@@ -24,6 +24,8 @@
 					chromium 
 					pandoc
 					texlive.combined.scheme-full
+					bat
+					just
 				];
        };
     });
