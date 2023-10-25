@@ -43,7 +43,7 @@ for(i in seq_along(x)) {
 
 
 
-op <- par(mfrow = c(3,1))
+op <- par(mfrow = c(3,1)) # current setting saved to op, par then changes it's internal state
 plot(xs, f(xs), type = 'l',
      col = 'dodgerblue3', lwd = 2)
 plot(xs, fPrime(xs), type = 'l', 
@@ -52,9 +52,7 @@ abline(h = 0)
 plot(xs, fPrime2(xs), type = 'l',
      col = 'dodgerblue3', lwd = 2)
 abline(h = 0)
-par(op)
-
-
+par(op) # previous settings are then again read into memory from variable
 
 # Taylor Approximation
 
@@ -69,18 +67,19 @@ expTaylor <- function(x, n, a = 0) {
 }
 
 xs <- seq(-4, 4, .005)
-n <- 5
+m <- 10 # my adjustment
+n <- 15
 a <- 1 # here you may set different values for a and check the corrsponding result
 colX <- rainbow(n)
 plot(xs, f(xs), type = 'l', lwd = 2)
 points(a, f(a), col = 'black', pch = 16)
 text(a, f(a) + 4, expression(f(a)), col = 'black')
-for(i in 1:n) {lines(xs, expTaylor(xs, i, a), 
+for(i in m:n) {lines(xs, expTaylor(xs, i, a), 
                     col = colX[i], lwd = 2, lty = 2)
-legend('topleft', legend = 1:n, col = colX, lty = 2, 
+legend('topleft', legend = m:n, col = colX, lty = 2, 
        lwd = 2, cex = .8)
 #lines(xs, expTaylor(xs, 10, a), col = 'purple', lwd = 3)
-Sys.sleep(1)
+#Sys.sleep(1)
 }
 
 #' WORKSPACE MANAGEMENT (ls, rm, save, load, ...)
