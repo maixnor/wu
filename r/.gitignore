@@ -1,0 +1,4 @@
+.RData
+*out
+sessions/*
+*.pdf

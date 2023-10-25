@@ -1,0 +1,8 @@
+run file:
+	R CMD BATCH {{file}}
+	bat {{file}}out
+
+run-pdf file:
+	R CMD BATCH {{file}}
+	okular Rplots.pdf &
+	bat {{file}}out
