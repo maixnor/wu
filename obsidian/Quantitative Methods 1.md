@@ -41,4 +41,5 @@ location: WU TC
 - [[Transformations of Graphs]]
 - [[New Functions from Old]]
 - [[Common Properties of Functions]]
+- [[Derivatives]]
 # General 
