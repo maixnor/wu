@@ -20,11 +20,14 @@
 					rPackages.knitr
 					rPackages.vioplot
 					rPackages.RDocumentation
+					rPackages.IRkernel
 					#vscode
 					chromium 
 					pandoc
+					python311Packages.jupyter
 					texlive.combined.scheme-full
 					bat
+					okular
 					just
 				];
        };
