@@ -1,0 +1,1 @@
+A person living on below 2.10 USD (2023) per day (1.90 in 2022)

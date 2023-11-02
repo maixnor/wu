@@ -697,4 +697,188 @@ debt to equity ratio, leverage ratio
 Gearing of 1 ... 50% equity, 50% liabilities
 
 ## Corporate Finance
+turning an investment into a [[Cash Flow]] Stream
+- cash out flow -> the investment (buying a new machine)
+- cash in flow -> increased production/sales -> increased cash flow
+
+> When a company has liabilities and equity it is impossible to tell which investment is funded by which.
+
+All Claims are equal, whether equity or liabilities.
+
+### Decisions
+- Financing Decisions -> Where is the money coming from?
+- Investment Decisions -> What am I gonna use the money for?
+	- shareholders need to be pleased
+
+### Analysis of Stocks
+[[Market Analysis]]
+- How is the whole industry developing?
+- How will the specific company develop relative to the industry?
+- Will the company have any interesting developments in the future?
+
+## Value of a Company
+The value of a company is rarely put together with simple step-by-step calculations. It is mostly a combination of many factors.  It is mostly about how much the company will yield to investors in the future, not necessarily about how much the company is "worth" right now.
+### Sheet Logic Value
+Assets - Liabilities = Equity
+
+this is incomplete to what the company will be worth and a buying decision should not be made just by the [[Balance Sheet]].
+
+### Economic Value
+The Value is determined by the future prospects of earnings or cash flow from this company
+
+Factors are
+- Management -> C-Level leaving/dying
+- Research -> e.g. Pharma and Bio Tech huge impact
+- [[Intangible Assets]] -> dependent on company
+- [[Interlectual Property]] -> dependent on company
+ 
+### Shares Value
+[[Market Capitalization]]
+
+### Forecast Value
+Investors only interested in future profits
+Generating forecasts on how the company is going to perform
+
+Attaching a monetary value to a [[Cash Flow]] Stream
+
+Money of the future in comparison to today.
+
+### Discounting
+Calculations done without [[Risks]].
+
+She sum of discounted future cash flows $CF_t$ more than the investment $I$?
+$NPV=-I +\frac{CF_1}{1+r}+\frac{CF_2}{(1+r)^2}+\frac{CF_3}{(1+r)^3} +... +\frac{CF_t}{(1+r)^t}$; $NPV>0$ -> $(-I, CF_1, CF_2, CF_3, ..., CF_t)$ is a profitable investment
+$r$ ... discount rate
+$NPV$ ... [[Net Present Value]]
+#### Example Taxi
+Assumption: the taxi business is closed after 5 years
+
+ $-40,000 +  \frac {30,000}{1+r} + \frac {30,000}{(1+r)^2} + \frac {30,000}{(1+r)^3} + \frac {30,000}{(1+r)^4} + \frac {45,000}{(1+r)^5}= 1001,637$ 
+ for $r=0.05$
+
+The [[Net Present Value]] is positive, it would be a worthwhile investment.
+
+Careful: This price also includes the driving of the taxi (done by entrepreneur).
+
+After hiring a taxi driver for 24k per year:
+ $-40,000 +  \frac {6,000}{1+r} + \frac {6,000}{(1+r)^2} + \frac {6,000}{(1+r)^3} + \frac {6,000}{(1+r)^4} + \frac {21,000}{(1+r)^5}= -2.270$ 
+ for $r=0.05$
+
+The [[Net Present Value]] now is negative. This would not be a good investment. You would get more money just saving with the bank at 5%.
+
+#### 0 Discount Rate
+when solving the $NPV = 0$ for $r$ we can find the [[Internal Rate of Return]]. 
+
+Invest 200 now, get 220 in a year: $\frac{220}{200} - 1 = 10\%$
+
+But how can we solve for $r$ in more years than just 2? -> [[Newtons Approximation]]
+Basically brute force the values.
+
+After brute forcing we get $0.032 < r < 0.033$ for this specific problem.
+
+### Amortization
+How long is the investment going to take to pay for itself?
+
+Either by cutting costs or increasing sales.
+
+### Putting it all together
+- predict future [[Cash Flow]]s
+- define [[Profitability]], what counts towards profit
+- [[Discounting|discount]] them with current interest rates
+- is expected to be close to the [[Market Capitalization]]
+- there is no "correct" way of calculating the value
+- other factors: 
+	- income taxes
+	- information of investors, providers of debt or other stakeholders
+	- measuring and managing the financial performance of the company
+- everything is just approximation
+
+# Strategic Perspective
+### What is Strategy?
+
+> How to avoid competition
+
+- Rumble in the Jungle 1974
+	- World Boxing championship
+	- Muhammad Ali and George Foreman 
+	- Muhammad Ali banned bc of Vietnam War and Black Rights
+	- Muhammad Ali not in his peak performance
+
+
+> Float like a butterfly - Sting like a bee
+
+&amp; Muhammad Ali
+
+Muhammad Ali's Strategy was to tire George Foreman so much, that in the end he could defeat George Foreman. He was applying his strengths while protecting against his weaknesses. Based on this strategy he trained to support his strategy.
+
+## Strategies
+### Price Leadership
+providing the same product for a much cheaper price
+[[USP]]: the cheapest option
+### Product Innovation
+being the "original" or the first on the market
+[[USP]]: the first product or only product for some time
+### Quality Leadership
+the brand or the quality of the product is unique enough to create value 
+[[USP]]: best product / provides most value
+### Niche Leadership
+such a "small" market that nobody else wants to participate
+[[USP]]: only product available
+## Market Barriers
+### Market Saturation Barrier
+- A saturated market is harder to join in on
+- Competitors can still join in markets which are not as separated
+	- Red Bull in EU market
+	- Monster in US market
+### Initial Investment Barrier
+- a high investment for any competitors to build up a brand similar to the original
+### Innovation Barrier
+- it is just too hard to join the race because the innovation costs are so high
+	- Apple with its M2 chips
+### Patent Barrier
+- you can't use my technology or I'll sue you
+	- pharma is big with patents
+## Market-Based View
+- from [[Michael Porter]] (Harvard)
+- [[Competitive Advantage]]
+	- choose an attractive market
+	- establish [[#Market Barriers]] -> me no like competition
+-  Multiple brands for multiple markets
+- Volkswagen
+	- normal Golf -> low price
+	- Lamborghini -> brand
+	- Porsche -> quality
+## Resource-Based View
+- from [[Edith Penrose]]
+- competitive edge being unique access to resources
+- they need to be [[VRIO Resources]]
+- what about basic resources?
+	- Apples -> every apple is mostly the same
+		- Organic Farming
+		- Special Breeds (maybe old/forgotten breeds)
+		- Special Marketing (CO2-free Apples)
+## Personal Career Strategy
+> University is not about what you get taught. It's about what you learn about yourself.
+
+&amp; [[Speckbacher]]
+
+- personal Strengths and Weaknesses -> [[#Resource-Based View]]
+	- what am I good at?
+	- what can I improve?
+- personal Opportunities and Threats -> [[#Market-Based View]]
+	- what is demanded on the job market?
+	- what is an attractive job market for me?
+
+Travel, do internships, talk with people, find out what people need/want.
+
+> Focus on your strengths, don't worry about your weaknesses.
+
+&amp; [[Speckbacher]]
+
+do a [[SWOT Analysis]] on yourself
+
+
+
+
 #cursor
+

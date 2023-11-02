@@ -27,11 +27,13 @@ Any constant function, is *increasing* and *decreasing*, neither of which *stric
 
 A *local extremum* is a point where a function changes its *monotonicity*
 
-# Convexity
+Trigonometric functions are not monotone (they increase and decrease). They are periodical functions because they repeat their values within 2 bounds.
+
+# Convexity & Concavity
 *conVex* if opens upwards (smiley face)
 *concAve* if opens downwards (frowny face)
 
-when connecting 2 lines on a function the line is either always above (convex) or always below (concave) the function.
+when connecting 2 lines on a function the line is either always above (convex) or always below (concave) the function. This must hold through the entire domain (x-range). Functions (like sin, cos) are both convex and concave, but in different domains. Should there be an inflection point within the domain, neither convexity nor concavity can be attributed.
 
 linear function are both convex and concave.
 
