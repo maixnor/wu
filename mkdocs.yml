@@ -1,5 +1,5 @@
 site_name: Dataview
-repo_url: https://github.com/blacksmithgu/wu
+repo_url: https://github.com/maixnor/wu
 edit_uri: edit/master/obsidian
 docs_dir: obsidian
 markdown_extensions:
@@ -15,7 +15,7 @@ theme:
     primary: deep purple
   logo: assets/obsidian.png
   favicon: assets/obsidian.png
-  custom_dir: overrides
+  custom_dir: obsidian/overrides
 nav:
   - Overview: 'README.md'
 plugins:
