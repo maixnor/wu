@@ -1,7 +1,7 @@
 site_name: Dataview
 repo_url: https://github.com/blacksmithgu/wu
 edit_uri: edit/master/obsidian
-docs_dir: .
+docs_dir: obsidian
 markdown_extensions:
   - abbr
   - admonition
