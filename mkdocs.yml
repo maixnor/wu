@@ -17,7 +17,7 @@ theme:
   favicon: assets/obsidian.png
   custom_dir: obsidian/overrides
 nav:
-  - Overview: 'README.md'
+  - Overview: 'Index.md'
 plugins:
   - search
   - redirects:
