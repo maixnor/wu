@@ -42,4 +42,5 @@ location: WU TC
 - [[New Functions from Old]]
 - [[Common Properties of Functions]]
 - [[Derivatives]]
+- [[Integrals]]
 # General 

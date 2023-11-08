@@ -8,7 +8,7 @@ The climate crisis is still ongoing and the emissions are still increasing despi
 - Canada, US, Australia, Russia have most pollution per capita
 - China and India only a fraction of pollution per capita
 - Highest Income accountable for highest pollution
-- Next climate meeting (COP26) will be held in 2026, by then we will have "lost" the 1,5 C mark
+- Next climate meeting ([[COP]]26) will be held in 2026, by then we will have "lost" the 1,5 C mark
 - Lobbying from fossil fuel companies still super strong
 ## ✅ Similarities
 none here yet

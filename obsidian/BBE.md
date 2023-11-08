@@ -4,9 +4,9 @@
 This study plan is recommended by the BBE Program and might be worth following. [Here](https://www.wu.ac.at/en/students/my-program/bachelors-programs/business-and-economics/structure-content/) in written form.
 ![[bbe_study_plan.png]]
 ### Semester 1
-- [[Contemporary Challenges in Business and Society]]
-- [[Business and Society 1]]
-- [[Quantitative Methods 1]]
+- [[CCBE Contemporary Challenges in Business and Economics]]
+- [[BS Business and Society 1]]
+- [[QM1 Quantitative Methods 1]]
 - [[Governance and Legal Enviroment]]
 - [[Understanding Business/Business Planning]]
 - [[Free Electives]] - onwards

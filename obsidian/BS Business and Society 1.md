@@ -472,7 +472,7 @@ Chester Barnard: Barnard-Simon Theory of Organizational Equilibrium
 	- not just something new and better
 - bearing risk of failure
 
-## Joseph Schumpeter
+## [[Joseph Schumpeter]]
 - dynamic entrepreneur / pioneer
 	- developing new process or products
 	- advantage over competition or new markets
@@ -840,6 +840,7 @@ such a "small" market that nobody else wants to participate
 	- pharma is big with patents
 ## Market-Based View
 - from [[Michael Porter]] (Harvard)
+- product oriented
 - [[Competitive Advantage]]
 	- choose an attractive market
 	- establish [[#Market Barriers]] -> me no like competition
@@ -850,6 +851,7 @@ such a "small" market that nobody else wants to participate
 	- Porsche -> quality
 ## Resource-Based View
 - from [[Edith Penrose]]
+- [[factor]] oriented
 - competitive edge being unique access to resources
 - they need to be [[VRIO Resources]]
 - what about basic resources?
@@ -949,6 +951,30 @@ do a [[SWOT Analysis]] on yourself
 	- After-Sales
 		- Feedback from customers, sharing (Social Media), product reviews
 
+### Employed Branding with Maslov
+after [[Maslov Hierachy]]
 
-#cursor
+- Physiological Needs -> money for daily needs
+- Safety Needs -> job security, not being fired, stable income
+- Social belonging -> colleagues, company events
+- Esteem -> social prestige and recognition
+- Self-Actualization -> enjoying what you do
+
+### Perfect Marketing | Problem perspective
+> Our Job is to figure out what they want before they do
+
+&amp; Steve Jobs
+
+> If I asked the people what they want they would have told me 'a faster horse' 
+ 
+&amp; Henry Ford
+
+It is important to first see the problem from the perspective of the users. Ford was into cars before he produced cars himself. The first mass computers were developed by computer-users and therefore they knew about the products.
+
+Being able to solve a problem - provide value - is most crucial when developing a new product/solution
+
+### Open Innovation
+Solutions also developed with users together
+
+
 

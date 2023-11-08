@@ -1,7 +1,6 @@
-
 #todo split different topics into separate notes
 # Homeworks
-## First Homework (Writing + Quiz)
+## First Homework (Writing)
 There will be a quiz on all 6 resources
 write a bit (200 words) about: 
 - [[Making sense of Globalization in the 21st Century]]
@@ -11,6 +10,12 @@ then read the rest of the material:
 - [[Let Them Eat Pollution]]
 - https://wu.instructure.com/courses/3581/modules/9709
 - https://doi.org/10.1353/gso.2006.0010
+
+## Second Homework (Writing)
+- https://canvas.wu.ac.at/courses/3581/assignments/16038?module_item_id=56577
+- My part will be 3.3-4, the last 2 bullet points
+
+# Overview
 
 # Introduction 
 
@@ -700,3 +705,23 @@ $\frac{1}{1-c_1}$ ... some factor #todo get name of factor
 
 
 
+
+
+
+# Climate Change, Justice and Policy
+[[Climate Change, Justice and Policy]]
+# Climate Friendly Living
+[[Climate Friendly Living]]
+
+# Readings 
+- [[How effictive is foreign eid?]]
+- [[The Economist - Poverty]]
+- [[Tackling climate breakdown and delivering economic justice must go hand in hand]]
+- [[The Case for Universal Basic Services]]
+- [[Making sense of Globalization in the 21st Century]]
+- [[The future of developing countries and globalization after the pandemic]]
+- [[Orientation, Exploring Economics]]
+- [[Let Them Eat Pollution]]
+#todo
+- https://wu.instructure.com/courses/3581/modules/9709
+- https://doi.org/10.1353/gso.2006.0010

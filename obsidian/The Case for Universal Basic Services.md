@@ -11,7 +11,12 @@ There is more to income than money on your bank account. Social Income is also a
 - [[Transactional Service Model]] vs [[Providing Service Model]]
 - should refugees be included? who is part of the welfare system?
 	- based on residency and not necessarily on passport?
-- 
+- Through [[Covid]] the "[[#Essential Jobs]]" have been identified
+- aims for UBS
+	- equity
+	- efficiency
+	- solidarity
+	- sustainability
 ## ✅ Similarities
 similarities to other papers or what other people think/write, link them here
 ## ⚔️ Differences
@@ -37,10 +42,10 @@ differences to other papers or what other people think/write, link them here
 ### In-Kind benefits as a share of disposable income by quintile
 ![[Pasted image 20231107153739.png]]
 
-### 1: Some name
-content of chapter 1
-### 2: Another name
-content of chapter 2
-.... more chapters
-### N: Nth name
-content of last chapter
+### Essential Jobs
+-  health and care or emergency services
+ - farmers, supermarket staff, 
+- workers in water, electricity, gas and oil, teachers
+- telecommunication workers, transport staff, 
+- workers in law and justice, religious staff, social security staff and retail banking staff
+
