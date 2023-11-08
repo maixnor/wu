@@ -5,6 +5,10 @@ docs_dir: obsidian
 markdown_extensions:
   - abbr
   - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
 theme:
   name: material
   palette:
