@@ -3,7 +3,10 @@
 
 These are my personal notes, freely available to you.
 
-Please remember that this is not official information and nothing is guaranteed to be correct or relevant.
+Please remember that this is not official information and nothing is guaranteed to be correct, relevant, or complete.
 
-- [[BEE]]
+# Where to start
+- [[CCBE Contemporary Challenges in Business and Economics]]
+- [[QM1 Quantitative Methods 1]]
+- [[BS Business and Society 1]]
 
