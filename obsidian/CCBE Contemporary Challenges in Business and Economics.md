@@ -387,7 +387,7 @@ Leading to:
 - workers and consumers needed to live close by
 - very expensive to import/export goods
 - local monopolies (cost was still lower than transportation cost)
-- limits the size of the market (no economy of scale)
+- limits the size of the market (no [[Economy of Scale]])
 
 ### First Unbundling (Steam Revolution)
 started in 1820 until 1940 (paused because of WW2)
