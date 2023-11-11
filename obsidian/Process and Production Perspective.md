@@ -28,7 +28,7 @@
 		- sourcing
 		- [[Research and Development]]
 		- [[Human Resources]]
-		- Infra (IT)
+		- Infra (IT, Vehicles, Buildings)
 - all costs should be covered by [[Profit#Producer Rent|Producer Rent]] 
 # Pipeline vs Platform
 - Pipeline by example Netflix
@@ -44,12 +44,15 @@
 	- two-sided market
 		- customer and producer
 		- platform is middleman
+	- often employ [[Vendor Lockin]]
 ### Smartphone
 - the phone is a clear pipeline product
 - what is one the phone (apps and service) form a platform
 - the real value is not in selling the phone, but selling services via the phone
 - the phone (hardware) does not need to change, the software is also part of the value
 - [[The Winner Takes It All]] when it comes to platforms -> app stores
+	- [[Vendor Lockin]] beneficial here
+	- [[Network Effect]] can become extreme here
 ### Digital vs Physical Platforms
 - physical
 	- shopping malls have a physical growth limit

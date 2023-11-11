@@ -714,6 +714,7 @@ $\frac{1}{1-c_1}$ ... some factor #todo get name of factor
 [[Climate Friendly Living]]
 
 # Readings 
+- [[Climate Change and Discounting the Future A Guide for the Perplexed]]
 - [[How effictive is foreign eid?]]
 - [[The Economist - Poverty]]
 - [[Tackling climate breakdown and delivering economic justice must go hand in hand]]
