@@ -976,5 +976,9 @@ Being able to solve a problem - provide value - is most crucial when developing 
 ### Open Innovation
 Solutions also developed with users together
 
+# Process and Production Perspective
+[[Process and Production Perspective]]
 
-
+# Employee Perspective
+[[Employee Perspective]]
+[[Recruiting]]
