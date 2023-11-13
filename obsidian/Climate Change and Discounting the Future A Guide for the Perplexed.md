@@ -26,6 +26,6 @@ differences to other papers or what other people think/write, link them here
 	- ethicists -> argue against [[Discounting]]
 		- future generations valued nothing with [[Discounting]]
 		- value of future generations should be greater than currently living people
-- 
+-  
 
 

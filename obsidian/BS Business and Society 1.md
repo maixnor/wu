@@ -14,6 +14,8 @@ upload as PDF until [[2023-11-02]]
 Quiz (20%) on [[2023-11-07]]
 Final Exam (50%) on [[2023-11-14]]
 
+[[BS Previous Questions]]
+
 # The Basics
 > No-one can "opt out" of economic issues and decisions. Our only options are to be informed, uninformed, or misinformed
 
