@@ -1,6 +1,6 @@
 #todo split different topics into separate notes
 # Grading Part Fuhrmann (30%)
-[[Too Good To Go Case Study]] #progress 
+[[Too Good To Go Case Study]] 
 Pick a successfull business
 
 - Half a page about the business (with sources)
