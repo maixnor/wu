@@ -47,3 +47,17 @@
 - creates a "fail fast" culture
 - high autonomy, flexibility, self-determination, self-organization
 
+# Recruiting
+## Modes
+#todo get from slides
+### Traditional Recruiting
+
+### Headhunting
+
+### Active Sourcing
+
+## Modern Incentives
+- work-life balance
+- remote work opportunities
+- learning opportunities
+- work-action 
