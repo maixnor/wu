@@ -21,11 +21,13 @@
 					rPackages.vioplot
 					rPackages.RDocumentation
 					rPackages.IRkernel
+					rPackages.emdbook
 					#vscode
 					chromium 
 					pandoc
 					python311Packages.jupyter
 					texlive.combined.scheme-full
+					kile
 					bat
 					okular
 					just
