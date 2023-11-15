@@ -22,6 +22,7 @@
 					rPackages.RDocumentation
 					rPackages.IRkernel
 					rPackages.emdbook
+					rPackages.rgl
 					#vscode
 					chromium 
 					pandoc

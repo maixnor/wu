@@ -32,6 +32,14 @@ M <- function(Y, r) .14*Y + 76.03*(r-2)^(-0.84)
 curve3d(M, from = c(0, 2.01), c(40000, 2.5), sys3d = "wireframe",
         varnames = c("Y", "r"))
 
+# RGL - interactive plot
+# comment including sys.sleep if not interested in the interactive plot.
+# if we do not wait the plot will close after the script has finished processsing
+library(rgl)
+curve3d(M, from = c(0, 2.01), c(40000, 2.5), sys3d = "rgl",
+        varnames = c("Y", "r"))
+Sys.sleep(1000000000)
+
 #' Another function
 f <- function(x,y) x * (25 - x) + y * (24 - 2*y) - (3*x^2 + 3 * x * y + y^2)
 curve3d(f, to = c(5, 5))
