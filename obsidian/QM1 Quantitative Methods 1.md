@@ -43,4 +43,5 @@ location: WU TC
 - [[Common Properties of Functions]]
 - [[Derivatives]]
 - [[Integrals]]
+- [[Functions with many Variables]]
 # General 

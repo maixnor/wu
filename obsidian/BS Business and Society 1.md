@@ -84,3 +84,4 @@ Chester Barnard: Barnard-Simon Theory of Organizational Equilibrium
 - [[Customer Perspective]]
 - [[Process and Production Perspective]]
 - [[Employee Perspective]]
+- [[Normative Perspective]]
