@@ -1,3 +1,4 @@
+[[Edith Penrose]]
 - Valuable
 	- some monetary value needs to be attached to it
 - Rare
