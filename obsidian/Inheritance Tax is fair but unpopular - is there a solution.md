@@ -31,4 +31,4 @@ author: [[George Eaton]]
 	- earlier transfer of assets
 - not a "death tax" anymore, since receivers are taxed
 	- Ireland has this: 33% above 320,000 transfer
-- 
+ 

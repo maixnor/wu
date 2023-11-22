@@ -166,7 +166,7 @@ Money of the future in comparison to today.
 ### Discounting
 Calculations done without [[Risks]].
 
-She sum of discounted future cash flows $CF_t$ more than the investment $I$?
+The sum of discounted future cash flows $CF_t$ more than the investment $I$?
 $NPV=-I +\frac{CF_1}{1+r}+\frac{CF_2}{(1+r)^2}+\frac{CF_3}{(1+r)^3} +... +\frac{CF_t}{(1+r)^t}$; $NPV>0$ -> $(-I, CF_1, CF_2, CF_3, ..., CF_t)$ is a profitable investment
 $r$ ... discount rate
 $NPV$ ... [[Net Present Value]]

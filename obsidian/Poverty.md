@@ -35,7 +35,7 @@ poorest:
 - sub-saharan countries -> still getting poorer
 
 ## Inequality
-With the [[Gini Index]] we can approximate the complete inequality of a country with its complete income distribution.
+With the [[GINI Index]] we can approximate the complete inequality of a country with its complete income distribution.
 
 https://worldpoverty.io
 

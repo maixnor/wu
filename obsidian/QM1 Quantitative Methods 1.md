@@ -25,7 +25,7 @@ location: WU TC
 	- YouTube
 - books
 	- A First Course in Statistical Programming with R
-	- [[Essentail Mathematics for Economic Analysis]]
+	- [[Essential Mathematics for Economic Analysis]]
 - Slides $\neq$ Book
 - Group Work will be important
 	- Always use group ID in communications
@@ -44,4 +44,5 @@ location: WU TC
 - [[Derivatives]]
 - [[Integrals]]
 - [[Functions with many Variables]]
+- [[Optimization]]
 # General 
