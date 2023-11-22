@@ -1,4 +1,3 @@
-#todo split different topics into separate notes
 # Homeworks
 ## First Homework
 There will be a quiz on all 6 resources
@@ -10,7 +9,6 @@ then read the rest of the material:
 - [[Let Them Eat Pollution]]
 - https://wu.instructure.com/courses/3581/modules/9709
 - https://doi.org/10.1353/gso.2006.0010
-
 ## Second Homework 
 - https://canvas.wu.ac.at/courses/3581/assignments/16038?module_item_id=56577
 - My part will be 3.3-4, the last 2 bullet points
@@ -18,7 +16,6 @@ then read the rest of the material:
 - Inequality
 - read [[Inheritance Tax is fair but unpopular - is there a solution]]
 - write max 800 words
-
 # Overview
 ## Course Instructor(s)
  - Jesus
@@ -47,7 +44,6 @@ then read the rest of the material:
 	- multiple choice quizzes
 	- best 5 quizzes are worth up to 6 points (max 30 points)
 - group homework(s)
-
 # Content
 [[Contemporary Problems]]
 [[CCBE Bits and Bobs]]
@@ -57,7 +53,6 @@ then read the rest of the material:
 [[Climate Change, Justice and Policy]]
 [[Climate Friendly Living]]
 [[Inequality]]
-
 # Readings
 - [[Inheritance Tax is fair but unpopular - is there a solution]]
 - [[Climate Change and Discounting the Future A Guide for the Perplexed]]
