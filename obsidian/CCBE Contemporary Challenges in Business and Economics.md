@@ -715,14 +715,13 @@ $\frac{1}{1-c_1}$ ... some factor #todo get name of factor
 
 # Readings 
 - [[Climate Change and Discounting the Future A Guide for the Perplexed]]
-- [[How effictive is foreign eid?]]
-- [[The Economist - Poverty]]
+- [[How effictive is foreign eid?]] #todo
+- [[The Economist - Poverty]] #todo
 - [[Tackling climate breakdown and delivering economic justice must go hand in hand]]
 - [[The Case for Universal Basic Services]]
 - [[Making sense of Globalization in the 21st Century]]
 - [[The future of developing countries and globalization after the pandemic]]
 - [[Orientation, Exploring Economics]]
 - [[Let Them Eat Pollution]]
-#todo
-- https://wu.instructure.com/courses/3581/modules/9709
-- https://doi.org/10.1353/gso.2006.0010
+- https://wu.instructure.com/courses/3581/modules/9709 #todo
+- https://doi.org/10.1353/gso.2006.0010 #todo

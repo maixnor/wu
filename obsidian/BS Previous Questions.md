@@ -332,7 +332,7 @@ $$-1,000 + \frac {10}{1+r}+ \frac {10}{(1+r)^2}\frac {1,015}{(1+r)^3}=0$$
 	4. Decisions on 4P´s can be used to differentiate a given product as part of quality leadership 
 		1. Correct
 2. Strategic Perspective and customer perspective
-assume that the sales of smartphones worldwide in year t is 500 billion USD, while in t-1 it was 450 billion USD. Moreover, assume that Samsung and Apple are the two largest players in the market in terms of smartphone sales. Samsung´s smartphone sales in year t are 100 billion USD, while Apple´s smartphone sales in year t are 120 billion USD. Which answers are correct?
+	assume that the sales of smartphones worldwide in year t is 500 billion USD, while in t-1 it was 450 billion USD. Moreover, assume that Samsung and Apple are the two largest players in the market in terms of smartphone sales. Samsung´s smartphone sales in year t are 100 billion USD, while Apple´s smartphone sales in year t are 120 billion USD. Which answers are correct?
 	1. The overall market growth for smartphones from t+1 to t is given by 500-450/450=50/450=11% 
 		1. Correct
 	2. Apple´s relative market share is 0.83 
