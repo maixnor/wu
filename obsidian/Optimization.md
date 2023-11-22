@@ -104,6 +104,7 @@ $\mathcal{L}$
 
 #tdoo write some F# code
 
-
+# Epsilon
+In Math in general the Epsilon $\mathcal{E}$ is something that is positive and very small. This can be used to overcome rounding errors in numerical approximation problems.
 
 
