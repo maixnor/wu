@@ -1,21 +1,3 @@
-# Homeworks
-## First Homework
-There will be a quiz on all 6 resources
-write a bit (200 words) about: 
-- [[Making sense of Globalization in the 21st Century]]
-- [[The future of developing countries and globalization after the pandemic]]
-- [[Orientation, Exploring Economics]]
-then read the rest of the material:
-- [[Let Them Eat Pollution]]
-- https://wu.instructure.com/courses/3581/modules/9709
-- https://doi.org/10.1353/gso.2006.0010
-## Second Homework 
-- https://canvas.wu.ac.at/courses/3581/assignments/16038?module_item_id=56577
-- My part will be 3.3-4, the last 2 bullet points
-## Third Homework 
-- Inequality
-- read [[Inheritance Tax is fair but unpopular - is there a solution]]
-- write max 800 words
 # Overview
 ## Course Instructor(s)
  - Jesus
@@ -27,7 +9,7 @@ then read the rest of the material:
 		- education in Uganda
 		- demographic dividend in Kenya
 		- policy reform in Belarus
-	- [[Poverty and Inequality]]
+	- [[Poverty]] and [[Inequality]]
 	- [[Climate Change]]
 	- [[Globalization - An Introduction]]
 - Essletzbichler
@@ -66,3 +48,21 @@ then read the rest of the material:
 - [[Let Them Eat Pollution]]
 - https://wu.instructure.com/courses/3581/modules/9709 #todo
 - https://doi.org/10.1353/gso.2006.0010 #todo
+# Homeworks
+## First Homework
+There will be a quiz on all 6 resources
+write a bit (200 words) about: 
+- [[Making sense of Globalization in the 21st Century]]
+- [[The future of developing countries and globalization after the pandemic]]
+- [[Orientation, Exploring Economics]]
+then read the rest of the material:
+- [[Let Them Eat Pollution]]
+- https://wu.instructure.com/courses/3581/modules/9709
+- https://doi.org/10.1353/gso.2006.0010
+## Second Homework 
+- https://canvas.wu.ac.at/courses/3581/assignments/16038?module_item_id=56577
+- My part will be 3.3-4, the last 2 bullet points
+## Third Homework 
+- Inequality
+- read [[Inheritance Tax is fair but unpopular - is there a solution]]
+- write max 800 words
