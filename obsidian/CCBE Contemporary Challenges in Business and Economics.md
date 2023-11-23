@@ -41,6 +41,7 @@
 - [[How effictive is foreign eid?]] #todo
 - [[The Economist - Poverty]] #todo
 - [[Tackling climate breakdown and delivering economic justice must go hand in hand]]
+- [[Trade and Globalization]]
 - [[The Case for Universal Basic Services]]
 - [[Making sense of Globalization in the 21st Century]]
 - [[The future of developing countries and globalization after the pandemic]]
