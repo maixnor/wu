@@ -1,6 +1,7 @@
 ---
 contributed-by: Faraz Muhammad
 ---
+source: https://ourworldindata.org/trade-and-globalization
 # Trade and Globalisation – Our World In Data
 Over the last two centuries trade has grown remarkably completely transforming the global economy. 
     • Exports today are more than 40 times larger than in 1913.
