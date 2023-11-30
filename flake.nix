@@ -16,6 +16,7 @@
 					rPackages.ggplot2
 					rPackages.dplyr
 					rPackages.xts
+					rPackages.purrr
 					rPackages.rmarkdown
 					rPackages.knitr
 					rPackages.vioplot
