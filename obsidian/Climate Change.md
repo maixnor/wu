@@ -45,7 +45,7 @@
 	- Companies stay dirty
 - Challenges to Adaption
 	- #todo what is this?
-- -> [[Jesus Crespu]] created a model to project GDP and GDP per Capita for **all countries** until 2100
+- -> [[Jesus Crespo]] created a model to project GDP and GDP per Capita for **all countries** until 2100
 	- Population projections from WHO
 	- [[Population Pyramids]]
 		- Assumptions for Projection

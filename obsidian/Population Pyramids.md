@@ -8,7 +8,7 @@
 # Female Education
 > The best contraceptive is education
 
-&amp; [[Jesus Crespu]]
+&amp; [[Jesus Crespo]]
 
 The more and better women are educated the more the fertility rate drops -> less kids.
 

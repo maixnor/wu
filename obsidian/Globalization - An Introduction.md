@@ -17,7 +17,7 @@
 - faster turnover time
 - capitalism causes the geographical expansion
 ### Enablers of Globalization
-After @Baldwin:
+After [[Baldwin]]:
 
 3 constraints:
 - Goods Trade Costs
@@ -73,10 +73,11 @@ Many problems still
 
 general process and contingent historical-geographic factors combine to tell a causal story
 
-## Rebundling (World Wars) (second unbundling)
+## Rebundling (World Wars) 
 - world wars put a stop on global trade and integration
 - increased fees, focusing on domestic market
 
+## Second Unbundling
 - different parts can be produced in different sites
 
 started after 1945
@@ -142,8 +143,8 @@ Elephant Curve #todo get from slides
 ## Countermovements
 - anti-globalization protests
 - economic outcomes are linked to political processes
-- string political reation to increasion precarization
-- job insecurity, competion in the labor market
+- string political reaction to increasion precarization
+- job insecurity, competition in the labor market
 
 ### Reactions and its Manifestations
 - populist voting
@@ -157,8 +158,9 @@ Elephant Curve #todo get from slides
 
 ### Polanyi's double movement
 - #todo get image from slides
-- Golden straigt jacket: you have to conform to golden role-model
-- betton woods compromise: after ww2
+- there will always be political backlash to every economic decision
+- [[Dani Rodrik#Golden Straightjacket|Golden Straightjacket]]: you have to conform to golden role-model
+- [[Dani Rodrik#Bretton Woods Compromise|Bretton Woods Compromise]]: after ww2
 - global governance: every person (globally) has a vote (also the [[global south]])
 
 ### Backlash
