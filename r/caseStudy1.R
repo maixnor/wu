@@ -1,5 +1,12 @@
 
-library(purrr)
+# after the modify function of library purrr
+modify <- function(x, f) {
+	res <- 0
+	for (i in x) {
+		res = c(res, f(i))
+	}
+	res
+}
 
 rieman_left = function(f,x,dx) f(x) * dx
 rieman_center <- function(f,x,dx) f(x + (dx/2)) * dx
