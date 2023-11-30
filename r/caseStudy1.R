@@ -1,13 +1,4 @@
 
-# after the modify function of library purrr
-modify <- function(x, f) {
-	res <- 0
-	for (i in x) {
-		res = c(res, f(i))
-	}
-	res
-}
-
 rieman_left = function(f,x,dx) f(x) * dx
 rieman_center <- function(f,x,dx) f(x + (dx/2)) * dx
 rieman_right <- function(f, x, dx) f(x + dx) * dx
@@ -28,9 +19,9 @@ rieman_combined(fa, 1, 0.1)
 evaluate <- function(f, from, to, dx) {
 	x <- seq(from, to - dx, by = dx)
 
-	yal <- modify(x, \(x) rieman_left(f, x, dx))
-	yac <- modify(x, \(x) rieman_center(f, x, dx))
-	yar <- modify(x, \(x) rieman_right(f, x, dx))
+	yal <- rieman_left(f, x, dx)
+	yac <- rieman_center(f, x, dx)
+	yar <- rieman_right(f, x, dx)
 
 	sum_al <- sum(yal)
 	sum_ac <- sum(yac)
