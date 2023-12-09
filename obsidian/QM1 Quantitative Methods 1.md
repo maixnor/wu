@@ -45,4 +45,5 @@ location: WU TC
 - [[Integrals]]
 - [[Functions with many Variables]]
 - [[Optimization]]
+- [[Matrix Algebra]]
 # General 
