@@ -1,0 +1,639 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/obsidian.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+    
+    
+      
+        <title>A Tiny Introduction to Economics - Maixnor@WU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-tiny-introduction-to-economics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maixnor@WU" class="md-header__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maixnor@WU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A Tiny Introduction to Economics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maixnor@WU" class="md-nav__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    Maixnor@WU
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-introduction-to-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Tiny Introduction to Economics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Tiny Introduction to Economics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-impact-of-legalized-abortion-on-crime" class="md-nav__link">
+    <span class="md-ellipsis">
+      The impact of legalized abortion on crime.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oil-and-the-duration-of-dictatorships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oil and the duration of dictatorships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up-or-down-toilet-seat-etiquette" class="md-nav__link">
+    <span class="md-ellipsis">
+      Up or Down? Toilet Seat Etiquette
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-efficiency-of-acdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      On the efficiency of ACDC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scarcity-and-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scarcity and Choice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trade-Offs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marginal-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marginal Thinking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstraction-and-mathematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstraction and Mathematics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-get-quotes-from-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo get quotes from slides
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo get quotes from slides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#popper-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popper  Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-and-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cause and Effect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positive-vs-normative-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positive vs Normative Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Thinking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#occams-razor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Occam's Razor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-fallacies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Fallacies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h2 id="a-tiny-introduction-to-economics">A Tiny Introduction to Economics</h2>
+<p>Macroeconomics ... using statistics to understand reality
+Microeconomics ... looking at specific groups and their decisions</p>
+<h3 id="definition">Definition</h3>
+<blockquote>
+<p>The study of how society makes choices in managing its scarce resources and the consequences of this decision-making</p>
+</blockquote>
+<p>Issues like
+- scarcity and choice
+- trade-offs and [[Opportunity Cost]]
+- marginal thinking ([[Marginal Changes]])
+- incentives and reaction to them</p>
+<p>Scope:
+- which policy measures reduce unemployment?
+- how should central banks conduct monetary policy?
+- how can we avoid that firms pollute the environment?
+- why do people become criminals?</p>
+<h3 id="examples">Examples</h3>
+<h4 id="the-impact-of-legalized-abortion-on-crime">The impact of legalized abortion on crime.</h4>
+<p>Theory: With legalized abortion the crime rate decreases because the people that are not born, would later in life become a criminal with a higher chance. </p>
+<p>Great example because:
+- a lot of variability for 50 different states
+- a lot of data on other aspects of this problem </p>
+<h4 id="oil-and-the-duration-of-dictatorships">Oil and the duration of dictatorships</h4>
+<p>Theory: Dictators with a lot of natural resources should have longer duration in their dictatorships, since they have more resources to burn through to keep the people happy.</p>
+<h4 id="up-or-down-toilet-seat-etiquette">Up or Down? Toilet Seat Etiquette</h4>
+<p>a mathematical system about if it is worth it to always put down the toilet seat after peeing.</p>
+<h4 id="on-the-efficiency-of-acdc">On the efficiency of ACDC</h4>
+<ul>
+<li>Bon Scott had a nice voice which was the signature part of the band</li>
+<li>Bon Scott died of alcohol</li>
+<li>They found Brian Johnson, a very similar voice</li>
+<li>huge controversy about who was the better vocalist</li>
+</ul>
+<p>They did:
+- played an [[Ultimatum Game Experiment]]
+- game was played in 2 rooms separately
+    - one room played music from Bon Scott
+    - one room played music from Brian Johnson
+- Scoring: Which got more total income (accepted offers) 
+- Brian Johnson Music won</p>
+<h2 id="scarcity-and-choice">Scarcity and Choice</h2>
+<ul>
+<li>economic activity: interaction between households and frims</li>
+<li>households cannot meet all wants and needs</li>
+<li>scarcity: society has limited resources, cannot meet all needs of all people</li>
+<li>how to best allocate resources for best meeting of needs/wants</li>
+</ul>
+<h2 id="trade-offs">Trade-Offs</h2>
+<ul>
+<li>trading off benefits/costs of options</li>
+<li>at societal level are different trade-offs</li>
+</ul>
+<h2 id="marginal-thinking">Marginal Thinking</h2>
+<p>Revenue $R(x)$ and Costs $C(x)$</p>
+<p>let profit be a function:
+$\pi (x) = R(x) - C(x)$</p>
+<p>then we can maximize the function (derivative = 0)
+$\frac{d\pi (x)}{dx} = \frac{dR (x)}{dx} - \frac{dC (x)}{dx} = 0$</p>
+<p>This model requires <em>rationality</em> of all participants.</p>
+<p>Marginal Quantities: When changing the inputs a little, how does the output change.</p>
+<p>Finding a way that the marginal revenue matches their marginal costs. Then their profit is maximized.</p>
+<h2 id="abstraction-and-mathematics">Abstraction and Mathematics</h2>
+<h1 id="todo-get-quotes-from-slides">todo get quotes from slides</h1>
+<p>Economics often use abstract models, often in mathematical form.</p>
+<p>Advantages:
+- transparent language for results and benchmarks
+- allowing a (hopefully) straightforward way to confront the theoretical results with empirical evidence through predictions </p>
+<p>Role Model of Physics:
+- when throwing a fall off a building, what is the speed after 3 seconds?
+    - Physics has no problem with using wrong model
+    - the problem with this model is air friction
+    - It doesn't matter in our model, because it is negligible
+- Economics wants to do it like that
+    - a lot of abstractsion
+    - a lot of assumptions, to keep complexity down
+    - question: did I abstract and assume the correct things?
+        - air friction negligible when dropping a ball 3 meters, but not when calculating for max speed of a falling ball</p>
+<p>Problem of social sciences:
+- Impossible (or at least very hard) to conduct experiment</p>
+<p>The Toolbox of an economics:
+- empiricism
+- rationalism
+- deduction
+- induction</p>
+<h2 id="popper-logic">Popper  Logic</h2>
+<p>Science vs Pseudo-Science</p>
+<p>For something to be scientific it needs to be 2 things
+- logically consistent
+    - if it rains, the floor gets wet
+- needs to be falsifiable
+    - theory: all swans are white
+    - how to falsify: find a non-white swan
+    - if I can't find a white swan
+        - "I cannot falsify the theory yet"
+        - but the theory is not proven</p>
+<h2 id="cause-and-effect">Cause and Effect</h2>
+<p>Pattern Matching is used to derive insights from data.</p>
+<p>Then we search for causality and implications of this patterns 
+Correlation != Causality</p>
+<h2 id="positive-vs-normative-analysis">Positive vs Normative Analysis</h2>
+<ul>
+<li>Why is unemployment higher for teenagers than older workers?</li>
+<li>What should the government do to improve the well-being of teenagers?</li>
+</ul>
+<p>Positive Statement ... Can be falsified ... scientific statements
+Normative Statement ... includes opinions ... cannot be tested</p>
+<p>Positive and Normative statements tend to get mixed up.</p>
+<h2 id="critical-thinking">Critical Thinking</h2>
+<p>6 rules of evidental reasoning (Lett, 1990)
+- Falsifiability
+- Logic
+- Comprehensive
+- Honesty
+- Replicability
+- Sufficiency</p>
+<h2 id="occams-razor">Occam's Razor</h2>
+<p>When there are 2 hypotheses that explain the situation equally well, then choose the simpler one.</p>
+<h2 id="logical-fallacies">Logical Fallacies</h2>
+<ul>
+<li>Ad hominem<ul>
+<li>oh no, that guy is a nazi, therefore the statement must be wrong</li>
+</ul>
+</li>
+<li>Argument from authority</li>
+<li>Appeal to ignorance</li>
+<li>Post hoc, ergo propter hoc<ul>
+<li>just because one thing happened after another doesnt mean, that they cause each other</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

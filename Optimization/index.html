@@ -1,0 +1,477 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/obsidian.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+    
+    
+      
+        <title>Single Variable Optimization - Maixnor@WU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#single-variable-optimization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maixnor@WU" class="md-header__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maixnor@WU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Single Variable Optimization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maixnor@WU" class="md-nav__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    Maixnor@WU
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#second-order-derivative-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second-Order Derivative Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-order-derivative-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Order Derivative Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-maximumminimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Maximum/Minimum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-profit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Profit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Profit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#second-order-derivative-test_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second-Order Derivative Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-order-derivative-test_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-Order Derivative Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-minimummaximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Minimum/Maximum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="single-variable-optimization">Single Variable Optimization</h1>
+<p>Optimization ... finding local maximum/minimum points.</p>
+<p>local extreme ... the extreme on a smaller domain
+global extreme ... the extreme on the whole domain</p>
+<p>for all maxima holds $f'(x) = 0$ since if the slope is non-zero there will be larger and lower values to both sides. Count of solutions to $f'(x) =0$ is the count of extreme points -&gt; can be 1, can be 0, can be many.</p>
+<h3 id="second-order-derivative-test">Second-Order Derivative Test</h3>
+<p>$f''(x) &gt; 0$ ... positive ... 😄 ... mouth sloped upwards ... local minimum
+$f''(x) &gt; 0$ ... negative ... 😦 ... mouth sloped downwards ... local maximum
+$f''(x) = 0$ ... inconclusive, we don't know if minimum or maximum</p>
+<h3 id="first-order-derivative-test">First-Order Derivative Test</h3>
+<p>$c$ ... extreme point
+$D$ ... Domain of extreme point
+$f'(x) &lt; (&gt;) 0 : \forall x &lt; c \cap D$  &amp;&amp; $f'(x) &gt; (&lt;) 0 : \forall x &gt; c \cap D$</p>
+<p>derivative is positive in one direction and negative  in the other direction for some domain.</p>
+<h3 id="global-maximumminimum">Global Maximum/Minimum</h3>
+<p>one needs to check all extreme points and also the end-points of the domain</p>
+<h3 id="example-profit">Example Profit</h3>
+<p>Revenue ... $R(Q) = 4000Q - 33Q^2$ 
+Costs ... $C(Q) = 2Q^3 - 3Q^2 + 400Q + 5000$</p>
+<p>Profit ... $\pi(Q) = R(Q) - C(Q)$
+$\pi'(Q) = -6Q^2 - 60Q + 3600 = 0$
+$-6 (Q+30) (Q-20) = 0$
+$Q_1 = -30, Q_2 = 20$ ... only $Q_2$ is relevant, since $Q$ must be positive
+$\pi(20) = 39 000$ ... maximum profit at 20 units sold</p>
+<h4 id="second-order-derivative-test_1">Second-Order Derivative Test</h4>
+<p>$\pi''(Q) = -12Q - 60$ 
+$\pi''(20) &lt; 0$ ... local maximum
+$\pi''(-30) &gt; 0$ ... local minimum (irrelevant)</p>
+<h4 id="first-order-derivative-test_1">First-Order Derivative Test</h4>
+<p>Factorization from above: $-6 (Q+30) (Q-20) = 0$</p>
+<p>Analyzing the factorization:
+- $-\infty &lt; Q &lt; -30$ ... negative
+- $-30 &lt; Q &lt; 20$ ... positive
+- $20 &lt; Q &lt; \infty$ ... negative</p>
+<h4 id="global-minimummaximum">Global Minimum/Maximum</h4>
+<p>on the domain $[-45,50]$</p>
+<p>$v = { \pi(-45), \pi(-30), \pi(20), \pi(45) }$
+global minimum ... $min(v)$
+global maximum ... $max(v)$</p>
+<h1 id="multivariate-optimization">Multivariate Optimization</h1>
+<p>We will only focus on 2 variables. More variables gets even more complicated.</p>
+<p>$f(x,y)$
+a point $(x_0, y_0)$ is only an extreme point if both derivatives are zero
+$f_x(x_0, y_0) = 0$ and $f_y(x_0, y_0) = 0$</p>
+<p>then take direct derivatives $f_{xx}, f_{yy}$ and check if they are #todo check</p>
+<p>local extreme ... product of direct derivatives &gt; product of cross derivatives</p>
+<p>saddle point is like a horse saddle, across x minimum, across y maximum
+saddle point ... product of direct derivatives = product of cross derivatives</p>
+<h1 id="todo-write-down-in-math-notation">todo write down in math notation</h1>
+<h3 id="example-profit_1">Example Profit</h3>
+<p>$\pi(x,y) = 64x -2x^2 + 4xy -4y^2 +32y -14$
+$\pi_x(x,y)= 64 - 4x + 4y = 0$
+$\pi_y(x,y)= 4x -8y +32 = 0$</p>
+<p>solve for $y=24, x = 40$ ... one candidate point at $(x^<em>,y^</em>) = (40,24)$</p>
+<p>Direct Derivatives:
+$\pi_{xx} = -4, \pi_{yy} = -8$ ... maximum
+Check with cross derivatives:
+$\pi_{xy} = 4, \pi_{yx} = 4$</p>
+<p>$\pi_{xx} * \pi_{yy} &gt; \pi_{xy} * \pi_{yx}$
+$(-4) * (-8) &gt; 4 * 4$ ... true</p>
+<p>$\pi_{max} = \pi(40, 24) = 1650$</p>
+<h3 id="example-profit-2">Example Profit 2</h3>
+<p>$\pi(x,y) = x(25-x) + y(24 -2y) - (3x^2 + 3xy + y^2)$</p>
+<h1 id="todo-finish-math-notation">todo finish math notation</h1>
+<h1 id="constraint-optimization">Constraint Optimization</h1>
+<p>$x$ and $y$ should not just be part of a maximum but also fulfill other constraints.
+e.g. $x + y = 12$</p>
+<p>therefore ... we can rearrange to $y = 12-x$ and plug into the function to maximize
+$\pi(x, 12-x) = ...$
+But careful, that is only possible because the constrained in this case is very simple. If the function is complex, use the Lagrange Multiplier Method</p>
+<h2 id="lagrange-multiplier-method">Lagrange Multiplier Method</h2>
+<p>lagrangian number will "punish" deviating from the required constraint
+$f_{max}(x,y)$ such that $g(x,y) = 0$</p>
+<p>$\mathcal{L}$</p>
+<h1 id="todo-finish-math-notation_1">todo finish math notation</h1>
+<h1 id="tdoo-write-some-f-code-or-r">tdoo write some F# code or R</h1>
+<h1 id="epsilon">Epsilon</h1>
+<p>In Math in general the Epsilon $\mathcal{E}$ is something that is positive and very small. This can be used to overcome rounding errors in numerical approximation problems.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

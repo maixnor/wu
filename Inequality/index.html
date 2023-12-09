@@ -1,0 +1,611 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/obsidian.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+    
+    
+      
+        <title>Concepts - Maixnor@WU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maixnor@WU" class="md-header__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maixnor@WU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maixnor@WU" class="md-nav__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    Maixnor@WU
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-vs-relative-poverty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Absolute vs Relative Poverty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opportunity-or-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opportunity or Outcome?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="concepts">Concepts</h1>
+<h2 id="absolute-vs-relative-poverty">Absolute vs Relative Poverty</h2>
+<ul>
+<li>economic growth -&gt; reduction in absolute poverty<ul>
+<li>covid reversed some of that</li>
+</ul>
+</li>
+<li>below 2.1 USD not sufficient for productive life<ul>
+<li>different measure is needed</li>
+</ul>
+</li>
+<li>social exclusion -&gt; relative poverty<ul>
+<li>poor people vs rich people</li>
+<li>if there were no rich people there would be no poor people</li>
+<li>high income -&gt; high relative poverty rate</li>
+</ul>
+</li>
+<li>Sissors of average income<ul>
+<li>top 1% rising</li>
+<li>bottom 50% dropping</li>
+</ul>
+</li>
+<li>what is interesting? <ul>
+<li>Opportunity or Outcomes?</li>
+<li>how to measure income?</li>
+<li>how to measure inequality?</li>
+</ul>
+</li>
+</ul>
+<h2 id="opportunity-or-outcome">Opportunity or Outcome?</h2>
+<ul>
+<li>example running race<ul>
+<li>opportunity -&gt; start</li>
+<li>outcome -&gt; leaderbord</li>
+</ul>
+</li>
+<li>related<ul>
+<li>fixing one will fix the other</li>
+</ul>
+</li>
+<li>measuring [[Income]]<ul>
+<li>sum (earnings of participants) + capital income + private transfers</li>
+<li>= household market income</li>
+<li>
+<h1 id="todo-how-to-get-this-calculation">todo how to get this calculation</h1>
+</li>
+<li>= household equivalised disposable income<ul>
+<li>different scalings with larger households<ul>
+<li>transport -&gt; exponential</li>
+<li>food -&gt; linear</li>
+<li>heating -&gt; constant</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>value of [[Public Services]] (education, public transport, etc)</li>
+</ul>
+</li>
+<li>= Household extended Income</li>
+</ul>
+</li>
+</ul>
+<h2 id="based-justice">Based Justice</h2>
+<ul>
+<li>based</li>
+<li>very based</li>
+<li>
+<h1 id="todo-fill-from-slides">todo fill from slides</h1>
+</li>
+</ul>
+<h3 id="needs-based-justice">Needs Based Justice</h3>
+<h3 id="performance-based-justice">Performance Based Justice</h3>
+<h3 id="market-based-justice">Market Based Justice</h3>
+<h3 id="opportunity-based-justice">Opportunity Based Justice</h3>
+<h3 id="participatory-justice">Participatory Justice</h3>
+<h3 id="environmental-justice">Environmental Justice</h3>
+<h2 id="measure-inequality">Measure Inequality</h2>
+<ul>
+<li>[[GINI Index]]<ul>
+<li>higher GINI Index -&gt; higher inequality</li>
+</ul>
+</li>
+<li>Upper Tail Inequailty -&gt; 90:50 ratio, 99:90 ratio, 100:99 ratio</li>
+<li>Lower Tail Inequality -&gt; 50:10 ratio</li>
+<li>Mean/Median ration -&gt; Greater outliers on top/bottom of income distribution</li>
+</ul>
+<h2 id="why-should-i-care">Why should I care?</h2>
+<ul>
+<li>endogenous fiscal policy<ul>
+<li>
+<h1 id="todo-slides">todo slides</h1>
+</li>
+</ul>
+</li>
+<li>human capital accumulation theory<ul>
+<li>untapped potential </li>
+<li>e.g. education<ul>
+<li>poorer children leaving school earlier</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>higher shares of rich<ul>
+<li>lower propensity to consume<ul>
+<li>more saving</li>
+<li>less re-investment or spending</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>negative link of inequality and growth<ul>
+<li>OECD study #todo find that study</li>
+<li>mostly due to human capital accumulation theory</li>
+</ul>
+</li>
+<li>Book [[The Spirit Level]] by [[Richard Wilkinson]] and [[Kate Pickett]]<ul>
+<li>life expectancy</li>
+<li>physical health</li>
+<li>mental health</li>
+<li>drug abuse</li>
+<li>obesity</li>
+</ul>
+</li>
+</ul>
+<h1 id="consequences">Consequences</h1>
+<h3 id="life-expectancy">Life Expectancy</h3>
+<ul>
+<li>
+<h1 id="todo-get-image-from-life-expectancyincome-diagram">todo get image from life expectancy/income diagram</h1>
+<ul>
+<li>higher development -&gt; higher life expectancy</li>
+<li>income is pointless -&gt; money cannot be eaten<ul>
+<li>income can only pay for healthcare etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h1 id="todo-get-image-of-tube-system-with-life-exptancy">todo get image of tube system with life exptancy</h1>
+</li>
+</ul>
+<h3 id="linked-social-aspects">Linked Social Aspects</h3>
+<ul>
+<li>
+<h1 id="todo-get-diagram-of-inequality-vs-health-and-social-problems">todo get diagram of inequality vs health and social problems</h1>
+<ul>
+<li>correlation between inequality and social health</li>
+</ul>
+</li>
+<li>other linked aspects<ul>
+<li>CO2 emissions</li>
+<li>democracy</li>
+<li>crime (and status anxiety)</li>
+<li>education</li>
+<li>health</li>
+</ul>
+</li>
+</ul>
+<h1 id="causes">Causes</h1>
+<h3 id="direct-access">Direct Access</h3>
+<ul>
+<li>Lack of access to <ul>
+<li>health care</li>
+<li>good food</li>
+<li>plenty exercise</li>
+<li>education</li>
+</ul>
+</li>
+</ul>
+<h3 id="status-anxiety">Status Anxiety</h3>
+<ul>
+<li>not on top of the monkey rock</li>
+<li>low [[Social Status]]</li>
+<li>social hierarchy / ladder</li>
+<li>leading to stress, leading to poor health</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+<li>[[Stress]] in the womb</li>
+<li>parents socio-economic status</li>
+</ul>
+<h2 id="education">Education</h2>
+<ul>
+<li>parent's income significant in children's performance</li>
+<li>babies already affected by parents'income </li>
+<li>IQ is related to income of parents</li>
+<li>just knowledge of social status degrades performance</li>
+<li>black/white students perform significantly different in "knowledge tests" but the same in "problem solving tests"<ul>
+<li>african-american students perform worse in "knowledge tests"</li>
+</ul>
+</li>
+</ul>
+<h2 id="social-graduation">Social Graduation</h2>
+<ul>
+<li>due to [[Social Status]], not due to IQ or Ability</li>
+<li>
+<h1 id="todo-get-more-from-slides-56">todo get more from slides (56)</h1>
+</li>
+<li>positive feedback look -&gt; reinforcing effects</li>
+</ul>
+<h2 id="populist-voting">Populist Voting</h2>
+<h1 id="todo-get-from-slides">todo get from slides</h1>
+<ul>
+<li>[[Dani Rodrik]] #todo reference</li>
+</ul>
+<h2 id="climate-change">Climate Change</h2>
+<ul>
+<li>related to [[Climate Change]]<ul>
+<li>
+<h1 id="todo-reference-to-emissions">todo reference to Emissions</h1>
+</li>
+<li>
+<h1 id="todo-reference-to-emissions_1">todo reference to Emissions</h1>
+</li>
+<li>
+<h1 id="todo-reference-to-emissions-distributions">todo reference to Emissions Distributions</h1>
+</li>
+</ul>
+</li>
+<li>[[Climate Change Policies by Social Status]]<ul>
+<li>[[Fossil Fuel Lobby]] challenging most anti-fossil-fuel concepts/legislations</li>
+</ul>
+</li>
+</ul>
+<h2 id="education-gap">Education Gap</h2>
+<h1 id="todo-fix-heading">todo fix heading</h1>
+<ul>
+<li>demand for university students was hit<ul>
+<li>pay decreased</li>
+</ul>
+</li>
+<li>
+<h1 id="todo-slides-get-image-from-skill-percentile-to-tasks">todo slides get image from skill percentile to tasks</h1>
+</li>
+<li>higher skill level -&gt; more abstract, less routine and manual tasks</li>
+</ul>
+<h3 id="automation-impact">Automation Impact</h3>
+<ul>
+<li>Most middle-skilled jobs automated by computers</li>
+<li>high-skilled jobs still in high demand</li>
+<li>low-skilled jobs hard to automate -&gt; not yet obsolete</li>
+<li>47% of jobs will be destroyed in the next 20 years (USA)</li>
+</ul>
+<h2 id="trade">Trade</h2>
+<ul>
+<li>import competition only affects blue-collar workers</li>
+<li>
+<h1 id="todo-slides-get-more">todo slides get more</h1>
+</li>
+</ul>
+<h2 id="market-forces">Market Forces</h2>
+<ul>
+<li>
+<h1 id="todo-slides-get-more_1">todo slides get more</h1>
+</li>
+</ul>
+<h1 id="explanations">Explanations</h1>
+<h1 id="todo-slides-get-more_2">todo slides get more</h1>
+<ul>
+<li>CEO Compensation </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

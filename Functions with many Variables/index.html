@@ -1,0 +1,696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/obsidian.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+    
+    
+      
+        <title>Functions with many Variables - Maixnor@WU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maixnor@WU" class="md-header__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maixnor@WU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions with many Variables
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maixnor@WU" class="md-nav__button md-logo" aria-label="Maixnor@WU" data-md-component="logo">
+      
+  <img src="../assets/obsidian.png" alt="logo">
+
+    </a>
+    Maixnor@WU
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/maixnor/wu" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-example-from-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo example from slides
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo example from slides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobb-douglas-production-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[Cobb-Douglas]] production functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-example-from-slides_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo example from slides
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tobdo-find-way-to-do-2-rows-in-one-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      tobdo find way to do 2 rows in one formula
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partial Derivatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-get-notation-from-slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo get notation from slides
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo get notation from slides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-cobb-douglas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example [[Cobb-Douglas]]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-demand-of-money" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Demand of Money
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-compute" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo compute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-compute_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo compute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo compute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-3-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with 3 variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-compute-the-3-derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo compute the 3 derivatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substitute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substitute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implicit-differentiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit Differentiation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-understand-this-stuff-exactly" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo understand this stuff exactly
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo understand this stuff exactly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not-so-simple-this-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not so simple this time
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-get-this-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo get this part
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#higher-order-partial-derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Higher-order Partial Derivatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-get-notation-from-slides_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo get notation from slides
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo get notation from slides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-cobb-douglas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example [[Cobb-Douglas]]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-compute_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo compute
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      todo explanation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="todo explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caviat-in-between" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caviat in-between
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>general definition of function: $f : A \rightarrow B$
+$A = \mathbb{R} \times \mathbb{R}$ ... real numbers in pairs of 2
+$A = \mathbb{R}^5$ ... 5th dimensional real numbers, in groups of 5</p>
+<h3 id="example-1">Example 1</h3>
+<h1 id="todo-example-from-slides">todo example from slides</h1>
+<h3 id="cobb-douglas-production-functions">[[Cobb-Douglas]] production functions</h3>
+<ul>
+<li>
+<h1 id="todo-example-from-slides_1">todo example from slides</h1>
+</li>
+<li>this is more of a demand function, but the same math is used</li>
+<li>all variables with different exponents</li>
+</ul>
+<h1 id="tobdo-find-way-to-do-2-rows-in-one-formula">tobdo find way to do 2 rows in one formula</h1>
+<ul>
+<li>$f(c_1p, c_2m) / f(p,m)$ ... relative change to changes in variables<ul>
+<li>$= c_1^{-1.5} * c_2^{2.08}$</li>
+</ul>
+</li>
+</ul>
+<h1 id="partial-derivatives">Partial Derivatives</h1>
+<p>when taking the [[Derivatives|derivative]] of functions with multiple variable then we take a partial derivative. There is one derivative for each variable. In case of $\mathbb{R} \times \mathbb{R}$ there will be 2 partial derivatives. In case of $\mathbb{R}^5$ there will be 5 partial derivatives.</p>
+<h1 id="todo-get-notation-from-slides">todo get notation from slides</h1>
+<h3 id="example-cobb-douglas">Example [[Cobb-Douglas]]</h3>
+<ul>
+<li>$f_1 = f_p(p,m) = m^{2.08} * (-1.5p^{-2.5})$<ul>
+<li>overall derivative is negative: $-1.5$</li>
+<li>milk price increase -&gt; consumption decrease</li>
+<li>vice versa</li>
+</ul>
+</li>
+<li>$f_2 = f_m(p,m) = p^{-1.5} * (2.08p^{1.08})$<ul>
+<li>overall derivative is positive: $2.08$</li>
+<li>income increases -&gt; consumption increases</li>
+<li>vice versa</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-demand-of-money">Example Demand of Money</h3>
+<p>$M(Y,r) = 0.14 Y + 76.03 * (r - 2)^{-0.84}$ #todo finish</p>
+<ul>
+<li>$M_Y = 0.14$<ul>
+<li>no scaling with Income, just linear changes</li>
+<li>[[Derivatives#Elasticity|elasticity]] of demand with respect to income<ul>
+<li>
+<h1 id="todo-compute">todo compute</h1>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>$M_r = -0.84 * 76.03 * (r - 2)^{-1.84}$<ul>
+<li>interest rate increases -&gt; demand for money decreases</li>
+<li>[[Derivatives#Elasticity|elasticity]] of demand with respect to interest rate<ul>
+<li>
+<h1 id="todo-compute_1">todo compute</h1>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-with-3-variables">Example with 3 variables</h3>
+<p>$f(a, b, c) = a^2 + 2ab + bc + e^bc$</p>
+<h1 id="todo-compute-the-3-derivatives">todo compute the 3 derivatives</h1>
+<h1 id="substitute">Substitute</h1>
+<p>When one product cannot be found or is disproportionately expensive another product can be chosen. Butter and Margarine.</p>
+<p>$B(p,q)$ ... butter demand
+$M(p,q)$ ... margarine demand</p>
+<p>if the price of butter increases, then..
+$B_p &lt; 0$ and $M_q &gt; 0$
+$E_p &gt; 0$ and $M_q &lt; 0$</p>
+<p>[[Cross-Elasticity]] is a thing</p>
+<h1 id="implicit-differentiation">Implicit Differentiation</h1>
+<p>keeping the function value constant when one variable changes.</p>
+<p>$f(x, y) = k$ 
+... when $x$ changes, how will $y$ have to change to keep $k$ constant.</p>
+<p>$xy = 5$, $y = 5/x$, $y' = -5/x^2$
+or
+$x * y(x) = 5$ -&gt; differenciate for $y$
+$y(x) + x * y'(x) = 0$
+$xy' = -y$
+$y' = \frac{-y}{x}$</p>
+<h1 id="todo-understand-this-stuff-exactly">todo understand this stuff exactly</h1>
+<h3 id="not-so-simple-this-time">Not so simple this time</h3>
+<p>$y^3 + 3x^2y = 13$
+$y(x)^3 + 3x^2<em>y(x) = 13$
+$3</em>y(x)^2<em>y'(x) + 3x^2</em>y'(x) + 6x*y(x) = 0$</p>
+<h1 id="todo-get-this-part">todo get this part</h1>
+<p>$y' = \frac{-2xy}{x^2+y^2}$</p>
+<p>division by 0 issue:
+only if $x^2 + y^2 = 0$ ... only if $x$ and $y$ are 0. 
+-&gt; when plugging into the given function it does not equal 13 -&gt; it's okay</p>
+<h1 id="higher-order-partial-derivatives">Higher-order Partial Derivatives</h1>
+<h1 id="todo-get-notation-from-slides_1">todo get notation from slides</h1>
+<p>the derivative can then be derived again. When talking about just 2 variables we can then either derive again with the same variable or the other variable.</p>
+<ul>
+<li>$f_{xx}, f_{yy}$ ... direct partial derivatives</li>
+<li>$f_{xy}, f_{yx}$ ... cross-partial derivatives<ul>
+<li>$f_{xy} = f_{yx}$ ... order of deriving is insignificant</li>
+<li>$f_{yxx} = f_{xyx} = f_{xxy}$ ... as long as the count of each factor is equal (here $y$ once, $x$ twice)  </li>
+</ul>
+</li>
+</ul>
+<h3 id="example-cobb-douglas_1">Example [[Cobb-Douglas]]</h3>
+<p>$f(p,m) = p^{-1.5} * m^{2.08}$</p>
+<h1 id="todo-compute_2">todo compute</h1>
+<h1 id="todo-explanation">todo explanation</h1>
+<p>Find out about the convexity or concavity of a function with multiple variables</p>
+<ul>
+<li>direct partial derivative -&gt; just one bottle cap</li>
+<li>cross-partial derivative -&gt; two bottle caps with different "parity"</li>
+</ul>
+<h3 id="caviat-in-between">Caviat in-between</h3>
+<p>It is possible for a function to increase along the x-axis and along the y-axis, but not along a combination of both an increase in x and y.</p>
+<p>Therefore the concavity or convexity is not given, since also any combination of increases of x and y need to be concave/convex. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
