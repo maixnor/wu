@@ -1,20 +1,25 @@
-# Roadmap
+
+## Roadmap
 Why trade?
 - production possibility frontier
-- principle of comparative advantage
+- principle of [[comparative advantage]]
 - winners and losers of trade
 
-- trade, globalization and [[economic development]]
-- trade, globalization and [[inequality]]
+- trade, globalization and economic development
+- trade, globalization and inequality
 - trade, globalization and the environment
 
-# History of Globalization
+## History of Globalization
 from [ourworldindata.org](ourworldindata.org)
 #todo get image from slides
 
 Measurement of "Openness" of a country: Exports + Imports over GDP
 
+<<<<<<< HEAD
 # Production Possibility Frontier
+=======
+## Production Possibility Frontier
+>>>>>>> a450d2a (stuff)
 Ultra-Simplification of Reality
 #todo get image from slides
 
@@ -38,7 +43,11 @@ how much do I have to sacrifice in my current product, so that I can produce 1 m
 - concave (inward)
 	- products do not profit from being produced together
 
+<<<<<<< HEAD
 # Principle of Comparative Advantage
+=======
+## Principle of [[Comparative Advantage]]
+>>>>>>> a450d2a (stuff)
 - Mark can produce a lot of Meat 
 - Pete can produce a lot of Potatoes
 #todo get image from slides
@@ -58,7 +67,11 @@ What if Mark is better at everything, has an [[Absolute Advantage]] on both Meat
 
 As long as you are *relatively better* (not absolutely better), you should specialize and engage in trade.
 
+<<<<<<< HEAD
 # International Trade & Economic Development
+=======
+## International Trade & Economic Development
+>>>>>>> a450d2a (stuff)
 
 #todo get image from slides
 Countries that trade more are more likely to have a greater increase in GDP per capita. Form just this chart we cannot exterpolate the causality relationsship; which cause causes which effect. 
@@ -75,5 +88,9 @@ Countries that trade more are more likely to have a greater increase in GDP per 
 	- lower unit costs -> economy of scale
 	- increased competition
 	- enhanced flow of ideas
+<<<<<<< HEAD
 - trade may increase within-country inequality while generating economic growth
 
+=======
+- trade may increase within-country inequality while generating economic growth
+>>>>>>> a450d2a (stuff)

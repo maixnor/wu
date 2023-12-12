@@ -1,0 +1,4 @@
+- [[Eric Ries]]
+- build an MVP
+- test it with people
+- if it fails -> [[Pivot]]
