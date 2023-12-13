@@ -10,6 +10,7 @@
       devShells.default = pkgs.mkShell {
         nativeBuildInputs = [ pkgs.bashInteractive ];
         buildInputs = with pkgs; [ 
+					nodejs_20
 					R 
 					rPackages.pagedown 
 					rPackages.recommenderlab
@@ -27,6 +28,7 @@
 					#vscode
 					chromium 
 					pandoc
+					python311
 					python311Packages.jupyter
 					texlive.combined.scheme-full
 					kile

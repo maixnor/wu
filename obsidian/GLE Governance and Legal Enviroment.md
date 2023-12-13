@@ -12,6 +12,10 @@ location: WU
 
 # Bewertung
 - 2 exams
-# Inhalt
+# Content
+- [[]]
+# Lectures
 - [[First Lecture GLE]]
+- [[Second Lecture GLE]]
+- [[Third Lecture GLE]]
 # General
