@@ -18,4 +18,5 @@ location: WU
 - [[First Lecture GLE]]
 - [[Second Lecture GLE]]
 - [[Third Lecture GLE]]
-# General
+# Sources
+- [[grabenwarter-et-al-2019-governance-and-legal-environment.pdf]]
