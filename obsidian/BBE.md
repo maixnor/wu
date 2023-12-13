@@ -7,7 +7,7 @@ This study plan is recommended by the BBE Program and might be worth following. 
 - [[CCBE Contemporary Challenges in Business and Economics]]
 - [[BS Business and Society 1]]
 - [[QM1 Quantitative Methods 1]]
-- [[Governance and Legal Environment]]
+- [[GLE Governance and Legal Enviroment]]
 - [[Understanding Business Business Planning]]
 - [[Free Electives]] - onwards
 
