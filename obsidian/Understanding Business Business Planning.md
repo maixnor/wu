@@ -8,13 +8,19 @@ location: WU D5
 ---
 # Vorbesprechung
 - Advice
-	- get material from another course #todo find out about the other course
+	- get material from another course
 	- be here: everything just spoken is also part of the exam
 - Tutor
 	- moritz.huetgen@wu.ac.at
 - there will be PDFs for everything
 # Grading
-- 30% Mid Term Poster Presentation
+- 30% Mid Term Poster Presentation (i am group 9 - Amazon)
+	- max 4 ppt slides, max 5 minutes
+	- choose a company
+	- present about the business model
+	- present about the financial statement over the last 3 years
+	- Phizer, Zalando, Baierstorf, Nike, Netflix, Tesla, Unilever, Amazon, Starbucks, LVMH
+	- specs for grading: sticking to the 5 minutes, correct information, interesting presentation, teamwork
 - 45% Final Written Exam 
 - 20% insight book
 	- what you have taken away from the class
@@ -25,6 +31,7 @@ location: WU D5
 - [[Business Models and Business Plans]]
 - [[Financial Reporting]]
 - [[Behavioral Economics]]
+- [[Investments on a Beermat]]
 - [[The Future]]
 - [[The Inditex Case]]
 # General

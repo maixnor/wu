@@ -22,3 +22,6 @@
 		 - leaving out parts of revenue for a longer-lasting revenue source
 	 - emotional engagement in company matters -> Intrinsic Motivation
 	 - Underserved Markets -> [[Procter Gambel Case]]
+
+### Week 4
+- [[Elberse]]
