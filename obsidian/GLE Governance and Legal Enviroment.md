@@ -12,8 +12,18 @@ location: WU
 
 # Bewertung
 - 2 exams
-# Content
-- [[]]
+# Content from Book
+- [[Business Organization]]
+- [[Limited Liability and Creditors]]
+- [[Management of Companies]]
+- [[Membership in Companies]]
+- [[Mergers and Acquisitions]]
+- [[Constitutional Law and Business Law]]
+- [[Development, Legal Foundations and Dynamics of European Integration]]
+- [[The EU Internal Market]]
+- [[Foundational Rights - General Issues]]
+- [[Selected Fundamental Rights of Businesses]]
+- [[International Law and Globalization]]
 # Lectures
 - [[First Lecture GLE]]
 - [[Second Lecture GLE]]

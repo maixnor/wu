@@ -1,3 +1,4 @@
+Rosabeth Moss Kanter
 # Achievements and Contributions
 
 ## Research and Academic Contributions
@@ -21,5 +22,8 @@
 ## Global Perspective
 - Kanter has a global perspective on management.
 - Studied and advised organizations worldwide, providing insights into managing in diverse cultural contexts.
+### Problem Based Thinking
+- Book [[Thinking outside the Building]]
+- Thinking about greater problems and their impacts and solutions
 
 Overall, Rosabeth Moss Kanter has made significant contributions to organizational studies, leadership, and societal impact. Her work continues to shape academia and influence leaders in the business world.

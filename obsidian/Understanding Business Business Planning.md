@@ -13,14 +13,14 @@ location: WU D5
 - Tutor
 	- moritz.huetgen@wu.ac.at
 - there will be PDFs for everything
-# Bewertung
+# Grading
 - 30% Mid Term Poster Presentation
 - 45% Final Written Exam 
 - 20% insight book
 	- what you have taken away from the class
 	- kind of self-reflection 
 - 05% participation during class
-# Inhalt
+# Content
 - [[Remarkable People Series]]
 - [[Business Models and Business Plans]]
 - [[Financial Reporting]]
