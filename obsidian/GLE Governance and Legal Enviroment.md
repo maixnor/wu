@@ -13,7 +13,11 @@ location: WU
 # Bewertung
 - 2 exams
 # Content
-- [[]]
+- [[Business Organization Concepts]]
+
+# Questions
+[[GLE Questions]]
+
 # Lectures
 - [[First Lecture GLE]]
 - [[Second Lecture GLE]]
