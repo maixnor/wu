@@ -47,3 +47,4 @@ location: WU TC
 - [[Optimization]]
 - [[Matrix Algebra]]
 # General 
+- [[Viktor from Marswalk]]
