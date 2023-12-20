@@ -1,14 +1,11 @@
 
 # Hi
+These are my personal notes, made freely available to you.
 
-These are my personal notes, freely available to you.
+Any and all contributions are welcome. It does not matter if you want to contribute with your own notes or insights or I made a mistake. These notes live off of "peer review" through people like you.
 
-Please remember that this is not official information and nothing is guaranteed to be correct, relevant, or complete.
+# How to get around town
+The root node is [[BBE]]. From there you can access all different courses I have done so far. But there is much more here than just scripts. Most concepts and insights are extracted into separate notes, for example [[Raising Capital]] emphasizes how to raise capital. Then there are also kowns unknowns in the from of grayed links like [[Liquidity]]. This is useful because it highlights where the notes either lack knowledge or where there are connections with other notes. There the power of the graph view really comes into view.
 
-# Where to start
-- [[BBE]] as whole
-- or different courses
-	- [[CCBE Contemporary Challenges in Business and Economics]]
-	- [[QM1 Quantitative Methods 1]]
-	- [[BS Business and Society 1]]
-
+# Disclaimer
+As these are personal notes I everything might be wrong or outdated/irrelevant for any exam. I try and gather as much information as possible, but there might always be something missing.
