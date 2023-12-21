@@ -22,7 +22,7 @@ why is legal restriction still needed?
 ### Limits of Limited Liability
 - [[veil piercing]]
 - liability directly against creditors
-	- e.g. continuing trade after insolvency
+	- e.g. continuing trade after [[Insolvency]]
 
 ## Legal Capital
 - to found a company one needs the starting capital
@@ -68,9 +68,26 @@ why is legal restriction still needed?
 - hidden or disguised distributions (illegal)
 	- parent company pays lower than market value prices to subsidiaries
 		- called transactions 'at arms length'
-		- e.g. the owners with is employed despite not working i.e. providing value to the company
+		- e.g. the owners wife is employed despite not working i.e. providing value to the company
 	- if reported the money needs to be payed back or compensated otherwise
 	- most common with majority shareholders, again discriminating against minority shareholders
 
 ## Creditor Protection through Insolvency Law
-#cursor
+![[Insolvency]]
+
+### Liability Issues
+- the directors are not liable for the failing company
+	- except grossly negligent
+	- if grossly negligent -> personally liable to creditors
+- if not enough funds for [[Insolvency#Insolvency Proceedings]] owners is not permitted to open another company within 3 years
+-  Shareholders are covered by [[Limited Liability]], but...
+	- hidden distributions may surface -> repayment
+	- fraudulent dividends have been payed
+- Creditors that cease their collateral shortly before insolvency may have that revoked and the collateral added to the split
+
+### Pressures
+- directors experience pressures
+- shareholders pressure to keep going
+- law and social security pressure to file for insolvency
+- difficult if director and shareholder are same person
+	- common in small to medium companies
