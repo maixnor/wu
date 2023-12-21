@@ -23,7 +23,8 @@ location: WU D5
 	- specs for grading: sticking to the 5 minutes, correct information, interesting presentation, teamwork
 - 45% Final Written Exam 
 - 20% insight book
-	- what you have taken away from the class
+	- max 4 pages
+	- this is a personal task, what have **you** taken from the class?
 	- kind of self-reflection 
 - 05% participation during class
 # Content
@@ -32,6 +33,7 @@ location: WU D5
 - [[Financial Reporting]]
 - [[Behavioral Economics]]
 - [[Investments on a Beermat]]
+- [[Viktor from Marswalk]]
 - [[The Future]]
 - [[The Inditex Case]]
 # General

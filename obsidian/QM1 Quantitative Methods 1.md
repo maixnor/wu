@@ -34,7 +34,7 @@ location: WU TC
 - At least 5 mandatory PUEs to be attended. otherwise negative grade.
 - home-assignments (10 points) (quizzes 25 of 35 questions for max points)
 - mid-term exam (20 points)
-- case study (20 points) (15 group + 5 own)
+- case studies (3) (20 points) (15 group + 5 own)
 - final exam (50 points)
 # Content
 - [[Functions]]
@@ -47,3 +47,4 @@ location: WU TC
 - [[Optimization]]
 - [[Matrix Algebra]]
 # General 
+- [[Viktor from Marswalk]]
