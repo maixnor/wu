@@ -59,3 +59,18 @@ why is legal restriction still needed?
 - if assets - liabilities > reserves -> dividends possible
 	- non-distributable reserves are mandated by law
 - accounting rules made to protect creditors
+	- e.g. value of fixed assets capped at buying price
+	- understating the actual business value
+- different account rules sets -> different outcomes
+	- higher profits under [[International Financial Reporting Standards|IFRS]] than under Austrian rules
+- liquidity is not part of balance sheet
+	- even if there is a profit in the balance sheet the company may not be able to pay the [[Dividend|dividends]] since the profits are tied up in less liquid assets like real estate
+- hidden or disguised distributions (illegal)
+	- parent company pays lower than market value prices to subsidiaries
+		- called transactions 'at arms length'
+		- e.g. the owners with is employed despite not working i.e. providing value to the company
+	- if reported the money needs to be payed back or compensated otherwise
+	- most common with majority shareholders, again discriminating against minority shareholders
+
+## Creditor Protection through Insolvency Law
+#cursor
