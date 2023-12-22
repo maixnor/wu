@@ -19,12 +19,7 @@ partnership != company
 no other business forms can be created (GmbH, AG, etc) but not any more
 
 ## Business Register
-facts or legal relationship public
-accessible for everyone
-power of representation -> attorneys public
-entry is mandatory
-list of members or directors
-annual accounts visible
+![[Business Register]]
 
 ## Partnerships
 "Offene Gesellshaft"
