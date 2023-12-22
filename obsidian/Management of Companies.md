@@ -142,4 +142,3 @@ for reference: [[Principal-Agent Conflicts]]
 ### Internal Decision-Making Process
 - public: majority vote, CEO's vote counts double if inconclusive
 - private: all directors need to approve
-- 
