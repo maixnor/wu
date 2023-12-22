@@ -134,22 +134,23 @@
 - shareholders in an AG can do so in a tier-one structure
 	- suing is also a possibility to defend against injustice
 ### Explain the effects of removal of a director on the director’s employment or service contract 
-- 
+- director can't just be terminated. director and board of supervision negotiate a termination package
 ### How are managers remunerated? 
 - either by executive compensation -> even if no profits
-- or by performance compensation (dividends) -> only if profits 
+- or by performance compensation (dividends, bonus) -> only if profits 
 ### Can shareholders of an AG or directors of a GmbH give directions to managers?
 - no, but managers have incentive to listen to shareholders as their job may be endangered otherwise by shareholders
 ### What is the role of the board of supervisors in an AG? Can it give instructions to managers? 
+- board of supervisors can veto decisions from board of directors and need to be consulted for large decisions liker mergers
 - instructions only if board of directors "asks" for it in form of a committee
 ### Should directors’ liability be strict or lenient? Analyse the effects of liability rules. 
 - should only be liable for negligent action (or inaction)
 - lack of success is not fault of manager and risk-taking should be encouraged to explore different business ventures, securing long-term success of company
 ### What is the business judgment rule?
 - judges cannot accurately judge core business decisions for a lack of knowledge
-- mostly managers are given free reign over their judgement in code business decisions as long as they have informed themselves sufficiently
+- mostly managers are given free reign over their judgement in core business decisions as long as they have informed themselves sufficiently
 ### Who gets compensation for damage under which circumstances: the company or the share- holders directly?
-- idk man
+- if there is damage to a company, the shareholders or the company can be compensated
 
 # Chapter 4
 
