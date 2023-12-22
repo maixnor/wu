@@ -31,6 +31,7 @@
 	- duty of loyalty 
 	- equal treatment principle
 
+#### Types of Shares
 - one share on vote
 	- each share has equal voting rights
 	- double shares, double voting rights

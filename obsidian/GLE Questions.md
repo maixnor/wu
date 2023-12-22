@@ -193,6 +193,7 @@
 - preferential shares -> no voting rights
 - capped shares -> capped voting rights
 - member-voting shares -> no additional voting rights with additional shares
+[[Membership in Companies#Types of Shares]]
 ### How do you transfer membership in a GmbH? 
 - shares or entry in [[Business Register]] after selling parts of company
 ### Are shareholders anonymous? What about members in a GmbH? 
