@@ -155,16 +155,17 @@
 # Chapter 4
 
 ### Explain the differences between rules and standards
-- rule: exact wording
-- standard: spirit
+- rule: exact wording needs to be met
+- standard: spirit needs to be met
 ### What is the duty of loyalty? 
 - "do not cause me harm by more competition"
-- standard, no exact law
+- standard
 ### How does one determine the profits of a company? Who is responsible in an AG and in a GmbH? 
 - [[Accounting]], [[profit and loss statement]] to be exact
 ### What is a pre-emptive right in company law? 
+- existing shareholder can buy new shares if new shares are issed, mostly with a discount. Shareholders keep same relative percentage
 ### What is the principle of ‘one share – one vote’? Can you deviate from it? 
--  one share, one vote
+- one share = one vote
 - double shares, double voting rights
 - deviations:
 	- one member, one vote
@@ -172,8 +173,9 @@
 	- voting rights caps -> 40% shares, but capped at 10% voting rights
 ### How can a shareholder attend an AG’s general meeting? Does he/she have to appear in person? 
 - only in person, no digital meetings
+- 28 days before
 ### Why is shareholder presence at general meetings low? How does the law try to increase this presence? 
-- cumbersome process, [[Rational Apathy]]
+- cumbersome process, [[Rational Apathy]] of minority shareholders, Pension Funds after [[Wall Street Rule]]
 - digital meetings and other forms of non-present vote casting
 - proxies -> give away decision to someone else
 - proxy advisors -> get a recommendation what to vote
@@ -195,11 +197,16 @@
 - capped shares -> capped voting rights
 - member-voting shares -> no additional voting rights with additional shares
 [[Membership in Companies#Types of Shares]]
+
+- traded on capital market
 ### How do you transfer membership in a GmbH? 
-- shares or entry in [[Business Register]] after selling parts of company
+- shares -> entry in [[Business Register]] after selling parts of company
+- notary action required
 ### Are shareholders anonymous? What about members in a GmbH? 
-- shareholders yes, members in a GmbH not
+- minority shareholders in a AG, yes
+- shareholders no, members in a GmbH -> [[Business Register]]
 ### Describe different methods for restricting the transfer of shares/a membership
+- not publicly listed, contract to not sell shares for time period
 ### What is a squeeze-out?
 - ![[Squeeze-Out]]
 # Chapter 5

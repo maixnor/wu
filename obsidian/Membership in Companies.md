@@ -74,8 +74,7 @@
 - attendance low
 	- large stakeholders attend
 	- small stakeholder typically not -> [[Rational Apathy]]
-	- if unhappy with company, most just sell
-		- -> Wall Street rule
+	- if unhappy with company, most just sell -> [[Wall Street Rule]]
 	- too expensive for institutional investors 
 - measures to increase attendance
 	- digital meetings -> error prone, falsifying result
