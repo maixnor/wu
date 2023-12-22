@@ -73,4 +73,32 @@ for reference: [[Principal-Agent Conflicts]]
 	- a company "knows" something when a director knows of it
 
 ## Appointment and Removal of Board Members
-#cursor page 63
+#todo page 63 onwards
+
+## Running the Company
+- managers cannot restructure company on their own -> shareholder approval
+	- 3/4 majority
+	- increase equity
+	- merger / split
+- private limited company
+	- crucial decisions need to be made with all members
+	- status define these decisions
+	- contracts made without consent to a 3rd party are still binding
+		- consequences are beared by director responsible
+	- members can give instructions when a majority is reached
+		- members can take initiative
+	- position of members is strong
+- public limited company
+	- no instructions from members -> managerial independence
+		- buffer against majority shareholders wants
+		- most still comply with majority, otherwise 'no confidence' in next shareholder meeting
+	- shareholders need only be consulted for merger
+	- board of supervisors consulted for material changes (closing a plant)
+	- board of supervisors can only prohibit things, not take initiative
+		- still, since supervisors can remove directors, they are likely to comply when asked 
+	- contracts made without consent to a 3rd party are still binding
+		- consequences are beared by director responsible
+### Internal Decision-Making Process
+- public: majority vote, CEO's vote counts double if inconclusive
+- private: all directors need to approve
+- 
