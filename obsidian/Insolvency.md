@@ -3,7 +3,7 @@
 - After [[Liquidation]] the company ceases to exist
 - Liquidation is often not the best option
 	- Creditors foregoing (parts) of the liabilities after a complete restructure of the company to allow further trading is often more advisable
-- If the Liquidation procedure is too expensive (court fees, insolvency administrator, etc) the company is simply deleted from the [[Business Organization Concepts#Business Register|Business Register]] and no further action is taken. The creditors loose their entire invenstment
+- If the Liquidation procedure is too expensive (court fees, insolvency administrator, etc) the company is simply deleted from the [[Business Register]] and no further action is taken. The creditors loose their entire invenstment
  
 # When am I insolvent?
 - not being able to pay the due liabilities

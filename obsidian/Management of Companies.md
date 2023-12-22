@@ -60,7 +60,7 @@ for reference: [[Principal-Agent Conflicts]]
 	- does not apply when other party signs contract under this knowledge
 
 ### Transparency
-- who is or isnt director: [[Business Organization Concepts#Business Register|Business Register]]
+- who is or isnt director: [[Business Register]]
 - plurality of directors: forming binding decisions
 	- individually (great flexibility, greatest danger)
 	- all of them together (less flexibility, least danger)
@@ -98,6 +98,47 @@ for reference: [[Principal-Agent Conflicts]]
 		- still, since supervisors can remove directors, they are likely to comply when asked 
 	- contracts made without consent to a 3rd party are still binding
 		- consequences are beared by director responsible
+### Remuneration
+- GmbH
+	- executive compensation -> even if no profits
+	- dividends -> only if profits
+- AG
+	- shareholders have "say on pay", decide on model
+- remuneration -> tool to align managers
+	- instead of extensive monitoring
+	- cash payments or stock options programme
+- board of supervision
+	- typically no performance compensation
+	- fixed compensation
+	- different alignment to management needed
+
+- different directors, different responsibilities
+	- CFO -> finance
+- board of supervisors
+	- decisions in circular resolution (majority vote) or in meeting
+	- provided with reports
+- committees
+	- decisions delegated to board of supervisors
+	- accounting auditing
+
+## Liability
+- compensation
+	- incentive to not inflict damage
+	- not liable for lack of success
+	- only liable for negligent actions (or inactions)
+	- liable if violate specific duties
+		- duty of loyalty (don't compete)
+		- duty of care (standards for management)
+			- [[hindsight bias]] by judges -> less risky decisions
+		- protection via D&O liability insurance
+- lawsuit against company
+	- AG -> board of supervisors
+	- GmbH -> members
+	- shareholders -> rarely, not enough knowledge
+				
+- damage by company vs damage by 3rd party
+- damage to company -> damage to shareholders
+
 ### Internal Decision-Making Process
 - public: majority vote, CEO's vote counts double if inconclusive
 - private: all directors need to approve
