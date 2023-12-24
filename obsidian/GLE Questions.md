@@ -216,31 +216,59 @@
 	- e.g. just one marketing and HR department
 - unification of business interests
 - restructuring within group
+- retirement
 ### What is an asset deal? 
-- transferring all the assets and therefore also all livelihood of the company 
+- transferring some the assets -> [[Asset Deal]]
 ### How does a share deal work? 
+[[Share Deal]]
 - all (or at least majority of) shares are sold to acquirer
 	- throw enough money at it and it's mine
 	- hostile takeover possible here
 - funds are given to previous shareholder e.g. a holding company
 - control is now within another entity's hands
 ### How do you transfer property in the assets in an asset deal? Is the passing of property an issue in a share deal? 
-- 
+- by [[Succession#Single Succession]]
 ### Do contracts pass automatically to the acquirer in an asset deal? Do you have to worry about the company’s contracts in a share deal? 
+- [[Asset Deal]] -> no, consent of all 3 parties needed
+- [[Share Deal]] -> all of contracts are still upright, except for [[Personal Legal Relationship]]
 ### Explain the concept of ‘successor liability’
-- the acquirer is liable for at least 5 years of predecessors liabilities
-- no magical "reset" of all liabilities just because of M&A deal
-### Compare the liability situation of the acquiror in an asset deal and in a share deal
-
+[[Successor Liability]]
+- the acquirer is liable for at least 5 years of predecessors liabilities (default rule)
+- no magical "reset" of all liabilities just because of [[Merger Deal]] deal
+### Compare the liability situation of the acquirer in an asset deal and in a share deal
+- [[Share Deal#Liability]]
+- [[Asset Deal#Liability]]
 ### What is takeover law? 
+- [[Share Deal#Takeover]]
 ### Please explain the concept of a merger
+[[Merger Deal]]
 ### What are the core issues of creditor protection in a merger? 
+- [[Private Ordering]]
 ### What are the core issues of shareholder protection in a merger? 
+- [[Merger Deal#Shareholder Protection]]
 ### Can you merge a company across the border? 
 - yes although more complicated
 - national company laws of both countries need to be matched and agreements need to be made to satisfy both jurisdictions
+	- easier within EU for mostly similar national company laws 
 ### What are the core issues in a division? 
+- all liabilities are transferred but none of the assets may be transferred
+- creditors have no right to veto
+	- all other companies in conglomerate are liable for new companies liabilities limited by assets transferred
+		- contract with creditors to circumvent
+	- court can issue safeguards
+ - shareholders need supermajority of 75% (proportional) or 90% (disproportional)
 ### Describe different pricing mechanisms in an M&A-deal
+- locked-box agreement
+	- prices fixed at closing of deal
+- completion account mechanism
+	- prices is fixed, but price can still be changed (up or down) while deal is happening
+- earn-out-clause
+	- fixed price of acquisition is lower and payed immediately
+	- later on, if company is successful, another payment will be made
+	- good for acquirer: only has to pay if profitable
+	- risk for previous owner: might not be profitable under new management
 ### What is a due diligence?
+[[Due Diligence]]
 - making sure that everything is correct
-	- e.g. checking your credit card statement regularly to ensure the card information has not been stolen and is now used by fraudulent parties
+	- checking all contracts
+	- researching into company
