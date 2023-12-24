@@ -125,7 +125,7 @@ No separate example here, look at [[#Everything together]].
 This is the code pieces from the first case study, you should be familiar with it. Notice how I structured the code into different logical "blocks". In the actual code there are no comments because they are not needed to understand the code. Here I have put in some comments to illustrate how the different "rules" I put forward are applied.
 
 ```R
-# could be inlined, but the names help with understanding
+# could be inlined -> label functions
 rieman_left = function(f,x,dx) f(x) * dx
 rieman_center <- function(f,x,dx) f(x + (dx/2)) * dx
 rieman_right <- function(f, x, dx) f(x + dx) * dx
@@ -150,6 +150,7 @@ rieman_combined(fa, 1, 0.1)
 evaluate <- function(f, from, to, dx) {
 	x <- seq(from, to - dx, by = dx)
 
+	# label variables + what belongs togthere
 	yal <- rieman_left(f, x, dx)
 	yac <- rieman_center(f, x, dx)
 	yar <- rieman_right(f, x, dx)
