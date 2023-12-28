@@ -1,5 +1,3 @@
-
-
 # Code Quality
 or Readability / Understandability
 
