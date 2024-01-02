@@ -12,8 +12,8 @@ This study plan is recommended by the BBE Program and might be worth following. 
 - [[Free Electives]] - onwards
 
 ### Semester 2
-- [[Financial Reporting]]
-- [[Quantitative Methods 2]]
+- [[FR Financial Reporting]]
+- [[QM2 Quantitative Methods 2]]
 - [[Law, Economics, and Business]]
 - [[Foundations in Microeconomics]]
 - [[Foundations in Socioeconomics]]

@@ -134,36 +134,38 @@
 - shareholders in an AG can do so in a tier-one structure
 	- suing is also a possibility to defend against injustice
 ### Explain the effects of removal of a director on the director’s employment or service contract 
-- 
+- director can't just be terminated. director and board of supervision negotiate a termination package
 ### How are managers remunerated? 
 - either by executive compensation -> even if no profits
-- or by performance compensation (dividends) -> only if profits 
+- or by performance compensation (dividends, bonus) -> only if profits 
 ### Can shareholders of an AG or directors of a GmbH give directions to managers?
 - no, but managers have incentive to listen to shareholders as their job may be endangered otherwise by shareholders
 ### What is the role of the board of supervisors in an AG? Can it give instructions to managers? 
+- board of supervisors can veto decisions from board of directors and need to be consulted for large decisions liker mergers
 - instructions only if board of directors "asks" for it in form of a committee
 ### Should directors’ liability be strict or lenient? Analyse the effects of liability rules. 
 - should only be liable for negligent action (or inaction)
 - lack of success is not fault of manager and risk-taking should be encouraged to explore different business ventures, securing long-term success of company
 ### What is the business judgment rule?
 - judges cannot accurately judge core business decisions for a lack of knowledge
-- mostly managers are given free reign over their judgement in code business decisions as long as they have informed themselves sufficiently
+- mostly managers are given free reign over their judgement in core business decisions as long as they have informed themselves sufficiently
 ### Who gets compensation for damage under which circumstances: the company or the share- holders directly?
-- idk man
+- if there is damage to a company, the shareholders or the company can be compensated
 
 # Chapter 4
 
 ### Explain the differences between rules and standards
-- rule: exact wording
-- standard: spirit
+- rule: exact wording needs to be met
+- standard: spirit needs to be met
 ### What is the duty of loyalty? 
 - "do not cause me harm by more competition"
-- standard, no exact law
+- standard
 ### How does one determine the profits of a company? Who is responsible in an AG and in a GmbH? 
 - [[Accounting]], [[profit and loss statement]] to be exact
 ### What is a pre-emptive right in company law? 
+- existing shareholder can buy new shares if new shares are issed, mostly with a discount. Shareholders keep same relative percentage
 ### What is the principle of ‘one share – one vote’? Can you deviate from it? 
--  one share, one vote
+- one share = one vote
 - double shares, double voting rights
 - deviations:
 	- one member, one vote
@@ -171,8 +173,9 @@
 	- voting rights caps -> 40% shares, but capped at 10% voting rights
 ### How can a shareholder attend an AG’s general meeting? Does he/she have to appear in person? 
 - only in person, no digital meetings
+- 28 days before
 ### Why is shareholder presence at general meetings low? How does the law try to increase this presence? 
-- cumbersome process, [[Rational Apathy]]
+- cumbersome process, [[Rational Apathy]] of minority shareholders, Pension Funds after [[Wall Street Rule]]
 - digital meetings and other forms of non-present vote casting
 - proxies -> give away decision to someone else
 - proxy advisors -> get a recommendation what to vote
@@ -194,11 +197,16 @@
 - capped shares -> capped voting rights
 - member-voting shares -> no additional voting rights with additional shares
 [[Membership in Companies#Types of Shares]]
+
+- traded on capital market
 ### How do you transfer membership in a GmbH? 
-- shares or entry in [[Business Register]] after selling parts of company
+- shares -> entry in [[Business Register]] after selling parts of company
+- notary action required
 ### Are shareholders anonymous? What about members in a GmbH? 
-- shareholders yes, members in a GmbH not
+- minority shareholders in a AG, yes
+- shareholders no, members in a GmbH -> [[Business Register]]
 ### Describe different methods for restricting the transfer of shares/a membership
+- not publicly listed, contract to not sell shares for time period
 ### What is a squeeze-out?
 - ![[Squeeze-Out]]
 # Chapter 5
@@ -208,31 +216,59 @@
 	- e.g. just one marketing and HR department
 - unification of business interests
 - restructuring within group
+- retirement
 ### What is an asset deal? 
-- transferring all the assets and therefore also all livelihood of the company 
+- transferring some the assets -> [[Asset Deal]]
 ### How does a share deal work? 
+[[Share Deal]]
 - all (or at least majority of) shares are sold to acquirer
 	- throw enough money at it and it's mine
 	- hostile takeover possible here
 - funds are given to previous shareholder e.g. a holding company
 - control is now within another entity's hands
 ### How do you transfer property in the assets in an asset deal? Is the passing of property an issue in a share deal? 
-- 
+- by [[Succession#Single Succession]]
 ### Do contracts pass automatically to the acquirer in an asset deal? Do you have to worry about the company’s contracts in a share deal? 
+- [[Asset Deal]] -> no, consent of all 3 parties needed
+- [[Share Deal]] -> all of contracts are still upright, except for [[Personal Legal Relationship]]
 ### Explain the concept of ‘successor liability’
-- the acquirer is liable for at least 5 years of predecessors liabilities
-- no magical "reset" of all liabilities just because of M&A deal
-### Compare the liability situation of the acquiror in an asset deal and in a share deal
-
+[[Successor Liability]]
+- the acquirer is liable for at least 5 years of predecessors liabilities (default rule)
+- no magical "reset" of all liabilities just because of [[Merger Deal]] deal
+### Compare the liability situation of the acquirer in an asset deal and in a share deal
+- [[Share Deal#Liability]]
+- [[Asset Deal#Liability]]
 ### What is takeover law? 
+- [[Share Deal#Takeover]]
 ### Please explain the concept of a merger
+[[Merger Deal]]
 ### What are the core issues of creditor protection in a merger? 
+- [[Private Ordering]]
 ### What are the core issues of shareholder protection in a merger? 
+- [[Merger Deal#Shareholder Protection]]
 ### Can you merge a company across the border? 
 - yes although more complicated
 - national company laws of both countries need to be matched and agreements need to be made to satisfy both jurisdictions
+	- easier within EU for mostly similar national company laws 
 ### What are the core issues in a division? 
+- all liabilities are transferred but none of the assets may be transferred
+- creditors have no right to veto
+	- all other companies in conglomerate are liable for new companies liabilities limited by assets transferred
+		- contract with creditors to circumvent
+	- court can issue safeguards
+ - shareholders need supermajority of 75% (proportional) or 90% (disproportional)
 ### Describe different pricing mechanisms in an M&A-deal
+- locked-box agreement
+	- prices fixed at closing of deal
+- completion account mechanism
+	- prices is fixed, but price can still be changed (up or down) while deal is happening
+- earn-out-clause
+	- fixed price of acquisition is lower and payed immediately
+	- later on, if company is successful, another payment will be made
+	- good for acquirer: only has to pay if profitable
+	- risk for previous owner: might not be profitable under new management
 ### What is a due diligence?
+[[Due Diligence]]
 - making sure that everything is correct
-	- e.g. checking your credit card statement regularly to ensure the card information has not been stolen and is now used by fraudulent parties
+	- checking all contracts
+	- researching into company

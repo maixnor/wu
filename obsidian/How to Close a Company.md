@@ -1,9 +1,10 @@
 - Selling Machines
 - Selling Land
 - Fire People
+	- not easy
 - End Contracts
 - End Relations
-- End Overseas Relations
+	- also Overseas Relations
 ### How to Fire People
 You don't just send a mass email.
 
