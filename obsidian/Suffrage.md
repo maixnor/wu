@@ -14,7 +14,5 @@ A set of rules for participating in elections.
 - free suffrage
 	- no discrimination on how to collect votes
 		- e.g. providing fewer voting stations in poorer neighborhoods
-
-
-- secret ballot
-	- to protect electoral freedom
+- secret suffrage
+	- secret ballot to protect electoral freedom
