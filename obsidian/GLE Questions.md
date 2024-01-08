@@ -272,3 +272,35 @@
 - making sure that everything is correct
 	- checking all contracts
 	- researching into company
+# Chapter 6
+
+### How is the Austrian Federal Constitution composed? 
+- there is not one main document "the constitution" but there are many law books containing bits of constitutional law
+### What is meant by the concept of the ‘hierarchy of norms’? Describe the hierarchy of norms in the Austrian legal system. 
+- each law must obey laws of higher order -> principle of legality
+- the higher the order the more difficult it is to change/adapt
+- hierarchy (top - highest)
+	- constitution
+	- federal law
+	- *Laender* Law
+	- Rules
+### The basic principles of the Austrian Federal Constitution enjoy a special position compared to other norms of constitutional law. Explain. 
+- constitutional law is hardest to change since it requires the highest amount of members of the council (at least half) and a 2/3 majority
+- also parts of the constitutional law, like democracy, are required by the [[Treaty of the European Union|TEU]]
+### Although Austria is an indirect democracy, there are also elements of a direct democracy in the Austrian legal system. Explain. 
+- [[Referendum]] - where the people cast their vote directly on a topic
+- 
+### What are the electoral principles of Austrian law? 
+- [[Suffrage]]
+### What is understood by the term ‘principle of legality‘? What is the relationship between the principle of legality and the basic democratic principle? 
+
+### What are the competences of the Federal President? 
+### May a Member of Government at the same time be a Member of Parliament? State reasons for your answer. 
+### Explain the legislative procedure in Austria.
+### Can the Federal Government as a collegial body, or a Federal Minister be dismissed?
+### How is the administrative court system organised? 
+### Why is the Constitutional Court described as the ‘guardian of the Constitution’? 
+### How did EU membership affect Austria’s status of permanent neutrality? 
+### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
+### Is every international treaty directly applicable in Austria? State reasons for your answer. 
+### How do the Laender participate in the decision-making process of the EU?
