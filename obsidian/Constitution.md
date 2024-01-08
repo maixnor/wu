@@ -17,9 +17,32 @@ If one of the basic principles is to be changed one needs 2/3 majority and at le
 ## Republican Principle
 - [[Federal President]]
 ## Federal Principle
+- Relative Autonomy of Laender
+- Parliament
+	- National Council (Nationalrat)
+		- directly voted
+	- Federal Council (Bundesrat)
+		- consists of members of Councils of Laender (Landrat)
+- Laender influence the legislative decisions on a national level 
 ## Liberal Principle
+- "Freedom from the State"
+- Separation of state and society
+- fundamental rights
 ## Principle of Separation of Powers
+- Executive
+	- Federal Government
+	- [[Federal President]]
+- Legislature
+	- Federal
+	- Land
+- Judiciary
+	- Ordinary Courts
+	- Courts of Public Law
 ## Principle of Rule of Law
+- Rechtsstaat
+- [[Principle of Legality]]
+	- Law is governing the executive
+- opposite of police state
 # Fundamental Rights
 - Right to 
 	- life
