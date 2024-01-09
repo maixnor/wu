@@ -7,3 +7,5 @@
 	- Ordinary Laws 
 	- Ordinances -> Ruligns by [[Administration]] -> Verordnung
 	- Rulings, Judgements, Decisions -> individual cases
+ - [[Federal Legislation]]
+ - Diet ... Parliament of Land

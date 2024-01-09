@@ -29,13 +29,13 @@ If one of the basic principles is to be changed one needs 2/3 majority and at le
 - Separation of state and society
 - fundamental rights
 ## Principle of Separation of Powers
-- Executive
+- [[Executive]]
 	- Federal Government
 	- [[Federal President]]
 - Legislature
 	- Federal
 	- Land
-- Judiciary
+- [[Judiciary]]
 	- Ordinary Courts
 	- Courts of Public Law
 ## Principle of Rule of Law
