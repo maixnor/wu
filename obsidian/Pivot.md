@@ -1,1 +1,0 @@
-Realising that the idea is good, but changing a key attribute like the customer base is a make or break decision

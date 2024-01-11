@@ -27,3 +27,6 @@
 - [[Elberse]]
 ### Week 5
 - [[Pierre Wack]]
+### Week 6
+- [[Eric Ries]]
+- [[Barbara Minto]]
