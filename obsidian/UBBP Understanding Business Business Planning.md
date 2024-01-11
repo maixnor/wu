@@ -22,7 +22,7 @@ location: WU D5
 	- Phizer, Zalando, Baierstorf, Nike, Netflix, Tesla, Unilever, Amazon, Starbucks, LVMH
 	- specs for grading: sticking to the 5 minutes, correct information, interesting presentation, teamwork
 - 45% Final Written Exam 
-- 20% insight book
+- 20% [[UBBP Insight Book]]
 	- max 4 pages
 	- this is a personal task, what have **you** taken from the class?
 	- kind of self-reflection 
@@ -34,6 +34,8 @@ location: WU D5
 - [[Behavioral Economics]]
 - [[Investments on a Beermat]]
 - [[Viktor from Marswalk]]
+- [[Strategic SWAT]]
+- [[Strategic Foresight]]
 - [[The Future]]
 - [[The Inditex Case]]
 # General

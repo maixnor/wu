@@ -1,0 +1,3 @@
+- Business is more than finance and marketing and sales, it's all of them combined
+- Not only about making money but also about providing value to others
+- 
