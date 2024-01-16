@@ -8,6 +8,7 @@ A <- matrix( c(1,2,3,5,1,6,3,6,8), nrow = 3)
 A
 det(A)   ## Determinant of A. (It's non-zero if and only if A is invertible)
 if (det(A) != 0) { print("A is invertible.") }
+solve(A) # inverse matrix 
 
 #' Continuous compounding (slide 4): 
 #' (1 + r/n)^(nt) tends to e^r when n tends to infinity, 
@@ -41,6 +42,7 @@ PVs <- sapply(rs, PV_IRR)
 plot(rs, PVs, type = "l")
 abline(h=0)
 # find the root numerically
+# uniroot ... root of uni-variable function i.e. function with just one variable
 IRR <- uniroot(PV_IRR, c(0, 0.1))
 IRR$root
 PV_IRR(IRR$root)
@@ -74,6 +76,7 @@ all_together2
 #' say whether it is also divisible by 3
 foo <- function(x) {
   if(x <= 2) return("There is no natural number divisible by 2 that is smaller than x.")
+	# ceiling ... always round up, flooring ... always round down
   max_div_2 <- max((1:(ceiling(x)-1))[1:(ceiling(x)-1) %% 2 == 0])
   div_3 <- ifelse(max_div_2 %% 3 == 0, "divisible by 3", "not divisible by 3")
   return(list(multiple_of_2 = max_div_2, is_divisible_3 = div_3))

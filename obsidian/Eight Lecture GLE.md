@@ -1,0 +1,11 @@
+- [[Constitution]]
+	- new fundamental rights can also create new basic values
+- [[Separation of Powers]]
+- Hierarchy of Norms
+	- Basic Principles
+	- [[Constitution]]
+	- Ordinary Laws 
+	- Ordinances -> Ruligns by [[Administration]] -> Verordnung
+	- Rulings, Judgements, Decisions -> individual cases
+ - [[Federal Legislation]]
+ - Diet ... Parliament of Land

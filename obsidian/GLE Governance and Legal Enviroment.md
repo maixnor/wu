@@ -29,8 +29,9 @@ location: WU
 - [[Selected Fundamental Rights of Businesses]]
 - [[International Law and Globalization]]
 # Lectures
+### First Part (until Midterm)
 - [[First Lecture GLE]]
-- [[Second Lecture GLE]]
-- [[Third Lecture GLE]]
+### Second Part 
+-  [[Eight Lecture GLE]]
 # Sources
 - [[grabenwarter-et-al-2019-governance-and-legal-environment.pdf]]

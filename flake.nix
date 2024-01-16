@@ -31,6 +31,7 @@
 					python311
 					python311Packages.jupyter
 					texlive.combined.scheme-full
+					rstudio
 					kile
 					bat
 					okular
