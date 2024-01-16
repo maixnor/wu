@@ -8,7 +8,7 @@ location: WU D5
 ---
 # Vorbesprechung
 - Advice
-	- get material from another course
+	- get material from other course
 	- be here: everything just spoken is also part of the exam
 - Tutor
 	- moritz.huetgen@wu.ac.at
@@ -26,6 +26,7 @@ location: WU D5
 	- max 4 pages
 	- this is a personal task, what have **you** taken from the class?
 	- kind of self-reflection 
+	- normal speaking language
 - 05% participation during class
 # Content
 - [[Remarkable People Series]]
@@ -36,9 +37,33 @@ location: WU D5
 - [[Viktor from Marswalk]]
 - [[Strategic SWAT]]
 - [[Strategic Foresight]]
-- [[The Future]]
+- [[Feral Futures]]
 - [[The Inditex Case]]
+- [[Entangled Futures]]
 # General
+
+## Exam
+- [[UBBP Insight Book]] assignment as a preparation
+- no number crunching
+- writing -> no multiple choice tests
+- 10-20 questions, 90 minutes time
+- first read completely, then answer
+- no essays, information in short form
+
+- questions about "founding a company"
+	- explain the business model
+	- what is a business plan and it's contents
+	- becoming king, turning rich
+	- entrepreneurial finance metrics
+		- 4 quadrants of financial activity
+	- what is feral futures
+	- what is an impact issue matrix
+	- what is underserved markets? utilize, mitigate, recognize
+- CEO adds more questions
+	- identify opportunities and threats dynamically
+	- choose 1 or 2 tools of the foresight ...
+	- fortune at the bottom of the pyramid
+	- prospect theory, biases
 
 # People
 - [[Eugene Fama]] -> wrote [[bible of economics]]

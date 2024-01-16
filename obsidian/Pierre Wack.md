@@ -1,7 +1,7 @@
 > Daimler is successful because they did scenarios over 50 years, although not a single one came true
 
 - french oil executive
-- amazing at predicting the future -> [[The Future]]
+- amazing at predicting the future -> [[Feral Futures]]
 	- never "saw" the future, but had a "feeling"
 	- being in the right state of mind to notice the insights
 - proactive approach

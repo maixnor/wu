@@ -17,4 +17,5 @@
 - [[Barbara Minto]]
 ### Week 7
 - [[Rene Rohrbeck]] -> [[Enterprise Foresight]]
-- [[Rafael Ramirez]] -> [[Scenario Planning]] -> [[Feral Futures]]
+- [[Rafael Ramirez]] -> [[Scenario Planning]] -> [[Feral Futures|Feral Futures]]
+	- companies which look into the future are better off in the long run
