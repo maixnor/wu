@@ -7,10 +7,10 @@
 - [[Profitability vs Liquidity]]
 - [[Hidden Positioning]]
 # What is a Business Model?
-- video #todo get link from slides (red Jaguar)
+- video (Red Jaguar) https://www.youtube.com/watch?v=_AB1s4pc48k
 - [[Charles Baden-Fuller]]
 - only 1/3 of companies can articulate their business model
-- 2 parts
+- 3 parts
 	- captures what the business is about
 		- a story
 	- how to generate the value -> [[Value Creation]]
@@ -38,5 +38,6 @@
 - Legal Structure and Organization
 - Implementation
 - [[SWOT Analysis]] <- Emphasis
-	- Plan B and C and D
+	- Plan B and C and D -> [[Scenario Planning]]
+	- also [[Strategic SWAT]]
 - Financial Plan <- Emphasis
