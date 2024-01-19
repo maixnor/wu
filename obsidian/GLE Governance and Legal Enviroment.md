@@ -30,9 +30,9 @@ location: WU
 - [[Selected Fundamental Rights of Businesses]]
 - [[International Law and Globalization]]
 # Lectures
-### First Part (until Midterm)
+## First Part (until Midterm)
 - [[First Lecture GLE]]
-### Second Part 
+## Second Part 
 - [[Eight Lecture GLE]]
 - [[Ninth Lecture GLE]]
 - [[Tenth Lecture GLE]]
