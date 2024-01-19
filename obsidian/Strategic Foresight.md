@@ -1,18 +1,15 @@
-
 > Foresight is about being informed about the future and trying your best to predict the future and see what problems could arise.
 
-René Rohrbeck is known for his work in strategic foresight, offering practical insights through different sprints:
+René [[Rohrbeck]] is known for his work in strategic foresight, offering practical insights through different sprints:
 
-## 1. **Discovery Sprint:**
-   Rohrbeck emphasizes the importance of a discovery phase, exploring emerging trends and uncertainties that could impact the future.
+### Discovery Sprint:
+Dig into what's happening now, and what could shake things up down the road
 
-## 2. **Visioning Sprint:**
-   In the visioning phase, he advocates for creating compelling future scenarios, helping organizations envision potential paths.
+### Visioning Sprint:
+Create cool future stories! Imagine exciting possibilities and where they could lead
 
-## 3. **Design Sprint:**
-   The design sprint involves developing strategies and innovative solutions based on the envisioned scenarios.
+### Design Sprint:
+Time to get creative! Develop smart strategies and cool solutions inspired by our awesome future scenarios
 
-## 4. **Scaling Sprint:**
-   Finally, Rohrbeck focuses on the scaling phase, ensuring that successful strategies are effectively implemented and integrated.
-
-Rohrbeck's approach offers a structured and actionable framework for organizations seeking to navigate an uncertain future.
+### Scaling Sprint:
+Let's make it real! Make sure our great ideas actually happen and become part of how the business operates
