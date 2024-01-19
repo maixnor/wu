@@ -8,7 +8,7 @@ location: WU D5
 ---
 # General Advice
 - Advice
-	- get material from other course
+	- get material from other course: [[UBBP Business Planning]]
 	- be here: everything just spoken is also part of the exam
 - Tutor
 	- moritz.huetgen@wu.ac.at
@@ -40,9 +40,8 @@ location: WU D5
 - [[Feral Futures]]
 - [[The Inditex Case]]
 - [[Entangled Futures]]
-# General
 
-## Exam
+# Exam
 - [[UBBP Insight Book]] assignment as a preparation
 - no number crunching
 - writing -> no multiple choice tests
@@ -66,6 +65,6 @@ location: WU D5
 	- prospect theory, biases
 
 # People
-- [[Eugene Fama]] -> wrote [[bible of economics]]
+- [[Eugene Fama]] -> wrote [[Bible of Economics]]
 - [[Lars Peter Hansen]] -> disprove all models from [[Eugene Fama]]
-- [[Robert Shiller]] -> 
+- [[Robert Shiller]]
