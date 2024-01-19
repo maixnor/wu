@@ -8,7 +8,7 @@ This study plan is recommended by the BBE Program and might be worth following. 
 - [[BS Business and Society 1]]
 - [[QM1 Quantitative Methods 1]]
 - [[GLE Governance and Legal Enviroment]]
-- [[UBBP Understanding Business Business Planning]]
+- [[UBBP Understanding Business]]
 - [[Free Electives]] - onwards
 
 ### Semester 2

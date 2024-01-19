@@ -6,7 +6,7 @@ semester: "1"
 type: vu
 location: WU D5
 ---
-# Vorbesprechung
+# General Advice
 - Advice
 	- get material from other course
 	- be here: everything just spoken is also part of the exam
