@@ -21,7 +21,7 @@ being able to use two hands
 - Cross Impact- and Vulnerability analysis
 - Road Mapping
 
-## 4: 
+## 4: Integrated Systems
 [[Beyond Business by John]]
 [[Deck of Wild Cards by Daniel Warmuth]]
 [[Media Training]]
