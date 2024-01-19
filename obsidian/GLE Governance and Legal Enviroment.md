@@ -35,7 +35,8 @@ location: WU
 ## Second Part 
 - [[Eight Lecture GLE]]
 - [[Ninth Lecture GLE]]
-- [[Eleventh Lecture GLE]]
+- [[Tenth Lecture GLE]]
+- [[Eleventh Lecture GLE]] -> will be there soon
 	- [[Exam Questions Preparation]]
 # Sources
 - [[grabenwarter-et-al-2019-governance-and-legal-environment.pdf]]
