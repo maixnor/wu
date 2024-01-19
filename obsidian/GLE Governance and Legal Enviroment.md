@@ -14,7 +14,8 @@ location: WU
 - 2 exams
 
 # Questions
-[[GLE Questions]]
+[[GLE Questions - pre Midterm]]
+[[GLE Questions - post Midterm]]
 
 # Content from Book
 - [[Business Organization Concepts]]
@@ -32,6 +33,9 @@ location: WU
 ### First Part (until Midterm)
 - [[First Lecture GLE]]
 ### Second Part 
--  [[Eight Lecture GLE]]
+- [[Eight Lecture GLE]]
+- [[Ninth Lecture GLE]]
+- [[Tenth Lecture GLE]]
+	- [[Exam Questions Preparation]]
 # Sources
 - [[grabenwarter-et-al-2019-governance-and-legal-environment.pdf]]
