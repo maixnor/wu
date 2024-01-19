@@ -8,12 +8,13 @@ semester: "1"
 type: vo
 location: WU
 ---
-# Vorbesprechung
+# General
+questions during studying to maria.braunsberger@wu.ac.at
 
-# Bewertung
+# Grading
 - 2 exams
 
-# Questions
+# Questions from Book
 [[GLE Questions - pre Midterm]]
 [[GLE Questions - post Midterm]]
 
