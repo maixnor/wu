@@ -1,6 +1,6 @@
 being able to use two hands
 
-## In business
+Meaning in business:
 - knowing how to do now what is best now
 - aaaand knowing how to handle the future challenges
 
@@ -22,13 +22,13 @@ being able to use two hands
 - Road Mapping
 
 ## 4: Integrated Systems
-[[Beyond Business by John]]
-[[Deck of Wild Cards by Daniel Warmuth]]
-[[Media Training]]
-[[Business Wargaming]]
+- [[Beyond Business by John]]
+- [[Deck of Wild Cards by Daniel Warmuth]]
+- [[Media Training]]
+- [[Business Wargaming]]
 
 ## 5: Experiencing the Future
-- Holodecks
+- [[Holodeck]]
 - Memories of the Future -> [[Pre-Mortem]] analysis
 - Science Fiction
 - Exploring Unknown Unknowns
