@@ -1,4 +1,4 @@
-# Feral Futures: A Comparative Perspective
+# A Comparative Perspective
 In exploring the spectrum of possible futures, the concepts of Feral, Wild, and Mild futures provide a nuanced understanding of potential scenarios.
 
 ## 1. **Tame Futures:**
