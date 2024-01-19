@@ -27,7 +27,8 @@
 
 ## EU Law Statements
 - [ ] Directives are binding legal acts and directly applicable in all Member States.
-	-> EU Regulations need to be implemented, typically not directly applicable in member states
+	-> Regulations: directly applicable, no need to be transposed/implemented
+	-> Directives: not directly applicable, need to be transposed into national law first
 - [!] EU secondary law consists of legal acts based upon primary law.
 - [ ] The [[preliminary reference procedure]] has enabled the CJEU to ensure a uniform interpretation and application of EU law in all Member States.
 - [!] EU law constitutes supranational law, characterized by its direct effect and supremacy.
