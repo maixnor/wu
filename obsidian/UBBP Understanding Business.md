@@ -39,6 +39,7 @@ location: WU D5
 - [[Feral Futures]]
 - [[The Inditex Case]]
 - [[Entangled Futures]]
+- [[Ambidexterity]]
 
 # Exam
 - [[UBBP Insight Book]] assignment as a preparation
