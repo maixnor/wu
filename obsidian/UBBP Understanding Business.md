@@ -64,7 +64,7 @@ location: WU D5
 	- fortune at the bottom of the pyramid
 	- prospect theory, biases
 
-# People
+# Further People
 - [[Eugene Fama]] -> wrote [[Bible of Economics]]
 - [[Lars Peter Hansen]] -> disprove all models from [[Eugene Fama]]
 - [[Robert Shiller]]
