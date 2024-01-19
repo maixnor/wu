@@ -1,3 +1,5 @@
+> One cannot live on profits, you can only live on cash
+
 Customers always pay late
 
 [[Profitability]] is just a fictive number
@@ -7,4 +9,3 @@ Customers always pay late
 
 both [[Liquidity]] and [[Solvency]] must be positive for successful business
 
-> One cannot live on profits, you can only live on cash
