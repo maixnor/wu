@@ -83,6 +83,9 @@ Hierarchy of Norms
 				- Voter gives legitimization to executive branch
 	- Republican Principle
 		- [[Federal President]]
+		- [[Federal Ministers]]
+		- [[Federal Government]]
+		- [[Federal Legislation]]
 	- Federal Principle
 		- Relative autonomy both in legislation and administration
 			- Article 11-14 B-VG
@@ -127,30 +130,7 @@ Hierarchy of Norms
 			- If a basic principle is amended or deleted, article 44 says this is a complete revision of the constitution and the parliament has to approve by ⅔ while 50% of parliamentarians are present.
 				- Referendum
 ## Federal Legislation
-- Legislation process on a federal level
-- Who can give the initiative for a law?
-	- Parliament
-	- Federal Council
-	- Popular initiative
-	- Government (all of the ministers)
-- Legislative proposal happens
-	- First reading
-	- Referral to a committee
-	- Preliminary deliberations in committee
-	- Deliberations in plenary
-	- Voting
-		- 2nd and 3rd reading, adoption by the National Council
-		- No right of objection
-			- Federal budget
-			- Rules of procedure of the national council
-- Transmission to the Federal council
-	- Right to a suspensive veto
-		- National council deliberates once more
-			- Final insistence
-		- Authentication + Promulgation
-	- Right of objection
-		- 8 weeks to deliberate
-		- Right to pause
+![[Federal Legislation]]
 ## Executive
 - Highest Executive Bodies
 	- Federal President
