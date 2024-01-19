@@ -51,17 +51,20 @@ location: WU D5
 
 - questions about "founding a company"
 	- explain the business model
-	- what is a business plan and it's contents
-	- becoming king, turning rich
+	- what is a [[Business Plan]] and it's contents
+	- [[Turning Rich or Becoming King]]
 	- entrepreneurial finance metrics
 		- 4 quadrants of financial activity
-	- what is feral futures
-	- what is an impact issue matrix
-	- what is underserved markets? utilize, mitigate, recognize
+		- [[Strategic Perspective#Accounting Perspective]]
+	- what is [[Feral Futures]]
+	- what is an [[Issue Impact Matrix]]
+	- what are [[Underserved Markets]]? utilize, mitigate, recognize
 - CEO adds more questions
-	- identify opportunities and threats dynamically
+	- identify opportunities and threats dynamically -> [[Dynamic SWOT]]
 	- choose 1 or 2 tools of the foresight ...
+		- [[Strategic Foresight]]
 	- fortune at the bottom of the pyramid
+		-> [[Prahalad]]
 	- prospect theory, biases
 
 # Further People and Topics
