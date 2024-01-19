@@ -80,7 +80,7 @@ Chester Barnard: Barnard-Simon Theory of Organizational Equilibrium
 ## Perspectives
 - [[Entrepreneurial Perspective]]
 - [[Financial Perspective]]
-- [[Strategic perspective]]
+- [[Strategic Perspective]]
 - [[Customer Perspective]]
 - [[Process and Production Perspective]]
 - [[Employee Perspective]]
