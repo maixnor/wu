@@ -1,6 +1,6 @@
 a.k.a [[Managerial Accounting]] or [[Cost Accounting]]
 beermat ... de: Bierdeckel, a cardboard sheet to place your drink on
-## how to make a wise decision
+## How to make a wise decision
 - machine lifetime -> [[Depreciation]]
 - consider opportunity costs of investment -> interest in slides of week 3
 - 2 different machines with different life times (10 vs 8 years)

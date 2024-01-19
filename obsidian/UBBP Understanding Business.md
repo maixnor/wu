@@ -32,7 +32,6 @@ location: WU D5
 - [[Remarkable People Series]]
 - [[Business Models and Business Plans]]
 - [[Financial Reporting]]
-- [[Behavioral Economics]]
 - [[Investments on a Beermat]]
 - [[Viktor from Marswalk]]
 - [[Strategic SWAT]]
@@ -64,7 +63,8 @@ location: WU D5
 	- fortune at the bottom of the pyramid
 	- prospect theory, biases
 
-# Further People
+# Further People and Topics
+- [[Behavioral Economics]]
 - [[Eugene Fama]] -> wrote [[Bible of Economics]]
 - [[Lars Peter Hansen]] -> disprove all models from [[Eugene Fama]]
 - [[Robert Shiller]]
