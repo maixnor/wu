@@ -1,7 +1,6 @@
 > Foresight is about being informed about the future and trying your best to predict the future and see what problems could arise.
 
-René [[Rohrbeck]] is known for his work in strategic foresight, offering practical insights through different sprints:
-
+René [[Rohrbeck]] is known for his work in strategic foresight.
 ### Discovery Sprint:
 Dig into what's happening now, and what could shake things up down the road
 
