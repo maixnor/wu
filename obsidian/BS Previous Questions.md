@@ -193,7 +193,7 @@ $$-1,000 + \frac {10}{1+r}+ \frac {10}{(1+r)^2}\frac {1,015}{(1+r)^3}=0$$
 	1. Correct
 
 # BS Final 2020
-1. [[Strategic perspective]]
+1. [[Strategic Perspective]]
 	1. Cost leadership means that a company produces at higher costs than its competitors
 		1. False
 	2. Core competencies are skills that enable a company to deliver a fundamental customer benefit

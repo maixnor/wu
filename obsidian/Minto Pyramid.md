@@ -1,4 +1,4 @@
-after [[Barbara Minto]] 
+after [[Minto]] 
 - [[Pitching]] effectively to CEOs or other leaders 
 ### Key Principles
 

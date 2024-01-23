@@ -1,6 +1,6 @@
 # Rafael Ramirez: Scenario Planning Insights
 
-[[Rafael Ramirez]]'s influence in scenario planning is marked by several key insights:
+[[Ramirez]]'s influence in scenario planning is marked by several key insights:
 
 ## 1. **Holistic Consideration:**
    Ramirez advocates a holistic approach, urging organizations to factor in diverse dimensions like social, political, economic, and technological elements when developing scenarios.
@@ -17,6 +17,6 @@
 ## 5. **Beyond Prediction:**
    Contrary to focusing on precise predictions, Ramirez sees scenario planning as a tool for exploring possibilities. This shift encourages organizations to prioritize agility and strategic foresight.
 
-[[Rafael Ramirez]]'s insights provide organizations with a strategic and adaptable framework for navigating uncertainties through scenario planning.
+[[Ramirez]]'s insights provide organizations with a strategic and adaptable framework for navigating uncertainties through scenario planning.
 
 There is no clear recipe for how many individuals should indulge in scenario planning. One should use the already present employees, not dedicate employees.

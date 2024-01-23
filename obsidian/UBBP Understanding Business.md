@@ -6,9 +6,9 @@ semester: "1"
 type: vu
 location: WU D5
 ---
-# Vorbesprechung
+# General Advice
 - Advice
-	- get material from other course
+	- get material from other course: [[UBBP Business Planning]]
 	- be here: everything just spoken is also part of the exam
 - Tutor
 	- moritz.huetgen@wu.ac.at
@@ -32,7 +32,6 @@ location: WU D5
 - [[Remarkable People Series]]
 - [[Business Models and Business Plans]]
 - [[Financial Reporting]]
-- [[Behavioral Economics]]
 - [[Investments on a Beermat]]
 - [[Viktor from Marswalk]]
 - [[Strategic SWAT]]
@@ -40,9 +39,9 @@ location: WU D5
 - [[Feral Futures]]
 - [[The Inditex Case]]
 - [[Entangled Futures]]
-# General
+- [[Ambidexterity]]
 
-## Exam
+# Exam
 - [[UBBP Insight Book]] assignment as a preparation
 - no number crunching
 - writing -> no multiple choice tests
@@ -52,20 +51,24 @@ location: WU D5
 
 - questions about "founding a company"
 	- explain the business model
-	- what is a business plan and it's contents
-	- becoming king, turning rich
+	- what is a [[Business Plan]] and it's contents
+	- [[Turning Rich or Becoming King]]
 	- entrepreneurial finance metrics
 		- 4 quadrants of financial activity
-	- what is feral futures
-	- what is an impact issue matrix
-	- what is underserved markets? utilize, mitigate, recognize
+		- [[Strategic Perspective#Accounting Perspective]]
+	- what is [[Feral Futures]]
+	- what is an [[Issue Impact Matrix]]
+	- what are [[Underserved Markets]]? utilize, mitigate, recognize
 - CEO adds more questions
-	- identify opportunities and threats dynamically
+	- identify opportunities and threats dynamically -> [[Dynamic SWOT]]
 	- choose 1 or 2 tools of the foresight ...
+		- [[Strategic Foresight]]
 	- fortune at the bottom of the pyramid
+		-> [[Prahalad]]
 	- prospect theory, biases
 
-# People
-- [[Eugene Fama]] -> wrote [[bible of economics]]
+# Further People and Topics
+- [[Behavioral Economics]]
+- [[Eugene Fama]] -> wrote [[Bible of Economics]]
 - [[Lars Peter Hansen]] -> disprove all models from [[Eugene Fama]]
-- [[Robert Shiller]] -> 
+- [[Robert Shiller]]

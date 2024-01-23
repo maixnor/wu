@@ -1,0 +1,11 @@
+- Right to life
+- Prohibition of torture
+- Right to property
+- Freedom of speech
+- Freedom of religion
+- Freedom of assembly
+- Access to court/right to legal representation
+	- Fair trial
+- Self determination
+- Housing
+- family

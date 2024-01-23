@@ -8,13 +8,15 @@ semester: "1"
 type: vo
 location: WU
 ---
-# Vorbesprechung
+# General
+questions during studying to maria.braunsberger@wu.ac.at
 
-# Bewertung
+# Grading
 - 2 exams
 
-# Questions
-[[GLE Questions]]
+# Questions from Book
+[[GLE Questions - pre Midterm]]
+[[GLE Questions - post Midterm]]
 
 # Content from Book
 - [[Business Organization Concepts]]
@@ -29,9 +31,13 @@ location: WU
 - [[Selected Fundamental Rights of Businesses]]
 - [[International Law and Globalization]]
 # Lectures
-### First Part (until Midterm)
+## First Part (until Midterm)
 - [[First Lecture GLE]]
-### Second Part 
--  [[Eight Lecture GLE]]
+## Second Part 
+- [[Eight Lecture GLE]]
+- [[Ninth Lecture GLE]]
+- [[Tenth Lecture GLE]]
+- [[Eleventh Lecture GLE]] -> will be there soon
+	- [[Exam Questions Preparation]]
 # Sources
 - [[grabenwarter-et-al-2019-governance-and-legal-environment.pdf]]

@@ -1,3 +1,6 @@
+- first "visionaries"
+	- knowledge lost for 100 years
+- early childhood education in math of [[Lovelace]] had great impact on her later life
 ## Ada Lovelace (1815-1852)
 **First Computer Programmer:** 
   Lovelace is credited as the world's first computer programmer. She worked with Babbage on the Analytical Engine and wrote extensive notes on the machine, including an algorithm for calculating Bernoulli numbers.
