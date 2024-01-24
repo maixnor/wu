@@ -62,7 +62,7 @@ location: WU D5
 - CEO adds more questions
 	- identify opportunities and threats dynamically -> [[Dynamic SWOT]]
 	- choose 1 or 2 tools of the foresight ...
-		- [[Strategic Foresight]]
+		- [[Strategic Foresight#Tools]]
 	- fortune at the bottom of the pyramid
 		-> [[Prahalad]]
 	- prospect theory, biases
