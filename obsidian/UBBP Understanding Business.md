@@ -37,7 +37,7 @@ location: WU D5
 - [[Strategic SWAT]]
 - [[Strategic Foresight]]
 - [[Feral Futures]]
-- [[The Inditex Case]]
+- [[The INDITEX Case]]
 - [[Entangled Futures]]
 - [[Ambidexterity]]
 
