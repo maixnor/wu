@@ -37,7 +37,7 @@ location: WU D5
 - [[Strategic SWAT]]
 - [[Strategic Foresight]]
 - [[Feral Futures]]
-- [[The Inditex Case]]
+- [[The INDITEX Case]]
 - [[Entangled Futures]]
 - [[Ambidexterity]]
 
@@ -61,8 +61,7 @@ location: WU D5
 	- what are [[Underserved Markets]]? utilize, mitigate, recognize
 - CEO adds more questions
 	- identify opportunities and threats dynamically -> [[Dynamic SWOT]]
-	- choose 1 or 2 tools of the foresight ...
-		- [[Strategic Foresight]]
+	- choose 1 or 2 tools of the foresight -> [[Strategic Foresight#Tools|Tools of Strategic Foresight]]
 	- fortune at the bottom of the pyramid
 		-> [[Prahalad]]
 	- prospect theory, biases
