@@ -15,7 +15,7 @@ questions during studying to maria.braunsberger@wu.ac.at
 - 2 exams
 
 # Questions from Book
-[[GLE Questions - pre Midterm]]
+[[Questions GLE - pre Midterm]]
 [[GLE Questions - post Midterm]]
 
 # Content from Book
