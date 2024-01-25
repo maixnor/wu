@@ -33,7 +33,7 @@ questions during studying to maria.braunsberger@wu.ac.at
 # Lectures
 ## First Part (until Midterm)
 - [[First Lecture GLE]]
-## Second Part 
+## Second Part
 - [[Eight Lecture GLE]]
 - [[Ninth Lecture GLE]]
 - [[Tenth Lecture GLE]]
