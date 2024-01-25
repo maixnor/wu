@@ -16,7 +16,7 @@ questions during studying to maria.braunsberger@wu.ac.at
 
 # Questions from Book
 [[Questions GLE - pre Midterm]]
-[[GLE Questions - post Midterm]]
+[[Questions GLE - post Midterm]]
 
 # Content from Book
 - [[Business Organization Concepts]]
