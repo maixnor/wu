@@ -9,7 +9,8 @@ type: vo
 location: WU
 ---
 # General
-questions during studying to maria.braunsberger@wu.ac.at
+- questions during studying to maria.braunsberger@wu.ac.at
+- [[Treaty vs Regulation vs Directive]]
 
 # Grading
 - 2 exams
