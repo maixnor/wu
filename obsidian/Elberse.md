@@ -4,7 +4,7 @@ Anita Elberse
 
 [[Anderson]]
 
-The Long Tail Discussion
+[[The Long Tail]] Discussion
 
 Diversification for Platform Businesses
 Specialization for Product Businesses
