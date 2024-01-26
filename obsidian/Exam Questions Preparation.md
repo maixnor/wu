@@ -1,6 +1,10 @@
 - one, multiple, or none of the answers can be correct in the exam
 - answers are scrambled in order
 
+### How to read
+purple tick => correct
+no tick => incorrect
+the indented text gives extra reasons or points to extra reasons with links
 
 ## Austrian Constitutional Law
 - [ ] The ECHR is an international treaty which is why it is ranked as an ordinary federal law in Austria.
