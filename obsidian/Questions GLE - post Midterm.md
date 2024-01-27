@@ -108,6 +108,7 @@
 - regulations for specific and quick changes
 - directives for more general goals and natural changes
 ### Why does the Council in some cases prefer TFEU provisions allowing it to adopt ‘non-legislative’ regulations or directives over TFEU provisions allowing it to adopt ‘legislative’ regulations or directives? 
+- 
 ### As for delegated regulations or directives, why must the essential elements of a policy area be reserved for the empowering legislative act? 
 ### The van Gend ruling may be perceived as a revolutionary act
 ### How did the CJEU justify its interpretation of the law? 
