@@ -1,4 +1,4 @@
-Relevant Cases to know are the ones with their own links:
+Relevant Cases to know are the ones with their own links or which are mentioned in the [[Questions GLE - post Midterm]] page.
 - [[Stoss Case]], [[Dassonville Case]], [[Keck Case]], [[Cassis Case]]
 
 ## The Internal Market as the Centre of Gravity of EU Integration
