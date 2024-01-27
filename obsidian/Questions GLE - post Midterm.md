@@ -146,8 +146,11 @@
 ### Why would indirectly discriminatory measures impair the operation of the internal market? 
 - they increase the marketability of one product while not increasing another product
 - this creates and imbalance of marketability -> disadvantage for not-increased product
-### How can non-discriminatory measures impede the operations of the internal market? 
-#collab
+- also e.g. language requirements with job descriptions
+### How can non-discriminatory measures impede the operations of the internal market?
+- e.g. product standards
+- must be equal to imported and domestic products alike
+- regulations may not be designs to favor domestic products
 ### As for the free movement of goods, explain the relevance of customs duties, internal taxation, and quantitative restrictions
 - Customs Duties
 	- Customs need to be collected when products enter the EU
