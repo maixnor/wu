@@ -154,7 +154,8 @@
 ### As for the free movement of goods, explain the relevance of customs duties, internal taxation, and quantitative restrictions
 - Customs Duties
 	- Customs need to be collected when products enter the EU
-	- Customs should be similar, otherwise incentive to import with a few countries with lower fees than others
+	- Customs need to be equal, otherwise incentive to import with a few countries with lower fees than others
+	- charges having an equivalent effect included (e.g. negative import taxes)
 - Internal Taxation
 	- no difference between domestic/imported goods
 	- would favor domestic products too much -> no fair competition
@@ -164,7 +165,11 @@
 	- e.g. only 5.000 liters of wine per week may be imported
 	- would again favor domestic products (no restrictions apply)
 ### How has the trouble with the concept of ‘measures having an equivalent effect’ resulting from the Dassonville and Cassis de Dijon rulings been resolved in Keck and later, in case law? 
+- [[Dassonville Case]] very broad rulings
+- [[Cassis de Dijon Case]] precise ruling
+- only are "measures having an equivalent effect" -> still impeding
 #collab
+#cursor
 ### According to the CJEU, under what conditions may the rules on the free movement of goods, free movement of workers and the freedom of establishment have a ‘horizontal direct effect’? 
 - fundamental freedoms are applicable to individuals alike
 - individuals can be bound to be non-discriminatory as well
