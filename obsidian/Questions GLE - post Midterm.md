@@ -79,9 +79,22 @@
 ### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly comparable to the ‘EU’ after Maastricht. Explain
 - [[Maastricht Treaty]]
 ### Against what criteria would an accession to the EU of Turkey (or any other third country) have to be assessed? 
+- if any country wants to enter the EU
+	- Law system has to changed to be compatible with EU law system
+	- political system has to be valid and stable
+	- [[Fundamental Rights]] and [[Human Rights]]
+	- strong market economy -> supporting EU market instead of being a burden
+	- all current EU member states have to approve
 ### Why did the ‘empty chair policy’ arise and how was it overcome? 
+- [[Empty Chair Policy]]
 ### Given the rules on how a qualified majority vote is taken within the Council, is it necessary to have a specific rule on how to establish a blocking minority? 
+- Blocking Minority -> 4 no
+- 55% of votes and at least 15 votes
 ### How are Commission decisions taken? 
+- consensus -> unanimous decision
+- more than 50% -> majority
+- #collab weird stuff
+- [[European Commission]]
 ### Are Advocates-General a useful institution? 
 ### Does Article 352 TFEU make the principle of conferral obsolete? 
 ### Given the principle of proportionality, are directives always preferable to regulations? 

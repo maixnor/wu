@@ -1,6 +1,7 @@
 - after Maastricht
-	- EU consists of multiple institutions
-	- not a single entity anymore
+	- EU is single entity
+	- not multiple institutions anymore
+- filled gaps in laws and regulations
 - goal was to write a single constitution
 	- not successful
 	- [[TEU]] and [[TFEU]] in place
