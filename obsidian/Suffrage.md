@@ -7,7 +7,7 @@ A set of rules for participating in elections.
 	- each vote is worth equally, equal weights
 - direct suffrage
 	- directly voting representatives (Austria, Germany)
-- indirect suffrage
+- (indirect suffrage)
 	- voting the electoral college to vote the representatives (US)
 - personal suffrage
 	- no substitution by another person

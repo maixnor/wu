@@ -1,20 +1,24 @@
 # Chapter 6
 
 ### How is the Austrian Federal Constitution composed? 
-- there is not one main document "the constitution" but there are many law books containing bits of constitutional law
+- there is not one main document "the constitutio" but there are many law books containing bits of constitutional law
+- constitutional law is marked as being constitutional
 ### What is meant by the concept of the ‘hierarchy of norms’? Describe the hierarchy of norms in the Austrian legal system
 - each law must obey laws of higher order -> principle of legality
 - the higher the order the more difficult it is to change/adapt
 - hierarchy (top - highest)
+	- basic principles
 	- constitution
-	- federal law
-	- *Laender* Law
-	- Rules
+	- ordinary laws
+	- ordinances
+	- rulings, judgement, decisions
 ### The basic principles of the Austrian Federal Constitution enjoy a special position compared to other norms of constitutional law. Explain
 - constitutional law is hardest to change since it requires the highest amount of members of the council (at least half) and a 2/3 majority
 - also parts of the constitutional law, like democracy, are required by the [[Treaty of the European Union|TEU]]
 ### Although Austria is an indirect democracy, there are also elements of a direct democracy in the Austrian legal system. Explain
 - [[Referendum]] - where the people cast their vote directly on a topic
+- National Council -> Consultation of the People (not legally binding)
+- Public Initiative (100k votes) -> must be discussed by parliament
 ### What are the electoral principles of Austrian law? 
 - [[Suffrage]]
 ### What is understood by the term ‘principle of legality‘? What is the relationship between the principle of legality and the basic democratic principle? 
