@@ -46,6 +46,11 @@
 	- Resolves conflicts of competence between the federation and a Land or between the Laender themselves
 	- Pronounces upon challenges to elections
 ### How did EU membership affect Austria’s status of permanent neutrality? 
+- special policy to verify Austria's neutrality
+- true neutrality cannot be held while being part of EU
+	- being part of a team and neutrality does not go well together
+- economically and politically not neutral
+- just neutrality regarding war and military conflicts
 #collab
 ### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
 #collab

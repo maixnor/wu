@@ -9,7 +9,7 @@
 # Courts of Public Law
 ### Constitutional Court (Guardian of the constitution)
 - Powers to review laws and regulations for their constitutionality
-- Court of fundamental rights
+- Court of [[Fundamental Rights]] and [[Human Rights]]
 - Resolves conflicts of competence between the federation and a Land or between the Laender themselves
 - Pronounces upon challenges to elections
 ### Administrative Jurisdiction
