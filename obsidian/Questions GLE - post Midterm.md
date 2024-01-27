@@ -67,7 +67,13 @@
 
 # Chapter 7
 ### Does the EU have a constitution? 
+- no
+- [[TFEU]], [[TEU]], [[Treaties of Accession]], Charter of [[Fundamental Rights]]
+- act in a similar way ([[Primary Law]]) but is not a "constitution"
 ### Why is it important to distinguish the ‘Council of Europe’ from the ‘European Council’ and the ‘Council’? 
+- [[Council of Europe]]
+- [[European Council]]
+- [[Council]]
 ### How did the Single European Act influence the trajectory of European integration?
 ### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly com- parable to the ‘EU’ after Maastricht. Explain
 ### Against what criteria would an accession to the EU of Turkey (or any other third country) have to be assessed? 
