@@ -52,7 +52,8 @@
 - economically and politically not neutral
 - just neutrality regarding war and military conflicts
 ### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
-#collab
+- [[TEU]], [[TFEU]] -> have to be approved by national council
+- not incorporated directly, need adoption by national law
 ### Is every international treaty directly applicable in Austria? State reasons for your answer
 - yes
 - although for the creation of the treaty the parliament or the Laender in case of special competences must be involved in the forming of the treaty
