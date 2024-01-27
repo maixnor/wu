@@ -132,14 +132,17 @@
 # Chapter 8
 
 ### How does an internal market differ from a free trade area and a customs union? 
+- free trade -> within specific country, different tariffs between member states
+- customs union -> the tariffs between each member state is the same
+- internal market -> not just products, goods, services, capital, payment
 ### Who is empowered by the fundamental freedoms? 
-- every citizen of an EU member state
+- every person (natural and legal) of an EU member state
 ### Who is limited by the fundamental freedoms? 
 - member states (countries) together with public authorities
 - private companies
 - individuals (horizontal effects)
 ### Who ensures compliance with the fundamental freedoms? 
-- the [[CJEU]]
+- [[CJEU]] and national courts
 ### Why would indirectly discriminatory measures impair the operation of the internal market? 
 - they weaken the marketability of one product while non weakening another product
 - this creates and imbalance of marketability -> disadvantage for weakened product
