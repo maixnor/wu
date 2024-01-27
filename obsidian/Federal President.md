@@ -5,7 +5,7 @@
 - “Head of state”
 - Competences:
 	- Dissolve National Council or whole [[Federal Government]]
-	- appoints /dismisses Federal Chancellor
+	- appoints/dismisses Federal Chancellor
 	- Commander in Chief of the Army
 - Impeachment by referendum
 	- ⅔, but has never happened
