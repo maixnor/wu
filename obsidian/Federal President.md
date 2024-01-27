@@ -4,7 +4,7 @@
 - Limited term of office (6 years)
 - “Head of state”
 - Competences:
-	- Dissolve National Council
+	- Dissolve National Council or whole [[Federal Government]]
 	- appoints /dismisses Federal Chancellor
 	- Commander in Chief of the Army
 - Impeachment by referendum
