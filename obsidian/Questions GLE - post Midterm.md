@@ -71,11 +71,13 @@
 - [[TFEU]], [[TEU]], [[Treaties of Accession]], Charter of [[Fundamental Rights]]
 - act in a similar way ([[Primary Law]]) but is not a "constitution"
 ### Why is it important to distinguish the ‘Council of Europe’ from the ‘European Council’ and the ‘Council’? 
-- [[Council of Europe]]
-- [[European Council]]
+- [[Council of Europe]] vs
+- [[European Council]] vs
 - [[Council]]
 ### How did the Single European Act influence the trajectory of European integration?
-### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly com- parable to the ‘EU’ after Maastricht. Explain
+- [[Single European Act]]
+### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly comparable to the ‘EU’ after Maastricht. Explain
+- [[Maastricht Treaty]]
 ### Against what criteria would an accession to the EU of Turkey (or any other third country) have to be assessed? 
 ### Why did the ‘empty chair policy’ arise and how was it overcome? 
 ### Given the rules on how a qualified majority vote is taken within the Council, is it necessary to have a specific rule on how to establish a blocking minority? 
