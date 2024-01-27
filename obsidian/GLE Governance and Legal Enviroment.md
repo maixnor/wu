@@ -20,17 +20,17 @@ location: WU
 [[Questions GLE - post Midterm]]
 
 # Content from Book
-- [[Business Organization Concepts]]
-- [[Limited Liability and Creditors]]
-- [[Management of Companies]]
-- [[Membership in Companies]]
-- [[Mergers and Acquisitions]]
-- [[Constitutional Law and Business Law]]
-- [[Development, Legal Foundations and Dynamics of European Integration]]
-- [[The EU Internal Market]]
-- [[Foundational Rights - General Issues]]
-- [[Selected Fundamental Rights of Businesses]]
-- [[International Law and Globalization]]
+1. [[Business Organization Concepts]]
+2. [[Limited Liability and Creditors]]
+3. [[Management of Companies]]
+4. [[Membership in Companies]]
+5. [[Mergers and Acquisitions]]
+6. [[Constitutional Law and Business Law]]
+7. [[Development, Legal Foundations and Dynamics of European Integration]]
+8. [[The EU Internal Market]]
+9. [[Foundational Rights 1. General Issues]]
+10. [[Selected Fundamental Rights of Businesses]]
+11. [[International Law and Globalization]]
 # Lectures
 ## First Part (until Midterm)
 - [[First Lecture GLE]]
