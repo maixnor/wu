@@ -40,7 +40,9 @@
 	- Resolves conflicts of competence between the federation and a Land or between the Laender themselves
 	- Pronounces upon challenges to elections
 ### How did EU membership affect Austria’s status of permanent neutrality? 
+#collab
 ### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
+#collab
 ### Is every international treaty directly applicable in Austria? State reasons for your answer
 - yes
 - although for the creation of the treaty the parliament or the Laender in case of special competences must be involved in the forming of the treaty
