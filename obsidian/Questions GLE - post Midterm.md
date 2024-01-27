@@ -73,7 +73,7 @@
 ### Why is it important to distinguish the ‘Council of Europe’ from the ‘European Council’ and the ‘Council’? 
 - [[Council of Europe]] vs
 - [[European Council]] vs
-- [[Council]]
+- Council -> [[Council of Ministers]]
 ### How did the Single European Act influence the trajectory of European integration?
 - [[Single European Act]]
 ### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly comparable to the ‘EU’ after Maastricht. Explain
@@ -96,9 +96,18 @@
 - #collab weird stuff
 - [[European Commission]]
 ### Are Advocates-General a useful institution? 
+- yes
+- because they help the judges finding information and exploring different views
 ### Does Article 352 TFEU make the principle of conferral obsolete? 
+- [[TFEU]]
+- may overrule the [[Principle of Conferral]] if there are legitimate reasons with specific measures in specific cases
+- [[Council of Ministers]] has to act unanimously
+- [[Principle of Proportionality]]
 ### Given the principle of proportionality, are directives always preferable to regulations? 
-### Why does the Council in some cases prefer TFEU provisions allowing it to adopt ‘non- legislative’ regulations or directives over TFEU provisions allowing it to adopt ‘legislative’ regulations or directives? 
+- no
+- regulations for specific and quick changes
+- directives for more general goals and natural changes
+### Why does the Council in some cases prefer TFEU provisions allowing it to adopt ‘non-legislative’ regulations or directives over TFEU provisions allowing it to adopt ‘legislative’ regulations or directives? 
 ### As for delegated regulations or directives, why must the essential elements of a policy area be reserved for the empowering legislative act? 
 ### The van Gend ruling may be perceived as a revolutionary act
 ### How did the CJEU justify its interpretation of the law? 

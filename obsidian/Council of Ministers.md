@@ -1,4 +1,4 @@
-- Council of Ministers
+- Ministers grouped together
 	- Education, Agriculture, Foreign Affairs, etc
 - All Ministers of the EU member states
 	- e.g. all ministers of defense from all member states
