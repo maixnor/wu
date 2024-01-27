@@ -1,3 +1,6 @@
+Relevant Cases to know are the ones with their own links:
+- [[Stoss Case]], [[Dassonville Case]], [[Keck Case]], [[Cassis Case]]
+
 ## The Internal Market as the Centre of Gravity of EU Integration
 - [[EPC]]
 - [[ECSC]]
@@ -7,7 +10,7 @@
 	- spillover
 - dynamics
 	- [[CJEU]]
-	- [[Dassonville]]
+	- [[Dassonville Case]]
 	- [[Cassis]]
 	- [[Keck]]
 	- [[Free Movement of Goods]]
@@ -87,3 +90,31 @@
 
 
 ### Free Movement of Workers
+- workers may work all over the EU
+- workers may not be chosen based off of origin within EU -> discrimination
+- workers are entitled to
+	- accept offers
+	- move freely within member states
+	- stay in a member state for work
+	- remain in a member state after work
+- definition worker ... exchange time for monetary value
+- **public service** may differentiate between nationals and foreigners
+	- safeguard interest of the State or public authorities
+	- mostly unsuccessfully invoked
+- prohibit direct discrimination
+	- except for public interest
+- prohibit indirect discrimination
+	- e.g. by language, residence requirements
+	- Bosman Case -> individual against institutions/associations
+	- Angonese Case -> individual against private employer
+
+### Freedom of Establishment
+- [[TFEU]]
+- self-employment possible in the entirety of the EU
+- founding a company/firm outside of country of residence is permitted
+- exception: official authority must be within country
+	- not with fields of work, e.g. lawyers
+- definition **establishment**: the actual pursuit of an economic activity
+- individuals and companies can change their host member state
+	- some companies may be restricted by national law 
+- 
