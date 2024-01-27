@@ -146,10 +146,13 @@
 ### What are the legal documents providing for fundamental rights protection in Austria, apart from the Federal Constitutional Act itself? 
 ### Name the Human Rights Treaties that are considered part of the Austrian legal system
 ### Who monitors compliance with fundamental rights in Austria? 
-- [[Courts in Austria#Constitutional Court]]
-### What is the European Convention on Human Rights (ECHR)? 
+- [[Courts#Constitutional Court (Guardian of the constitution)|Constitutional Court]]
+### What is the European Convention on Human Rights (ECHR)?
+- [[ECHR]]
 ### Who are the obligated parties under the ECHR? 
+- member states of the EU and their subsidiaries (authorities)
 ### Who are the beneficiaries under the ECHR? 
+- all humans which are in any relation with the EU or one of its member states
 ### Under what conditions may legal persons rely on fundamental rights protected under the ECHR? 
 ### Who are the obligated parties under the Charter of Fundamental Rights of the European Union (CFR)? 
 ### Name the conditions under which the CFR may also be addressed to the Member States of the EU? 
