@@ -126,6 +126,8 @@
 	- includes constitutional law as well
 - even though no statement of EU law being higher ranked than national law
 ### The preliminary reference procedure has been described as the ‘infringement procedure of the European citizen’. Why would you agree or disagree?
+- to punish countries not implementing a directive correctly or at all
+- against national law in EU court
 
 # Chapter 8
 
