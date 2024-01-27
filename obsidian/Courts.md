@@ -14,9 +14,8 @@
 - Pronounces upon challenges to elections
 ### Administrative Jurisdiction
 - Examine whether administrative acts comply with the law
-- Supreme Administrative Court
-- Court of final instance in administrative matters
+- Federal Administrative Court -> Court of final instance in administrative matters
 -  11 Courts of First Instance
-	- 9 Land Administrative Courts
 	- Federal Administrative Court
 	- Federal Finance Court
+	- 9 Land Administrative Courts
