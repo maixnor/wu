@@ -42,7 +42,11 @@
 ### How did EU membership affect Austria’s status of permanent neutrality? 
 ### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
 ### Is every international treaty directly applicable in Austria? State reasons for your answer
+- yes
+- although for the creation of the treaty the parliament or the Laender in case of special competences must be involved in the forming of the treaty
+- once the treaty is formed it is directly applicable
 ### How do the Laender participate in the decision-making process of the EU?
+- they participate directly in the Austrian elections for the EU Parliament and can vote via proxy in the Austrian Parliament via their representatives there
 
 # Chapter 7
 ### Does the EU have a constitution? 
@@ -61,28 +65,71 @@
 ### The van Gend ruling may be perceived as a revolutionary act
 ### How did the CJEU justify its interpretation of the law? 
 ### Why would an EU tertiary law decision adopted by the Commission enjoy supremacy over Austrian constitutional law? 
-### The preliminary reference procedure has been described as the ‘infringement procedure of the European citizen’
-### Why would you agree or disagree?
+### The preliminary reference procedure has been described as the ‘infringement procedure of the European citizen’. Why would you agree or disagree?
 
 # Chapter 8
 
 ### How does an internal market differ from a free trade area and a customs union? 
 ### Who is empowered by the fundamental freedoms? 
+- every citizen of an EU member state
 ### Who is limited by the fundamental freedoms? 
+- member states (countries) together with public authorities
+- private companies
+- individuals (horizontal effects)
 ### Who ensures compliance with the fundamental freedoms? 
+- the [[CJEU]]
 ### Why would indirectly discriminatory measures impair the operation of the internal market? 
+- they weaken the marketability of one product while non weakening another product
+- this creates and imbalance of marketability -> disadvantage for weakened product
 ### How can non-discriminatory measures impede the operations of the internal market? 
-### As for the free movement of goods, explain the relevance of customs duties, internal taxa- tion, and quantitative restrictions
-### How has the trouble with the concept of ‘measures having an equivalent effect’ resulting from the Dassonville and Cassis de Dijon rulings been resolved in Keck and later, in case- law? 
+#collab
+### As for the free movement of goods, explain the relevance of customs duties, internal taxation, and quantitative restrictions
+- Customs Duties
+	- Customs need to be collected when products enter the EU
+	- Customs should be similar, otherwise incentive to import with a few countries with lower fees than others
+- Internal Taxation
+	- no difference between domestic/imported goods
+	- would favor domestic products too much -> no fair competition
+	- taxation can happen on other factors (e.g. energy consumption)
+- Quantitative Restrictions
+	- no limit on import volume
+	- e.g. only 5.000 liters of wine per week may be imported
+	- would again favor domestic products (no restrictions apply)
+### How has the trouble with the concept of ‘measures having an equivalent effect’ resulting from the Dassonville and Cassis de Dijon rulings been resolved in Keck and later, in case law? 
+#collab
 ### According to the CJEU, under what conditions may the rules on the free movement of goods, free movement of workers and the freedom of establishment have a ‘horizontal direct effect’? 
+- fundamental freedoms are applicable to individuals alike
+- individuals can be bound to be non-discriminatory as well
+- same counts for private companies compared to public service or official authorities
 ### Under what conditions may other societal goals (to be pursued at Member State level) trump negative market integration processes (and hence market efficiency and economic welfare)? 
+- exhaustive list of justification
+	- protection of wildlife
+	- protection of environment
+	- protection of human health
+	- etc
 ### On what grounds can non-discriminatory restrictions on the free movement of services or the free movement of capital be justified? 
-### What is the relationship between the freedom of establishment and free movement of work- ers on the one hand, and the free movement of EU citizens (Article 21 TFEU) on the other hand? 
-### Why is there a need for positive market integration when there is negative market integra- tion? 
+- non-exhaustive list of justification
+	- protection of wildlife
+	- protection of environment
+	- protection of human health
+	- etc
+### What is the relationship between the freedom of establishment and free movement of workers on the one hand, and the free movement of EU citizens (Article 21 TFEU) on the other hand? 
+- establishment -> founding a company in another member state
+- workers -> working in another member state
+	- one may found a company and work in said company in another member state
+- movement -> travel and residing in another member state
+	- one may also reside in another member state (especially for work)
+	- longer than 3 months
+### Why is there a need for positive market integration when there is negative market integration? 
+- encouraging self-reinforcing behavior
+- reduces micro-managing
+- less invasive/abrupt changes -> more natural adaption
 ### As a matter of principle, when will a harmonising measure have as its ‘object … the internal market’ (Article 114 TFEU)? 
+#collab
 ### How can a directive prohibiting tobacco advertising in the Member States have as its ‘object … the internal market’ (Article 114 TFEU)? 
-### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants
-### Why is this problematic?
+- protection of human health
+### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants Why is this problematic?
+#collab
 # Chapter 9
 
 ### What are fundamental rights? 

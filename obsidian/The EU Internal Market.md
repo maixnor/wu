@@ -122,3 +122,43 @@ Relevant Cases to know are the ones with their own links or which are mentioned 
 	- reasoning from Bosman Case
 	- trade unions also have freedom of establishment
 - [[Societas Europa]] business type
+
+### Free Movement of Services
+- cross-border trade is important (... duh)
+- definition **service**: exchanged for remuneration
+- already defined by other Fundamental Freedoms
+- while conducting the service the worker may reside in the member state
+- modes of supply
+	- provider temporarily in another member state
+	- provider to recipients coming from another member state
+	- provider to recipients without movement of persons
+	- provider to recipients temporarily moving to another member state
+- exception: official authority
+- individual temporarily moving to another country for medical care
+
+### Free Movement of Capital and Payments
+- [[Maastricht Treaty]]
+	- attract [[FDI|Foreign Direct Investment]]
+	- Euro as attractive Global Reserve Currency
+- no exact definitions for **capital** or **payment**
+- capital includes: [[FDI]], [[Share|Shares]], Loans, Credits
+- payment includes: money, electronic money, bills of exchange, cheques
+- transfer of capital and payments may not be prohibited
+	- exchange controls
+	- authorization procedures
+	- also covers special rights in companies
+- [[Dassonville Case]]
+- exceptions:
+	- tax related payments
+	- ceasing control over important enterprises
+
+### Union Citizenship and Free Movement
+- [[Maastricht Treaty]]
+- nationality in one of the member states automatically grants citizenship of the EU
+	- not replacing national citizenship
+- political rights with EU (voting and being candidate)
+- right to move and reside freely within other member states
+	- up to 3 months without any conditions or formalities
+	- longer than 3 months if they are workers or self-employed or have sufficient funds to not become a burden to social system
+	- permanent residence after 5 years of lawful residence
+
