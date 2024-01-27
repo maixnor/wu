@@ -142,7 +142,7 @@
 - private companies
 - individuals (horizontal effects)
 ### Who ensures compliance with the fundamental freedoms? 
-- [[CJEU]] and national courts
+- negative integration: [[CJEU]] and national courts
 ### Why would indirectly discriminatory measures impair the operation of the internal market? 
 - they weaken the marketability of one product while non weakening another product
 - this creates and imbalance of marketability -> disadvantage for weakened product
