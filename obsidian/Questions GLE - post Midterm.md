@@ -144,8 +144,8 @@
 ### Who ensures compliance with the fundamental freedoms? 
 - negative integration: [[CJEU]] and national courts
 ### Why would indirectly discriminatory measures impair the operation of the internal market? 
-- they increase the marketability of one product while not increasing another product
-- this creates and imbalance of marketability -> disadvantage for not-increased product
+- introducing restrictions which are designed to not be met by imported products
+	- giving unfair advantage to domestic options
 - also e.g. language requirements with job descriptions
 ### How can non-discriminatory measures impede the operations of the internal market?
 - e.g. product standards
