@@ -26,7 +26,7 @@ Credit: Aaron Meekins
 		- Actions done by high politicians in government
 		- Rule, regulate, set the games of political process
 		- No politician may step outside of this
-	- [[Separation of powers]]
+	- [[Separation of Powers]]
 	- [[Fundamental Rights]]
 	- [[Basic values]]
 	- Common goals

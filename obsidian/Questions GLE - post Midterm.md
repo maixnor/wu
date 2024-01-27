@@ -23,11 +23,13 @@
 - [[Suffrage]]
 ### What is understood by the term ‘principle of legality‘? What is the relationship between the principle of legality and the basic democratic principle? 
 - [[Principle of Legality]]
-- [[Democartic Principle]]
+- [[Democratic Principle]]
 ### What are the competences of the Federal President? 
 - [[Federal President]]
 ### May a Member of Government at the same time be a Member of Parliament? State reasons for your answer
-- 
+- no
+- [[Separation of Powers]]
+- same person may have multiple roles in the same branch
 ### Explain the legislative procedure in Austria
 - [[Federal Legislation]]
 ### Can the Federal Government as a collegial body, or a Federal Minister be dismissed?

@@ -1,6 +1,7 @@
 
 ![[federal_legislation_from_slides.png]]
-
+- red: [[Federal Committee]]
+- green: [[Federal Council]]
 - suspensive veto
 	- like a stop! button for the law
 	- is overruled by another transmission
