@@ -18,8 +18,7 @@ location: WU
 # Questions from Book
 [[Questions GLE - pre Midterm]]
 [[Questions GLE - post Midterm]]
-
-# Content from Book
+# Unit Summaries from Book
 1. [[Business Organization Concepts]]
 2. [[Limited Liability and Creditors]]
 3. [[Management of Companies]]
