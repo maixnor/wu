@@ -57,11 +57,13 @@
 	- can be, but do not have to be
 - #collab 
 ### Is every international treaty directly applicable in Austria? State reasons for your answer
-- yes
+- no
 - although for the creation of the treaty the parliament, or the Laender in case of special competences, must be involved in the forming of the treaty
 - once the treaty is formed it is directly applicable
+- depends on precision of the treaty
 ### How do the Laender participate in the decision-making process of the EU?
 - they participate directly in the Austrian elections for the EU Parliament and can vote via proxy in the Austrian Parliament via their representatives there
+#collab
 
 # Chapter 7
 ### Does the EU have a constitution? 
