@@ -108,11 +108,23 @@
 - regulations for specific and quick changes
 - directives for more general goals and natural changes
 ### Why does the Council in some cases prefer TFEU provisions allowing it to adopt ‘non-legislative’ regulations or directives over TFEU provisions allowing it to adopt ‘legislative’ regulations or directives? 
-- 
+- legislative -> involves more organs
+	- proposal of [[European Commission]]
+	- decision by [[Council of Ministers]]
+	- decision by [[EU Parliament]]
+- non-legislative -> simpler process
+	- just enacted by [[European Commission]] or [[Council of Ministers]]
+	- no elaborate process whatsoever
 ### As for delegated regulations or directives, why must the essential elements of a policy area be reserved for the empowering legislative act? 
-### The van Gend ruling may be perceived as a revolutionary act
-### How did the CJEU justify its interpretation of the law? 
+- empowering legislative act -> secondary law
+- essential elements are placeholders
+	- later defined by tertiary law by delegated act
+### The van Gend ruling may be perceived as a revolutionary act How did the CJEU justify its interpretation of the law? 
+- [[van Gend Case]]
 ### Why would an EU tertiary law decision adopted by the Commission enjoy supremacy over Austrian constitutional law? 
+- EU law is higher ranked than any national law
+	- includes constitutional law as well
+- even though no statement of EU law being higher ranked than national law
 ### The preliminary reference procedure has been described as the ‘infringement procedure of the European citizen’. Why would you agree or disagree?
 
 # Chapter 8
