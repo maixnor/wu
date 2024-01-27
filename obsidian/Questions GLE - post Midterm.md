@@ -51,7 +51,6 @@
 	- being part of a team and neutrality does not go well together
 - economically and politically not neutral
 - just neutrality regarding war and military conflicts
-#collab
 ### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
 #collab
 ### Is every international treaty directly applicable in Austria? State reasons for your answer
