@@ -117,4 +117,8 @@ Relevant Cases to know are the ones with their own links or which are mentioned 
 - definition **establishment**: the actual pursuit of an economic activity
 - individuals and companies can change their host member state
 	- some companies may be restricted by national law 
-- 
+- [[Cassis Case]]
+- Horizontal Effect
+	- reasoning from Bosman Case
+	- trade unions also have freedom of establishment
+- [[Societas Europa]] business type
