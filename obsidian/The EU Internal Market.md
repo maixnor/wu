@@ -1,3 +1,6 @@
+Relevant Cases to know are the ones with their own links or which are mentioned in the [[Questions GLE - post Midterm]] page.
+-> [[Stoss Case]], [[Dassonville Case]], [[Keck Case]], [[Cassis de Dijon Case]]
+
 ## The Internal Market as the Centre of Gravity of EU Integration
 - [[EPC]]
 - [[ECSC]]
@@ -96,5 +99,76 @@
 	- measures not just against member states, but private persons and companies
 	- German TUEV affected
 		- products which are certified pose a discriminatory threat against non-certified products
+### Free Movement of Workers
+- workers may work all over the EU
+- workers may not be chosen based off of origin within EU -> discrimination
+- workers are entitled to
+	- accept offers
+	- move freely within member states
+	- stay in a member state for work
+	- remain in a member state after work
+- definition worker ... exchange time for monetary value
+- **public service** may differentiate between nationals and foreigners
+	- safeguard interest of the State or public authorities
+	- mostly unsuccessfully invoked
+- prohibit direct discrimination
+	- except for public interest
+- prohibit indirect discrimination
+	- e.g. by language, residence requirements
+	- Bosman Case -> individual against institutions/associations
+	- Angonese Case -> individual against private employer
 
-### Free Movement of Goods
+### Freedom of Establishment
+- [[TFEU]]
+- self-employment possible in the entirety of the EU
+- founding a company/firm outside of country of residence is permitted
+- exception: official authority must be within country
+	- not with fields of work, e.g. lawyers
+- definition **establishment**: the actual pursuit of an economic activity
+- individuals and companies can change their host member state
+	- some companies may be restricted by national law 
+- [[Cassis de Dijon Case]]
+- Horizontal Effect
+	- reasoning from Bosman Case
+	- trade unions also have freedom of establishment
+- [[Societas Europa]] business type
+
+### Free Movement of Services
+- cross-border trade is important (... duh)
+- definition **service**: exchanged for remuneration
+- already defined by other Fundamental Freedoms
+- while conducting the service the worker may reside in the member state
+- modes of supply
+	- provider temporarily in another member state
+	- provider to recipients coming from another member state
+	- provider to recipients without movement of persons
+	- provider to recipients temporarily moving to another member state
+- exception: official authority
+- individual temporarily moving to another country for medical care
+
+### Free Movement of Capital and Payments
+- [[Maastricht Treaty]]
+	- attract [[FDI|Foreign Direct Investment]]
+	- Euro as attractive Global Reserve Currency
+- no exact definitions for **capital** or **payment**
+- capital includes: [[FDI]], [[Share|Shares]], Loans, Credits
+- payment includes: money, electronic money, bills of exchange, cheques
+- transfer of capital and payments may not be prohibited
+	- exchange controls
+	- authorization procedures
+	- also covers special rights in companies
+- [[Dassonville Case]]
+- exceptions:
+	- tax related payments
+	- ceasing control over important enterprises
+
+### Union Citizenship and Free Movement
+- [[Maastricht Treaty]]
+- nationality in one of the member states automatically grants citizenship of the EU
+	- not replacing national citizenship
+- political rights with EU (voting and being candidate)
+- right to move and reside freely within other member states
+	- up to 3 months without any conditions or formalities
+	- longer than 3 months if they are workers or self-employed or have sufficient funds to not become a burden to social system
+	- permanent residence after 5 years of lawful residence
+

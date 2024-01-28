@@ -1,29 +1,35 @@
 # Chapter 6
 
 ### How is the Austrian Federal Constitution composed? 
-- there is not one main document "the constitution" but there are many law books containing bits of constitutional law
+- there is not one main document "the constitutio" but there are many law books containing bits of constitutional law
+- constitutional law is marked as being constitutional
 ### What is meant by the concept of the ‘hierarchy of norms’? Describe the hierarchy of norms in the Austrian legal system
 - each law must obey laws of higher order -> principle of legality
 - the higher the order the more difficult it is to change/adapt
 - hierarchy (top - highest)
+	- basic principles
 	- constitution
-	- federal law
-	- *Laender* Law
-	- Rules
+	- ordinary laws
+	- ordinances
+	- rulings, judgement, decisions
 ### The basic principles of the Austrian Federal Constitution enjoy a special position compared to other norms of constitutional law. Explain
 - constitutional law is hardest to change since it requires the highest amount of members of the council (at least half) and a 2/3 majority
 - also parts of the constitutional law, like democracy, are required by the [[Treaty of the European Union|TEU]]
 ### Although Austria is an indirect democracy, there are also elements of a direct democracy in the Austrian legal system. Explain
 - [[Referendum]] - where the people cast their vote directly on a topic
+- National Council -> Consultation of the People (not legally binding)
+- Public Initiative (100k votes) -> must be discussed by parliament
 ### What are the electoral principles of Austrian law? 
 - [[Suffrage]]
 ### What is understood by the term ‘principle of legality‘? What is the relationship between the principle of legality and the basic democratic principle? 
 - [[Principle of Legality]]
-- [[Democartic Principle]]
+- [[Democratic Principle]]
 ### What are the competences of the Federal President? 
 - [[Federal President]]
 ### May a Member of Government at the same time be a Member of Parliament? State reasons for your answer
-- 
+- no
+- [[Separation of Powers]]
+- same person may have multiple roles in the same branch
 ### Explain the legislative procedure in Austria
 - [[Federal Legislation]]
 ### Can the Federal Government as a collegial body, or a Federal Minister be dismissed?
@@ -40,49 +46,163 @@
 	- Resolves conflicts of competence between the federation and a Land or between the Laender themselves
 	- Pronounces upon challenges to elections
 ### How did EU membership affect Austria’s status of permanent neutrality? 
+- special policy to verify Austria's neutrality
+- true neutrality cannot be held while being part of EU
+	- being part of a team and neutrality does not go well together
+- economically and politically not neutral
+- just neutrality regarding war and military conflicts
 ### Assuming that the EU decides to modify the EU Treaties, what has to happen from the perspective of Austrian constitutional law? 
+- [[TEU]], [[TFEU]] -> have to be approved by [[national council]]
+- directly adopted by national law, no need for extra incorporation
+	- can be, but do not have to be
+- #collab 
 ### Is every international treaty directly applicable in Austria? State reasons for your answer
+- no
+- although for the creation of the treaty the parliament, or the Laender in case of special competences, must be involved in the forming of the treaty
+- once the treaty is formed it is directly applicable
+- depends on precision of the treaty
 ### How do the Laender participate in the decision-making process of the EU?
+- they participate directly in the Austrian elections for the EU Parliament and can vote via proxy in the Austrian Parliament via their representatives there
+#collab
 
 # Chapter 7
 ### Does the EU have a constitution? 
+- no
+- [[TFEU]], [[TEU]], [[Treaties of Accession]], Charter of [[Fundamental Rights]]
+- act in a similar way ([[Primary Law]]) but is not a "constitution"
 ### Why is it important to distinguish the ‘Council of Europe’ from the ‘European Council’ and the ‘Council’? 
+- [[Council of Europe]] vs
+- [[European Council]] vs
+- Council -> [[Council of Ministers]]
 ### How did the Single European Act influence the trajectory of European integration?
-### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly com- parable to the ‘EU’ after Maastricht. Explain
+- [[Single European Act]]
+### While the name suggests continuity, the post-Lisbon ‘EU’ is, for the most part, hardly comparable to the ‘EU’ after Maastricht. Explain
+- [[Maastricht Treaty]]
 ### Against what criteria would an accession to the EU of Turkey (or any other third country) have to be assessed? 
+- if any country wants to enter the EU
+	- Law system has to changed to be compatible with EU law system
+	- political system has to be valid and stable
+	- [[Fundamental Rights]] and [[Human Rights]]
+	- strong market economy -> supporting EU market instead of being a burden
+	- all current EU member states have to approve
 ### Why did the ‘empty chair policy’ arise and how was it overcome? 
+- [[Empty Chair Policy]]
 ### Given the rules on how a qualified majority vote is taken within the Council, is it necessary to have a specific rule on how to establish a blocking minority? 
+- Blocking Minority -> 4 no
+- 55% of votes and at least 15 votes
 ### How are Commission decisions taken? 
+- consensus -> unanimous decision
+- more than 50% -> majority
+- #collab weird stuff
+- [[European Commission]]
 ### Are Advocates-General a useful institution? 
+- yes
+- because they help the judges finding information and exploring different views
 ### Does Article 352 TFEU make the principle of conferral obsolete? 
+- [[TFEU]]
+- may overrule the [[Principle of Conferral]] if there are legitimate reasons with specific measures in specific cases
+- [[Council of Ministers]] has to act unanimously
+- [[Principle of Proportionality]]
 ### Given the principle of proportionality, are directives always preferable to regulations? 
-### Why does the Council in some cases prefer TFEU provisions allowing it to adopt ‘non- legislative’ regulations or directives over TFEU provisions allowing it to adopt ‘legislative’ regulations or directives? 
+- no
+- regulations for specific and quick changes
+- directives for more general goals and natural changes
+### Why does the Council in some cases prefer TFEU provisions allowing it to adopt ‘non-legislative’ regulations or directives over TFEU provisions allowing it to adopt ‘legislative’ regulations or directives? 
+- legislative -> involves more organs
+	- proposal of [[European Commission]]
+	- decision by [[Council of Ministers]]
+	- decision by [[EU Parliament]]
+- non-legislative -> simpler process
+	- just enacted by [[European Commission]] or [[Council of Ministers]]
+	- no elaborate process whatsoever
 ### As for delegated regulations or directives, why must the essential elements of a policy area be reserved for the empowering legislative act? 
-### The van Gend ruling may be perceived as a revolutionary act
-### How did the CJEU justify its interpretation of the law? 
+- empowering legislative act -> secondary law
+- essential elements are placeholders
+	- later defined by tertiary law by delegated act
+### The van Gend ruling may be perceived as a revolutionary act How did the CJEU justify its interpretation of the law? 
+- [[van Gend Case]]
 ### Why would an EU tertiary law decision adopted by the Commission enjoy supremacy over Austrian constitutional law? 
-### The preliminary reference procedure has been described as the ‘infringement procedure of the European citizen’
-### Why would you agree or disagree?
+- EU law is higher ranked than any national law
+	- includes constitutional law as well
+- even though no statement of EU law being higher ranked than national law
+### The preliminary reference procedure has been described as the ‘infringement procedure of the European citizen’. Why would you agree or disagree?
+- to punish countries not implementing a directive correctly or at all
+- against national law in EU court
 
 # Chapter 8
 
 ### How does an internal market differ from a free trade area and a customs union? 
+- free trade -> within specific country, different tariffs between member states
+- customs union -> the tariffs between each member state is the same
+- internal market -> not just products, goods, services, capital, payment
 ### Who is empowered by the fundamental freedoms? 
+- every person (natural and legal) of an EU member state
 ### Who is limited by the fundamental freedoms? 
+- member states (countries) together with public authorities
+- private companies
+- individuals (horizontal effects)
 ### Who ensures compliance with the fundamental freedoms? 
+- negative integration: [[CJEU]] and national courts
 ### Why would indirectly discriminatory measures impair the operation of the internal market? 
-### How can non-discriminatory measures impede the operations of the internal market? 
-### As for the free movement of goods, explain the relevance of customs duties, internal taxa- tion, and quantitative restrictions
-### How has the trouble with the concept of ‘measures having an equivalent effect’ resulting from the Dassonville and Cassis de Dijon rulings been resolved in Keck and later, in case- law? 
+- introducing restrictions which are designed to be more difficult to be met by imported options
+	- giving unfair advantage to domestic options
+- e.g. language requirements with job descriptions
+### How can non-discriminatory measures impede the operations of the internal market?
+- e.g. product standards
+- must be equal to imported and domestic products alike
+- regulations may not be designs to favor domestic products
+### As for the free movement of goods, explain the relevance of customs duties, internal taxation, and quantitative restrictions
+- Customs Duties
+	- Customs need to be collected when products enter the EU
+	- Customs need to be equal, otherwise incentive to import with a few countries with lower fees than others
+	- charges having an equivalent effect included (e.g. negative import taxes)
+- Internal Taxation
+	- no difference between domestic/imported goods
+	- would favor domestic products too much -> no fair competition
+	- taxation can happen on other factors (e.g. energy consumption)
+- Quantitative Restrictions
+	- no limit on import volume
+	- e.g. only 5.000 liters of wine per week may be imported
+	- would again favor domestic products (no restrictions apply)
+### How has the trouble with the concept of ‘measures having an equivalent effect’ resulting from the Dassonville and Cassis de Dijon rulings been resolved in Keck and later, in case law? 
+- [[Dassonville Case]] very broad rulings
+- [[Cassis de Dijon Case]] precise ruling
+- only are "measures having an equivalent effect" -> still impeding
+#collab
+#cursor
 ### According to the CJEU, under what conditions may the rules on the free movement of goods, free movement of workers and the freedom of establishment have a ‘horizontal direct effect’? 
+- fundamental freedoms are applicable to individuals alike
+- individuals can be bound to be non-discriminatory as well
+- same counts for private companies compared to public service or official authorities
 ### Under what conditions may other societal goals (to be pursued at Member State level) trump negative market integration processes (and hence market efficiency and economic welfare)? 
+- exhaustive list of justification
+	- protection of wildlife
+	- protection of environment
+	- protection of human health
+	- etc
 ### On what grounds can non-discriminatory restrictions on the free movement of services or the free movement of capital be justified? 
-### What is the relationship between the freedom of establishment and free movement of work- ers on the one hand, and the free movement of EU citizens (Article 21 TFEU) on the other hand? 
-### Why is there a need for positive market integration when there is negative market integra- tion? 
+- non-exhaustive list of justification
+	- protection of wildlife
+	- protection of environment
+	- protection of human health
+	- etc
+### What is the relationship between the freedom of establishment and free movement of workers on the one hand, and the free movement of EU citizens (Article 21 TFEU) on the other hand? 
+- establishment -> founding a company in another member state
+- workers -> working in another member state
+	- one may found a company and work in said company in another member state
+- movement -> travel and residing in another member state
+	- one may also reside in another member state (especially for work)
+	- longer than 3 months
+### Why is there a need for positive market integration when there is negative market integration? 
+- encouraging self-reinforcing behavior
+- reduces micro-managing
+- less invasive/abrupt changes -> more natural adaption
 ### As a matter of principle, when will a harmonising measure have as its ‘object … the internal market’ (Article 114 TFEU)? 
+#collab
 ### How can a directive prohibiting tobacco advertising in the Member States have as its ‘object … the internal market’ (Article 114 TFEU)? 
-### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants
-### Why is this problematic?
+- protection of human health
+### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants Why is this problematic?
+#collab
 # Chapter 9
 
 ### What are fundamental rights? 
@@ -97,10 +217,13 @@
 ### What are the legal documents providing for fundamental rights protection in Austria, apart from the Federal Constitutional Act itself? 
 ### Name the Human Rights Treaties that are considered part of the Austrian legal system
 ### Who monitors compliance with fundamental rights in Austria? 
-- [[Courts in Austria#Constitutional Court]]
-### What is the European Convention on Human Rights (ECHR)? 
+- [[Courts#Constitutional Court (Guardian of the constitution)|Constitutional Court]]
+### What is the European Convention on Human Rights (ECHR)?
+- [[ECHR]]
 ### Who are the obligated parties under the ECHR? 
+- member states of the EU and their subsidiaries (authorities)
 ### Who are the beneficiaries under the ECHR? 
+- all humans which are in any relation with the EU or one of its member states
 ### Under what conditions may legal persons rely on fundamental rights protected under the ECHR? 
 ### Who are the obligated parties under the Charter of Fundamental Rights of the European Union (CFR)? 
 ### Name the conditions under which the CFR may also be addressed to the Member States of the EU? 
