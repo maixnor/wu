@@ -202,6 +202,7 @@
 ### How can a directive prohibiting tobacco advertising in the Member States have as its ‘object … the internal market’ (Article 114 TFEU)? 
 - protection of human health
 ### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants. Why is this problematic?
+- #todo
 - why? because it is going against the free market by principle
 	- [[Principle of Conferral]]
 - can be abused
