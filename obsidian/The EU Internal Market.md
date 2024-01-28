@@ -11,8 +11,8 @@ Relevant Cases to know are the ones with their own links or which are mentioned 
 - dynamics
 	- [[CJEU]]
 	- [[Dassonville Case]]
-	- [[Cassis]]
-	- [[Keck]]
+	- [[Cassis Case]]
+	- [[Keck Case]]
 	- [[Free Movement of Goods]]
 ## Forms of Economic Integration
 >an area without internal frontiers in which the free movement of goods, persons, services and capital is ensured in accordance with the provisions of the Treaties.
@@ -86,9 +86,19 @@ Relevant Cases to know are the ones with their own links or which are mentioned 
 	- may be indirectly discriminatory when legitimate ground
 	- e.g. foreign red wine need more energy during production than Austrian red wines -> foreign red wine taxed higher
 #### Quantitative Restrictions
-- #cursor
-
-
+- limiting the amount or volume of a product imported is prohibited
+- [[Dassonville Case]]
+- not just "trading rules" but also other measures by states
+- very broad reading
+- on legitimate grounds (e.g. protection of health) can be justified
+	- shall not be arbitrary discrimination
+- exhaustive list of justifications + proportionality analysis
+- [[Cassis Case]]
+- [[Keck Case]]
+- Horizontal Effect
+	- measures not just against member states, but private persons and companies
+	- German TUEV affected
+		- products which are certified pose a discriminatory threat against non-certified products
 ### Free Movement of Workers
 - workers may work all over the EU
 - workers may not be chosen based off of origin within EU -> discrimination
