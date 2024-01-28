@@ -240,9 +240,12 @@
 - [[ECHR#Metadata]]
 - ECtHR
 ### Who are the obligated parties under the ECHR? 
-- member states of the EU and their subsidiaries (authorities)
+- states which have signed the ECHR and their subsidiaries (authorities)
+	- All EU member states + 20 more
 ### Who are the beneficiaries under the ECHR? 
-- all humans which are in any relation with the EU or one of its member states
+- all humans (whether nationals or not) within their jurisdiction
+	- being within of the member countries boundaries
+- NGOs, legal persons, and groups of individuals alike
 ### Under what conditions may legal persons rely on fundamental rights protected under the ECHR? 
 ### Who are the obligated parties under the Charter of Fundamental Rights of the European Union (CFR)? 
 ### Name the conditions under which the CFR may also be addressed to the Member States of the EU? 
