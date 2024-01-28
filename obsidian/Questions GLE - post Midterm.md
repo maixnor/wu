@@ -35,6 +35,7 @@
 ### Can the Federal Government as a collegial body, or a Federal Minister be dismissed?
 - government can be dismissed by [[Federal President]]
 - single ministers can only be dismissed after recommendation of [[Federal Chancellor]]
+- via vote of no confidence of [[National Council]]
 ### How is the administrative court system organised? 
 - [[Courts#Administrative Jurisdiction]]
 ### Why is the Constitutional Court described as the ‘guardian of the Constitution’? 
