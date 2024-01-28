@@ -237,7 +237,8 @@
 ### Who monitors compliance with fundamental rights in Austria? 
 - [[Courts#Constitutional Court (Guardian of the constitution)|Constitutional Court]]
 ### What is the European Convention on Human Rights (ECHR)?
-- [[ECHR]]
+- [[ECHR#Metadata]]
+- ECtHR
 ### Who are the obligated parties under the ECHR? 
 - member states of the EU and their subsidiaries (authorities)
 ### Who are the beneficiaries under the ECHR? 

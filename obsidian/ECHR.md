@@ -5,7 +5,7 @@
 - accepted by
 	- all EU member states
 	- + 20 other states (Turkey, Russia, Switzerland, ...)
-- ECtHR -> Court
+- ECtHR -> Court in Strasbourg
 
 ## Contents
 - everyone
