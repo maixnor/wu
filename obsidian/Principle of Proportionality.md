@@ -7,3 +7,5 @@
 - primary law is more broad
 - secondary law is more precise
 	- may not overstep primary law
+- tertiary law even more precise
+	- applied after the fact of secondary law

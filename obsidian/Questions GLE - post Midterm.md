@@ -203,11 +203,11 @@
 - protection of human health
 ### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants. Why is this problematic?
 - why? because it is going against the free market by principle
+	- [[Principle of Conferral]]
 - can be abused
 - [[Principle of Proportionality]] important
 	- in the past proportionality grew less important 
 	- principle of consistency has risen in importance
-- [[Principle of Conferral]]
 # Chapter 9
 
 ### What are fundamental rights? 
