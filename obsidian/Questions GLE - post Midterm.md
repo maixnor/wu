@@ -412,7 +412,15 @@
 - even if the organization is not recognized one may still enter into diplomatic relations with the member states
 	- e.g. a country does not recognize the EU it may still enter into relations with Austria (member of EU)
 ### What are the tasks of the UN Security Council, and what hinders it from discharging them?
-- 
+- maintenance of international peace and security
+	- has power of binding decisions
+- 15 nations in total
+- 5 permanent nations have power of veto over any decision
+	- China
+	- France
+	- Russia
+	- UK
+	- USA
 ### Compared to the CJEU, in what sense is the International Court of Justice’s jurisdiction weaker? 
 
 ### Within the UN system of collective security, does the Security Council have the power to compel Member States to resort to certain non-military or military action?
