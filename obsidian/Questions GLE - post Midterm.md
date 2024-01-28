@@ -27,9 +27,9 @@
 ### What are the competences of the Federal President? 
 - [[Federal President]]
 ### May a Member of Government at the same time be a Member of Parliament? State reasons for your answer
-- no
-- [[Separation of Powers]]
-- same person may have multiple roles in the same branch
+- would be expected: false, because [[Separation of Powers]]
+	- same person may have multiple roles in the same branch
+- in Austria exception, persons of government may also be in parliament
 ### Explain the legislative procedure in Austria
 - [[Federal Legislation]]
 ### Can the Federal Government as a collegial body, or a Federal Minister be dismissed?
@@ -168,8 +168,6 @@
 - [[Dassonville Case]] very broad rulings
 - [[Cassis de Dijon Case]] precise ruling
 - only are "measures having an equivalent effect" -> still impeding
-#collab
-#cursor
 ### According to the CJEU, under what conditions may the rules on the free movement of goods, free movement of workers and the freedom of establishment have a ‘horizontal direct effect’? 
 - fundamental freedoms are applicable to individuals alike
 - individuals can be bound to be non-discriminatory as well
