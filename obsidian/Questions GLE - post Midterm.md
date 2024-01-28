@@ -244,13 +244,26 @@
 	- All EU member states + 20 more
 ### Who are the beneficiaries under the ECHR? 
 - all humans (whether nationals or not) within their jurisdiction
-	- being within of the member countries boundaries
+	- i.e. being within of the member countries borders
 - NGOs, legal persons, and groups of individuals alike
 ### Under what conditions may legal persons rely on fundamental rights protected under the ECHR? 
+- as long as they are not government
+- [[ECHR#Conditions]]
 ### Who are the obligated parties under the Charter of Fundamental Rights of the European Union (CFR)? 
+- only the EU itself
+	- its authorities and institutions
 ### Name the conditions under which the CFR may also be addressed to the Member States of the EU? 
+- if country implements [[CFR]] law themselves, then they are addressed
+- regulation or implemented directives
 ### What is the role of the so-called ‘principles’ in the CFR? 
+- instructions for the Union and member states
+- how to interpret the other rulings
+	- providing directions to follow
+	- e.g. respecting cultural, ethnic, and linguistic diversity
+- [[CFR]] title 7
 ### Do the rights protected under the CFR constitute a standard of review in proceedings before the Austrian Constitutional Court? State reasons for your answer
+- yes
+- landmark decision in 2012 decided it to be this way
 
 # Chapter 10
 

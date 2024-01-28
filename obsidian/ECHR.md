@@ -17,3 +17,10 @@
 	2. section 2: establishment of court (Strasbourg)
 	3. section 3: miscellaneous general provisions
 - who can claim 
+
+### Conditions
+- not being close to the government
+- includes
+	- Companies which are 100% state owned
+	- private companies which are under 100% governmental control
+	- public authorities

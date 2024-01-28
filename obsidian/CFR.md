@@ -1,4 +1,6 @@
 - 54 articles in 7 titles
+- landmark decision in 2012
+	- standard of review in proceedings within Austrian constitutional court
 
 #### Titles and their Fields
 1. dignity
