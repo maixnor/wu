@@ -358,6 +358,7 @@
 	- uses [[ECHR]] for reference
 - yes, if direct access means personal access (eventually)
 - no, if direct access means the first court which handles your case
+- #collab what do you think? yes or no?
 ### Is there a possibility for an individual to get direct access to the CJEU in Luxemburg? State reasons for your answer
 - no, an Austrian Court goes to the [[CJEU]] for advice
 	- uses [[CFR]] for reference
