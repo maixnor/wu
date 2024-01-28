@@ -209,8 +209,10 @@
 
 ### What are fundamental rights? 
 - [[Fundamental Rights]]
+- rights granted to every human being, not just EU citizens
 ### What are the objectives of fundamental rights? 
-- [[Fundamental Rights#Objectives]]
+- [[Fundamental Rights]]
+- freedom from the state
 ### What are the differences between human rights and citizen’s rights? 
 - [[human rights]] -> applicable to all humans
 - [[citizens rights]] -> applicable to all humans of a certain citizenship (e.g. Americans)
