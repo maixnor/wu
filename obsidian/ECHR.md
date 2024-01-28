@@ -1,7 +1,13 @@
+
+## Metadata
+- not from EU
+	- regional-international treaty
 - accepted by
 	- all EU member states
-	- + 20 other states (Turkey, Russia, ...)
+	- + 20 other states (Turkey, Russia, Switzerland, ...)
+- ECtHR -> Court
 
+## Contents
 - everyone
 - HUMAN rights
 	- not just EU citizens

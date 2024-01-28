@@ -217,9 +217,23 @@
 - [[human rights]] -> applicable to all humans
 - [[citizens rights]] -> applicable to all humans of a certain citizenship (e.g. Americans)
 ### What groups of fundamental and human rights are there? 
+- Civil Liberties
+- Rights of Equality
+- Procedural Guarantees
+- Political Rights
+- Social Fundamental Rights
+- [[Fundamental Rights]]
 ### What are the levels of protection from a European perspective? 
+- regional international law ([[ECHR]])
+- EU law
+- national constitutional law 
 ### What are the legal documents providing for fundamental rights protection in Austria, apart from the Federal Constitutional Act itself? 
+- [[Fundamental Rights#Sources of fundamental rights]]
 ### Name the Human Rights Treaties that are considered part of the Austrian legal system
+- [[ECHR]] -> constitutional law rank
+	- most important source in Austrian system
+- [[CFR]] -> reservation of implementation
+	- just federal law rank
 ### Who monitors compliance with fundamental rights in Austria? 
 - [[Courts#Constitutional Court (Guardian of the constitution)|Constitutional Court]]
 ### What is the European Convention on Human Rights (ECHR)?
