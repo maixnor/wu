@@ -422,7 +422,9 @@
 	- UK
 	- USA
 ### Compared to the CJEU, in what sense is the International Court of Justice’s jurisdiction weaker? 
-
+- [[ICJ]] vs [[CJEU]]
+- as long as the CJEU recognizes the ICJ rulings as higher value it counts
+- even though the ICJ has "no value" in the sense that not every state has agreed to it's power
 ### Within the UN system of collective security, does the Security Council have the power to compel Member States to resort to certain non-military or military action?
 ### A State’s enforcement jurisdiction is territorial in principle. Explain.
 ### Under what conditions may the EU be entitled, under international law, to adopt legislation so as to regulate economic activity taking place, for example, in China?
