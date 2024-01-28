@@ -268,22 +268,101 @@
 # Chapter 10
 
 ### What are the three steps that must be observed when examining a potential violation of a fundamental right? 
-### Does the ECHR provide for a special right to the protection of personal? 
+- scope
+	- personal or material rights 
+- interference
+	- whether the right has been violated
+- justification
+	- whether the violation was justified
+### Does the ECHR provide for a special right to the protection of personal data? 
+- (I amended personal data from the question in the book. I hope it was meant)
+- no specific data protection guarantee
+	- there is a right to privacy, but not exactly regarding personal data
 ### What does ‘informational self-determination’ in the context of the right to privacy and data protection under Art. 8 ECHR mean? 
+- I can myself determine how much and which data of myself I disclose 
 ### How can an interference with the rights under Art. 8 para. 1 ECHR be justified? Name and explain the conditions
-### Describe the proportionality test employed by the European Court of Human Rights (EC- tHR)
+- in accordance with the law
+- legitimate aims
+	- national safety, prevention of crime, etc
+- necessary, in a democratic society
+	- proportionality test
+### Describe the proportionality test employed by the European Court of Human Rights (ECtHR)
+- public interest balanced against the individuals interest
+	- margin of appreciation
 ### What does the term ‘margin of appreciation’ mean? 
+- "punishing crime" might be a good reason for every measure, but cannot be blindly attributed to all measures
+	- wiggle room
+	- depends on 
+		- nature and seriousness of matters
+		- gravity of the interference
+- each case has to be weighed individually
 ### What is the material scope of the protection of property under Art. 1 of Protocol No. 1 to the ECHR? 
+- peaceful enjoyment of property
+- protection against deprivation
+- control the use of property 
 ### Name the three types of interference with the right to property
+- deprivation of possession
+	- you had something, now you don't
+- control the use of property
+	- you can't build your house there (not *Baugrund*)
+	- or
+	- you have to sell your property, because we build a road here
+- other interference
+	- denial of vehicle registration
 ### What is the personal scope of the right to property? 
+- who has the property?
+- natural or legal person 
 ### What are the defining characteristics of a ‘criminal charge’ for the purposes of Art. 6 ECHR? 
+- Engel Criteria:
+	- classification under domestic law
+	- nature of an offense
+	- nature and severity of penalty
 ### What are the guarantees of Art. 6 ECHR? 
+- right of access to a tribunal
+- procedural guarantees in a limited sense
+	- right to fair hearing
+	- equality of arms
+- length of proceedings -> within reasonable time
+- public hearing (with exceptions)
+	- decisions have to be made public
+- special procedural guarantees in criminal proceedings
+	- informed promptly in a language you understand
+	- adequate time and resources to prepare for the defense
+	- defense in person or by lawyer
+	- right to be present at hearing
+	- right to free assistance of an interpreter
+	- right to remain silent and not to incriminate yourself
+	- presumption of innocence
 ### What is a ‘tribunal’ within the meaning of Art. 6 ECHR? 
+- decision making body which decide on basis of law
+- proceedings have to be conducted in specified manner
+- safeguards during the process
+- [[Tribunal]] organ must be able to
+	- exercise judicial functions
+	- take a decision binding to the parties
+	- establish facts of case
+	- apply legal provision to the facts
+	- form decisions independently
 ### What does the principle of ‘nulla poena sine lege’ in Art. 7 ECHR guarantee? 
-### The right to an effective remedy is an ancillary right
-### Was does the term ‘ancillary right’ mean? 
+- one cannot be convicted if there is no national or international law
+- one cannot be convicted for a law being established after the crime has been committed
+### The right to an effective remedy is an ancillary right. What does the term ‘ancillary right’ mean? 
+- if my rights are infringed by the state I am entitled to a remedy which is
+	- sufficient
+	- accessible
+	- adequate
+	- being capable of remedying the infringed right
 ### Is there a possibility for an individual to get direct access to the ECtHR in Strasbourg? State reasons for your answer
+- after all courts in Austria have been exhausted the ECtHR is the last last instance
+	- above OGH in Austria
+	- uses [[ECHR]] for reference
+- yes, if direct access means personal access (eventually)
+- no, if direct access means the first court which handles your case
 ### Is there a possibility for an individual to get direct access to the CJEU in Luxemburg? State reasons for your answer
+- no, an Austrian Court goes to the [[CJEU]] for advice
+	- uses [[CFR]] for reference
+- no direct access since Austrian Court acts as proxy
+- (preliminary reference procedure)
 
 # Chapter 11
 
