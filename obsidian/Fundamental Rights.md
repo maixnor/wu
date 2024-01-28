@@ -20,5 +20,5 @@
 - [[CFR]] -> Charter of Fundamental Rights
 - CERD -> Convention of the Elimination of All Forms of Racial Discrimination
 - CRC -> Convention Rights of the Child
-
+- ICCPR -> International Covenant on Civil and Political Rights
 
