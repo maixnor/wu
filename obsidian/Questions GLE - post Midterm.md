@@ -368,16 +368,56 @@
 # Chapter 11
 
 ### Are you a subject of international law? 
+- yes, I am a **partial** subject
+- primary subjects are states
+- my personality is recognized by the states to limited extent
+	- if it was not recognized, it would not exist
+
+-> extra explanation of **partial**
+- who recognizes you as an Austrian Citizen? The Austrian Government
+- who recognizes you as a Citizen of the World? Nobody
+	- since there is no "World Government"
 ### Why could one be surprised by the effectiveness of international law? 
+- even though there is no "world executive" which can punish the actions of a state, international law is still quite effective
+- states can issue sanctions against one another
+- emergent behavior
 ### Why is international law effective? 
+- emergent behavior
 ### How can states consciously create new rules of international law? 
+- basically, writing it down
+- conclude international treaties and conventions
+- explicit statement between countries
+	- have to recognized by member countries
+	- should be recognized by other countries
+	- institutions should also recognize statements
 ### Which principles limit states’ freedom to award their citizenship to individuals? 
+- genuine link between individual and home country
+- most frequent links
+	- decendentcy (same citizenship as your parents)
+	- place of birth
 ### What are the consequences of an established state government losing substantial control over the state’s territory? 
+- failed state
+- remains a state due to security
+	- hopes of state being just temporary
 ### What are the consequences of one state declining to recognise another state?
-### Are you a subject of international law? 
-### Why could one be surprised by the effectiveness of international law? 
-### Why is international law effective? 
-### How can states consciously create new rules of international law? 
-### Which principles limit states’ freedom to award their citizenship to individuals? 
-### What are the consequences of an established state government losing substantial control over the state’s territory? 
-### What are the consequences of one state declining to recognise another state?
+- countries do not into diplomatic relations
+- if lots of states do not recognize same state
+	-> base principle of a state is not fulfilled
+
+### International Organisations enjoy an international legal personality status which is partially derived and relative. Explain. 
+- derived -> legal personality derived from member states
+- relative -> can represent member states, but not in all manners
+	- e.g. organization with environmental protection only covers environmental protection, nothing else. Similar to [[Principle of Conferral]]
+
+- even if the organization is not recognized one may still enter into diplomatic relations with the member states
+	- e.g. a country does not recognize the EU it may still enter into relations with Austria (member of EU)
+### What are the tasks of the UN Security Council, and what hinders it from discharging them?
+- 
+### Compared to the CJEU, in what sense is the International Court of Justice’s jurisdiction weaker? 
+
+### Within the UN system of collective security, does the Security Council have the power to compel Member States to resort to certain non-military or military action?
+### A State’s enforcement jurisdiction is territorial in principle. Explain.
+### Under what conditions may the EU be entitled, under international law, to adopt legislation so as to regulate economic activity taking place, for example, in China?
+### Are the International Covenant on Civil and Political Rights and the International Covenant on Economic, Social and Cultural Rights legally binding?
+### What limits the jurisdictional powers of the International Criminal Court? 
+### Globalisation may raise concerns of democratic legitimacy. Explain.
