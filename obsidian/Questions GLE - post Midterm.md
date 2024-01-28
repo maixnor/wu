@@ -197,11 +197,16 @@
 - reduces micro-managing
 - less invasive/abrupt changes -> more natural adaption
 ### As a matter of principle, when will a harmonising measure have as its ‘object … the internal market’ (Article 114 TFEU)? 
-#collab
+- always
+- EU is obligated to remove dis-harmonizing measures within internal market
 ### How can a directive prohibiting tobacco advertising in the Member States have as its ‘object … the internal market’ (Article 114 TFEU)? 
 - protection of human health
-### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants Why is this problematic?
-#collab
+### Article 114 TFEU allows Member States derogations from harmonising measures on the grounds of, inter alia, the protection of health and life of animals and plants. Why is this problematic?
+- why? because it is going against the internal market
+- can be abused
+- [[Principle of Proportionality]] important
+- in the past proportionality grew less important 
+- principle of consistency has risen in importance
 # Chapter 9
 
 ### What are fundamental rights? 
