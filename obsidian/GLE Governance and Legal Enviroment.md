@@ -18,6 +18,7 @@ location: WU
 # Questions from Book
 [[Questions GLE - pre Midterm]]
 [[Questions GLE - post Midterm]]
+[[Questions GLE - post Midterm - with GPT]]
 # Unit Summaries from Book
 1. [[Business Organization Concepts]]
 2. [[Limited Liability and Creditors]]

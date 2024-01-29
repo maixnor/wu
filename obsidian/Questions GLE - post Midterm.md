@@ -3,8 +3,12 @@
 ### How is the Austrian Federal Constitution composed? 
 - there is not one main document "the constitutio" but there are many law books containing bits of constitutional law
 - constitutional law is marked as being constitutional
+- main document being constitutional act of 1920
+- 9 land constitutions -> less important than federal constitution
 ### What is meant by the concept of the ‘hierarchy of norms’? Describe the hierarchy of norms in the Austrian legal system
 - each law must obey laws of higher order -> principle of legality
+- developed by merkl
+- law creates its own regulation
 - the higher the order the more difficult it is to change/adapt
 - hierarchy (top - highest)
 	- basic principles
@@ -13,7 +17,7 @@
 	- ordinances
 	- rulings, judgement, decisions
 ### The basic principles of the Austrian Federal Constitution enjoy a special position compared to other norms of constitutional law. Explain
-- constitutional law is hardest to change since it requires the highest amount of members of the council (at least half) and a 2/3 majority
+- constitutional law is hardest to change since it requires the highest amount of members of the council (at least half) and a 2/3 majority for total revision
 - also parts of the constitutional law, like democracy, are required by the [[Treaty of the European Union|TEU]]
 ### Although Austria is an indirect democracy, there are also elements of a direct democracy in the Austrian legal system. Explain
 - [[Referendum]] - where the people cast their vote directly on a topic
@@ -21,9 +25,10 @@
 - Public Initiative (100k votes) -> must be discussed by parliament
 ### What are the electoral principles of Austrian law? 
 - [[Suffrage]]
+- right to vote from 16
 ### What is understood by the term ‘principle of legality‘? What is the relationship between the principle of legality and the basic democratic principle? 
-- [[Principle of Legality]]
-- [[Democratic Principle]]
+- [[Principle of Legality]] -> all state actions must be authorized by law
+- [[Democratic Principle]] -> individuals can influence the government
 ### What are the competences of the Federal President? 
 - [[Federal President]]
 ### May a Member of Government at the same time be a Member of Parliament? State reasons for your answer
@@ -426,8 +431,36 @@
 - as long as the CJEU recognizes the ICJ rulings as higher value it counts
 - even though the ICJ has "no value" in the sense that not every state has agreed to it's power
 ### Within the UN system of collective security, does the Security Council have the power to compel Member States to resort to certain non-military or military action?
+- yes, theoretically
+- authorizes the member states to apply military action on it's behalf
+- UN is not in command of any army directly
 ### A State’s enforcement jurisdiction is territorial in principle. Explain.
+- state can enforce laws only within it's territory
+- extraterritorial jurisdiction
+	- active personal principle: conviction for crime in foreign country by domestic court
+	- objective territorial principle: even tho the convict is not in Austria the convict still infringes on Austrian laws
+		- e.g. flying a RC drone into Schwechat Airport from another state
+		- e.g. hacking an Austrian Company / Authority / Individual
 ### Under what conditions may the EU be entitled, under international law, to adopt legislation so as to regulate economic activity taking place, for example, in China?
+- if economic activities within China are against fair competition in the EU
+- e.g. active cartels, corruption, infringement of [[Human Rights]]
 ### Are the International Covenant on Civil and Political Rights and the International Covenant on Economic, Social and Cultural Rights legally binding?
+- Yes
+- [[ICCPR]] -> International Covenant o Civil and Political Rights
+- and
+- [[ICESCR]] -> International Covenant on Economic, Social and Cultural Rights
 ### What limits the jurisdictional powers of the International Criminal Court? 
+- "core" crimes
+	- genocide
+	- war crimes
+	- crimes against humanity
+	- crime of aggression
+- [[ICC]] -> International Criminal Court
+	- commited on Rome Statute member states ground or by citizen of member
+	- expction: cases brought up by [[UN Security Council]]
+	- only steps in if national courts are not able or willing to act
 ### Globalisation may raise concerns of democratic legitimacy. Explain.
+- sovereignty of individual states decreasing
+- increasingly governed by international treaties
+- international law done by governments, not parliaments
+	-> not democratic anymore, since no genuine legislative
