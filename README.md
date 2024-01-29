@@ -1,9 +1,14 @@
 
-# All things WU
+# Deprecated
+
+please use https://github.com/maixnor/wu-quartz instead.
+
+### All things WU
 
 Everything so far I have done during the Bachelors Degree of Business and Economics @WU Vienna
 
-## Obsidian
+#### Obsidian
+
 I am making most of my notes publicly available in the folder `obsidian`. 
 
 Feel free to contribute or even do some of my todos (like copying images from slides). Open a pull request and I am more than happy to review the changes.
@@ -11,7 +16,8 @@ Feel free to contribute or even do some of my todos (like copying images from sl
 Place all images and other non-markdown files into the folder `obsidian/attachments` for easy reference.
 
 I personally use obsidian, but you can use any Markdown Editor you want. Just view (and edit) the markdown files on Github or clone the repository using `git clone` and get started editing.
-## R & nix
+
+#### R & nix
 
 R is a statistical programming language heavily relying on arrays and pure functions.
 
