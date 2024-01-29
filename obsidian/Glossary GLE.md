@@ -14,4 +14,5 @@
 | preliminary reference procedure | courts can (or must) go to CJEU for interpretation of EU law |
 | harmonization | removing differences between member states |
 | preliminary question | What is the issue about? |
+| (MEE) measures having an equivalent effect | any state measures which could affect trade between member states |
 |  |  |

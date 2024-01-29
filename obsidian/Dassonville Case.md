@@ -1,0 +1,1 @@
+Measures having an equivalent effect

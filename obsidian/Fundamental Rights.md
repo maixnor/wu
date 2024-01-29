@@ -29,4 +29,4 @@
 	- protection of life of humans, animals, plants
 	- protection of national treasures, cultures
 	- protection of morality
-	- protection of industrial and commercial property (including interlectual property)
+	- protection of industrial and commercial property (including intellectual property)
