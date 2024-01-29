@@ -9,4 +9,3 @@ Fields of business:
 
 All of them were hit by Covid and therefore their sales decreased drasticly.
 
-penis pupu kaka
