@@ -1,0 +1,23 @@
+{
+  "title": "Maixnor WU",
+  "author": "Benjamin 'Maixnor' Meixner",
+  "pathPrefix": "/",
+  "quartzPath": "/obsidian",
+  "outputDirectory": "public",
+  "ignorePaths": [],
+  "dateFormat": "DD MMMM, YYYY",
+  "theme": "light",
+  "socialMedia": {
+    "github": "maixnor",
+    "linkedin": "benjamin-meixner-a7b82617a"
+  },
+  "navigation": [
+    {
+      "title": "Home",
+      "url": "/Index"
+    }
+  ],
+  "plugins": [
+  ]
+}
+
