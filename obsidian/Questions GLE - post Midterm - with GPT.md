@@ -243,4 +243,112 @@
 ### Do the rights protected under the CFR constitute a standard of review in proceedings before the Austrian Constitutional Court? State reasons for your answer
 - Yes, the rights protected by the CFR are used as a standard of review in Austrian Constitutional Court proceedings.
 
+# Chapter 10
+
+### What are the three steps that must be observed when examining a potential violation of a fundamental right? 
+- Determine the personal and material scope of the right.
+- Investigate whether there was an interference with the right.
+- Assess if the interference was justified; if not, a violation has occurred.
+
+### Does the ECHR provide for a special right to the protection of personal data? 
+- No specific right for data protection in ECHR; however, CFR implements such rights.
+- Rights include respect for private life, family life, home, and correspondence.
+
+### What does ‘informational self-determination’ in the context of the right to privacy and data protection under Art. 8 ECHR mean? 
+- The right to control the disclosure and use of one’s personal data.
+- Protects individual autonomy and the development of one's personality in social contexts.
+
+### How can an interference with the rights under Art. 8 para. 1 ECHR be justified? Name and explain the conditions.
+- Interferences must be in accordance with the law, pursuing legitimate aims like national security, public safety, economic well-being, prevention of disorder or crime, health or morals, and protecting rights and freedoms of others.
+- Must be necessary in a democratic society, balancing individual interests and community/public interest.
+
+### Describe the proportionality test employed by the European Court of Human Rights (ECtHR).
+- The test involves examining the necessity of an interference concerning a legitimate aim.
+- Balances the public interest against the individual's rights and interests.
+
+### What does the term ‘margin of appreciation’ mean? 
+- Refers to the leeway granted to states in interpreting and implementing human rights, acknowledging legal, cultural, and historical differences.
+- Emphasizes a balance between state interests and individual rights protection, with the scope varying per case.
+
+### What is the material scope of the protection of property under Art. 1 of Protocol No. 1 to the ECHR? 
+- Includes various forms of property rights, tangible and intangible: land, possessions, investments, intellectual property, and contractual rights.
+
+### Name the three types of interference with the right to property.
+- Deprivation of possessions.
+- Control of the use of property.
+- Other interferences with the right to property.
+
+### What is the personal scope of the right to property? 
+- Applies to all natural and legal entities.
+
+### What are the defining characteristics of a ‘criminal charge’ for the purposes of Art. 6 ECHR? 
+- Engel criteria: classification under domestic law, nature of an offense, and nature/severity of a penalty.
+
+### What are the guarantees of Art. 6 ECHR? 
+- Right of access to a tribunal, fair hearing, reasonable length of proceedings, public hearing, and special guarantees in criminal proceedings.
+
+### What is a ‘tribunal’ within the meaning of Art. 6 ECHR? 
+- An independent and impartial decision-making body established by law.
+
+### What does the principle of ‘nulla poena sine lege’ in Art. 7 ECHR guarantee? 
+- No punishment without law; no criminal charges for acts not criminalized at the time of commission.
+
+### The right to an effective remedy is an ancillary right. What does the term ‘ancillary right’ mean? 
+- A secondary right supporting a primary right, enhancing or protecting its exercise.
+
+### Is there a possibility for an individual to get direct access to the ECtHR in Strasbourg? State reasons for your answer. 
+- Yes, after exhausting domestic remedies, individuals can access the ECtHR in Strasbourg.
+
+### Is there a possibility for an individual to get direct access to the CJEU in Luxembourg? State reasons for your answer.
+- No direct access for individuals; national courts can refer questions to the CJEU.
+
+# Chapter 11
+
+### Are you a subject of international law? 
+- As an individual, you have partial subjectivity in international law, primarily through human rights protections.
+
+### Why could one be surprised by the effectiveness of international law? 
+- Despite the lack of a global executive authority to enforce it, international law often functions effectively through mutual state cooperation and compliance.
+
+### Why is international law effective? 
+- States usually comply with international law due to mutual benefits, diplomatic relations, and the desire to maintain a stable international order.
+
+### How can states consciously create new rules of international law? 
+- States create international law through treaties, conventions, and sometimes through customary practices recognized as legally binding.
+
+### Which principles limit states’ freedom to award their citizenship to individuals? 
+- The principle of a genuine link, such as birthplace or parentage, is required for citizenship to prevent abuse of diplomatic protections and rights.
+
+### What are the consequences of an established state government losing substantial control over the state’s territory? 
+- The state might be deemed a 'failed state', impacting its international relations and legal obligations.
+
+### What are the consequences of one state declining to recognise another state?
+- It leads to a lack of diplomatic relations and possibly impacts the non-recognizing state's international obligations towards the unrecognized entity.
+
+### International Organisations enjoy an international legal personality status which is partially derived and relative. Explain. 
+- Such organizations get their legal status from member states and have limited capacity based on their functions and objectives.
+
+### What are the tasks of the UN Security Council, and what hinders it from discharging them?
+- Responsible for maintaining international peace and security, but its effectiveness can be hindered by the veto power of permanent members.
+
+### Compared to the CJEU, in what sense is the International Court of Justice’s jurisdiction weaker? 
+- ICJ's decisions depend on state consent for jurisdiction and enforcement, whereas the CJEU has direct effect and supremacy within the EU legal order.
+
+### Within the UN system of collective security, does the Security Council have the power to compel Member States to resort to certain non-military or military action?
+- Theoretically, yes, but such actions require consensus among permanent members, often impeded by their veto power.
+
+### A State’s enforcement jurisdiction is territorial in principle. Explain.
+- A state’s legal authority generally extends only within its territorial boundaries, with certain exceptions for extraterritorial jurisdiction under specific conditions.
+
+### Under what conditions may the EU be entitled, under international law, to adopt legislation so as to regulate economic activity taking place, for example, in China?
+- The EU can regulate external economic activities affecting its internal market or common policies under international law principles and agreements.
+
+### Are the International Covenant on Civil and Political Rights and the International Covenant on Economic, Social and Cultural Rights legally binding?
+- Yes, these covenants are legally binding for states that have ratified them, committing to uphold the rights enshrined therein.
+
+### What limits the jurisdictional powers of the International Criminal Court? 
+- The ICC’s jurisdiction is limited to crimes listed in the Rome Statute and cases where states consent to its jurisdiction or are referred by the UN Security Council.
+
+### Globalisation may raise concerns of democratic legitimacy. Explain.
+- Globalisation can impact local governance and decision-making, leading to concerns about the democratic accountability of transnational and supranational entities.
 

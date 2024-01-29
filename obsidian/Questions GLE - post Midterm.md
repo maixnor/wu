@@ -1,7 +1,7 @@
 # Chapter 6
 
 ### How is the Austrian Federal Constitution composed? 
-- there is not one main document "the constitutio" but there are many law books containing bits of constitutional law
+- there is not one main document "the constitution" but there are many law books containing bits of constitutional law
 - constitutional law is marked as being constitutional
 - main document being constitutional act of 1920
 - 9 land constitutions -> less important than federal constitution
