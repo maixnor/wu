@@ -141,7 +141,7 @@
 # Chapter 8
 
 ### How does an internal market differ from a free trade area and a customs union? 
-- free trade -> within specific country, different tariffs between member states
+- free trade -> within specific region, different tariffs to third countries (non-members)
 - customs union -> the tariffs between each member state is the same
 - internal market -> not just products, goods, services, capital, payment
 ### Who is empowered by the fundamental freedoms? 
