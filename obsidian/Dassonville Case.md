@@ -1,1 +1,1 @@
-Measures having an equivalent effect
+[[Measures having an Equivalent Effect]]
