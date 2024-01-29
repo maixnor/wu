@@ -25,3 +25,6 @@
 ### Justifications for Exceptions
 - public policy, health, security
 - consumer/environment protection
+- Art. 36 of TFEU (only for products)
+	- protection of life of humans, animals, plants
+	- protection of national treasures, cultures 
