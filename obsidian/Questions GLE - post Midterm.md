@@ -446,9 +446,11 @@
 - e.g. active cartels, corruption, infringement of [[Human Rights]]
 ### Are the International Covenant on Civil and Political Rights and the International Covenant on Economic, Social and Cultural Rights legally binding?
 - Yes
-- [[ICCPR]] -> International Covenant o Civil and Political Rights
-- and
-- [[ICESCR]] -> International Covenant on Economic, Social and Cultural Rights
+	- [[ICCPR]] -> International Covenant o Civil and Political Rights
+	- and
+	- [[ICESCR]] -> International Covenant on Economic, Social and Cultural Rights
+- recommendations to states, how to do better
+	- [[ICCPR]] protocol, create case with Human Rights Committee and [[ICJ]] if national measures are insufficient
 ### What limits the jurisdictional powers of the International Criminal Court? 
 - "core" crimes
 	- genocide
