@@ -109,6 +109,7 @@ Forms of Economic Integration
 	- Justification
 		- Grounds explicitly mentioned in TFEU
 		- Mandatory Requirements
+			- 
 	- Test of proportionality
 		- We make a balance between the restriction on the one side and the aim on the other side
 		- Only if the balance between these elements is fair, is the interference justified.

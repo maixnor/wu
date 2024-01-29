@@ -22,3 +22,6 @@
 - CRC -> Convention Rights of the Child
 - ICCPR -> International Covenant on Civil and Political Rights
 
+### Justifications for Exceptions
+- public policy, health, security
+- consumer/environment protection

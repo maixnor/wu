@@ -12,5 +12,6 @@
 | infringement proceedings | failing to fulfill an obligation |
 | annulment actions | declaring an EU law as null if impeding on EU treaties or fundamental rights |
 | preliminary reference procedure | courts can (or must) go to CJEU for interpretation of EU law |
-|  |  |
+| harmonization | removing differences between member states |
+| preliminary question | What is the issue about? |
 |  |  |
