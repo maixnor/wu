@@ -1,0 +1,344 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{vo-thann}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f0d9f5b2a5b9f81105324a93ab2a1ffe}{%
+           family={T},
+           familyi={T\bibinitperiod},
+           given={Vo-Thann},
+           giveni={V\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0d9f5b2a5b9f81105324a93ab2a1ffe}
+      \strng{fullhash}{f0d9f5b2a5b9f81105324a93ab2a1ffe}
+      \strng{bibnamehash}{f0d9f5b2a5b9f81105324a93ab2a1ffe}
+      \strng{authorbibnamehash}{f0d9f5b2a5b9f81105324a93ab2a1ffe}
+      \strng{authornamehash}{f0d9f5b2a5b9f81105324a93ab2a1ffe}
+      \strng{authorfullhash}{f0d9f5b2a5b9f81105324a93ab2a1ffe}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How a mobile app can become a catalyst for sustainable social business: The case of Too Good To Go. Technological Forecasting \& Social Change}
+      \field{volume}{171}
+      \field{year}{2021}
+      \field{pages}{120962}
+      \range{pages}{1}
+    \endentry
+    \entry{fraccascia}{article}{}
+      \name{author}{1}{}{%
+        {{hash=42f6076691bfb89e0aae4d66a1d70ec6}{%
+           family={Fraccascia\bibnamedelima L},
+           familyi={F\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Nastasi\bibnamedelima A},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{42f6076691bfb89e0aae4d66a1d70ec6}
+      \strng{fullhash}{42f6076691bfb89e0aae4d66a1d70ec6}
+      \strng{bibnamehash}{42f6076691bfb89e0aae4d66a1d70ec6}
+      \strng{authorbibnamehash}{42f6076691bfb89e0aae4d66a1d70ec6}
+      \strng{authornamehash}{42f6076691bfb89e0aae4d66a1d70ec6}
+      \strng{authorfullhash}{42f6076691bfb89e0aae4d66a1d70ec6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mobile apps against food waste: Are consumers willing to use them? A survey research on Italian consumers. Resources, Conservation \& Recycling Advances}
+      \field{volume}{18}
+      \field{year}{2023}
+      \field{pages}{200150}
+      \range{pages}{1}
+    \endentry
+    \entry{waste}{online}{}
+      \name{author}{2}{}{%
+        {{hash=0a38e7286ebbb560354992b3ce62be67}{%
+           family={Food},
+           familyi={F\bibinitperiod}}}%
+        {{hash=6c2a12a84dd13dfd6f55948e4a84979a}{%
+           family={United\bibnamedelima Nations},
+           familyi={U\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Agriculture\bibnamedelima Organization},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           prefix={of\bibnamedelima the},
+           prefixi={o\bibinitperiod\bibinitdelim t\bibinitperiod}}}%
+      }
+      \strng{namehash}{e261a773ba3d9f12a60a6bab08dbd8fc}
+      \strng{fullhash}{e261a773ba3d9f12a60a6bab08dbd8fc}
+      \strng{bibnamehash}{e261a773ba3d9f12a60a6bab08dbd8fc}
+      \strng{authorbibnamehash}{e261a773ba3d9f12a60a6bab08dbd8fc}
+      \strng{authornamehash}{e261a773ba3d9f12a60a6bab08dbd8fc}
+      \strng{authorfullhash}{e261a773ba3d9f12a60a6bab08dbd8fc}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Global Food Losses and Food Waste}
+      \verb{urlraw}
+      \verb https://www.fao.org/3/mb060e/mb060e00.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.fao.org/3/mb060e/mb060e00.pdf
+      \endverb
+    \endentry
+    \entry{blab}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8050581a669f41d4a59abf005bdb8dca}{%
+           family={Global},
+           familyi={G\bibinitperiod},
+           given={B\bibnamedelima Lab},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{8050581a669f41d4a59abf005bdb8dca}
+      \strng{fullhash}{8050581a669f41d4a59abf005bdb8dca}
+      \strng{bibnamehash}{8050581a669f41d4a59abf005bdb8dca}
+      \strng{authorbibnamehash}{8050581a669f41d4a59abf005bdb8dca}
+      \strng{authornamehash}{8050581a669f41d4a59abf005bdb8dca}
+      \strng{authorfullhash}{8050581a669f41d4a59abf005bdb8dca}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{B Corp Certification Guide for Large Enterprises}
+      \verb{urlraw}
+      \verb https://assets.ctfassets.net/l575jm7617lt/2Q8x6Q7QoOWnoVDgVUuu2R/3245b5d64cdb0a8f940eed043020115f/Certification_Guide_-_Large_Enterprise_14_Sept_2022__1_.pdf
+      \endverb
+      \verb{url}
+      \verb https://assets.ctfassets.net/l575jm7617lt/2Q8x6Q7QoOWnoVDgVUuu2R/3245b5d64cdb0a8f940eed043020115f/Certification_Guide_-_Large_Enterprise_14_Sept_2022__1_.pdf
+      \endverb
+    \endentry
+    \entry{impact}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2d7963ed2c3be86b1863a676059c9a09}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={TooGoodTooGo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{fullhash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{bibnamehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{authorbibnamehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{authornamehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{authorfullhash}{2d7963ed2c3be86b1863a676059c9a09}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Annual Impact Report TooGoodToGo GmbH}
+      \verb{urlraw}
+      \verb https://tgtg-mkt-cms-prod.s3.eu-west-1.amazonaws.com/40102/ImpactReport2022_DE.pdf
+      \endverb
+      \verb{url}
+      \verb https://tgtg-mkt-cms-prod.s3.eu-west-1.amazonaws.com/40102/ImpactReport2022_DE.pdf
+      \endverb
+    \endentry
+    \entry{milestones}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2d7963ed2c3be86b1863a676059c9a09}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={TooGoodTooGo},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{fullhash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{bibnamehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{authorbibnamehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{authornamehash}{2d7963ed2c3be86b1863a676059c9a09}
+      \strng{authorfullhash}{2d7963ed2c3be86b1863a676059c9a09}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Too Good To Go Announces New Global Milestone: 200 Million Meals Saved. Press Release}
+      \verb{urlraw}
+      \verb https://www.toogoodtogo.com/en-gb/press/200-million
+      \endverb
+      \verb{url}
+      \verb https://www.toogoodtogo.com/en-gb/press/200-million
+      \endverb
+    \endentry
+    \entry{reduce}{online}{}
+      \name{author}{1}{}{%
+        {{hash=09614f432df41bf988c27fae22247241}{%
+           family={Go},
+           familyi={G\bibinitperiod},
+           given={Too\bibnamedelimb Good\bibnamedelima To},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{09614f432df41bf988c27fae22247241}
+      \strng{fullhash}{09614f432df41bf988c27fae22247241}
+      \strng{bibnamehash}{09614f432df41bf988c27fae22247241}
+      \strng{authorbibnamehash}{09614f432df41bf988c27fae22247241}
+      \strng{authornamehash}{09614f432df41bf988c27fae22247241}
+      \strng{authorfullhash}{09614f432df41bf988c27fae22247241}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Reducing food waste}
+      \verb{urlraw}
+      \verb https://time.com/collection/time100-companies-2022/6159510/too-good-to-go
+      \endverb
+      \verb{url}
+      \verb https://time.com/collection/time100-companies-2022/6159510/too-good-to-go
+      \endverb
+    \endentry
+    \entry{kanunugermany}{online}{}
+      \name{author}{1}{}{%
+        {{hash=880ddc27f84e857e15cf389effbbecd3}{%
+           family={kanunu.com},
+           familyi={k\bibinitperiod}}}%
+      }
+      \strng{namehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{fullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{bibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorbibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authornamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorfullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Annual Impact Report TooGoodToGo GmbH}
+      \verb{urlraw}
+      \verb https://www.kununu.com/de/too-good-to-go3
+      \endverb
+      \verb{url}
+      \verb https://www.kununu.com/de/too-good-to-go3
+      \endverb
+    \endentry
+    \entry{kanunuus}{online}{}
+      \name{author}{1}{}{%
+        {{hash=880ddc27f84e857e15cf389effbbecd3}{%
+           family={kanunu.com},
+           familyi={k\bibinitperiod}}}%
+      }
+      \strng{namehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{fullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{bibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorbibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authornamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorfullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Annual Impact Report TooGoodToGo GmbH}
+      \verb{urlraw}
+      \verb https://www.glassdoor.com/Reviews/Too-Good-To-Go-Reviews-E2402025.htm
+      \endverb
+      \verb{url}
+      \verb https://www.glassdoor.com/Reviews/Too-Good-To-Go-Reviews-E2402025.htm
+      \endverb
+    \endentry
+    \entry{kanunuaustria}{online}{}
+      \name{author}{1}{}{%
+        {{hash=880ddc27f84e857e15cf389effbbecd3}{%
+           family={kanunu.com},
+           familyi={k\bibinitperiod}}}%
+      }
+      \strng{namehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{fullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{bibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorbibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authornamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorfullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \field{extraname}{3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{Annual Impact Report TooGoodToGo GmbH}
+      \verb{urlraw}
+      \verb https://www.kununu.com/at/too-good-to-go-oesterreich1
+      \endverb
+      \verb{url}
+      \verb https://www.kununu.com/at/too-good-to-go-oesterreich1
+      \endverb
+    \endentry
+    \entry{kanunuswitzerland}{online}{}
+      \name{author}{1}{}{%
+        {{hash=880ddc27f84e857e15cf389effbbecd3}{%
+           family={kanunu.com},
+           familyi={k\bibinitperiod}}}%
+      }
+      \strng{namehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{fullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{bibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorbibnamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authornamehash}{880ddc27f84e857e15cf389effbbecd3}
+      \strng{authorfullhash}{880ddc27f84e857e15cf389effbbecd3}
+      \field{extraname}{4}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{TooGoodToGo Switzerland}
+      \verb{urlraw}
+      \verb https://www.kununu.com/ch/toogoodtogo
+      \endverb
+      \verb{url}
+      \verb https://www.kununu.com/ch/toogoodtogo
+      \endverb
+    \endentry
+    \entry{unep}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7135106187a96aa8ac633f7efe5648c6}{%
+           family={unep.org},
+           familyi={u\bibinitperiod}}}%
+      }
+      \strng{namehash}{7135106187a96aa8ac633f7efe5648c6}
+      \strng{fullhash}{7135106187a96aa8ac633f7efe5648c6}
+      \strng{bibnamehash}{7135106187a96aa8ac633f7efe5648c6}
+      \strng{authorbibnamehash}{7135106187a96aa8ac633f7efe5648c6}
+      \strng{authornamehash}{7135106187a96aa8ac633f7efe5648c6}
+      \strng{authorfullhash}{7135106187a96aa8ac633f7efe5648c6}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(accessed: 24th Oct 2023)}
+      \field{title}{New ‘123 Pledge’ set to mobilize global action on food loss and waste as key climate strategy}
+      \verb{urlraw}
+      \verb https://www.unep.org/technical-highlight/new-123-pledge-set-mobilize-global-action-food-loss-and-waste-key-climate
+      \endverb
+      \verb{url}
+      \verb https://www.unep.org/technical-highlight/new-123-pledge-set-mobilize-global-action-food-loss-and-waste-key-climate
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

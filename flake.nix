@@ -15,6 +15,7 @@
 					rPackages.pagedown 
 					rPackages.recommenderlab
 					rPackages.ggplot2
+          rPackages.extraDistr
 					rPackages.dplyr
 					rPackages.xts
 					rPackages.purrr
