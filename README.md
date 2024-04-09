@@ -1,15 +1,15 @@
 
 # Notes - Deprecated
 
-please use https://github.com/maixnor/wu-quartz instead.
+please use https://github.com/maixnor/wu-quartz instead for the obsidian vault (also know as quartz).
 
-### All things Code at WU
+# All things Code at WU
 
 Everything so far I have done (coding wise) during the Bachelors Degree of Business and Economics @WU Vienna.
 
 Basically everything which is not my obsidian vault (wu-quartz) is in here.
 
-#### R & nix
+# R & nix
 
 R is a statistical programming language heavily relying on arrays and pure functions.
 
