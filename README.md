@@ -1,27 +1,21 @@
 
-# Deprecated
+# Notes - Deprecated
 
 please use https://github.com/maixnor/wu-quartz instead.
 
-### All things WU
+### All things Code at WU
 
-Everything so far I have done during the Bachelors Degree of Business and Economics @WU Vienna
+Everything so far I have done (coding wise) during the Bachelors Degree of Business and Economics @WU Vienna.
 
-#### Obsidian
-
-I am making most of my notes publicly available in the folder `obsidian`. 
-
-Feel free to contribute or even do some of my todos (like copying images from slides). Open a pull request and I am more than happy to review the changes.
-
-Place all images and other non-markdown files into the folder `obsidian/attachments` for easy reference.
-
-I personally use obsidian, but you can use any Markdown Editor you want. Just view (and edit) the markdown files on Github or clone the repository using `git clone` and get started editing.
+Basically everything which is not my obsidian vault (wu-quartz) is in here.
 
 #### R & nix
 
 R is a statistical programming language heavily relying on arrays and pure functions.
 
-Nerdy Linux stuff ahead - you have been warned!
+>Nerdy Linux stuff ahead - you have been warned! 
+
+Nix can be used on Windows through WSL or on MacOs using nix-darvin. Not recommended for most people
 
 For creating the R environment using nix run `nix develop` in the project root.
 
