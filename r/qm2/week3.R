@@ -16,6 +16,7 @@ mydata["male","2nd"]
 converteddata <- as.data.frame(mydata)
 converteddata
 converteddata$crew
+converteddata$'1st' # 1 would be interpreted as constant, therefore needs to be in single quotes
 
 #'Another example:
 # In general we can work with  a data frame:
@@ -125,7 +126,7 @@ inc <- engel[,"income"]
 fdexp <- engel$foodexp # two ways of accessing variables
 plot(inc, fdexp, xlab = "income", ylab = "food expenditure")
 
-
-
-
+#' Experimentation
+# barplot does not work like that, there are no colors with this many polygons, even with no borders
+barplot(rep(10,256), main="I am a Rainbow, really", color=rainbow(256), border=NA)
 

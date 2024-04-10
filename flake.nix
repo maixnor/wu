@@ -38,6 +38,10 @@
 					okular
 					just
 				];
+        shellHook = ''
+          $SHELL
+          echo "It is time to R..."
+        '';
        };
     });
 }
