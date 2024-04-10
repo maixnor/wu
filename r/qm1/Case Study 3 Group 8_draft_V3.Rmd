@@ -1,0 +1,381 @@
+---
+title: "Quantitative Methods I"
+author: "Course 0165 - Group 8"
+output:
+  pdf_document:
+    latex_engine: xelatex
+    fig_caption: yes
+---
+
+
+\thispagestyle{empty}
+
+\begin{center}
+  \vspace*{2cm}
+  \Huge\textbf{Case Study 3 - Matrices} \\[0.5cm]
+  \Large\textbf{Modeling of Population Dynamics} \\[1cm]
+  \large
+  \begin{tabular}{c}
+    Laurenz Baumgartner \\
+    Benjamin Maixner \\
+    Maximilan Stark \\
+    Lorenz Springer \\
+    Markus Wane \\
+  \end{tabular}
+  \vfill
+  \normalsize
+  \textbf{Date}| 2024/01/01 |
+\end{center}
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+\newpage
+\section*{Task 1 - Matrix Representation of Population Dynamics}
+
+\textbf{Matrix Structure and System (Revised):}
+
+In Task 1 of our case study, we delve into the theoretical modeling of population dynamics using matrix equations. Our focus is on a population divided into \( n \) distinct age classes, where the interaction between fertility and survival rates across these classes dictates the overall population trajectory. The task involves creating a matrix system that encapsulates these dynamics, providing a mathematical framework to understand and predict population changes over time.
+
+To model the population dynamics, we represent the changes in population from one time period to the next using a matrix system. The population at time \( s \) is denoted by the vector \( N(s) \), which is an \( n \)-column vector where each element represents the number of individuals in a corresponding age class.
+
+The transition of population from time \( t \) to \( t + 1 \) can be represented by the equation:
+
+\[ N(t + 1) = AN(t) \]
+
+Here, \( A \) is an \( n \times n \) matrix that encapsulates the fertility and survival rates for each age class. The structure of matrix \( A \) is as follows:
+
+\[ A = \begin{pmatrix}
+f_1 & f_2 & f_3 & \cdots & f_n \\
+p_1 & 0 & 0 & \cdots & 0 \\
+0 & p_2 & 0 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & \cdots & p_{n-1} & 0
+\end{pmatrix} \]
+
+Where:
+- \( f_1, f_2, ..., f_n \) are the fertility rates for each age class, represented in the diagonal of the matrix.
+- \( p_1, p_2, ..., p_{n-1} \) are the survival rates, with each \( p_i \) placed in the column immediately to the right of the diagonal, signifying the transition of individuals from one age class to the next. 
+
+This matrix \( A \) is applied to the population vector \( N(t) \) to calculate the projected population \( N(t + 1) \) in each age class for the subsequent time period. This matrix-based approach provides a robust framework for analyzing the dynamics of a population structured into discrete age classes, considering the vital rates of fertility and survival that govern population growth and decline.
+
+\section*{Task 2 - Function of the A-Matrix}
+```{r}
+#Function to create the population dynamics matrix
+AMatrix <- function(f, p) {
+  n <- length(f)
+  
+  #Initializes an n x n matrix with zeros
+  A <- matrix(0, nrow = n, ncol = n)
+  
+  #The first row is the fertility rates
+  A[1, ] <- f
+  
+  #The sub-diagonal here is the survival rates
+  for (i in 1:(n-1)) {
+    A[i+1, i] <- p[i]
+  }
+  
+  return(A)
+}
+
+#Example uising it with 3 age classes
+f_example <- c(0.3, 0.2, 0.1)  #Example fertility rates
+p_example <- c(0.5, 0.6, 0)    #Example survival rates (last rate is always 0)
+
+AMatrix_example <- AMatrix(f_example, p_example)
+
+#Current population in each age class
+N_example <- c(40, 50, 30)     #N1 = 40, N2 = 50, N3 = 30
+
+#Creating a matrix where each column is the population vector
+N_matrix_example <- matrix(N_example, nrow = length(N_example), 
+                           ncol = length(N_example), byrow = TRUE)
+
+#Projecting the population for the next time period (detailed 3x3 matrix)
+detailedPopulationChange_example <- AMatrix_example %*% 
+  N_matrix_example
+
+#Projecting the population for the next time period (resulting vector)
+nextPopulation_example <- AMatrix_example %*% N_example
+
+#Print the detailed population change matrix
+print("Detailed Population Change Matrix:")
+print(detailedPopulationChange_example)
+
+#Lastly we print the resulting population vector
+print("Resulting Population Vector:")
+print(nextPopulation_example)
+```
+### Explanation of the Results
+
+1. **Detailed Population Change Matrix**: 
+   This matrix shows the projected population changes in each age class for the next time period:
+   
+   - **Row 1**: Shows the contributions to the first age class (N1) from the current N1, N2, and N3. Each element in this row represents the number of new individuals added to N1 from each corresponding current age class.
+   - **Row 2**: Displays the number of individuals from the current N1 moving to the second age class (N2). Only the first element of this row is relevant, indicating the transition from N1 to N2.
+   - **Row 3**: Indicates the number of individuals from the current N2 moving to the third age class (N3). Here, the second element shows the transition from N2 to N3.
+
+2. **Resulting Population Vector**: 
+   This vector provides the total projected population in each age class for the next time period. It represents the sum of each row in the detailed population change matrix:
+   
+   - The first element is the total new population in N1, combining new births and transitions from other classes.
+   - The second element represents the total population transitioning into N2 from N1.
+   - The third element shows the total population moving into N3 from N2.
+   
+From this, we can understand both the specific contributions to each age class and the overall population dynamics for the next period.
+
+## Task 3
+
+\section*{Task 3 - Population Development Simulation}
+```{r, fig.height=14, fig.width=6, fig.align='center'}
+
+#Define the function to simulate population development
+PDevelopment <- function(A, N0, K) {
+  n <- length(N0)  #' Get the number of age classes from the
+                   #' initial population vector
+
+  #Initialize a matrix to store the population at each time step
+  N_bar <- matrix(nrow = n, ncol = K)
+  N_bar[, 1] <- N0  #Set the initial population in the first column
+
+  #Iteratively calculate the population for each subsequent time step
+  for (k in 2:K) {
+    N_bar[, k] <- A %*% N_bar[, k - 1]
+  }
+
+  return(N_bar)  #Return the matrix of population values over time
+  print(N-bar)
+}
+
+#Define the function to plot the population development
+plotPopulationDevelopment <- function(N_bar, K) {
+  #Ensure there are no negative values in the population matrix
+  N_bar[N_bar < 0] <- 0
+
+  #Set up the plot with specified axis limits and point size
+  plot(1:min(K, 80), N_bar[1, 1:min(K, 80)], type = 'p', col = 1, 
+       xlab = 'Time Period', ylab = 'Population', ylim = c(0, 100), 
+       xlim = c(0, min(K, 80)), main = 'Population Development Over Time', 
+       pch = 16, cex = 0.6)
+abline(h=0)
+  #Add points for each age class to the plot
+  for (i in 2:nrow(N_bar)) {
+    points(1:min(K, 80), N_bar[i, 1:min(K, 80)], col = i, pch = 16, cex = 0.6)
+  }
+
+  #Add a legend to the plot to distinguish between age classes
+  legend("topright", legend = paste('Age Class', 1:nrow(N_bar)), 
+         col = 1:nrow(N_bar), pch = 16, cex = 0.8)
+}
+
+#Example usage of the defined functions
+#'Set the example fertility rates, survival rates, initial population, 
+#'and number of time periods
+f_example <- c(0.3, 0.2, 0.1)
+p_example <- c(0.5, 0.6, 0)
+AMatrix_example <- AMatrix(f_example, p_example)
+N0_example <- c(100, 80, 60)
+K_example <- 20
+
+#Generate the population development matrix using the PDevelopment function
+N_bar_example <- PDevelopment(AMatrix_example, N0_example, K_example)
+
+#Then we print it for visualization
+N_bar_example
+
+#Plot the population development using the plotPopulationDevelopment function
+plotPopulationDevelopment(N_bar_example, K_example)
+```
+\section*{Task 4 - Growthrate}
+```{r}
+#Function to compute growth rates
+Growthrate <- function(N_bar) {
+  K <- ncol(N_bar)
+  result <- rep(NA, K - 1)  #Initializes a vector with NA values
+
+  #Compute the growth rate for each period
+  for (t in seq_len(K - 1)) {
+    M_t <- sum(N_bar[, t])   #Total population at time t
+    M_t_plus_1 <- sum(N_bar[, t + 1])  #Total population at time t+1
+    result[t] <- M_t_plus_1 / M_t  #Growth rate at time t
+  }
+ lambda<- result
+ lambda
+}
+
+#Function to plot growth rates
+plotGrowthRates <- function(growth_rates) {
+  plot(seq_len(length(growth_rates)), growth_rates, type = 'o', col = 'blue', 
+       xlab = 'Time Period', ylab = 'Growth Rate', 
+       main = 'Population Growth Rate Over Time', pch = 16, cex = 0.6)
+}
+
+#Example usage of Growthrate and plotGrowthRates functions
+growth_rates_example <- Growthrate(N_bar_example)
+plotGrowthRates(growth_rates_example)
+```
+
+**Task 4 Interpretation and Findings:**
+
+**Discrepancy in Growth Rate vs. Population Dynamics:**
+
+- **Task 3 - Population Dynamics:**  
+  In Task 3, we observed the actual number of individuals in each age class over time. The population nearing zero after 20 periods suggests a significant decline, indicating that the population in each age class may have diminished to very low levels or completely disappeared.
+
+- **Task 4 - Growth Rate:**  
+  Conversely, Task 4 calculates the growth rate (λ(t)) as the ratio of the total population at time t+1 to t. A consistent growth rate of around 0.57, as seen in our results, doesn't inherently signal a thriving population. It reflects the relative change between successive periods. Importantly, even if the absolute population numbers are minimal, the growth rate can still present a misleadingly stable figure as long as the ratio between M(t+1) and M(t) remains around 0.57.
+
+**Potential Data Issues or Model Assumptions:**
+
+The discrepancy between the near-zero population in later periods (Task 3) and the relatively stable growth rate (Task 4) warrants a closer look at the model's initial assumptions and parameters. Parameters such as fertility and survival rates in the population matrix are pivotal. We chose rather unrealisticly low values for both rates, which lead to unexpected nonetheless mathematically correct results. 
+
+\section*{Task 5 - Population Dynamics and Growth Rate Analysis:}
+```{r}
+#Define the A matrix, initial population vector N(0), and the number of time periods for Task 5
+f_task5 <- c(0, 2, 3, 2.2)  #Fertility rates for Task 5
+p_task5 <- c(0.7, 0.5, 0.3, 0)  #Survival rates for Task 5
+N0_task5 <- c(40, 20, 11, 4)  #Initial population for Task 5
+K_task5 <- 20  #Number of time periods
+
+#(a) Creating the A matrix for Task 5
+AMatrix_task5 <- AMatrix(f_task5, p_task5)
+
+#(b) Simulating the population development over K periods
+N_bar_task5 <- PDevelopment(AMatrix_task5, N0_task5, K_task5)
+plotPopulationDevelopment(N_bar_task5, K_task5)
+
+#(c) Analyzing the growth rate over K periods
+growth_rates_task5 <- Growthrate(N_bar_task5)
+plotGrowthRates(growth_rates_task5)
+
+
+```
+**Task 5 Findings and Analysis:**
+
+**Population Dynamics and Growth Rate:**
+
+- **Population Development Over Time:**  
+  The simulation, using the specified fertility and survival rates, reveals the changes in population across the four age classes over 20 periods. This visualization allows us to observe the trajectory of each age class, identifying trends such as growth, decline, or stabilization in population numbers.
+
+- **Growth Rate Analysis:**  
+  The growth rate plot provides insights into the overall population growth dynamics. By observing the growth rate over the 20 periods, we can analyze whether the population is expanding, declining, or reaching a stable state. A constant λ value would suggest a steady-state growth rate, while fluctuations in λ indicate changing population dynamics.
+
+**Behavioral Observations and λ Convergence:**
+
+- The behavior observed in the growth rate plot, alongside the population development visualization, offers a comprehensive view of the population's trajectory. If λ converges to a constant value, it implies a certain equilibrium in population dynamics. Conversely, varying λ values across periods might reflect transitions or instabilities in the population structure, influenced by the given fertility and survival rates.
+
+This analysis provides critical insights into the population's future prospects, helping to understand the long-term implications of the current demographic trends.
+
+\section*{Task 6 - Equilibrium Growth Rate}
+
+Task 6 focuses on the concept of equilibrium growth rate λ and its implications for population dynamics. We explore this through matrix algebra and determinant calculations.
+
+### (a)
+
+Depending on if $λ$ is greater, equal, or less than 1 there are 3 different things happening. If $λ$ is equal to 1 the overall population does not change over time. Should $λ$ be smaller than 1 the population will shrink by $(1-λ)$% with each generation, ultimately approaching 0, while with $λ$ greater than 1 the population will increase by $(λ-1)$% each iteration until infinity.
+
+```{r}
+#Assuming AMatrix and Growthrate functions are defined earlier in the script
+
+#Given parameters for Task 6
+f_task6 <- c(0, 2, 3, 2.2)  #Fertility rates
+p_task6 <- c(0.7, 0.5, 0.3, 0)  #Survival rates
+AMatrix_task6 <- AMatrix(f_task6, p_task6)
+
+#(a) Define the determinant condition function for a generic matrix A
+det_condition <- function(A, lambda) {
+  return(det(A - lambda * diag(nrow(A))))
+}
+
+#Solve for λ values satisfying the determinant condition for a 2x2 matrix
+#Define a 2x2 matrix A as an example
+A_2x2_example <- matrix(c(2, 3, 3, 4), nrow = 2, byrow = TRUE)
+
+#Calculate the characteristic polynomial and find its roots to solve for λ
+characteristic_polynomial <- function(A) {
+  coeffs <- polyroot(c(det(A), -sum(diag(A)), 1))  #Coefficients are from the expansion of |A - λI|
+  return(Re(coeffs))  #Return only the real parts of the roots as eigenvalues
+}
+
+lambda_values <- characteristic_polynomial(A_2x2_example)
+
+#Printing the λ values
+print("λ values satisfying the determinant condition for the 2x2 matrix:")
+print(lambda_values)
+
+```
+### (b)
+Given a 2x2 matrix \( A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} \), the determinant condition for \( \lambda \) is derived from the equation \( |A - \lambda I| = 0 \), which expands to:
+
+\[ \begin{vmatrix} a_{11} - \lambda & a_{12} \\ a_{21} & a_{22} - \lambda \end{vmatrix} = 0 \]
+
+Solving for \( \lambda \), we get the characteristic equation:
+
+\[ \lambda^2 - \lambda(a_{11} + a_{22}) + a_{11}a_{22} - a_{12}a_{21} = 0 \]
+
+Using the quadratic formula, the solutions for \( \lambda \) are:
+
+\[ \lambda = \frac{(a_{11} + a_{22}) \pm \sqrt{(a_{11} + a_{22})^2 - 4(a_{11}a_{22} - a_{12}a_{21})}}{2} \]
+
+This equation will give the values of \( \lambda \) that satisfy the determinant condition for the 2x2 matrix \( A \).
+
+### (c)
+```{r}
+#Task 6c - Checking the Determinant Condition
+
+#Assuming AMatrix_task6 is a 4x4 matrix and lambda_19_task5 is the computed value from Task 5
+#Define the determinant condition function for a generic matrix A
+det_condition <- function(A, lambda) {
+  #Calculates the determinant of A - lambda * I
+  determinant_value <- det(A - lambda * diag(nrow(A)))
+  #Return the determinant value
+  return(determinant_value)
+}
+lambda_19_task5 <- growth_rates_task5[19]
+
+#Calculate the determinant for lambda_19_task5 and AMatrix_task6
+det_result_lambda_19 <- det_condition(AMatrix_task6, lambda_19_task5)
+
+#Print the determinant result and check if it is close to zero
+print("Determinant result for λ(19) from Task 5:")
+print(det_result_lambda_19)
+
+#Printing the results of our Interpretation (rounding error):
+if (abs(det_result_lambda_19) < 1e-7) {
+  print("The determinant condition is satisfied, indicating an equilibrium state.")
+} else {
+  print("The determinant condition is not satisfied, indicating no equilibrium state.")
+}
+
+```
+\newpage
+\section*{Conclusion}
+
+**Synthesis of Insights from the Population Dynamics Case Study:**
+
+In this case study, the exploration of population dynamics using matrix models was undertaken. Each task contributed significantly to the understanding of the impact of demographic factors on population structures.
+
+- **Matrix Representation (Task 1):** The construction of a matrix model illustrated population changes over time, establishing a foundational tool for demographic analysis.
+
+- **Population Development Simulation (Task 3):** Simulation of population changes across different age classes provided quantitative insights into demographic shifts.
+
+- **Growth Rate Analysis (Task 4):** This task focused on the analysis of growth rates, emphasizing the importance of assessing relative changes in population and the necessity for interpretation of demographic data.
+
+- **Application to a Specific Demographic Scenario (Task 5):** The theoretical models were applied to a practical demographic scenario. The dynamics and growth rate for a population divided into four age classes were analyzed, serving as a practical application of theoretical learnings.
+
+- **Exploration of Equilibrium Growth Rate (Task 6):** The concept of equilibrium growth rate was explored using matrix algebra. The task involved computing the determinant of \( A - \lambda I \) to check if the growth rate \( \lambda \) for period 19 satisfies the equilibrium condition. The determinant condition was not satisfied for \( \lambda = 1.4 \), indicating a non-equilibrium state for the population model under these parameters.
+
+**Reflections and Academic Implications:**
+
+The study led to two main insights:
+
+1. **Understanding Population Stability and Transition:** Analysis of the equilibrium growth rate and determinant conditions provided deeper insight into long-term population stability and potential transitional dynamics.
+
+2. **Significance of Accurate Model Assumptions:** The importance of precise model assumptions, particularly regarding fertility and survival rates, was recognized to ensure the validity of predictions and analyses.
+
+In conclusion, this case study provided a comprehensive toolkit for analyzing population dynamics. The methodologies and findings are valuable for understanding patterns in population growth and decline.
+
+---

@@ -6,3 +6,7 @@ run-pdf file:
 	R CMD BATCH {{file}}
 	okular Rplots.pdf &
 	cat {{file}}out
+
+rmarkdown file:
+  Rscript -e "rmarkdown::render('{{file}}')"
+  
