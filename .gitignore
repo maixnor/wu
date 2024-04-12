@@ -1,2 +1,9 @@
 .*.Rout
 .obsidian
+
+# R Markdown output files
+.pdf
+.aux
+.knit.md
+.log
+.tex
