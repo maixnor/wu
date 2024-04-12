@@ -36,6 +36,7 @@
 					kile
 					bat
 					okular
+          inotify-tools
 					just
 				];
         shellHook = ''

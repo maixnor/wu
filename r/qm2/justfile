@@ -7,4 +7,8 @@ run-pdf file:
 
 rmarkdown file:
   Rscript -e "rmarkdown::render('{{file}}')"
+
+watch file:
+  inotifywait --monitor $(pwd)/{{file}} && echo "triggered" && Rscript -e "rmarkdown::render('{{file}}')"
+  
   

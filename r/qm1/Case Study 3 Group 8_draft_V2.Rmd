@@ -33,7 +33,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 \newpage
-
 \section*{Task 1 - Matrix Representation of Population Dynamics}
 
 \textbf{Matrix Structure and System (Revised):}
@@ -83,13 +82,13 @@ AMatrix <- function(f, p) {
 }
 
 #Example uising it with 3 age classes
-f_example <- c(0.3, 0.2, 0.1)  #Example fertility rates
-p_example <- c(0.5, 0.6, 0)    #Example survival rates (last rate is always 0)
+f_example <- c(0.3, 0.2, 0.1)  # Example fertility rates
+p_example <- c(0.5, 0.6, 0)    # Example survival rates (last rate is always 0)
 
 AMatrix_example <- AMatrix(f_example, p_example)
 
 #Current population in each age class
-N_example <- c(40, 50, 30)     #N1 = 40, N2 = 50, N3 = 30
+N_example <- c(40, 50, 30)     # N1 = 40, N2 = 50, N3 = 30
 
 #Creating a matrix where each column is the population vector
 N_matrix_example <- matrix(N_example, nrow = length(N_example), 
@@ -140,7 +139,7 @@ PDevelopment <- function(A, N0, K) {
 
   #Initialize a matrix to store the population at each time step
   N_bar <- matrix(nrow = n, ncol = K)
-  N_bar[, 1] <- N0  #Set the initial population in the first column
+  N_bar[, 1] <- N0  # Set the initial population in the first column
 
   #Iteratively calculate the population for each subsequent time step
   for (k in 2:K) {
@@ -153,7 +152,7 @@ PDevelopment <- function(A, N0, K) {
 
 #Define the function to plot the population development
 plotPopulationDevelopment <- function(N_bar, K) {
-  #Ensure there are no negative values in the population matrix
+  # Ensure there are no negative values in the population matrix
   N_bar[N_bar < 0] <- 0
 
   #Set up the plot with specified axis limits and point size
@@ -236,10 +235,10 @@ The discrepancy between the near-zero population in later periods (Task 3) and t
 \section*{Task 5 - Population Dynamics and Growth Rate Analysis:}
 ```{r}
 #Define the A matrix, initial population vector N(0), and the number of time periods for Task 5
-f_task5 <- c(0, 2, 3, 2.2)  #Fertility rates for Task 5
-p_task5 <- c(0.7, 0.5, 0.3, 0)  #Survival rates for Task 5
-N0_task5 <- c(40, 20, 11, 4)  #Initial population for Task 5
-K_task5 <- 20  #Number of time periods
+f_task5 <- c(0, 2, 3, 2.2)  # Fertility rates for Task 5
+p_task5 <- c(0.7, 0.5, 0.3, 0)  # Survival rates for Task 5
+N0_task5 <- c(40, 20, 11, 4)  # Initial population for Task 5
+K_task5 <- 20  # Number of time periods
 
 #(a) Creating the A matrix for Task 5
 AMatrix_task5 <- AMatrix(f_task5, p_task5)
@@ -274,16 +273,12 @@ This analysis provides critical insights into the population's future prospects,
 
 Task 6 focuses on the concept of equilibrium growth rate λ and its implications for population dynamics. We explore this through matrix algebra and determinant calculations.
 
-### (a)
-
-Depending on if $λ$ is greater, equal, or less than 1 there are 3 different things happening. If $λ$ is equal to 1 the overall population does not change over time. Should $λ$ be smaller than 1 the population will shrink by $(1-λ)$% with each generation, ultimately approaching 0, while with $λ$ greater than 1 the population will increase by $(λ-1)$% each iteration until infinity.
-
 ```{r}
 #Assuming AMatrix and Growthrate functions are defined earlier in the script
 
 #Given parameters for Task 6
-f_task6 <- c(0, 2, 3, 2.2)  #Fertility rates
-p_task6 <- c(0.7, 0.5, 0.3, 0)  #Survival rates
+f_task6 <- c(0, 2, 3, 2.2)  # Fertility rates
+p_task6 <- c(0.7, 0.5, 0.3, 0)  # Survival rates
 AMatrix_task6 <- AMatrix(f_task6, p_task6)
 
 #(a) Define the determinant condition function for a generic matrix A
@@ -297,8 +292,8 @@ A_2x2_example <- matrix(c(2, 3, 3, 4), nrow = 2, byrow = TRUE)
 
 #Calculate the characteristic polynomial and find its roots to solve for λ
 characteristic_polynomial <- function(A) {
-  coeffs <- polyroot(c(det(A), -sum(diag(A)), 1))  #Coefficients are from the expansion of |A - λI|
-  return(Re(coeffs))  #Return only the real parts of the roots as eigenvalues
+  coeffs <- polyroot(c(det(A), -sum(diag(A)), 1))  # Coefficients are from the expansion of |A - λI|
+  return(Re(coeffs))  # Return only the real parts of the roots as eigenvalues
 }
 
 lambda_values <- characteristic_polynomial(A_2x2_example)
@@ -322,17 +317,15 @@ Using the quadratic formula, the solutions for \( \lambda \) are:
 \[ \lambda = \frac{(a_{11} + a_{22}) \pm \sqrt{(a_{11} + a_{22})^2 - 4(a_{11}a_{22} - a_{12}a_{21})}}{2} \]
 
 This equation will give the values of \( \lambda \) that satisfy the determinant condition for the 2x2 matrix \( A \).
-
-### (c)
 ```{r}
 #Task 6c - Checking the Determinant Condition
 
 #Assuming AMatrix_task6 is a 4x4 matrix and lambda_19_task5 is the computed value from Task 5
 #Define the determinant condition function for a generic matrix A
 det_condition <- function(A, lambda) {
-  #Calculates the determinant of A - lambda * I
+  # Calculates the determinant of A - lambda * I
   determinant_value <- det(A - lambda * diag(nrow(A)))
-  #Return the determinant value
+  # Return the determinant value
   return(determinant_value)
 }
 lambda_19_task5 <- growth_rates_task5[19]
@@ -344,7 +337,7 @@ det_result_lambda_19 <- det_condition(AMatrix_task6, lambda_19_task5)
 print("Determinant result for λ(19) from Task 5:")
 print(det_result_lambda_19)
 
-#Printing the results of our Interpretation (rounding error):
+# Printing the results of our Interpretation:
 if (abs(det_result_lambda_19) < 1e-7) {
   print("The determinant condition is satisfied, indicating an equilibrium state.")
 } else {
