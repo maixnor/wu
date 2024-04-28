@@ -43,7 +43,7 @@ P(3A + 2B) = \frac{\binom{6}{3} \times \binom{7}{2}}{\binom{13}{5}} = 0.\overlin
 
 ### b) Just More
 
-When there should just be more athletes of country B than from A. Necessitating athletes from B being more or equalt to 3:
+When there should just be more athletes of country B than from A. Necessitating athletes from B being more or equal to 3:
 
 \[
 P(B > A) = P(B \geq 3) = \frac{\binom{7}{3} \times \binom{6}{2} + \binom{7}{4} \times \binom{6}{1} + \binom{7}{5} \times \binom{6}{0}}{\binom{13}{5}} = 0.587412 \approx 58.74\%
@@ -87,7 +87,7 @@ This formula provides the expected consistency in voting behavior across the tea
 
 # 3 Time to Perform
 
-Each member of the team is supposed to supervise another during training. Who supervises who is supposed to be decided using a bowl and some paper. Each person will pick a random name from the bowl. Since self-supervision is mostly not working as well an athlete is not supposed to pick (and therefore supervise) himself.
+Each member of the team is supposed to supervise another during training. Who supervises who is supposed to be decided using a bowl and some paper. Each person will pick a random name from the bowl. Since self-supervision generally doesn't work well, and an athlete is not supposed to pick (and therefore supervise) themself.
 
 The worst case would be each person picking their own name, then the whole operation was done for nothing!
 
@@ -117,7 +117,7 @@ P(\text{first } m) = \frac{m! \times (n-m)!}{n!}
 
 ### c) Team Inception
 
-Now we shall devide the team into 2 groups wherby the first $m$ members should be assigned people of the other part. The larger $m$ is the lower the probability of succeeding.
+Now we shall divide the team into 2 groups wherby the first $m$ members should be assigned people of the other part. The larger $m$ is the lower the probability of succeeding.
 
 \[
 P(\text{switch}) = \frac{\binom{n}{m} \times m!}{n!}
@@ -161,4 +161,4 @@ print(output_permutation)  # Print the result
 
 The drawback is that for even 1 wrongly placed name we need to reshuffle the whole permutation. If the list of names is considerably small then this algorithm will finish in time. With larger datasets it is considerably more expensive to reshuffle. Therefore one should use more specialized algorithms.
 
-One such algorithm would choose for each index a random entry from the remainder of the names. If this one index matches the input one has to just fetch another (e.g. the next one). Therefore is no complete reshuffling taking place and the algrithm will be quicker for larger datasets.
+One such algorithm would choose for each index a random entry from the remainder of the names. If this one index matches the input one has to just fetch another (e.g. the next one). Thus, no complete reshuffling takes place, making the algorithm quicker for larger datasets.

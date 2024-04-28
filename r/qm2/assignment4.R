@@ -38,6 +38,8 @@ result_data2
 result_data5
 result_data7
 
+hist(data7, breaks=30)
+
 # Compare with theoretical proportions (if applicable)
 # You can also repeat this for k = 2, 3, etc.
 # For example, result_data1 <- calc_rule(data1, k = 2)
