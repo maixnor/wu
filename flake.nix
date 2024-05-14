@@ -27,13 +27,13 @@
 					rPackages.emdbook
 					rPackages.rgl
 					#vscode
-					chromium 
+					#chromium 
 					pandoc
-					python311
-					python311Packages.jupyter
-					texlive.combined.scheme-full
+					#python311
+					#python311Packages.jupyter
+					texlive.combined.scheme-small
 					rstudio
-					kile
+					#kile
 					bat
 					okular
           inotify-tools
