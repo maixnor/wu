@@ -1,0 +1,131 @@
+---
+title: "Quantitative Methods 2 - Case Study 3"
+author: "Group Number: [Your Group Number Here]"
+date: "May 31, 2024"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Loading necessary packages
+library(tidyverse)
+```
+
+## 1. Computing the Log-Return Series
+
+First, we load the historical price series data for IBM and compute the log-return series.
+
+```{r}
+# Load the data
+ibm_data <- read.csv("IBMdata.csv")
+
+# Compute the log-return series
+log_returns <- diff(log(ibm_data$Close))
+
+# Plot the histogram of log-returns
+hist(log_returns, main="Histogram of Log-Returns", xlab="Log-Returns", breaks=50, col="blue")
+```
+
+## 2. Calculating Sample Statistics
+
+Next, we calculate the sample mean (\(\bar{x}\)) and sample standard deviation (\(s\)) of the log-returns. These statistics will serve as estimators for the unknown parameters \(\mu\) and \(\sigma\).
+
+```{r}
+# Calculate sample mean and standard deviation
+mean_log_return <- mean(log_returns)
+sd_log_return <- sd(log_returns)
+
+# Report the results
+mean_log_return
+sd_log_return
+```
+
+## 3. Generating Realizations of the Random Variable \(Z\)
+
+We set \(n = 100000\) and use the function `rnorm` to generate \(n\) realizations of the random variable \(Z\).
+
+```{r}
+# Parameters
+n <- 100000
+S0 <- 110
+
+# Generate n realizations of Z
+Z <- rnorm(n)
+
+# Calculate SF realizations
+SF <- S0 * exp((mean_log_return - (sd_log_return^2) / 2) * 1 + sd_log_return * sqrt(1) * Z)
+```
+
+## 4. Calculating the Payoff Realizations
+
+We set \(K1 = 100\) and \(K2 = 120\), and use the payoff function to obtain realizations for the payoff.
+
+```{r}
+# Payoff function
+payoff <- SF + pmax(K1 - SF, 0) - pmax(SF - K2, 0)
+
+# Plot the histogram of payoffs
+hist(payoff, main="Histogram of Payoffs", xlab="Payoffs", breaks=50, col="green")
+```
+
+## 5. Approximating the Value \(V\) Using the Monte Carlo Method
+
+We use the generated realizations to approximate the value \(V\).
+
+```{r}
+# Approximate the value V
+V_hat <- mean(payoff)
+V_hat
+```
+
+## 6. Sample Variance of \(V\)
+
+We calculate the sample variance of \(V\).
+
+```{r}
+# Sample variance
+var_payoff <- var(payoff)
+var_payoff
+```
+
+## 7. Analysis of Variance and Sample Size
+
+We discuss how the variance of \(V\) changes as we increase the sample size \(n\).
+
+```{r}
+# The variance of the estimate V_hat
+var_V_hat <- var_payoff / n
+var_V_hat
+
+# Discussion:
+# As the sample size n increases, the variance of V_hat decreases.
+# This is in line with the Central Limit Theorem, which states that the distribution of the sample mean will
+# tend to be normal with a variance equal to the population variance divided by the sample size.
+```
+
+## 8. Calculating Profit/Loss (P/L) Values and Value at Risk (VaR)
+
+We calculate the P/L values and estimate the 5% quantile (VaR).
+
+```{r}
+# Initial cost
+C <- 110
+
+# Calculate P/L values
+PL <- payoff - C
+
+# Plot the histogram of P/Ls
+hist(PL, main="Histogram of Profit/Loss", xlab="Profit/Loss", breaks=50, col="red")
+
+# Estimate expected P/L
+expected_PL <- mean(PL)
+expected_PL
+
+# Calculate the 5% quantile (VaR)
+VaR_5 <- quantile(PL, 0.05)
+VaR_5
+
+# Discussion on VaR:
+# The 5% quantile (VaR) represents the maximum loss that can be expected with 95% confidence.
+# In other words, there is a 5% chance that the loss will exceed this value.
+```
+
