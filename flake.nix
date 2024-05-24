@@ -10,7 +10,6 @@
       devShells.default = pkgs.mkShell {
         nativeBuildInputs = [ pkgs.bashInteractive ];
         buildInputs = with pkgs; [ 
-					nodejs_20
 					R 
 					rPackages.pagedown 
 					rPackages.recommenderlab
@@ -21,21 +20,12 @@
 					rPackages.purrr
 					rPackages.rmarkdown
 					rPackages.knitr
-					rPackages.vioplot
 					rPackages.RDocumentation
 					rPackages.IRkernel
 					rPackages.emdbook
 					rPackages.rgl
-					#vscode
-					#chromium 
 					pandoc
-					#python311
-					#python311Packages.jupyter
-					texlive.combined.scheme-small
-					rstudio
-					#kile
 					bat
-					okular
           inotify-tools
 					just
 				];
