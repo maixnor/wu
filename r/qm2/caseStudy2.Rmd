@@ -1,0 +1,184 @@
+---
+title: "Quantitative Methods 2 - Case Study 2"
+author: "Group Number: [Your Group Number Here]"
+date: "June 7, 2024"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Loading necessary packages
+library(tidyverse)
+library(ggplot2)
+```
+
+## 1. Descriptive Analysis of the Data Set
+
+First, we load the dataset and provide a descriptive analysis of the variables.
+
+```{r}
+# Load the data
+wines <- read.csv("wines.csv")
+
+# Basic information about the dataset
+str(wines)
+summary(wines)
+
+# Sample size
+sample_size <- nrow(wines)
+sample_size
+
+# Plot the distribution of wine scores
+ggplot(wines, aes(x = points)) +
+  geom_histogram(binwidth = 1, fill = "blue", color = "black") +
+  labs(title = "Distribution of Wine Scores", x = "Score", y = "Count")
+
+# Plot the distribution of wine prices
+ggplot(wines, aes(x = price)) +
+  geom_histogram(binwidth = 5, fill = "green", color = "black") +
+  labs(title = "Distribution of Wine Prices", x = "Price (USD)", y = "Count")
+```
+
+## 2. Analysis of Sample on Country and Variety Level
+
+### 2(a). Comparing Countries
+
+We compare the average prices and average quality scores of wines from France and Italy.
+
+```{r}
+# Average price by country
+avg_price_by_country <- wines %>%
+  group_by(country) %>%
+  summarize(mean_price = mean(price, na.rm = TRUE))
+
+avg_price_by_country
+
+# Average quality by country
+avg_quality_by_country <- wines %>%
+  group_by(country) %>%
+  summarize(mean_quality = mean(points, na.rm = TRUE))
+
+avg_quality_by_country
+```
+
+### 2(b). Comparing Wine Varieties
+
+We determine which variety of wine is the most expensive and which has the highest average quality.
+
+```{r}
+# Average price by variety
+avg_price_by_variety <- wines %>%
+  group_by(variety) %>%
+  summarize(mean_price = mean(price, na.rm = TRUE)) %>%
+  arrange(desc(mean_price))
+
+avg_price_by_variety
+
+# Average quality by variety
+avg_quality_by_variety <- wines %>%
+  group_by(variety) %>%
+  summarize(mean_quality = mean(points, na.rm = TRUE)) %>%
+  arrange(desc(mean_quality))
+
+avg_quality_by_variety
+```
+
+### 2(c). Combination of Price and Points
+
+We analyze the combinations of price and points to find the highest average price and best average quality.
+
+```{r}
+# Highest average price and best average quality by country and variety
+avg_price_quality <- wines %>%
+  group_by(country, variety) %>%
+  summarize(mean_price = mean(price, na.rm = TRUE),
+            mean_quality = mean(points, na.rm = TRUE)) %>%
+  arrange(desc(mean_price), desc(mean_quality))
+
+avg_price_quality
+```
+
+## 3. Testing the Sommelier's Claims
+
+We test the claims about French Chardonnay.
+
+### 3(a). Proportion Test for French Chardonnay in Champagne
+
+```{r}
+# Subset French Chardonnays
+french_chardonnay <- subset(wines, country == "France" & variety == "Chardonnay")
+
+# Proportion of French Chardonnay in Champagne
+prop_champagne <- mean(french_chardonnay$province == "Champagne")
+prop_champagne
+
+# Hypothesis test for proportion
+prop.test(x = sum(french_chardonnay$province == "Champagne"), n = nrow(french_chardonnay), p = 0.11)
+```
+
+### 3(b). Mean Price Test for French Chardonnay
+
+```{r}
+# Mean price of French Chardonnay
+mean_price_chardonnay <- mean(french_chardonnay$price, na.rm = TRUE)
+mean_price_chardonnay
+
+# t-test for mean price
+t.test(french_chardonnay$price, mu = 55.5)
+```
+
+## 4. Comparison of Price and Quality Between Countries
+
+### 4(a). Boxplot of Wine Prices by Country
+
+```{r}
+# Boxplot of prices by country
+ggplot(wines, aes(x = country, y = price)) +
+  geom_boxplot(fill = c("blue", "green")) +
+  labs(title = "Boxplot of Wine Prices by Country", x = "Country", y = "Price (USD)")
+```
+
+### 4(b). Boxplot of Wine Quality by Country
+
+```{r}
+# Boxplot of quality by country
+ggplot(wines, aes(x = country, y = points)) +
+  geom_boxplot(fill = c("blue", "green")) +
+  labs(title = "Boxplot of Wine Quality by Country", x = "Country", y = "Quality (Points)")
+```
+
+### 4(c). Confidence Intervals for Wine Prices
+
+```{r}
+# Confidence intervals for wine prices
+ci_price_france <- t.test(wines$price[wines$country == "France"])$conf.int
+ci_price_italy <- t.test(wines$price[wines$country == "Italy"])$conf.int
+
+ci_price_france
+ci_price_italy
+
+# Interpretation:
+# If the confidence intervals do not overlap, there is statistical evidence of a difference in wine prices.
+```
+
+### 4(d). Confidence Intervals for Wine Quality
+
+```{r}
+# Confidence intervals for wine quality
+ci_quality_france <- t.test(wines$points[wines$country == "France"])$conf.int
+ci_quality_italy <- t.test(wines$points[wines$country == "Italy"])$conf.int
+
+ci_quality_france
+ci_quality_italy
+
+# Interpretation:
+# If the confidence intervals do not overlap, there is statistical evidence of a difference in wine quality.
+```
+
+### 4(e). Combined Interpretation
+
+```{r}
+# Combined interpretation of price and quality confidence intervals
+# Discussion on whether the results are expected or surprising based on confidence intervals for price and quality.
+# Also considering the Central Limit Theorem and assumptions made during tests.
+```
+
