@@ -9,6 +9,7 @@ output: pdf_document
 # Loading necessary packages
 library(tidyverse)
 library(ggplot2)
+library(dplyr)
 ```
 
 ## 1. Descriptive Analysis of the Data Set
@@ -36,6 +37,46 @@ ggplot(wines, aes(x = points)) +
 ggplot(wines, aes(x = price)) +
   geom_histogram(binwidth = 5, fill = "green", color = "black") +
   labs(title = "Distribution of Wine Prices", x = "Price (USD)", y = "Count")
+
+# Plot the distribution of countries of origin
+ggplot(wines, aes(x = country)) +
+  geom_bar() +
+  xlab("Country") +
+  ylab("Quantity") +
+  ggtitle("Number of Wines from each Country")
+
+# Plot the distribution of provinces of origin
+ggplot(wines, aes(x = province)) +
+  geom_bar() +
+  xlab("Province") +
+  ylab("Quantity") +
+  ggtitle("Number of Wines from each region") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+
+# Plot the distribution of wines' variety
+ggplot(wines, aes(x = variety)) +
+  geom_bar() +
+  xlab("Variety") +
+  ylab("Quantity") +
+  ggtitle("Number of Wines of each variety") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+
+# Plot the distribution of wineries of origin
+# Count the number of wines per winery
+winery_counts <- wines %>%
+  group_by(winery) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count)) %>%
+  top_n(20, count)
+
+# Create the histogram
+ggplot(winery_counts, aes(x = reorder(winery, -count), y = count)) +
+  geom_bar(stat = "identity") +
+  xlab("Winery") +
+  ylab("Quantity") +
+  ggtitle("Number of Wines from Top 20 Wineries") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+
 ```
 
 ## 2. Analysis of Sample on Country and Variety Level
