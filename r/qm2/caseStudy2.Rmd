@@ -18,7 +18,7 @@ First, we load the dataset and provide a descriptive analysis of the variables.
 
 ```{r}
 # Load the data
-wines <- read.csv("wines.csv")
+wines <- read.csv("wines.csv", sep = "")
 
 # Basic information about the dataset
 str(wines)
