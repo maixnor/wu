@@ -19,7 +19,7 @@ First, we load the historical price series data for IBM and compute the log-retu
 ibm_data <- read.csv("IBMdata.csv")
 
 # Compute the log-return series
-log_returns <- diff(log(ibm_data$Close))
+log_returns <- diff(log(ibm_data$Price))
 
 # Plot the histogram of log-returns
 hist(log_returns, main="Histogram of Log-Returns", xlab="Log-Returns", breaks=50, col="blue")
@@ -60,6 +60,9 @@ SF <- S0 * exp((mean_log_return - (sd_log_return^2) / 2) * 1 + sd_log_return * s
 We set \(K1 = 100\) and \(K2 = 120\), and use the payoff function to obtain realizations for the payoff.
 
 ```{r}
+K1 <- 100
+K2 <- 120
+
 # Payoff function
 payoff <- SF + pmax(K1 - SF, 0) - pmax(SF - K2, 0)
 
