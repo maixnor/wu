@@ -52,7 +52,7 @@ S0 <- 110
 Z <- rnorm(n)
 
 # Calculate SF realizations
-SF <- S0 * exp((mean_log_return - (sd_log_return^2) / 2) * 1 + sd_log_return * sqrt(1) * Z)
+SF <- S0 * exp((mean_log_return - (sd_log_return^2) / 2) * 360 + sd_log_return * sqrt(360) * Z)
 ```
 
 ## 4. Calculating the Payoff Realizations

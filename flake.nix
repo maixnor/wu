@@ -24,6 +24,7 @@
 					rPackages.IRkernel
 					rPackages.emdbook
 					rPackages.rgl
+					rPackages.tidyverse
 					pandoc
 					bat
           inotify-tools
