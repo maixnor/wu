@@ -1,7 +1,7 @@
 ---
 output:
   pdf_document:
-    latex_engine: xelatex
+    latex_engine: tectonic
     fig_caption: yes
 ---
 
@@ -24,15 +24,22 @@ output:
 \end{center}
 
 \newpage
+
+## Setting up
+
+First we need to set up our environment by loading relevant libraries and importing the 
+data we need from the given CSV.
+
+Then we also draw histograms to first visualize the data and get a feel for the 
+dataset we are dealing with.
+
 ```{r setup, include=TRUE}
 # Load necessary libraries
 library(ggplot2)
 library(readr)
 
-
 # Extracting data from the .csv file
 data <- read.csv("CEO_compensations.csv", sep = ",")
-
 
 # Attach the dataset to use variable names directly
 attach(data)
@@ -43,6 +50,12 @@ hist(SALES, main="Histogram of Sales", xlab="Sales", col="blue", breaks=50)
 hist(COMP, main="Histogram of Compensation", xlab="Compensation", col="green", breaks=50)
 ```
 
+The histogarms seem to be aligning quite well with one another. In the lower part with more data points as
+well as in the higher regions with considerably less density of data points.
+
+To get a better overview we also plot a logarithmic scale histogram, since this will be used later for a more 
+accurate regression approximation.
+
 ```{r}
 # Log-transformed histograms
 par(mfrow=c(1,2))  #plotting layout
@@ -50,15 +63,38 @@ hist(log2(SALES), main="Histogram for Sales", xlab="log2(Sales)", col="blue", br
 hist(log2(COMP), main="Histogram for Compensation", xlab="log2(Compensation)", col="green", breaks=50)
 ```
 
+## Regression
+
+To start solving the task we first implement a standard linear regression model.
+
 ```{r}
 # Simple linear regression without log-transform
 model1 <- lm(COMP ~ SALES)
 summary(model1)
+```
 
+The summary tells us that our approach is already quite good, since we see 3 stars `***` with both
+variables. This signals high significance and therefore a close correlation between the 2 variables
+*Sales* and *Income*.
+
+But we think we can do better by using a logarithmic scale to reduce the spread of the data.
+
+```{r}
 # Simple linear regression with log-transform
 model2 <- lm(log2(COMP) ~ log2(SALES))
 summary(model2)
+```
 
+Looking the summary now we see an even higher significance, since we don't even see any zeroes 
+with the `SALES` variable, but also an exponential notation, meaning the value is even smaller
+and thus resulting in a better approximation model.
+
+## Scattering the Plot
+
+Now to get an even better feel of our approximation we will use scatter plots to show the data set 
+as well as the regression line.
+
+```{r}
 # Scatter plots with regression lines
 par(mfrow=c(1,2))  # 1x2 plotting layout
 
@@ -71,6 +107,10 @@ plot(log2(SALES), log2(COMP), main="log2(Compensation) vs. log2(Sales)", xlab="l
 abline(model2, col="red")
 ```
 
+Comparing the 2 plots we see a steeper red linear regression line. Also the spread of the data points
+is much smoother using the logarithm. More spread out in the clustering region, but also closer together in the outer
+regions.
+
 ```{r}
 # R-squared for the models
 r_squared_model1 <- summary(model1)$r.squared
@@ -79,6 +119,9 @@ r_squared_model2 <- summary(model2)$r.squared
 r_squared_model1
 r_squared_model2
 ```
+
+And we can also verify that the spread has decreased as is indicated by the `Multiple R-squared` in the summary. 
+It has dramatically improved from `0.141` to `0.2416`. Almost double, therefore half the spread overall.
 
 
 ```{r}
@@ -90,6 +133,14 @@ slope <- coef(chosen_model)[2]
 slope
 ```
 
+For the reason of less spread and a more accurate approximation we chose the logarithmic model 
+to base our predictions on.
+
+## Tell me Crystal Sphere
+
+Lastly we want to finally reap the fruits of our effort and predict the compensation
+of CEOs which are not included in the dataset.
+
 ```{r}
 # Predicting compensation for sales of 1.6384 billion USD
 sales_values <- seq(from=min(SALES), to=max(SALES), length.out=100)
@@ -97,7 +148,6 @@ predicted_log2_compensation <- predict(chosen_model, newdata = data.frame(log2.S
 predicted_compensation <- 2^predicted_log2_compensation
 predicted_compensation
 ```
-
 
 ```{r}
 # Perform statistical test on the chosen model
