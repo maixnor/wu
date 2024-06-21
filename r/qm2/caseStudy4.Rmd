@@ -1,0 +1,126 @@
+---
+output:
+  pdf_document:
+    latex_engine: xelatex
+    fig_caption: yes
+---
+
+\thispagestyle{empty}
+
+\begin{center}
+  \vspace*{2cm}
+  \Huge\textbf{Case Study 4} \\[0.5cm]
+  \Large\textbf{Linear Regression of CEO Compensations on the Firm’s Sales} \\[1cm]
+  \large
+  \begin{tabular}{c}
+    Benjamin Maixner \\
+    Chirill Glitos \\
+    Franziska Kirschner \\
+    Said Rizvanov \\
+  \end{tabular}
+  \vfill
+  \normalsize
+  \textbf{Date}: `r format(Sys.Date(), "%B %d, %Y")`
+\end{center}
+
+\newpage
+```{r setup, include=TRUE}
+# Load necessary libraries
+library(ggplot2)
+library(readr)
+
+
+# Extracting data from the .csv file
+data <- read.csv("CEO_compensations.csv", sep = ",")
+
+
+# Attach the dataset to use variable names directly
+attach(data)
+
+# Histograms for X and Y
+par(mfrow=c(1,2))  #plotting layout
+hist(SALES, main="Histogram of Sales", xlab="Sales", col="blue", breaks=50)
+hist(COMP, main="Histogram of Compensation", xlab="Compensation", col="green", breaks=50)
+```
+
+```{r}
+# Log-transformed histograms
+par(mfrow=c(1,2))  #plotting layout
+hist(log2(SALES), main="Histogram for Sales", xlab="log2(Sales)", col="blue", breaks=50)
+hist(log2(COMP), main="Histogram for Compensation", xlab="log2(Compensation)", col="green", breaks=50)
+```
+
+```{r}
+# Simple linear regression without log-transform
+model1 <- lm(COMP ~ SALES)
+summary(model1)
+
+# Simple linear regression with log-transform
+model2 <- lm(log2(COMP) ~ log2(SALES))
+summary(model2)
+
+# Scatter plots with regression lines
+par(mfrow=c(1,2))  # 1x2 plotting layout
+
+# Scatter plot for original data
+plot(SALES, COMP, main="Compensation vs. Sales", xlab="Sales", ylab="Compensation")
+abline(model1, col="red")
+
+# Scatter plot for log-transformed data
+plot(log2(SALES), log2(COMP), main="log2(Compensation) vs. log2(Sales)", xlab="log2(Sales)", ylab="log2(Compensation)")
+abline(model2, col="red")
+```
+
+```{r}
+# R-squared for the models
+r_squared_model1 <- summary(model1)$r.squared
+r_squared_model2 <- summary(model2)$r.squared
+
+r_squared_model1
+r_squared_model2
+```
+
+
+```{r}
+# Choosing the final model
+chosen_model <- model2  # Assuming log-transformed model was chosen
+
+# Interpretation of the slope
+slope <- coef(chosen_model)[2]
+slope
+```
+
+```{r}
+# Predicting compensation for sales of 1.6384 billion USD
+sales_values <- seq(from=min(SALES), to=max(SALES), length.out=100)
+predicted_log2_compensation <- predict(chosen_model, newdata = data.frame(log2.SALES. = log2(sales_values)))
+predicted_compensation <- 2^predicted_log2_compensation
+predicted_compensation
+```
+
+
+```{r}
+# Perform statistical test on the chosen model
+summary(chosen_model)
+```
+
+
+```{r}
+# Standardize the variables
+log2_sales_std <- scale(log2(SALES))
+log2_compensation_std <- scale(log2(COMP))
+
+# Fit the model with standardized variables
+model_std <- lm(log2_compensation_std ~ log2_sales_std)
+summary(model_std)
+```
+
+
+```{r}
+# Verify that one of the coefficients is the correlation coefficient
+correlation <- cor(log2_sales_std, log2_compensation_std)
+coef_model_std <- coef(model_std)[2]
+
+list(correlation = correlation, coef_model_std = coef_model_std)
+```
+
