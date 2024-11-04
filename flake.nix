@@ -11,13 +11,8 @@
         nativeBuildInputs = [ pkgs.bashInteractive ];
         buildInputs = with pkgs; [ 
 					R 
-					rPackages.pagedown 
-					rPackages.recommenderlab
-					rPackages.ggplot2
-          rPackages.extraDistr
-					rPackages.dplyr
+          rstudio
 					rPackages.xts
-					rPackages.purrr
 					rPackages.rmarkdown
 					rPackages.knitr
 					rPackages.RDocumentation
@@ -25,14 +20,9 @@
 					rPackages.emdbook
 					rPackages.rgl
 					rPackages.tidyverse
-					pandoc
-					bat
-          inotify-tools
-					just
 				];
         shellHook = ''
-          $SHELL
-          echo "It is time to R..."
+          echo "It's time to R..."
         '';
        };
     });
