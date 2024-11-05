@@ -1,0 +1,516 @@
+---
+title: "BA 2 - 1296 - Homework 1 - Group 1"
+author: "AUER Kornel, ARNS Vivien, LAKATOS Vanda, MASIUK Yurii, MEIXNER Benjamin, OLSA Nicolas"
+date: "04-11-2024"
+output: 
+  pdf_document:
+    fig_width: 12
+    fig_height: 12 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.width=12, fig.height=12)
+
+knitr::opts_knit$set(root.dir = "~/projects/wu/r/ba2/hw1")
+```
+
+# Introduction
+
+We start by executing the whole BA2_Ex1.R script, which was provided on Canvas before starting the Exercises.
+
+```{r}
+#----------------------------
+# 1) READING-IN DATA FROM CSV
+#----------------------------
+
+# specify the separator appropriately
+price_data <- read.csv(file="price_data.csv", sep=";") # now it works!
+head(price_data) # looks nice
+
+head(price_data$Name)
+class(price_data$Name) # character variables are read into R as character by read.csv()
+
+mean(price_data$Price) # let's take the mean of Price, which should be a numeric variable
+class(price_data$Price)
+# R didn't get that this should be numeric,
+# since read.csv() does not recognize "," as a decimal point unless you explicitly specify this
+
+#let's try one more time, with sep and dec specified correctly
+price_data <- read.csv(file="price_data.csv", sep=";", dec=",")
+dim(price_data)
+head(price_data)
+class(price_data$Name)
+class(price_data$Price)
+mean(price_data$Price)
+which(is.na(price_data$Price))
+
+head(price_data) # now let's have a look at the data again
+summary(price_data)
+
+price_data <- na.omit(price_data) #removing NA (always removes whole row if at least 1 NA occurs)
+
+# let's have a closer look at our first firm
+
+# extracting data on just the first firm
+f1 <- price_data[price_data$ID==10001 ,]
+
+head(f1$Date)
+class(f1$Date) # date is currently of class character
+
+f1$Date <- as.Date(f1$Date, format="%Y-%m-%d") #convert the date of class "character" to a proper date of class "Date"
+head(f1$Date)
+class(f1$Date)
+
+
+
+#---------------------------------------
+# 2) CONVERT PRICES TO XTS AND VISUALIZE
+#---------------------------------------
+
+# load the xts library
+library(xts)
+
+# let's convert the price into an xts object, using the dates in the appropriate "Date" format
+p1 <- xts(f1$Price, order.by=f1$Date)
+head(p1)
+class(p1)
+plot(p1, col="steelblue")
+
+# let's have a look at a second firm
+f2 <- price_data[price_data$ID==10002, ]
+p2 <- xts(f2$Price, order.by=as.Date(f2$Date))
+
+plot(p2, col="coral")
+
+# plotting the two time series together
+length(p1)
+length(p2) # the two time series are of different length...
+p12 <- cbind(p1, p2)
+colnames(p12) <- c("p1", "p2")
+head(p12)
+dim(p12)
+tail(p12)
+
+plot(p12, col=c("steelblue", "coral"), legend.loc="topright")
+
+# using lines() instead
+plot(p12[,1],col="steelblue") #plot first series
+lines(p12[,2], col="coral") #add second series
+addLegend("topleft", legend.names=c("p1", "p2"), col=c("steelblue", "coral"), lwd=1)
+
+
+
+#---------------------------------------------------
+# 2) CONVERT ALL TIME SERIES TO XTS AND CREATE PANEL
+#---------------------------------------------------
+
+# our data has the following (simplified) structure:
+
+# DATE    PRICE
+# date1   price_firm1
+# date2   price_firm1
+# date3   price_firm1
+# ...     ...
+# date1   price_firm2
+# date2   price_firm2
+# date3   price_firm2
+# ...     ...
+
+
+# with the code below, we change the structure of our data to the following:
+
+# DATE    FIRM1         FIRM2         ...
+# date1   price_firm1   price_firm2   ...
+# date2   price_firm1   price_firm2   ...
+# date3   price_firm1   price_firm2   ...
+# ...     ...           ...
+
+# so one row always corresponds to a particular date and each column holds to the stock prices of a particular firm
+# with our data in this new structure, we can easily convert it into an xts timeseries
+
+IDs <- unique(price_data$ID) # get the IDs of unique firms in the data set
+head(IDs)
+p <- list() #create an empty list to store time series of individual firmst, already converted to xts
+for (i in 1:length(IDs)) {
+  price_data_i <- price_data[price_data$ID==IDs[i], ] #take all the price data of one firm with firm ID equal to IDs[i]
+  p[[i]] <- xts(price_data_i$Price, order.by=as.Date(as.character(price_data_i$Date), format="%Y-%m-%d")) # convert the series of prices of this one firm to an xts object
+}
+
+# we now have a list, where each list element holds an xts time series with prices from one particular firm
+p[1]
+
+# we now want to combine all individual xts time series stored in the list elements into one object, where each column corresponds to the time series of one particular firm
+#?do.call
+
+price <- do.call(cbind, p) # cbind combines the individual time series into columns of a matrix-like object (still of class xts)
+colnames(price) <- paste0("X", IDs) #add the X to get alpha-numeric colnames instead of numeric colnames, which might be an issue
+dim(price)
+price <- price["1990/"] # only take the data form 1990 onwards
+price[1:10,1:10]
+
+#we see that some firms actually have two prices for the same month -- e.g. 1990-04-30 is included twice for this reason
+#for all other firms that only have one observation on 1990-04-30, this additional row therefore gets filled with NA
+price <- apply.daily(price, FUN=function(x) x[1,] ) #for each day, take only the first of the available prices -> if there are more prices, only the first is considered; if there is only one price, then this is also the "first price" of that day
+
+# some prices in our data set are negative, which, if taken literally, would be quite weird...
+# in this data set, negative means that quoted prices (averages of available bid and ask prices) are used instead of actual prices at which a transaction was executed
+# for our purposes, we do not care about the difference between quoted and traded prices, so we just remove the negative sign by taking the absolute value
+price <- abs(price)
+
+# we just created a matrix of prices, where the column names identify the corresponding firm
+
+```
+
+
+# Exercise 1.
+
+
+```{r}
+library(xts)
+library(lubridate)
+library(zoo)
+setwd("~/projects/wu/r/ba2/hw1")
+firm_data <- read.csv(file = "firm_data.csv", sep=",", dec=".")
+head(firm_data)
+summary(firm_data)
+firm_data <- na.omit(firm_data) #removing NA (always removes whole row if at least 1 NA occurs)
+
+```
+
+## 2: Convert the data on earnings for the first firm to an xts object and plot it
+
+```{r}
+f1 <- firm_data[firm_data$ID==10001, ]
+f1
+f1$Date <- as.Date(f1$Date, format="%Y-%m-%d") #convert "character" to  "Date" for dates
+class(f1$Date) #double check
+
+
+e1 <- xts(f1$Earnings, order.by=f1$Date) #convert earnings to an xts
+plot(e1, col="steelblue", main="Earnings of Company 1")
+```
+
+
+## 3: Convert the data on earnings for all firms to an xts object and subset the data to the period from 1990 to 2018
+
+```{r}
+IDs<-unique(firm_data$ID)
+head(IDs)
+
+e <- list()
+for (i in 1:length(IDs)) {
+  firm_data_i <- firm_data[firm_data$ID==IDs[i], ]
+  e[[i]] <- xts(firm_data$Earnings, order.by=as.Date(as.character(firm_data$Date), format="%Y-%m-%d"))
+}
+e[1]
+
+
+names(e) <- IDs
+earnings <- do.call(cbind, e)
+
+colnames(earnings) <- paste0("X",IDs) # add the X to get alpha-numeric colnames instead of numeric colnames, which might be an issue
+class(earnings)
+dim(earnings)
+earnings <- earnings["1990/2018"]
+earnings[,1] #just to check
+```
+
+## 4: Yearly data
+
+###a taking yearly averages
+
+```{r}
+price_avg_yearly <- apply.yearly(price, FUN= function(x) colMeans(x, na.rm=TRUE) )
+price_avg_yearly [ ,1:6]
+
+earnings_avg_yearly <- apply.yearly(earnings, FUN=function(x) colMeans(x, na.rm=TRUE))
+earnings_avg_yearly [ ,1:6]
+```
+
+###b taking the last date from each year 
+
+```{r}
+yearly_price <- apply.yearly(price, FUN = last)
+yearly_price[ ,1:6]
+
+earnings_last_yearly <- apply.yearly (earnings, FUN=last)
+earnings_last_yearly[ ,1:6]
+```
+
+## 5: Calculate yearly returns from the yearly prices.
+multiple time-series:
+
+```{r}
+dim(yearly_price)#just to check 
+```
+
+calculating returns:
+```{r, include=FALSE, results='hide'}
+yearly_price/lag(yearly_price)-1
+na.locf(diff(yearly_price), fromLast=TRUE) 
+```
+
+## 6: Take the first company of the data set, and make a 2-panel multipanel plot
+
+### a)-1 Calculating yearly returns for the first company (ID 10001) Align dates for the yearly price series as provided in Hint 1
+
+```{r}
+yearly_dates <- seq(from = as.Date("1990-12-31"), to = as.Date("2018-12-31"), by = "year")
+yearly_price_f1 <- xts(coredata(yearly_price[,"X10001"]), order.by = yearly_dates)
+```
+
+# Calculating returns for the aligned yearly price series
+
+```{r}
+f1_returns <- yearly_price[,"X10001"] / lag(yearly_price[,"X10001"]) - 1
+```
+
+### a)-2 Calculating yearly average earnings for company 1 (ID 10001) with aligned dates
+
+```{r}
+earnings_avg_yearly_f1 <- xts(coredata(earnings_avg_yearly[,"X10001"]), order.by = yearly_dates)
+```
+
+Calculate 3-year moving average of earnings for company 1
+
+```{r}
+earnings_f1_ma <- rollapply(earnings_avg_yearly_f1, width = 3, FUN = mean, align = "right", fill = NA)
+```
+
+Plotting
+```{r}
+par(mfrow = c(2, 1))  # Set up for 2-panel plot
+```
+
+Upper panel
+```{r}
+plot(index(f1_returns), coredata(f1_returns), type = "l", col = "darkred", #x axis: dates are extracted from the xts(f1_returns) "
+                                                                          #using index", y axis: vector of yearly returns plotted 
+     main = "Yearly Returns for Company 1 (ID: 10001)", xlab = "Year", ylab = "Return")
+```
+
+Lower panel
+
+```{r}
+plot(index(earnings_avg_yearly_f1), coredata(earnings_avg_yearly_f1), type = "l", col = "steelblue",
+     main = "Yearly Average Earnings with 3-Year Moving Average for Company 1", xlab = "Year", ylab = "Earnings")
+
+lines(index(earnings_f1_ma), coredata(earnings_f1_ma), col = "orange", lty = 2, lwd = 2) # b) Adding the 3-year moving average line to the lower panel
+
+legend("topleft", legend = c("Yearly Earnings of Company 1", "3-Year Moving Average of Company 1"), col = c("steelblue", "orange"), lty = c(1, 2), lwd = c(1, 2))
+```
+
+# Exercise 2.
+## 1
+
+```{r}
+load("index_data.RData")
+```
+
+Convert row names to Date format
+
+```{r}
+dates <- as.Date(row.names(indices))
+```
+
+## 2
+
+```{r}
+# Create an xts object for one index of choice
+
+sp_xts <- xts(indices$sp.xts, order.by = dates)
+
+# Filter data from 1995 to 2015
+
+sp_xts_filtered <- sp_xts["1995/2015"]
+```
+
+```{r}
+#a)Monthly trading days count
+
+trading_days_month <- apply.monthly(sp_xts_filtered, FUN=length)
+
+#b) Yearly trading days count
+
+trading_days_year <- apply.yearly(sp_xts_filtered, FUN=length)
+
+# Plot monthly and yearly trading days count
+
+plot(trading_days_month, main="Monthly Trading Days (1995–2015)", ylab="Days")
+
+plot(trading_days_year, main="Yearly Trading Days (1995–2015)", ylab="Days")
+```
+
+## 3
+Calculate first and last values of each month
+
+```{r}
+first_values <- apply.monthly(sp_xts_filtered, FUN=function(x) first(x))
+head(first_values)
+last_values <- apply.monthly(sp_xts_filtered, FUN=function(x) last(x))
+head(last_values)
+```
+
+Plot both series on the same plot
+
+```{r}
+plot(first_values, type="l", col="blue", ylab="Index Value", main="First and Last Monthly Index Values")
+
+lines(last_values, col="red")
+legend("topright", legend=c("First Value", "Last Value"), col=c("blue", "red"), pch =19, lty=1)
+```
+
+## 4
+Calculate monthly returns based on last values
+
+```{r}
+monthly_returns <- diff(log(last_values)) * 100
+head(monthly_returns)
+plot(monthly_returns, main="Monthly Returns of S&P 500", ylab="Return (%)")
+```
+
+## 5
+Calculate daily returns
+
+```{r}
+daily_returns <- diff(log(sp_xts_filtered)) * 100
+plot(daily_returns, main="Daily Returns of S&P 500", ylab="Return (%)")
+```
+
+## 6
+Visualize the density of daily returns
+
+```{r}
+density_daily_returns <- density(daily_returns, na.rm = TRUE)
+plot(density_daily_returns, main = "Density of Daily Returns", xlab = "Daily Return (%)")
+```
+
+## 7
+Plot the time series of daily returns and squared daily returns
+
+```{r}
+daily_returns_squared <- daily_returns^2
+par(mfrow = c(2, 1))
+plot(daily_returns, type = "l", col = "darkgreen", main = "Daily Returns", ylab = "Return (%)")
+plot(daily_returns_squared, type = "l", col = "purple", main = "Squared Daily Returns", ylab = "Squared Return (%)")
+```
+
+Observations:
+The high volatility periods (squared returns) appear to be clustered, with notable spikes around 2008-2009.
+
+## 8
+Lag the daily returns by one day
+
+```{r}
+lagged_daily_returns <- lag(daily_returns, k = 1)
+head(lagged_daily_returns)
+```
+
+Lag the squared daily returns by one day
+
+```{r}
+lagged_daily_returns_squared <- lag(daily_returns_squared, k = 1)
+```
+
+## 9
+Filter data between 2000 and 2018
+
+```{r}
+daily_returns_2000_2018 <- daily_returns["2000/2018"]
+```
+
+Lagged returns
+
+```{r}
+lagged_daily_returns_2000_2018 <- lag(daily_returns_2000_2018, k = 1)
+```
+
+Squared returns and lagged squared returns
+
+```{r}
+daily_returns_squared_2000_2018 <- daily_returns_2000_2018^2
+lagged_daily_returns_squared_2000_2018 <- lag(daily_returns_squared_2000_2018, k = 1)
+```
+
+Remove NA values
+
+```{r}
+valid_indices <- complete.cases(daily_returns_2000_2018, lagged_daily_returns_2000_2018)
+valid_indices_squared <- complete.cases(daily_returns_squared_2000_2018, lagged_daily_returns_squared_2000_2018)
+```
+
+Compute correlations
+
+```{r}
+correlation_daily <- cor(daily_returns_2000_2018[valid_indices], lagged_daily_returns_2000_2018[valid_indices])
+print(correlation_daily)
+```
+
+The negative correlation suggests a weak inverse relationshiNexp between the daily returns and their lagged values. In other words, if today's return is positive, tomorrow's return is slightly more likely to be negative, and vice versa. However, since the correlation is close to zero, this relationship is very weak and indicates that past returns do not significantly predict future returns.
+
+```{r}
+correlation_daily_squared <- cor(daily_returns_squared_2000_2018[valid_indices_squared], lagged_daily_returns_squared_2000_2018[valid_indices_squared])
+print(correlation_daily_squared)
+```
+
+The positive correlation indicates a moderate relationship between squared daily returns and their lagged values. Squared returns are often used as a measure of volatility, so this result suggests that periods of high volatility tend to be followed by periods of high volatility. In contrast, periods of low volatility tend to follow periods of low volatility, indicating some persistence in volatility over time.
+
+# Exercise 3.
+
+## 1
+
+Before starting we need to convert into an xts object. Then we slice for the relevant dates
+
+```{r}
+timevector <- as.Date(rownames(indices)) # dates
+xts_data <- xts(indices, order.by=timevector)
+xts_dats <- xts_data["1995-01-01/2018-12-31"]
+```
+
+Then we can plot everything together.
+
+```{r}
+plot(xts_dats, legend.loc="topleft", main="Price time series")
+```
+
+## 2
+
+We can also plot in separate plots.
+
+```{r}
+plot(xts_dats, multi.panel=3, main="Price time series")
+```
+
+## 3 
+
+Lastly we calculate the monthly returns by the formula of $r_t = \frac{p_t}{p_{t-1}} - 1$ for each of the 3 indices.
+
+```{r}
+subset_last_ftse <- xts_dats$ftse.xts[endpoints(xts_dats$ftse.xts, on= "months")]
+subset_first_ftse <- xts_dats$ftse.xts[xts:::startof(xts_dats$ftse.xts, by="months")]
+monthly_returns_ftse <- ((coredata(subset_last_ftse) / coredata(subset_first_ftse)) - 1)
+
+subset_last_sp <- xts_dats$sp.xts[endpoints(xts_dats$sp.xts, on= "months")]
+subset_first_sp <- xts_dats$sp.xts[xts:::startof(xts_dats$sp.xts, by="months")]
+monthly_returns_sp <- ((coredata(subset_last_sp) / coredata(subset_first_sp)) - 1)
+
+subset_last_dji <- xts_dats$dji.xts[endpoints(xts_dats$dji.xts, on= "months")]
+subset_first_dji <- xts_dats$dji.xts[xts:::startof(xts_dats$dji.xts, by="months")]
+monthly_returns_dji <- ((coredata(subset_last_dji) / coredata(subset_first_dji)) - 1)
+```
+
+Now to demonstrate the returns we can use head to get the first few elements from each vector.
+
+```{r}
+head(monthly_returns_ftse)
+```
+```{r}
+head(monthly_returns_sp)
+```
+```{r]
+head(monthly_returns_dji)
+```
+
+
+

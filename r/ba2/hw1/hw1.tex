@@ -1,0 +1,1643 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={BA 2 - 1296 - Homework 1 - Group 1},
+  pdfauthor={AUER Kornel, ARNS Vivien, LAKATOS Vanda, MASIUK Yurii, MEIXNER Benjamin, OLSA Nicolas},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{BA 2 - 1296 - Homework 1 - Group 1}
+\author{AUER Kornel, ARNS Vivien, LAKATOS Vanda, MASIUK Yurii, MEIXNER
+Benjamin, OLSA Nicolas}
+\date{04-11-2024}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}\label{introduction}
+
+We start by executing the whole BA2\_Ex1.R script, which was provided on
+Canvas before starting the Exercises.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# 1) READING{-}IN DATA FROM CSV}
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\CommentTok{\# specify the separator appropriately}
+\NormalTok{price\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file=}\StringTok{"price\_data.csv"}\NormalTok{, }\AttributeTok{sep=}\StringTok{";"}\NormalTok{) }\CommentTok{\# now it works!}
+\FunctionTok{head}\NormalTok{(price\_data) }\CommentTok{\# looks nice}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   X    ID       Name       Date            Price Shares.Outstanding
+## 1 1 10001 Dictum Ltd 1986-01-31 2,05580160630732               2955
+## 2 2 10001 Dictum Ltd 1986-02-28 2,09143784239333               2955
+## 3 3 10001 Dictum Ltd 1986-03-31 2,09860029297989               2955
+## 4 4 10001 Dictum Ltd 1986-04-30   2,128636103186               2955
+## 5 5 10001 Dictum Ltd 1986-05-30 2,10684674616708               2955
+## 6 6 10001 Dictum Ltd 1986-06-30 2,04773814008873               2955
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Name)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Dictum Ltd" "Dictum Ltd" "Dictum Ltd" "Dictum Ltd" "Dictum Ltd"
+## [6] "Dictum Ltd"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Name) }\CommentTok{\# character variables are read into R as character by read.csv()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Price) }\CommentTok{\# let\textquotesingle{}s take the mean of Price, which should be a numeric variable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in mean.default(price_data$Price): argument is not numeric or logical:
+## returning NA
+\end{verbatim}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Price)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# R didn\textquotesingle{}t get that this should be numeric,}
+\CommentTok{\# since read.csv() does not recognize "," as a decimal point unless you explicitly specify this}
+
+\CommentTok{\#let\textquotesingle{}s try one more time, with sep and dec specified correctly}
+\NormalTok{price\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file=}\StringTok{"price\_data.csv"}\NormalTok{, }\AttributeTok{sep=}\StringTok{";"}\NormalTok{, }\AttributeTok{dec=}\StringTok{","}\NormalTok{)}
+\FunctionTok{dim}\NormalTok{(price\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 194724      6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(price\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   X    ID       Name       Date    Price Shares.Outstanding
+## 1 1 10001 Dictum Ltd 1986-01-31 2.055802               2955
+## 2 2 10001 Dictum Ltd 1986-02-28 2.091438               2955
+## 3 3 10001 Dictum Ltd 1986-03-31 2.098600               2955
+## 4 4 10001 Dictum Ltd 1986-04-30 2.128636               2955
+## 5 5 10001 Dictum Ltd 1986-05-30 2.106847               2955
+## 6 6 10001 Dictum Ltd 1986-06-30 2.047738               2955
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Name)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Price)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Price)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{Price))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]   1786   5459  19052  19347  20236  24146  36104  40295  46665  54226
+## [11]  65564  66360  72234  74180  75468  82552  86808  86809  90454 106607
+## [21] 106617 107619 107869 109040 116676 117915 131688 132260 132949 139405
+## [31] 140077 140078 144768 144769 146937 147223 152099 152298 152997 165757
+## [41] 183877 186496 186497 189649
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(price\_data) }\CommentTok{\# now let\textquotesingle{}s have a look at the data again}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   X    ID       Name       Date    Price Shares.Outstanding
+## 1 1 10001 Dictum Ltd 1986-01-31 2.055802               2955
+## 2 2 10001 Dictum Ltd 1986-02-28 2.091438               2955
+## 3 3 10001 Dictum Ltd 1986-03-31 2.098600               2955
+## 4 4 10001 Dictum Ltd 1986-04-30 2.128636               2955
+## 5 5 10001 Dictum Ltd 1986-05-30 2.106847               2955
+## 6 6 10001 Dictum Ltd 1986-06-30 2.047738               2955
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(price\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X                ID            Name               Date          
+##  Min.   :     1   Min.   :10001   Length:194724      Length:194724     
+##  1st Qu.: 48682   1st Qu.:11976   Class :character   Class :character  
+##  Median : 97362   Median :29946   Mode  :character   Mode  :character  
+##  Mean   : 97362   Mean   :31549                                        
+##  3rd Qu.:146043   3rd Qu.:47715                                        
+##  Max.   :194724   Max.   :62033                                        
+##                                                                        
+##      Price          Shares.Outstanding
+##  Min.   :  -310.4   Min.   :       3  
+##  1st Qu.:     4.6   1st Qu.:    7692  
+##  Median :    11.5   Median :   23598  
+##  Mean   :   311.8   Mean   :  160940  
+##  3rd Qu.:    25.0   3rd Qu.:   70218  
+##  Max.   :440119.5   Max.   :10880222  
+##  NA's   :44         NA's   :44
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{price\_data }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(price\_data) }\CommentTok{\#removing NA (always removes whole row if at least 1 NA occurs)}
+
+\CommentTok{\# let\textquotesingle{}s have a closer look at our first firm}
+
+\CommentTok{\# extracting data on just the first firm}
+\NormalTok{f1 }\OtherTok{\textless{}{-}}\NormalTok{ price\_data[price\_data}\SpecialCharTok{$}\NormalTok{ID}\SpecialCharTok{==}\DecValTok{10001}\NormalTok{ ,]}
+
+\FunctionTok{head}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1986-01-31" "1986-02-28" "1986-03-31" "1986-04-30" "1986-05-30"
+## [6] "1986-06-30"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date) }\CommentTok{\# date is currently of class character}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f1}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date, }\AttributeTok{format=}\StringTok{"\%Y{-}\%m{-}\%d"}\NormalTok{) }\CommentTok{\#convert the date of class "character" to a proper date of class "Date"}
+\FunctionTok{head}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1986-01-31" "1986-02-28" "1986-03-31" "1986-04-30" "1986-05-30"
+## [6] "1986-06-30"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Date"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# 2) CONVERT PRICES TO XTS AND VISUALIZE}
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\CommentTok{\# load the xts library}
+\FunctionTok{library}\NormalTok{(xts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# let\textquotesingle{}s convert the price into an xts object, using the dates in the appropriate "Date" format}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Price, }\AttributeTok{order.by=}\NormalTok{f1}\SpecialCharTok{$}\NormalTok{Date)}
+\FunctionTok{head}\NormalTok{(p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                [,1]
+## 1986-01-31 2.055802
+## 1986-02-28 2.091438
+## 1986-03-31 2.098600
+## 1986-04-30 2.128636
+## 1986-05-30 2.106847
+## 1986-06-30 2.047738
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "xts" "zoo"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(p1, }\AttributeTok{col=}\StringTok{"steelblue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# let\textquotesingle{}s have a look at a second firm}
+\NormalTok{f2 }\OtherTok{\textless{}{-}}\NormalTok{ price\_data[price\_data}\SpecialCharTok{$}\NormalTok{ID}\SpecialCharTok{==}\DecValTok{10002}\NormalTok{, ]}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(f2}\SpecialCharTok{$}\NormalTok{Price, }\AttributeTok{order.by=}\FunctionTok{as.Date}\NormalTok{(f2}\SpecialCharTok{$}\NormalTok{Date))}
+
+\FunctionTok{plot}\NormalTok{(p2, }\AttributeTok{col=}\StringTok{"coral"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# plotting the two time series together}
+\FunctionTok{length}\NormalTok{(p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 379
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(p2) }\CommentTok{\# the two time series are of different length...}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 325
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p12 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(p1, p2)}
+\FunctionTok{colnames}\NormalTok{(p12) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"p1"}\NormalTok{, }\StringTok{"p2"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(p12)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  p1       p2
+## 1986-01-31 2.055802 7.761010
+## 1986-02-28 2.091438 8.824989
+## 1986-03-31 2.098600 9.482566
+## 1986-04-30 2.128636 9.946551
+## 1986-05-30 2.106847 9.741044
+## 1986-06-30 2.047738 8.475655
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(p12)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 379   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tail}\NormalTok{(p12)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  p1 p2
+## 2017-02-28 12.64267 NA
+## 2017-03-31 12.71028 NA
+## 2017-04-28 12.50716 NA
+## 2017-05-31 12.69769 NA
+## 2017-06-30 12.92101 NA
+## 2017-07-31 12.94437 NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(p12, }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"steelblue"}\NormalTok{, }\StringTok{"coral"}\NormalTok{), }\AttributeTok{legend.loc=}\StringTok{"topright"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# using lines() instead}
+\FunctionTok{plot}\NormalTok{(p12[,}\DecValTok{1}\NormalTok{],}\AttributeTok{col=}\StringTok{"steelblue"}\NormalTok{) }\CommentTok{\#plot first series}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-1-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lines}\NormalTok{(p12[,}\DecValTok{2}\NormalTok{], }\AttributeTok{col=}\StringTok{"coral"}\NormalTok{) }\CommentTok{\#add second series}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-1-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{addLegend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{, }\AttributeTok{legend.names=}\FunctionTok{c}\NormalTok{(}\StringTok{"p1"}\NormalTok{, }\StringTok{"p2"}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"steelblue"}\NormalTok{, }\StringTok{"coral"}\NormalTok{), }\AttributeTok{lwd=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-1-6.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# 2) CONVERT ALL TIME SERIES TO XTS AND CREATE PANEL}
+\CommentTok{\#{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+
+\CommentTok{\# our data has the following (simplified) structure:}
+
+\CommentTok{\# DATE    PRICE}
+\CommentTok{\# date1   price\_firm1}
+\CommentTok{\# date2   price\_firm1}
+\CommentTok{\# date3   price\_firm1}
+\CommentTok{\# ...     ...}
+\CommentTok{\# date1   price\_firm2}
+\CommentTok{\# date2   price\_firm2}
+\CommentTok{\# date3   price\_firm2}
+\CommentTok{\# ...     ...}
+
+
+\CommentTok{\# with the code below, we change the structure of our data to the following:}
+
+\CommentTok{\# DATE    FIRM1         FIRM2         ...}
+\CommentTok{\# date1   price\_firm1   price\_firm2   ...}
+\CommentTok{\# date2   price\_firm1   price\_firm2   ...}
+\CommentTok{\# date3   price\_firm1   price\_firm2   ...}
+\CommentTok{\# ...     ...           ...}
+
+\CommentTok{\# so one row always corresponds to a particular date and each column holds to the stock prices of a particular firm}
+\CommentTok{\# with our data in this new structure, we can easily convert it into an xts timeseries}
+
+\NormalTok{IDs }\OtherTok{\textless{}{-}} \FunctionTok{unique}\NormalTok{(price\_data}\SpecialCharTok{$}\NormalTok{ID) }\CommentTok{\# get the IDs of unique firms in the data set}
+\FunctionTok{head}\NormalTok{(IDs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10001 10002 10025 10026 10028 10032
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{() }\CommentTok{\#create an empty list to store time series of individual firmst, already converted to xts}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(IDs)) \{}
+\NormalTok{  price\_data\_i }\OtherTok{\textless{}{-}}\NormalTok{ price\_data[price\_data}\SpecialCharTok{$}\NormalTok{ID}\SpecialCharTok{==}\NormalTok{IDs[i], ] }\CommentTok{\#take all the price data of one firm with firm ID equal to IDs[i]}
+\NormalTok{  p[[i]] }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(price\_data\_i}\SpecialCharTok{$}\NormalTok{Price, }\AttributeTok{order.by=}\FunctionTok{as.Date}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(price\_data\_i}\SpecialCharTok{$}\NormalTok{Date), }\AttributeTok{format=}\StringTok{"\%Y{-}\%m{-}\%d"}\NormalTok{)) }\CommentTok{\# convert the series of prices of this one firm to an xts object}
+\NormalTok{\}}
+
+\CommentTok{\# we now have a list, where each list element holds an xts time series with prices from one particular firm}
+\NormalTok{p[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+##            m.c.seq.row..seq.n...seq.col..drop...FALSE.
+## 1986-01-31                                    2.055802
+## 1986-02-28                                    2.091438
+## 1986-03-31                                    2.098600
+## 1986-04-30                                    2.128636
+## 1986-05-30                                    2.106847
+## 1986-06-30                                    2.047738
+## 1986-07-31                                    2.025431
+## 1986-08-29                                    2.153462
+## 1986-09-30                                    2.121691
+## 1986-10-31                                    2.214154
+##        ...                                            
+## 2016-10-31                                   12.361647
+## 2016-11-30                                   12.494809
+## 2016-12-30                                   12.561419
+## 2017-01-31                                   12.645462
+## 2017-02-28                                   12.642667
+## 2017-03-31                                   12.710280
+## 2017-04-28                                   12.507163
+## 2017-05-31                                   12.697687
+## 2017-06-30                                   12.921007
+## 2017-07-31                                   12.944370
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# we now want to combine all individual xts time series stored in the list elements into one object, where each column corresponds to the time series of one particular firm}
+\CommentTok{\#?do.call}
+
+\NormalTok{price }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(cbind, p) }\CommentTok{\# cbind combines the individual time series into columns of a matrix{-}like object (still of class xts)}
+\FunctionTok{colnames}\NormalTok{(price) }\OtherTok{\textless{}{-}} \FunctionTok{paste0}\NormalTok{(}\StringTok{"X"}\NormalTok{, IDs) }\CommentTok{\#add the X to get alpha{-}numeric colnames instead of numeric colnames, which might be an issue}
+\FunctionTok{dim}\NormalTok{(price)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 523 500
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{price }\OtherTok{\textless{}{-}}\NormalTok{ price[}\StringTok{"1990/"}\NormalTok{] }\CommentTok{\# only take the data form 1990 onwards}
+\NormalTok{price[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              X10001   X10002    X10025   X10026    X10028    X10032   X10044
+## 1990-01-31 3.311181 4.181425 10.474186 5.306980 0.4693490 0.9506917 1.798413
+## 1990-02-28 3.284937 4.245365 10.226498 4.442308 0.4871051 0.9173799 1.713630
+## 1990-03-30 3.287699 4.256135  9.769611 4.294397 0.3802039 1.0558565 1.658601
+## 1990-04-30 3.300391 4.237388  9.434155 4.506959 0.3308849 0.9315946 1.448466
+## 1990-04-30       NA       NA        NA       NA        NA        NA       NA
+## 1990-05-31 3.243311 4.247749  9.952157 4.339328 0.2455050 0.9579519 1.379002
+## 1990-06-29 3.259194 4.239016  9.563001 4.077300 0.2307414 1.2552199 1.317599
+## 1990-07-31 3.329531 4.093011  9.311723 4.225863 0.2759456 1.0793802 1.316509
+## 1990-08-31 3.170938 3.908244  6.547842 3.816919 0.2459330 0.9402255 1.305125
+## 1990-09-28 3.243294 3.421910  4.734037 3.053089 0.3970484 0.9462025 1.048629
+##              X10100    X10104    X10107
+## 1990-01-31 2.063903 0.5498699 0.6559213
+## 1990-02-28 2.063828 0.5252338 0.7295998
+## 1990-03-30 2.088646 0.4899132 0.7173745
+## 1990-04-30 2.280196 0.4176335 0.8310474
+## 1990-04-30       NA        NA        NA
+## 1990-05-31 2.589755 0.5043378 0.9432163
+## 1990-06-29 2.907041 0.5573478 1.0175649
+## 1990-07-31 4.126346 0.4115881 0.9010209
+## 1990-08-31 3.376768 0.2916137 0.8914020
+## 1990-09-28 3.000250 0.1774012 0.8598513
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#we see that some firms actually have two prices for the same month {-}{-} e.g. 1990{-}04{-}30 is included twice for this reason}
+\CommentTok{\#for all other firms that only have one observation on 1990{-}04{-}30, this additional row therefore gets filled with NA}
+\NormalTok{price }\OtherTok{\textless{}{-}} \FunctionTok{apply.daily}\NormalTok{(price, }\AttributeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) x[}\DecValTok{1}\NormalTok{,] ) }\CommentTok{\#for each day, take only the first of the available prices {-}\textgreater{} if there are more prices, only the first is considered; if there is only one price, then this is also the "first price" of that day}
+
+\CommentTok{\# some prices in our data set are negative, which, if taken literally, would be quite weird...}
+\CommentTok{\# in this data set, negative means that quoted prices (averages of available bid and ask prices) are used instead of actual prices at which a transaction was executed}
+\CommentTok{\# for our purposes, we do not care about the difference between quoted and traded prices, so we just remove the negative sign by taking the absolute value}
+\NormalTok{price }\OtherTok{\textless{}{-}} \FunctionTok{abs}\NormalTok{(price)}
+
+\CommentTok{\# we just created a matrix of prices, where the column names identify the corresponding firm}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Exercise 1.}\label{exercise-1.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(xts)}
+\FunctionTok{library}\NormalTok{(lubridate)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'lubridate'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     date, intersect, setdiff, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(zoo)}
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"\textasciitilde{}/projects/wu/r/ba2/hw1"}\NormalTok{)}
+\NormalTok{firm\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file =} \StringTok{"firm\_data.csv"}\NormalTok{, }\AttributeTok{sep=}\StringTok{","}\NormalTok{, }\AttributeTok{dec=}\StringTok{"."}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(firm\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   X    ID       Name       Date    Assets     Equity      Debt  Earnings
+## 1 1 10001 Dictum Ltd 1986-06-30 17.248783  6.8786059 10.370177 0.1422878
+## 2 2 10001 Dictum Ltd 1987-06-30 23.719300 12.0117739 11.707526 0.4540029
+## 3 3 10001 Dictum Ltd 1988-06-30  8.976084  3.7832275  5.192857 0.3253186
+## 4 4 10001 Dictum Ltd 1989-06-30 15.816952  0.6825201 15.134432 1.1534640
+## 5 5 10001 Dictum Ltd 1990-06-30 10.080559  3.8494762  6.231083 1.2652186
+## 6 6 10001 Dictum Ltd 1991-06-30  9.194724  1.4947987  7.699925 1.0831830
+##   Industry
+## 1       49
+## 2       49
+## 3       49
+## 4       49
+## 5       49
+## 6       49
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(firm\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X               ID            Name               Date          
+##  Min.   :    1   Min.   :10001   Length:16987       Length:16987      
+##  1st Qu.: 4248   1st Qu.:12111   Class :character   Class :character  
+##  Median : 8494   Median :30940   Mode  :character   Mode  :character  
+##  Mean   : 8494   Mean   :31957                                        
+##  3rd Qu.:12740   3rd Qu.:47896                                        
+##  Max.   :16987   Max.   :62033                                        
+##                                                                       
+##      Assets              Equity               Debt              Earnings       
+##  Min.   :-127024.6   Min.   :-19510.27   Min.   :-130037.8   Min.   :-7281.61  
+##  1st Qu.:     59.9   1st Qu.:    28.29   1st Qu.:     21.5   1st Qu.:    0.67  
+##  Median :    340.0   Median :   139.82   Median :    156.0   Median :   11.13  
+##  Mean   :   9270.3   Mean   :  1518.84   Mean   :   7750.1   Mean   :  202.44  
+##  3rd Qu.:   1738.0   3rd Qu.:   571.61   3rd Qu.:   1070.9   3rd Qu.:   61.59  
+##  Max.   :2642430.2   Max.   :275281.56   Max.   :2379750.1   Max.   :61242.00  
+##  NA's   :11          NA's   :1           NA's   :10          NA's   :99        
+##     Industry   
+##  Min.   :10.0  
+##  1st Qu.:34.0  
+##  Median :39.0  
+##  Mean   :45.1  
+##  3rd Qu.:60.0  
+##  Max.   :87.0  
+##  NA's   :309
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{firm\_data }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(firm\_data) }\CommentTok{\#removing NA (always removes whole row if at least 1 NA occurs)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2: Convert the data on earnings for the first firm to an xts
+object and plot
+it}\label{convert-the-data-on-earnings-for-the-first-firm-to-an-xts-object-and-plot-it}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f1 }\OtherTok{\textless{}{-}}\NormalTok{ firm\_data[firm\_data}\SpecialCharTok{$}\NormalTok{ID}\SpecialCharTok{==}\DecValTok{10001}\NormalTok{, ]}
+\NormalTok{f1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X    ID       Name       Date     Assets      Equity       Debt   Earnings
+## 1   1 10001 Dictum Ltd 1986-06-30  17.248783   6.8786059  10.370177  0.1422878
+## 2   2 10001 Dictum Ltd 1987-06-30  23.719300  12.0117739  11.707526  0.4540029
+## 3   3 10001 Dictum Ltd 1988-06-30   8.976084   3.7832275   5.192857  0.3253186
+## 4   4 10001 Dictum Ltd 1989-06-30  15.816952   0.6825201  15.134432  1.1534640
+## 5   5 10001 Dictum Ltd 1990-06-30  10.080559   3.8494762   6.231083  1.2652186
+## 6   6 10001 Dictum Ltd 1991-06-30   9.194724   1.4947987   7.699925  1.0831830
+## 7   7 10001 Dictum Ltd 1992-06-30  33.299828  11.0246519  22.275176  0.8893313
+## 8   8 10001 Dictum Ltd 1993-06-30  22.588703   4.8570133  17.731690  1.3801115
+## 9   9 10001 Dictum Ltd 1994-06-30  28.918780   7.4256284  21.493151  1.4575423
+## 10 10 10001 Dictum Ltd 1995-06-30  29.645010   9.6718140  19.973196  1.4742840
+## 11 11 10001 Dictum Ltd 1996-06-30  39.639818  10.5089933  29.130825  1.0495452
+## 12 12 10001 Dictum Ltd 1997-06-30  36.195396  13.1353168  23.060079  1.1267671
+## 13 13 10001 Dictum Ltd 1998-06-30  43.279992  10.1028066  33.177186  1.6284332
+## 14 14 10001 Dictum Ltd 1999-06-30  32.357800   8.9110662  23.446733  1.2656334
+## 15 15 10001 Dictum Ltd 2000-06-30  47.395824  11.5338517  35.861972  0.9204531
+## 16 16 10001 Dictum Ltd 2001-06-30  64.385081  19.5007428  44.884338  2.7142611
+## 17 17 10001 Dictum Ltd 2002-06-30  52.132071  17.2203108  34.911760  1.4555661
+## 18 18 10001 Dictum Ltd 2003-06-30  57.655007  13.2345308  44.420477 -0.2025542
+## 19 19 10001 Dictum Ltd 2004-06-30  70.608544  16.7097745  53.898769 -0.5113411
+## 20 20 10001 Dictum Ltd 2005-06-30  56.868180  15.0624029  41.805777  1.1615378
+## 21 21 10001 Dictum Ltd 2006-06-30  58.002769  21.8187100  36.184059  2.1681153
+## 22 22 10001 Dictum Ltd 2007-06-30  43.803307  16.4131252  27.390182  6.2210549
+## 23 23 10001 Dictum Ltd 2008-12-31  69.965692  26.3480597  43.617632  3.0168909
+## 24 24 10001 Dictum Ltd 2009-12-31  77.851433  33.5137472  44.337685  7.1036531
+## 25 25 10001 Dictum Ltd 2016-12-31 194.596694  93.6193822 100.977311  0.6739245
+## 26 26 10001 Dictum Ltd 2010-12-31 142.263582  77.2458719  65.017711  5.4274469
+## 27 27 10001 Dictum Ltd 2011-12-31 156.405047  73.3203678  83.084680  5.3304593
+## 28 28 10001 Dictum Ltd 2012-12-31 174.843418  73.3068448 101.536573  3.5139886
+## 29 29 10001 Dictum Ltd 2013-12-31 199.175983  99.0059767 100.170007  6.5139328
+## 30 30 10001 Dictum Ltd 2014-12-31 219.345301 100.5702295 118.775071  4.0461179
+## 31 31 10001 Dictum Ltd 2015-12-31 195.146499  91.8328866 103.313613  4.9996974
+##    Industry
+## 1        49
+## 2        49
+## 3        49
+## 4        49
+## 5        49
+## 6        49
+## 7        49
+## 8        49
+## 9        49
+## 10       49
+## 11       49
+## 12       49
+## 13       49
+## 14       49
+## 15       49
+## 16       49
+## 17       49
+## 18       49
+## 19       49
+## 20       49
+## 21       49
+## 22       49
+## 23       49
+## 24       49
+## 25       49
+## 26       49
+## 27       49
+## 28       49
+## 29       49
+## 30       49
+## 31       49
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f1}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date, }\AttributeTok{format=}\StringTok{"\%Y{-}\%m{-}\%d"}\NormalTok{) }\CommentTok{\#convert "character" to  "Date" for dates}
+\FunctionTok{class}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Date) }\CommentTok{\#double check}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Date"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{e1 }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(f1}\SpecialCharTok{$}\NormalTok{Earnings, }\AttributeTok{order.by=}\NormalTok{f1}\SpecialCharTok{$}\NormalTok{Date) }\CommentTok{\#convert earnings to an xts}
+\FunctionTok{plot}\NormalTok{(e1, }\AttributeTok{col=}\StringTok{"steelblue"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Earnings of Company 1"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\subsection{3: Convert the data on earnings for all firms to an xts
+object and subset the data to the period from 1990 to
+2018}\label{convert-the-data-on-earnings-for-all-firms-to-an-xts-object-and-subset-the-data-to-the-period-from-1990-to-2018}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IDs}\OtherTok{\textless{}{-}}\FunctionTok{unique}\NormalTok{(firm\_data}\SpecialCharTok{$}\NormalTok{ID)}
+\FunctionTok{head}\NormalTok{(IDs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10001 10002 10025 10026 10028 10032
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{e }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(IDs)) \{}
+\NormalTok{  firm\_data\_i }\OtherTok{\textless{}{-}}\NormalTok{ firm\_data[firm\_data}\SpecialCharTok{$}\NormalTok{ID}\SpecialCharTok{==}\NormalTok{IDs[i], ]}
+\NormalTok{  e[[i]] }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(firm\_data}\SpecialCharTok{$}\NormalTok{Earnings, }\AttributeTok{order.by=}\FunctionTok{as.Date}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(firm\_data}\SpecialCharTok{$}\NormalTok{Date), }\AttributeTok{format=}\StringTok{"\%Y{-}\%m{-}\%d"}\NormalTok{))}
+\NormalTok{\}}
+\NormalTok{e[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+##            m.c.seq.row..seq.n...seq.col..drop...FALSE.
+## 1980-01-31                                3.136064e-01
+## 1980-01-31                                5.987378e+00
+## 1980-01-31                                6.831667e+00
+## 1980-01-31                                8.123738e+00
+## 1980-01-31                                7.905559e+00
+## 1980-01-31                                7.426134e+01
+## 1980-01-31                                1.532538e+01
+## 1980-01-31                                2.105070e-01
+## 1980-01-31                                5.498991e-01
+## 1980-01-31                                4.099084e+01
+##        ...                                            
+## 2019-04-30                                8.556636e+02
+## 2019-04-30                                5.290101e+02
+## 2019-04-30                                6.697762e+01
+## 2019-05-31                                1.067182e+04
+## 2019-05-31                                8.578125e+02
+## 2019-05-31                                1.599969e+02
+## 2019-05-31                                6.061747e+00
+## 2019-05-31                                3.958709e+03
+## 2019-05-31                                1.015218e+03
+## 2019-06-30                                4.033534e+04
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(e) }\OtherTok{\textless{}{-}}\NormalTok{ IDs}
+\NormalTok{earnings }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(cbind, e)}
+
+\FunctionTok{colnames}\NormalTok{(earnings) }\OtherTok{\textless{}{-}} \FunctionTok{paste0}\NormalTok{(}\StringTok{"X"}\NormalTok{,IDs) }\CommentTok{\# add the X to get alpha{-}numeric colnames instead of numeric colnames, which might be an issue}
+\FunctionTok{class}\NormalTok{(earnings)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "xts" "zoo"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(earnings)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16573   492
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{earnings }\OtherTok{\textless{}{-}}\NormalTok{ earnings[}\StringTok{"1990/2018"}\NormalTok{]}
+\NormalTok{earnings[,}\DecValTok{1}\NormalTok{] }\CommentTok{\#just to check}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                   X10001
+## 1990-01-31    17.7608440
+## 1990-01-31     8.4562929
+## 1990-01-31    13.8164841
+## 1990-01-31    -0.5878572
+## 1990-01-31    -3.1116117
+## 1990-01-31     2.3864121
+## 1990-01-31     6.1036349
+## 1990-01-31     1.3105668
+## 1990-01-31    28.7152592
+## 1990-01-31    12.3693569
+##        ...              
+## 2018-12-31  -430.9145264
+## 2018-12-31  2062.4586832
+## 2018-12-31 -6807.6144520
+## 2018-12-31   -24.0767824
+## 2018-12-31    50.8724714
+## 2018-12-31     1.1273672
+## 2018-12-31   279.4462263
+## 2018-12-31   142.9644134
+## 2018-12-31  -180.1244055
+## 2018-12-31   258.9596939
+\end{verbatim}
+
+\subsection{4: Yearly data}\label{yearly-data}
+
+\#\#\#a taking yearly averages
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{price\_avg\_yearly }\OtherTok{\textless{}{-}} \FunctionTok{apply.yearly}\NormalTok{(price, }\AttributeTok{FUN=} \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{colMeans}\NormalTok{(x, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{) )}
+\NormalTok{price\_avg\_yearly [ ,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               X10001    X10002    X10025     X10026    X10028     X10032
+## 1990-12-31  3.251257  3.951448  7.954324   4.111371 0.3195902  0.9554561
+## 1991-12-31  3.734524  3.306640  8.220238   6.391556 0.5760705  1.5940290
+## 1992-12-31  4.323149  5.187161  7.725432   5.089724 1.8166509  4.3847769
+## 1993-12-31  5.304380  7.995463 10.574035   7.820974 1.7403624  3.7604179
+## 1994-12-30  5.700563  8.770818 17.380019   7.004687 2.3636527  3.1941561
+## 1995-12-29  5.391038  8.830317 21.791004   5.775349 1.5294713  3.6552974
+## 1996-12-31  5.784108  9.099754 37.175311   5.789594 1.3006607  3.6372481
+## 1997-12-31  5.790658 11.769698 39.289885   7.464815 1.8482365 11.1037485
+## 1998-12-31  5.992088 17.020924 25.777927   9.505872 2.6728394 11.0435390
+## 1999-12-31  5.816407 13.682199 30.346493  10.635176 3.8117122 16.5493102
+## 2000-12-29  5.642948  9.724237 30.641988   8.057827 7.3697798 46.6287307
+## 2001-12-31  7.373623 10.798903 34.860102  10.392055 5.4336376 31.1114166
+## 2002-12-31  6.272208 11.015458 27.421114  18.540714 1.6838121 17.3269773
+## 2003-12-31  4.558207 15.116177  7.799088  16.451022 1.3620389 13.3523133
+## 2004-12-31  4.381500 18.532343 11.252942  21.474338 2.8021155 14.5388766
+## 2005-12-30  5.727122 20.095808 20.293767  26.901601 2.4164286 15.3580699
+## 2006-12-29  6.967419 23.909779 39.620951  33.611616 2.3866638 29.1956036
+## 2007-12-31  9.379791 17.796335 41.044142  36.868208 3.6747019 22.7974570
+## 2008-12-31  9.192859 10.864362 23.039735  29.863606 3.3499812 23.7407695
+## 2009-12-31  8.712324  4.500852 27.951325  38.224521 1.1685254 21.6779513
+## 2010-12-31 10.756295  3.745371 26.913699  43.282643 2.9338744 31.0342586
+## 2011-12-30 11.187983  2.241333 27.642470  49.357616 6.7868476 30.0899041
+## 2012-12-31 10.408944  2.435985 46.452599  56.700977 6.7358178 29.9446985
+## 2013-12-31  9.858322  2.891421 69.912065  78.354037 3.6742293 32.2594041
+## 2014-12-31 10.862687       NaN 41.318538  96.112180 1.7462109 40.5307889
+## 2015-12-31  9.425800       NaN 59.981338 110.920076 0.7173288 39.3947733
+## 2016-12-30  8.745990       NaN 89.610541 116.054757 0.7485953 44.1168646
+## 2017-12-29 12.724091       NaN       NaN 135.002289 1.3581458 55.9345159
+## 2018-12-31       NaN       NaN       NaN 144.969416 0.7172223 58.6728432
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{earnings\_avg\_yearly }\OtherTok{\textless{}{-}} \FunctionTok{apply.yearly}\NormalTok{(earnings, }\AttributeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{colMeans}\NormalTok{(x, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{))}
+\NormalTok{earnings\_avg\_yearly [ ,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               X10001    X10002    X10025    X10026    X10028    X10032
+## 1990-12-31  25.49985  25.49985  25.49985  25.49985  25.49985  25.49985
+## 1991-12-31  28.23427  28.23427  28.23427  28.23427  28.23427  28.23427
+## 1992-12-31  44.44037  44.44037  44.44037  44.44037  44.44037  44.44037
+## 1993-12-31  40.96154  40.96154  40.96154  40.96154  40.96154  40.96154
+## 1994-12-31  54.29808  54.29808  54.29808  54.29808  54.29808  54.29808
+## 1995-12-31  88.20849  88.20849  88.20849  88.20849  88.20849  88.20849
+## 1996-12-31  94.33287  94.33287  94.33287  94.33287  94.33287  94.33287
+## 1997-12-31 105.16003 105.16003 105.16003 105.16003 105.16003 105.16003
+## 1998-12-31 108.92141 108.92141 108.92141 108.92141 108.92141 108.92141
+## 1999-12-31 153.45289 153.45289 153.45289 153.45289 153.45289 153.45289
+## 2000-12-31 186.05361 186.05361 186.05361 186.05361 186.05361 186.05361
+## 2001-12-31  97.29566  97.29566  97.29566  97.29566  97.29566  97.29566
+## 2002-12-31 114.74439 114.74439 114.74439 114.74439 114.74439 114.74439
+## 2003-12-31 175.26489 175.26489 175.26489 175.26489 175.26489 175.26489
+## 2004-12-31 210.85563 210.85563 210.85563 210.85563 210.85563 210.85563
+## 2005-12-31 279.36508 279.36508 279.36508 279.36508 279.36508 279.36508
+## 2006-12-31 308.83556 308.83556 308.83556 308.83556 308.83556 308.83556
+## 2007-12-31 306.83403 306.83403 306.83403 306.83403 306.83403 306.83403
+## 2008-12-31 174.18546 174.18546 174.18546 174.18546 174.18546 174.18546
+## 2009-12-31 168.33659 168.33659 168.33659 168.33659 168.33659 168.33659
+## 2010-12-31 300.74020 300.74020 300.74020 300.74020 300.74020 300.74020
+## 2011-12-31 406.68393 406.68393 406.68393 406.68393 406.68393 406.68393
+## 2012-12-31 461.95556 461.95556 461.95556 461.95556 461.95556 461.95556
+## 2013-12-31 529.99136 529.99136 529.99136 529.99136 529.99136 529.99136
+## 2014-12-31 581.57576 581.57576 581.57576 581.57576 581.57576 581.57576
+## 2015-12-31 623.76819 623.76819 623.76819 623.76819 623.76819 623.76819
+## 2016-12-31 674.33938 674.33938 674.33938 674.33938 674.33938 674.33938
+## 2017-12-31 759.04765 759.04765 759.04765 759.04765 759.04765 759.04765
+## 2018-12-31 932.00256 932.00256 932.00256 932.00256 932.00256 932.00256
+\end{verbatim}
+
+\#\#\#b taking the last date from each year
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yearly\_price }\OtherTok{\textless{}{-}} \FunctionTok{apply.yearly}\NormalTok{(price, }\AttributeTok{FUN =}\NormalTok{ last)}
+\NormalTok{yearly\_price[ ,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               X10001    X10002     X10025     X10026    X10028    X10032
+## 1990-12-31  3.159900  3.338218   5.284033   3.932476 0.2154010  0.726014
+## 1991-12-31  4.834841  3.998255   9.308886   7.147103 2.3767708  3.193640
+## 1992-12-31  4.672670  5.996535   8.333322   4.420327 1.3711389  3.777630
+## 1993-12-31  6.133420  8.575709  12.176938  10.365560 2.4377464  3.846093
+## 1994-12-30  5.326591  8.756667  18.385350   5.849241 2.2469345  2.084426
+## 1995-12-29  6.241262  9.335369  21.980182   5.442736 1.2504850  4.130492
+## 1996-12-31  5.423627  8.671818  55.044374   6.737772 1.0590843  4.204164
+## 1997-12-31  6.006805 16.345319  30.900551   8.238588 2.7473168  7.461110
+## 1998-12-31  6.410785 15.243707  21.711054  11.100681 3.8177758 16.961201
+## 1999-12-31  5.674832 12.186792  25.730517  10.223477 6.0041325 21.977383
+## 2000-12-29  6.506717  9.176898  44.731277   8.458553 8.4980335 30.366241
+## 2001-12-31  7.623074  9.878163  23.992256  12.243145 3.4020838 26.571450
+## 2002-12-31  4.912624 11.108226  13.025798  17.857398 1.0601512  8.824588
+## 2003-12-31  3.962967 16.034105   9.724171  18.893986 2.3462498 17.162604
+## 2004-12-31  4.592695 24.595087  14.793003  24.453537 2.8191140 12.981816
+## 2005-12-30  6.463590 20.115559  24.917152  29.702578 1.9871553 22.709591
+## 2006-12-29  7.402281 25.512013  53.296757  41.318179 2.5431123 23.878119
+## 2007-12-31  9.417873 12.085386  32.012145  31.356993 5.2441684 26.280015
+## 2008-12-31  8.251231 14.763023  17.595795  35.864361 1.6958933 16.942586
+## 2009-12-31 10.289762  2.858252  38.340624  39.880495 1.4130502 28.468760
+## 2010-12-31 10.530965  2.690771  25.937793  48.294935 4.2782069 30.978374
+## 2011-12-30 11.424145  1.224821  28.103132  53.234643 7.4753029 27.440788
+## 2012-12-31  9.323117  2.773605  59.193787  63.888145 5.4313229 25.844402
+## 2013-12-31  8.025930        NA  52.889275  88.592537 2.2350214 43.285860
+## 2014-12-31 11.014674        NA  58.099290 108.789814 1.2205268 41.245098
+## 2015-12-31  7.440461        NA  77.114849 116.678033 0.3343190 34.902553
+## 2016-12-30 12.561419        NA 116.051130 133.318622 1.2403311 54.008192
+## 2017-12-29        NA        NA         NA 151.786725 0.9329276 60.750280
+## 2018-12-31        NA        NA         NA 144.610298 0.4531680 51.062221
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{earnings\_last\_yearly }\OtherTok{\textless{}{-}} \FunctionTok{apply.yearly}\NormalTok{ (earnings, }\AttributeTok{FUN=}\NormalTok{last)}
+\NormalTok{earnings\_last\_yearly[ ,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               X10001    X10002    X10025    X10026    X10028    X10032
+## 1990-12-31  22.73659  22.73659  22.73659  22.73659  22.73659  22.73659
+## 1991-12-31  25.43191  25.43191  25.43191  25.43191  25.43191  25.43191
+## 1992-12-31  22.13867  22.13867  22.13867  22.13867  22.13867  22.13867
+## 1993-12-31  18.31193  18.31193  18.31193  18.31193  18.31193  18.31193
+## 1994-12-31  21.29426  21.29426  21.29426  21.29426  21.29426  21.29426
+## 1995-12-31  16.63997  16.63997  16.63997  16.63997  16.63997  16.63997
+## 1996-12-31  38.95043  38.95043  38.95043  38.95043  38.95043  38.95043
+## 1997-12-31  39.03226  39.03226  39.03226  39.03226  39.03226  39.03226
+## 1998-12-31  23.02726  23.02726  23.02726  23.02726  23.02726  23.02726
+## 1999-12-31  32.66145  32.66145  32.66145  32.66145  32.66145  32.66145
+## 2000-12-31  51.43349  51.43349  51.43349  51.43349  51.43349  51.43349
+## 2001-12-31  96.24377  96.24377  96.24377  96.24377  96.24377  96.24377
+## 2002-12-31  69.06899  69.06899  69.06899  69.06899  69.06899  69.06899
+## 2003-12-31  60.85183  60.85183  60.85183  60.85183  60.85183  60.85183
+## 2004-12-31  53.46515  53.46515  53.46515  53.46515  53.46515  53.46515
+## 2005-12-31  27.73885  27.73885  27.73885  27.73885  27.73885  27.73885
+## 2006-12-31  77.52084  77.52084  77.52084  77.52084  77.52084  77.52084
+## 2007-12-31  95.73467  95.73467  95.73467  95.73467  95.73467  95.73467
+## 2008-12-31  94.00946  94.00946  94.00946  94.00946  94.00946  94.00946
+## 2009-12-31  83.19524  83.19524  83.19524  83.19524  83.19524  83.19524
+## 2010-12-31  74.88718  74.88718  74.88718  74.88718  74.88718  74.88718
+## 2011-12-31  39.06967  39.06967  39.06967  39.06967  39.06967  39.06967
+## 2012-12-31  93.74817  93.74817  93.74817  93.74817  93.74817  93.74817
+## 2013-12-31 106.08584 106.08584 106.08584 106.08584 106.08584 106.08584
+## 2014-12-31 130.75849 130.75849 130.75849 130.75849 130.75849 130.75849
+## 2015-12-31 -28.68760 -28.68760 -28.68760 -28.68760 -28.68760 -28.68760
+## 2016-12-31  83.67334  83.67334  83.67334  83.67334  83.67334  83.67334
+## 2017-12-31 186.41457 186.41457 186.41457 186.41457 186.41457 186.41457
+## 2018-12-31 258.95969 258.95969 258.95969 258.95969 258.95969 258.95969
+\end{verbatim}
+
+\subsection{5: Calculate yearly returns from the yearly
+prices.}\label{calculate-yearly-returns-from-the-yearly-prices.}
+
+multiple time-series:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(yearly\_price)}\CommentTok{\#just to check }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  29 500
+\end{verbatim}
+
+calculating returns:
+
+\subsection{6: Take the first company of the data set, and make a
+2-panel multipanel
+plot}\label{take-the-first-company-of-the-data-set-and-make-a-2-panel-multipanel-plot}
+
+\subsubsection{a)-1 Calculating yearly returns for the first company (ID
+10001) Align dates for the yearly price series as provided in Hint
+1}\label{a-1-calculating-yearly-returns-for-the-first-company-id-10001-align-dates-for-the-yearly-price-series-as-provided-in-hint-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{yearly\_dates }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \FunctionTok{as.Date}\NormalTok{(}\StringTok{"1990{-}12{-}31"}\NormalTok{), }\AttributeTok{to =} \FunctionTok{as.Date}\NormalTok{(}\StringTok{"2018{-}12{-}31"}\NormalTok{), }\AttributeTok{by =} \StringTok{"year"}\NormalTok{)}
+\NormalTok{yearly\_price\_f1 }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(}\FunctionTok{coredata}\NormalTok{(yearly\_price[,}\StringTok{"X10001"}\NormalTok{]), }\AttributeTok{order.by =}\NormalTok{ yearly\_dates)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Calculating returns for the aligned yearly price
+series}\label{calculating-returns-for-the-aligned-yearly-price-series}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f1\_returns }\OtherTok{\textless{}{-}}\NormalTok{ yearly\_price[,}\StringTok{"X10001"}\NormalTok{] }\SpecialCharTok{/} \FunctionTok{lag}\NormalTok{(yearly\_price[,}\StringTok{"X10001"}\NormalTok{]) }\SpecialCharTok{{-}} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{a)-2 Calculating yearly average earnings for company 1
+(ID 10001) with aligned
+dates}\label{a-2-calculating-yearly-average-earnings-for-company-1-id-10001-with-aligned-dates}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{earnings\_avg\_yearly\_f1 }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(}\FunctionTok{coredata}\NormalTok{(earnings\_avg\_yearly[,}\StringTok{"X10001"}\NormalTok{]), }\AttributeTok{order.by =}\NormalTok{ yearly\_dates)}
+\end{Highlighting}
+\end{Shaded}
+
+Calculate 3-year moving average of earnings for company 1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{earnings\_f1\_ma }\OtherTok{\textless{}{-}} \FunctionTok{rollapply}\NormalTok{(earnings\_avg\_yearly\_f1, }\AttributeTok{width =} \DecValTok{3}\NormalTok{, }\AttributeTok{FUN =}\NormalTok{ mean, }\AttributeTok{align =} \StringTok{"right"}\NormalTok{, }\AttributeTok{fill =} \ConstantTok{NA}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Plotting
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{))  }\CommentTok{\# Set up for 2{-}panel plot}
+\end{Highlighting}
+\end{Shaded}
+
+Upper panel
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{index}\NormalTok{(f1\_returns), }\FunctionTok{coredata}\NormalTok{(f1\_returns), }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkred"}\NormalTok{, }\CommentTok{\#x axis: dates are extracted from the xts(f1\_returns) "}
+                                                                          \CommentTok{\#using index", y axis: vector of yearly returns plotted }
+     \AttributeTok{main =} \StringTok{"Yearly Returns for Company 1 (ID: 10001)"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Return"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+Lower panel
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{index}\NormalTok{(earnings\_avg\_yearly\_f1), }\FunctionTok{coredata}\NormalTok{(earnings\_avg\_yearly\_f1), }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"steelblue"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Yearly Average Earnings with 3{-}Year Moving Average for Company 1"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Earnings"}\NormalTok{)}
+
+\FunctionTok{lines}\NormalTok{(}\FunctionTok{index}\NormalTok{(earnings\_f1\_ma), }\FunctionTok{coredata}\NormalTok{(earnings\_f1\_ma), }\AttributeTok{col =} \StringTok{"orange"}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{) }\CommentTok{\# b) Adding the 3{-}year moving average line to the lower panel}
+
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{, }\AttributeTok{legend =} \FunctionTok{c}\NormalTok{(}\StringTok{"Yearly Earnings of Company 1"}\NormalTok{, }\StringTok{"3{-}Year Moving Average of Company 1"}\NormalTok{), }\AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"steelblue"}\NormalTok{, }\StringTok{"orange"}\NormalTok{), }\AttributeTok{lty =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), }\AttributeTok{lwd =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\section{Exercise 2.}\label{exercise-2.}
+
+\subsection{1}\label{section}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{load}\NormalTok{(}\StringTok{"index\_data.RData"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Convert row names to Date format
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dates }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{row.names}\NormalTok{(indices))}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2}\label{section-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create an xts object for one index of choice}
+
+\NormalTok{sp\_xts }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(indices}\SpecialCharTok{$}\NormalTok{sp.xts, }\AttributeTok{order.by =}\NormalTok{ dates)}
+
+\CommentTok{\# Filter data from 1995 to 2015}
+
+\NormalTok{sp\_xts\_filtered }\OtherTok{\textless{}{-}}\NormalTok{ sp\_xts[}\StringTok{"1995/2015"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#a)Monthly trading days count}
+
+\NormalTok{trading\_days\_month }\OtherTok{\textless{}{-}} \FunctionTok{apply.monthly}\NormalTok{(sp\_xts\_filtered, }\AttributeTok{FUN=}\NormalTok{length)}
+
+\CommentTok{\#b) Yearly trading days count}
+
+\NormalTok{trading\_days\_year }\OtherTok{\textless{}{-}} \FunctionTok{apply.yearly}\NormalTok{(sp\_xts\_filtered, }\AttributeTok{FUN=}\NormalTok{length)}
+
+\CommentTok{\# Plot monthly and yearly trading days count}
+
+\FunctionTok{plot}\NormalTok{(trading\_days\_month, }\AttributeTok{main=}\StringTok{"Monthly Trading Days (1995–2015)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Days"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in text.default(xlim[1], 0.5, main, font = 2, col = theme$labels, :
+## conversion failure on 'Monthly Trading Days (1995–2015)' in 'mbcsToSbcs': dot
+## substituted for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(xlim[1], 0.5, main, font = 2, col = theme$labels, :
+## conversion failure on 'Monthly Trading Days (1995–2015)' in 'mbcsToSbcs': dot
+## substituted for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(xlim[1], 0.5, main, font = 2, col = theme$labels, :
+## conversion failure on 'Monthly Trading Days (1995–2015)' in 'mbcsToSbcs': dot
+## substituted for <93>
+\end{verbatim}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(trading\_days\_year, }\AttributeTok{main=}\StringTok{"Yearly Trading Days (1995–2015)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Days"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in text.default(xlim[1], 0.5, main, font = 2, col = theme$labels, :
+## conversion failure on 'Yearly Trading Days (1995–2015)' in 'mbcsToSbcs': dot
+## substituted for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(xlim[1], 0.5, main, font = 2, col = theme$labels, :
+## conversion failure on 'Yearly Trading Days (1995–2015)' in 'mbcsToSbcs': dot
+## substituted for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(xlim[1], 0.5, main, font = 2, col = theme$labels, :
+## conversion failure on 'Yearly Trading Days (1995–2015)' in 'mbcsToSbcs': dot
+## substituted for <93>
+\end{verbatim}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-19-2.pdf}
+
+\subsection{3}\label{section-2}
+
+Calculate first and last values of each month
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{first\_values }\OtherTok{\textless{}{-}} \FunctionTok{apply.monthly}\NormalTok{(sp\_xts\_filtered, }\AttributeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{first}\NormalTok{(x))}
+\FunctionTok{head}\NormalTok{(first\_values)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              [,1]
+## 1995-01-31 459.11
+## 1995-02-28 470.40
+## 1995-03-31 485.65
+## 1995-04-28 501.85
+## 1995-05-31 514.26
+## 1995-06-30 533.49
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{last\_values }\OtherTok{\textless{}{-}} \FunctionTok{apply.monthly}\NormalTok{(sp\_xts\_filtered, }\AttributeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{last}\NormalTok{(x))}
+\FunctionTok{head}\NormalTok{(last\_values)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              [,1]
+## 1995-01-31 470.42
+## 1995-02-28 487.39
+## 1995-03-31 500.71
+## 1995-04-28 514.71
+## 1995-05-31 533.40
+## 1995-06-30 544.75
+\end{verbatim}
+
+Plot both series on the same plot
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(first\_values, }\AttributeTok{type=}\StringTok{"l"}\NormalTok{, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Index Value"}\NormalTok{, }\AttributeTok{main=}\StringTok{"First and Last Monthly Index Values"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lines}\NormalTok{(last\_values, }\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topright"}\NormalTok{, }\AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{"First Value"}\NormalTok{, }\StringTok{"Last Value"}\NormalTok{), }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"red"}\NormalTok{), }\AttributeTok{pch =}\DecValTok{19}\NormalTok{, }\AttributeTok{lty=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-21-2.pdf}
+
+\subsection{4}\label{section-3}
+
+Calculate monthly returns based on last values
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{monthly\_returns }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(}\FunctionTok{log}\NormalTok{(last\_values)) }\SpecialCharTok{*} \DecValTok{100}
+\FunctionTok{head}\NormalTok{(monthly\_returns)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                [,1]
+## 1995-01-31       NA
+## 1995-02-28 3.543871
+## 1995-03-31 2.696247
+## 1995-04-28 2.757654
+## 1995-05-31 3.566798
+## 1995-06-30 2.105536
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(monthly\_returns, }\AttributeTok{main=}\StringTok{"Monthly Returns of S\&P 500"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Return (\%)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\subsection{5}\label{section-4}
+
+Calculate daily returns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{daily\_returns }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(}\FunctionTok{log}\NormalTok{(sp\_xts\_filtered)) }\SpecialCharTok{*} \DecValTok{100}
+\FunctionTok{plot}\NormalTok{(daily\_returns, }\AttributeTok{main=}\StringTok{"Daily Returns of S\&P 500"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Return (\%)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+\subsection{6}\label{section-5}
+
+Visualize the density of daily returns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{density\_daily\_returns }\OtherTok{\textless{}{-}} \FunctionTok{density}\NormalTok{(daily\_returns, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(density\_daily\_returns, }\AttributeTok{main =} \StringTok{"Density of Daily Returns"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Daily Return (\%)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+\subsection{7}\label{section-6}
+
+Plot the time series of daily returns and squared daily returns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{daily\_returns\_squared }\OtherTok{\textless{}{-}}\NormalTok{ daily\_returns}\SpecialCharTok{\^{}}\DecValTok{2}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(daily\_returns, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkgreen"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Daily Returns"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Return (\%)"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(daily\_returns\_squared, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"purple"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Squared Daily Returns"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Squared Return (\%)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+Observations: The high volatility periods (squared returns) appear to be
+clustered, with notable spikes around 2008-2009.
+
+\subsection{8}\label{section-7}
+
+Lag the daily returns by one day
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lagged\_daily\_returns }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(daily\_returns, }\AttributeTok{k =} \DecValTok{1}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(lagged\_daily\_returns)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                   [,1]
+## 1995-01-03          NA
+## 1995-01-04          NA
+## 1995-01-05  0.34789450
+## 1995-01-06 -0.08034309
+## 1995-01-09  0.07383119
+## 1995-01-10  0.03255526
+\end{verbatim}
+
+Lag the squared daily returns by one day
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lagged\_daily\_returns\_squared }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(daily\_returns\_squared, }\AttributeTok{k =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{9}\label{section-8}
+
+Filter data between 2000 and 2018
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{daily\_returns\_2000\_2018 }\OtherTok{\textless{}{-}}\NormalTok{ daily\_returns[}\StringTok{"2000/2018"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Lagged returns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lagged\_daily\_returns\_2000\_2018 }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(daily\_returns\_2000\_2018, }\AttributeTok{k =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Squared returns and lagged squared returns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{daily\_returns\_squared\_2000\_2018 }\OtherTok{\textless{}{-}}\NormalTok{ daily\_returns\_2000\_2018}\SpecialCharTok{\^{}}\DecValTok{2}
+\NormalTok{lagged\_daily\_returns\_squared\_2000\_2018 }\OtherTok{\textless{}{-}} \FunctionTok{lag}\NormalTok{(daily\_returns\_squared\_2000\_2018, }\AttributeTok{k =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Remove NA values
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{valid\_indices }\OtherTok{\textless{}{-}} \FunctionTok{complete.cases}\NormalTok{(daily\_returns\_2000\_2018, lagged\_daily\_returns\_2000\_2018)}
+\NormalTok{valid\_indices\_squared }\OtherTok{\textless{}{-}} \FunctionTok{complete.cases}\NormalTok{(daily\_returns\_squared\_2000\_2018, lagged\_daily\_returns\_squared\_2000\_2018)}
+\end{Highlighting}
+\end{Shaded}
+
+Compute correlations
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{correlation\_daily }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(daily\_returns\_2000\_2018[valid\_indices], lagged\_daily\_returns\_2000\_2018[valid\_indices])}
+\FunctionTok{print}\NormalTok{(correlation\_daily)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             [,1]
+## [1,] -0.07813596
+\end{verbatim}
+
+The negative correlation suggests a weak inverse relationshiNexp between
+the daily returns and their lagged values. In other words, if today's
+return is positive, tomorrow's return is slightly more likely to be
+negative, and vice versa. However, since the correlation is close to
+zero, this relationship is very weak and indicates that past returns do
+not significantly predict future returns.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{correlation\_daily\_squared }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(daily\_returns\_squared\_2000\_2018[valid\_indices\_squared], lagged\_daily\_returns\_squared\_2000\_2018[valid\_indices\_squared])}
+\FunctionTok{print}\NormalTok{(correlation\_daily\_squared)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           [,1]
+## [1,] 0.2054778
+\end{verbatim}
+
+The positive correlation indicates a moderate relationship between
+squared daily returns and their lagged values. Squared returns are often
+used as a measure of volatility, so this result suggests that periods of
+high volatility tend to be followed by periods of high volatility. In
+contrast, periods of low volatility tend to follow periods of low
+volatility, indicating some persistence in volatility over time.
+
+\section{Exercise 3.}\label{exercise-3.}
+
+\subsection{1}\label{section-9}
+
+Before starting we need to convert into an xts object. Then we slice for
+the relevant dates
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{timevector }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{rownames}\NormalTok{(indices)) }\CommentTok{\# dates}
+\NormalTok{xts\_data }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(indices, }\AttributeTok{order.by=}\NormalTok{timevector)}
+\NormalTok{xts\_dats }\OtherTok{\textless{}{-}}\NormalTok{ xts\_data[}\StringTok{"1995{-}01{-}01/2018{-}12{-}31"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Then we can plot everything together.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(xts\_dats, }\AttributeTok{legend.loc=}\StringTok{"topleft"}\NormalTok{, }\AttributeTok{main=}\StringTok{"Price time series"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-35-1.pdf}
+
+\subsection{2}\label{section-10}
+
+We can also plot in separate plots.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(xts\_dats, }\AttributeTok{multi.panel=}\DecValTok{3}\NormalTok{, }\AttributeTok{main=}\StringTok{"Price time series"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{hw1_files/figure-latex/unnamed-chunk-36-1.pdf}
+
+\subsection{3}\label{section-11}
+
+Lastly we calculate the monthly returns by the formula of
+\(r_t = \frac{p_t}{p_{t-1}} - 1\) for each of the 3 indices.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{subset\_last\_ftse }\OtherTok{\textless{}{-}}\NormalTok{ xts\_dats}\SpecialCharTok{$}\NormalTok{ftse.xts[}\FunctionTok{endpoints}\NormalTok{(xts\_dats}\SpecialCharTok{$}\NormalTok{ftse.xts, }\AttributeTok{on=} \StringTok{"months"}\NormalTok{)]}
+\NormalTok{subset\_first\_ftse }\OtherTok{\textless{}{-}}\NormalTok{ xts\_dats}\SpecialCharTok{$}\NormalTok{ftse.xts[xts}\SpecialCharTok{:::}\FunctionTok{startof}\NormalTok{(xts\_dats}\SpecialCharTok{$}\NormalTok{ftse.xts, }\AttributeTok{by=}\StringTok{"months"}\NormalTok{)]}
+\NormalTok{monthly\_returns\_ftse }\OtherTok{\textless{}{-}}\NormalTok{ ((}\FunctionTok{coredata}\NormalTok{(subset\_last\_ftse) }\SpecialCharTok{/} \FunctionTok{coredata}\NormalTok{(subset\_first\_ftse)) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{subset\_last\_sp }\OtherTok{\textless{}{-}}\NormalTok{ xts\_dats}\SpecialCharTok{$}\NormalTok{sp.xts[}\FunctionTok{endpoints}\NormalTok{(xts\_dats}\SpecialCharTok{$}\NormalTok{sp.xts, }\AttributeTok{on=} \StringTok{"months"}\NormalTok{)]}
+\NormalTok{subset\_first\_sp }\OtherTok{\textless{}{-}}\NormalTok{ xts\_dats}\SpecialCharTok{$}\NormalTok{sp.xts[xts}\SpecialCharTok{:::}\FunctionTok{startof}\NormalTok{(xts\_dats}\SpecialCharTok{$}\NormalTok{sp.xts, }\AttributeTok{by=}\StringTok{"months"}\NormalTok{)]}
+\NormalTok{monthly\_returns\_sp }\OtherTok{\textless{}{-}}\NormalTok{ ((}\FunctionTok{coredata}\NormalTok{(subset\_last\_sp) }\SpecialCharTok{/} \FunctionTok{coredata}\NormalTok{(subset\_first\_sp)) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{subset\_last\_dji }\OtherTok{\textless{}{-}}\NormalTok{ xts\_dats}\SpecialCharTok{$}\NormalTok{dji.xts[}\FunctionTok{endpoints}\NormalTok{(xts\_dats}\SpecialCharTok{$}\NormalTok{dji.xts, }\AttributeTok{on=} \StringTok{"months"}\NormalTok{)]}
+\NormalTok{subset\_first\_dji }\OtherTok{\textless{}{-}}\NormalTok{ xts\_dats}\SpecialCharTok{$}\NormalTok{dji.xts[xts}\SpecialCharTok{:::}\FunctionTok{startof}\NormalTok{(xts\_dats}\SpecialCharTok{$}\NormalTok{dji.xts, }\AttributeTok{by=}\StringTok{"months"}\NormalTok{)]}
+\NormalTok{monthly\_returns\_dji }\OtherTok{\textless{}{-}}\NormalTok{ ((}\FunctionTok{coredata}\NormalTok{(subset\_last\_dji) }\SpecialCharTok{/} \FunctionTok{coredata}\NormalTok{(subset\_first\_dji)) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Now to demonstrate the returns we can use head to get the first few
+elements from each vector.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(monthly\_returns\_ftse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          ftse.xts
+## [1,] -0.024170662
+## [2,] -0.002651377
+## [3,]  0.031796659
+## [4,]  0.023416372
+## [5,]  0.030741523
+## [6,] -0.007783033
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(monthly\_returns\_sp)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          sp.xts
+## [1,] 0.02463462
+## [2,] 0.03611820
+## [3,] 0.03100999
+## [4,] 0.02562519
+## [5,] 0.03721853
+## [6,] 0.02110630
+\end{verbatim}
+
+\texttt{\{r{]}\ head(monthly\_returns\_dji)}
+
+\end{document}
