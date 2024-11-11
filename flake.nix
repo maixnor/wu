@@ -10,16 +10,20 @@
       devShells.default = pkgs.mkShell {
         nativeBuildInputs = [ pkgs.bashInteractive ];
         buildInputs = with pkgs; [ 
-					R 
-          rstudio
+          R
 					rPackages.xts
 					rPackages.rmarkdown
+          rPackages.tinytex
 					rPackages.knitr
 					rPackages.RDocumentation
 					rPackages.IRkernel
 					rPackages.emdbook
 					rPackages.rgl
+          rPackages.Hmisc
+          rPackages.lubridate
+          rPackages.corrplot
 					rPackages.tidyverse
+          rPackages.moments
 				];
         shellHook = ''
           echo "It's time to R..."
