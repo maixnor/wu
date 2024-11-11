@@ -1,0 +1,18 @@
+run dir file:
+  R CMD BATCH {{dir}}/{{file}}
+  bat {{dir}}/{{file}}out
+
+run-pdf dir file:
+	R CMD BATCH {{dir}}/{{file}}
+	okular {{dir}}/Rplots.pdf &
+
+rmd dir file:
+  Rscript -e "rmarkdown::render('{{dir}}/{{file}}')"
+
+watch dir file:
+  while inotifywait --m $(pwd)/{{dir}}/{{file}} -re create,modify do just run {{file}} done
+  
+watch-rmd dir file:
+  inotifywait --monitor $(pwd)/{{dir}}/{{file}} && just rmd {{dir}}/{{file}}
+  
+  

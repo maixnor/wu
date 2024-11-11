@@ -1,0 +1,105 @@
+---
+title: "BA 2 - 1296 - Homework 1 - Group 1"
+author: "AUER Kornel, ARNS Vivien, LAKATOS Vanda, MASIUK Yurii, MEIXNER Benjamin, OLSA Nicolas"
+date: "04-11-2024"
+output: 
+  pdf_document:
+    latex_engine: tectonic
+    fig_width: 12
+    fig_height: 12 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.width=12, fig.height=12)
+
+knitr::opts_knit$set(root.dir = "~/projects/wu/r/ba2/data")
+```
+# Exercise 2
+
+## Task 1
+
+First we start reading in the data and create an xts object from the S&P 500 data.
+Then using the simple daily returns we take the 95% quantile to get the 95%
+Value at Risk level
+
+```{r}
+library(xts)
+load("index_data.RData")
+head(indices)
+sp500 <- indices$sp.xts #extracting the s&p500 indices
+dates <- as.Date(row.names(indices))
+sp500xts <- xts(indices$sp.xts, order.by=dates) #conversion to xts object 
+
+returns_daily <- sp500xts / lag(sp500xts, k=1) -1 #calculating simple daily returny
+head(returns_daily)
+returns_daily <- na.omit(returns_daily) #removing NA-s
+VaR95 <- quantile(returns_daily, probs=0.05) #lower endpoint of the 95% VaR
+abs(VaR95)
+```
+
+With a result of 0.017 the result is that with a chance of 5% our investments will fall more than 1.7%. This should be a very safe investment.
+
+Let's plot the daily returns.
+
+
+```{r}
+plot(returns_daily, col="steelblue", main="Daily return series of the S&P 500 including VaR 95% (coral)")
+```
+
+We can then add the 95% VaR line and highlight the points which fall below that line to visualize the VaR of 1.7% better.
+
+```{r}
+VaR95_seq <- rep(VaR95,times=length(returns_daily) ) #adjusting the length of the 95% VaR
+VaR95_seq <- xts(VaR95_seq, order.by = time(returns_daily)) #converting it to an XTS object
+
+lines(VaR95_seq, col="coral", lwd = 3)
+
+points(x = which(coredata(returns_daily) < VaR95),
+       y = coredata(returns_daily)[which(coredata(returns_daily) < VaR95)],
+       col = "gold", pch=19)
+```
+
+During market crashes and high volatility (e.g. in 2008) the VaR often underestimates the actual risk,
+ as VaR is static and does not adapt to market condition changes.
+Therefore, it does not always adequately indicate the risk of substantial losses. 
+
+```{r}
+below_VaR95_number <- length(returns_daily[returns_daily< VaR95]) #number of returns below the 5% quantile
+total_number <- length(returns_daily) #total number of returns
+(below_VaR95_percentage <- below_VaR95_number/total_number*100) #verification whether indeed 5% of all values lies below VaR 95%.
+```
+
+Just over 5%, neglibible rounding error.
+
+## Task 2
+
+```{r}
+VaR_expand <- rep(NA, 250) #vector of 250 NA-s
+
+for (i in 251:length(returns_daily)) {
+  VaR_expand[i] <- quantile(returns_daily[1:i-1], probs = 0.05) # loop for creating
+  # the expanding window of 95% VaR using the returns up to the current value in the sequence
+}
+
+VaR_expand_xts <- xts(VaR_expand, order.by = time(returns_daily))
+
+plot(returns_daily, type = "p", col = "steelblue", main = "Daily return series of the S&P 500 (blue) including Expanding VaR (coral)")
+lines(VaR_expand_xts, col = "coral", lwd = 3)
+points(x = index(returns_daily)[coredata(returns_daily) < VaR_expand_xts],
+       y = coredata(returns_daily)[coredata(returns_daily) < VaR_expand_xts],
+       col = "gold", pch = 19, cex = 1.2) #SAME PROBLEM HERE AS ABOVE WITH GOLDEN POINTS
+
+below_VaR_expand_number <- length(returns_daily[returns_daily<VaR_expand_xts])
+(below_VaR_expand_number <- below_VaR95_number/total_number*100) #verification whether
+```
+
+Indeed 5% of all values lies below VaR 95%.
+
+Conclusion: With the expanding window calculation method of the VaR at 95%,
+we could verify that the theory - similarly to our previous calculation - holds -->
+Indeed 5% of all returns lie below the 5th quantile of VaR 95%. 
+
+The expanding window method is better at indicating the risk of substantial losses 
+as its threshold value is constantly adjusted based on the cumulative returns data up to the current year measured. As an example, one can refer to the graph  at the period after the 2008's stock market crash. The value of VaR 95% decreased, indicating that negative returns are more likely based on recent negative returns. 
+

@@ -12,7 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(fig.width=12, fig.height=12)
 
-knitr::opts_knit$set(root.dir = "~/projects/wu/r/ba2/hw1")
+knitr::opts_knit$set(root.dir = "~/projects/wu/r/ba2/data")
 ```
 
 # Introduction
