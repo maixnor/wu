@@ -1,5 +1,5 @@
 ---
-title: "BA 2 - 1296 - Homework 1 - Group 1"
+title: "BA 2 - 1296 - Homework 2 - Group 1"
 author: "AUER Kornel, ARNS Vivien, LAKATOS Vanda, MASIUK Yurii, MEIXNER Benjamin, OLSA Nicolas"
 date: "04-11-2024"
 output: 
@@ -13,8 +13,227 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(fig.width=12, fig.height=12)
 
-knitr::opts_knit$set(root.dir = "~/projects/wu/r/ba2/data")
+knitr::opts_knit$set(root.dir = "~/repo/wu/r/ba2/data")
 ```
+# Exercise 1
+
+## Task 1
+
+Compute the portfolio value for each month and plot the results.
+
+```{r}
+price_data <- read.csv(file="price_data.csv", sep=";", dec=",")
+price_data <- na.omit(price_data) #removing NA (always removes whole row if at least 1 NA occurs)
+
+dim(price_data)
+price_data$Date <- as.Date(price_data$Date, format="%Y-%m-%d")
+
+price_data <- price_data[price_data$Name %in% c("Dictum Ltd", "Pede Ltd", "Sed LLP", "Consectetuer Company", "Vel LLC"), ]
+
+library(xts)
+
+names <- unique(price_data$Name)
+p <- list()
+for (i in 1:length(names)) {
+  price_data_i <- price_data[price_data$Name == names[i], ]
+  p[[i]] <- xts(price_data_i$Price, order.by = price_data_i$Date) 
+}
+price <- do.call(cbind, p) 
+
+colnames(price) <- names
+price <- price["2003/"] 
+price <- abs(price)
+price <- apply.daily(price, FUN = function(x) x[1, ])
+price <- na.omit(price)
+head(price)
+
+prices_monthly <- apply.monthly(price, function(x) last(x)) #last because at the end of each month
+
+holdings<- matrix(c(100, 100, 200, 150, 50), nrow = nrow(prices_monthly), ncol = ncol(prices_monthly), byrow = TRUE) # we make sure the dimensions are right for the holdings and the monthly prices
+pv <- rowSums(prices_monthly * holdings) #portfolio values in each month
+head(pv)
+pv_xts <- xts(pv, order.by = index(prices_monthly)) #portfolio value in an xts file
+dim(pv_xts)
+pv_xts [1:159,]
+
+plot(pv_xts, main= "Monthly Portfolio Values", col='darkred')
+```
+
+Here we can clearly see the financial crisis in 2008 and how portfolio started to increse from January 2009.
+In 2014 the economy recovered to pre-crash values.
+
+## Task 2
+
+Compute the monthly portfolio returns and plot them.
+
+```{r}
+#we are using simple returns, as it is not stated otherwise
+pv_returns<- (pv_xts-lag(pv_xts))/ lag(pv_xts)
+plot(pv_returns, main='Monthly Portfolio Returns', col="orange")
+```
+
+Just this plot alone is not giving a lot of insight into what was happening. What we can see is that large fluctuations
+are grouped together. Especially in January of 2009.
+
+## Task 3
+
+Compare the portfolio’s return distribution to the stocks’ return distributions graphically.
+
+```{r}
+stock_returns <-(price-lag(price))/lag(price) #we compute the stock returns
+head(stock_returns)
+
+#we compute densities and plot 
+stock_densities <- apply(stock_returns, 2, function(x) density(na.omit(x)))
+portfolio_density <- density(na.omit(pv_returns))
+
+stock_names <- colnames(stock_returns)
+stock_color <- rainbow(5) #assign different colors to the different firms
+
+plot(portfolio_density, col='black', ylim=c(0,10), main='Density Of Portfolio Returns ')
+for (i in 1:ncol(stock_returns)) {
+  lines(stock_densities[[i]], col=stock_color[i], )
+}
+legend("topleft", legend = c("Portfolio", stock_names), col = c("black",stock_color), lwd = 2)
+```
+
+# #todo add interpretation for 1.4-8
+
+## Task 4
+
+Plot Time Series of Relative Portfolio Weights.
+
+```{r}
+# Filter for portfolio companies and prepare xts time series
+company_names <- unique(price_data$Name)
+price_list <- lapply(company_names, function(company) {
+  company_data <- subset(price_data, Name == company)
+  xts(company_data$Price, order.by = company_data$Date)
+})
+price <- do.call(cbind, price_list)
+colnames(price) <- company_names
+
+# Define initial holdings for each stock in the portfolio (adjust as per actual holdings)
+holdings <- c(100, 100, 200, 150, 50)  # For Dictum Ltd, Pede Ltd, Sed LLP, Consectetuer Company, Vel LLC
+
+# Calculate and Plot Time Series of Relative Portfolio Weights
+monthly_prices <- apply.monthly(price, last)  # Get last price of each month
+portfolio_value <- rowSums(monthly_prices * holdings)  # Monthly portfolio value
+
+# Calculate relative weights for each stock in the portfolio
+weights_Dictum <- holdings[1] * monthly_prices$`Dictum Ltd` / portfolio_value
+weights_Pede <- holdings[2] * monthly_prices$`Pede Ltd` / portfolio_value
+weights_Sed <- holdings[3] * monthly_prices$`Sed LLP` / portfolio_value
+weights_Consectetuer <- holdings[4] * monthly_prices$`Consectetuer Company` / portfolio_value
+weights_Vel <- holdings[5] * monthly_prices$`Vel LLC` / portfolio_value
+
+# Combine weights into a matrix for plotting
+weights_portfolio <- cbind(weights_Dictum, weights_Pede, weights_Sed, weights_Consectetuer, weights_Vel)
+
+# Plot portfolio weights with distinct colors and legend
+plot(weights_portfolio, main = "Time Series of Relative Portfolio Weights",
+     ylab = "Relative Weight in Portfolio", col = c("darkgreen", "purple", "skyblue", "darkorange", "goldenrod"))
+legend("topright", legend = c("Dictum Ltd", "Pede Ltd", "Sed LLP", "Consectetuer Company", "Vel LLC"),
+       col = c("darkgreen", "purple", "skyblue", "darkorange", "goldenrod"), lty = 1, lwd = 2)
+
+```
+
+## Task 5
+
+Compute Volatility and Skewness.
+
+```{r}
+# # Compute volatility for each stock
+# volatility_single <- apply(coredata(stock_returns), 2, sd, na.rm = TRUE)
+# volatility_portfolio <- sd(portfolio_returns, na.rm = TRUE)
+# 
+# 
+# # Load the moments library for the skewness function
+# library(moments)
+# # Calculate skewness for each stock
+# skewness_single <- apply(coredata(stock_returns), 2, skewness, na.rm = TRUE)
+# 
+# # Calculate skewness for the overall portfolio
+# skewness_portfolio <- skewness(portfolio_returns, na.rm = TRUE)
+# 
+# # Print results
+# cat("Skewness of single stocks:", skewness_single, "\n")
+# cat("Portfolio skewness:", skewness_portfolio, "\n")
+# 
+# # Print results
+# cat("Volatility of single stocks:", volatility_single, "\n")
+# cat("Portfolio volatility:", volatility_portfolio, "\n")
+# cat("Skewness of single stocks:", skewness_single, "\n")
+# cat("Portfolio skewness:", skewness_portfolio, "\n")
+```
+
+## Task 6
+
+Compute Historical VaR and Expected Shortfall at 2%.
+
+```{r}
+# var_2 <- quantile(portfolio_returns, 0.02, na.rm = TRUE)
+# expected_shortfall <- mean(portfolio_returns[portfolio_returns < var_2], na.rm = TRUE)
+# 
+# cat("VaR at 2% level:", var_2, "\n")
+# cat("Expected Shortfall at 2% level:", expected_shortfall, "\n")
+```
+
+## Task 7
+
+Compute Portfolio's Sharpe Ratio
+
+```{r}
+# Required Libraries
+library(xts)
+library(lubridate)
+
+# Load the risk-free rate data and process it
+risk_free_rate <- read.csv(file="risk_free_return_monthly.csv", header = TRUE, sep = ",", dec = ".")
+risk_free_rate <- na.omit(risk_free_rate)
+risk_free_rate$Date <- as.Date(paste0(risk_free_rate$Date, "01"), format = "%Y%m%d")
+end_of_month <- ceiling_date(risk_free_rate$Date, "month") - 1
+
+#plot(risk_free_rate) #todo fix this plot
+
+# Convert risk-free rates to xts, aligning them to the end of each month
+end_of_month <- na.omit(end_of_month)
+rf_xts <- xts(risk_free_rate$Rate / 100, order.by = end_of_month)
+
+# # Align risk-free rate data with portfolio returns by date
+# aligned_rf <- rf_xts[index(portfolio_returns)]
+# excess_returns <- na.omit(portfolio_returns - aligned_rf)  # Calculate excess returns
+# 
+# # Calculate Sharpe ratio as the mean of excess returns divided by their standard deviation
+# sharpe_ratio_portfolio <- mean(excess_returns) / sd(excess_returns)
+# 
+# # Display the Sharpe Ratio
+# cat("Portfolio's Sharpe Ratio:", sharpe_ratio_portfolio, "\n")
+```
+
+## Task 8
+
+Compare Portfolio’s Cumulative Return to an Equal-Weighted Portfolio
+
+```{r}
+# # Calculate individual stock returns (from Task 1) if not already calculated
+# #stock_returns <- (price - lag(price)) / lag(price) # Uncomment if stock_returns is not defined
+# 
+# # Compute equal-weighted portfolio returns by averaging the stock returns
+# equal_weighted_returns <- rowMeans(stock_returns, na.rm = TRUE)  # Assuming all stocks have equal weights
+# equal_weighted_cumulative <- cumprod(1 + equal_weighted_returns) - 1  # Cumulative returns
+# 
+# # Compute portfolio cumulative returns
+# portfolio_cumulative <- cumprod(1 + portfolio_returns) - 1  # Cumulative returns of the original portfolio
+# 
+# # Plot cumulative returns for the original and equal-weighted portfolios
+# plot(as.zoo(portfolio_cumulative), type = "l", col = "blue", lwd = 2, 
+#      main = "Cumulative Return Comparison", ylab = "Cumulative Return", xlab = "Date")
+# lines(as.zoo(equal_weighted_cumulative), col = "red", lwd = 2)
+# legend("topleft", legend = c("Original Portfolio", "Equal-Weighted Portfolio"), 
+#        col = c("blue", "red"), lty = 1, lwd = 2)
+```
+
 # Exercise 2
 
 ## Task 1
@@ -54,10 +273,7 @@ VaR95_seq <- rep(VaR95,times=length(returns_daily) ) #adjusting the length of th
 VaR95_seq <- xts(VaR95_seq, order.by = time(returns_daily)) #converting it to an XTS object
 
 lines(VaR95_seq, col="coral", lwd = 3)
-
-points(x = which(coredata(returns_daily) < VaR95),
-       y = coredata(returns_daily)[which(coredata(returns_daily) < VaR95)],
-       col = "gold", pch=19)
+points(returns_daily[returns_daily < VaR95], col = "gold", pch = 19, cex = 1.2)
 ```
 
 During market crashes and high volatility (e.g. in 2008) the VaR often underestimates the actual risk,
@@ -86,20 +302,40 @@ VaR_expand_xts <- xts(VaR_expand, order.by = time(returns_daily))
 
 plot(returns_daily, type = "p", col = "steelblue", main = "Daily return series of the S&P 500 (blue) including Expanding VaR (coral)")
 lines(VaR_expand_xts, col = "coral", lwd = 3)
-points(x = index(returns_daily)[coredata(returns_daily) < VaR_expand_xts],
-       y = coredata(returns_daily)[coredata(returns_daily) < VaR_expand_xts],
-       col = "gold", pch = 19, cex = 1.2) #SAME PROBLEM HERE AS ABOVE WITH GOLDEN POINTS
-
+points(returns_daily[returns_daily < VaR_expand_xts], col = "gold", pch = 19, cex = 1.2)
 below_VaR_expand_number <- length(returns_daily[returns_daily<VaR_expand_xts])
-(below_VaR_expand_number <- below_VaR95_number/total_number*100) #verification whether
+#verification whether indeed 5% of all values lies below VaR 95% 
+(below_VaR_expand_number <- below_VaR95_number/total_number*100) 
 ```
-
-Indeed 5% of all values lies below VaR 95%.
 
 Conclusion: With the expanding window calculation method of the VaR at 95%,
 we could verify that the theory - similarly to our previous calculation - holds -->
 Indeed 5% of all returns lie below the 5th quantile of VaR 95%. 
 
-The expanding window method is better at indicating the risk of substantial losses 
-as its threshold value is constantly adjusted based on the cumulative returns data up to the current year measured. As an example, one can refer to the graph  at the period after the 2008's stock market crash. The value of VaR 95% decreased, indicating that negative returns are more likely based on recent negative returns. 
+The expanding window method is better at indicating the risk of substantial losses as its threshold value is constantly adjusted based on the cumulative returns data up to the current year measured. As an example, one can refer to the graph  at the period after the 2008's stock market crash. The value of VaR 95% decreased, indicating that negative returns are more likely based on recent negative returns. 
+
+## Task 3
+
+Calculating the mean is very straightforward.
+
+```{r}
+mean(returns_daily)
+```
+
+The mean return is indeed close to 0.
+
+## Task 4 
+
+To create a prediction about volatility we create use a rolling standard deviation with a window of 25 days. Then we lag it by a day and plot it.
+
+```{r}
+#calculating rolling daily volatility with a rolling window of 25 days
+rolling_volatility <- rollapply(returns_daily,width=25, FUN=sd, align = "right", na.rm=TRUE) 
+
+#lagging rolling volatility by one day to predict next day's volatility
+predicted_volatility <- lag(rolling_volatility, k=1)
+
+plot(predicted_volatility)
+```
+
 
