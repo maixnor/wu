@@ -3,7 +3,7 @@ title: "Quantitative Methods I"
 author: "Course 0165 - Group 8"
 output:
   pdf_document:
-    latex_engine: xelatex
+    latex_engine: tectonic
     fig_caption: yes
 ---
 
