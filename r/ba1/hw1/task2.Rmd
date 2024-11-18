@@ -1,7 +1,9 @@
 ---
 title: "BA1 Task 2"
 output:
-  pdf_document: default
+  pdf_document: 
+    latex_engine: tectonic
+    fig_caption: yes
   html_document: default
 date: "2024-11-15"
 ---
@@ -11,12 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-#setwd("~/Downloads")
+setwd("~/repo/wu/r/ba1/data")
 site_data <- read.csv("site_data.csv", sep = ";",header=TRUE, fill=TRUE)
+setwd("~/repo/wu/r/ba1/hw1")
 colnames(site_data)
 library(dplyr)
 library(ggplot2)
 library(psych)
+library(Hmisc)
+library(corrplot)
 ```
 
 # Task 1
@@ -33,6 +38,24 @@ ggplot(site_data, aes(x = number_ads, y = impressions)) +
   ) +
   theme_minimal()
 ```
+
+### Correlation Coefficients between variables
+
+```{r}
+# exclude first column (row) and select only numeric columns
+site_data_numeric <- site_data %>% select(-1) %>% select_if(is.numeric)
+rcorr(as.matrix(site_data_numeric)) # includes respective p-values
+```
+
+
+```{r}
+M <- cor(site_data_numeric)
+corrplot(M, method="circle",diag=FALSE,tl.srt=35)
+```
+
+The strongest correlations can be observed between `impressions` and `viewed_impressions`, `clicks` and `number_ads` which is quite obvious.
+The only correlation which is unexpected is the slightly negative, although not statistically significant, correlation of the `publisher` to the other variables.
+We can also observe that the `number of ads` is not as strongly correlated with `clicks` than the others. Indicating that just quantity is not replacing quality in this case.
 
 # Task 2
 
