@@ -1,5 +1,5 @@
 ---
-title: "BA1 Task 2"
+title: "BA1 Task 2 - Group 1"
 output:
   pdf_document: 
     latex_engine: tectonic
@@ -7,6 +7,11 @@ output:
   html_document: default
 date: "2024-11-15"
 ---
+
+Benjamin Meixner, Maryna Manzharova, Elias Clemens Maria Prackwieser, Richard Takacs
+
+# Assignment - Unit 3
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -39,14 +44,13 @@ ggplot(site_data, aes(x = number_ads, y = impressions)) +
   theme_minimal()
 ```
 
-### Correlation Coefficients between variables
+### Correlation coefficients
 
 ```{r}
 # exclude first column (row) and select only numeric columns
 site_data_numeric <- site_data %>% select(-1) %>% select_if(is.numeric)
 rcorr(as.matrix(site_data_numeric)) # includes respective p-values
 ```
-
 
 ```{r}
 M <- cor(site_data_numeric)
@@ -59,7 +63,8 @@ We can also observe that the `number of ads` is not as strongly correlated with 
 
 # Task 2
 
-### Let's run a simple regression model for impressions (dependent variable) and number of ads (independent variable)
+### Simple Regression I
+Let's run a simple regression model for impressions (dependent variable) and number of ads (independent variable)
 ```{r}
 mod0 = lm(impressions ~ number_ads, data = site_data); e <- summary(mod0)
 e
@@ -90,7 +95,8 @@ R-squared adjusted is very close to R-squared value. It suggests that the model 
 
 P-value of F-statistic is < 2.2e-16 which is less than 0.05. It means we can reject the null hypothesis that R-squared equals 0 (or all coefficients except for intercept = 0). It suggests that model as a whole is significant. 
 
-### Let's run a simple regression model for clicks (dependent variable) and impressions(independent variable)
+### Simple Regression II
+Let's run a simple regression model for clicks (dependent variable) and impressions(independent variable)
 ```{r}
 mod1 = lm(clicks ~ impressions, data = site_data); d <- summary(mod1)
 d 
@@ -118,18 +124,24 @@ d$adj.r.squared
 R-squared adjusted is very close to R-squared value. It suggests that the model is not very affected by the number of predictors.
 p-value of F-statistic is < 2.2e-16 which is less than 0.05. It means we can reject the null hypothesis that R-squared equals 0 (or all coefficients except for intercept = 0). It suggests that model as a whole is significant 
 
-###Let's predict number of impressions when a website owner would publish 5 ad slots on their website
+### Predict 5 ad slots
+
+Let's predict number of impressions when a website owner would publish 5 ad slots on their website
 ```{r}
 predicted_imp <- predict(mod0, newdata = list(number_ads = 5))
 cat("Predicted impressions for 5 ad slots is", predicted_imp, "\n")
 ```
-###Let's predict how many clicks could the manager generate on average if a website owner would sell 1M impressions on their website
+### Predict 1 million impressions
+
+Let's predict how many clicks could the manager generate on average if a website owner would sell 1M impressions on their website
 ```{r}
 predicted_clicks <- predict(mod1, newdata = list(impressions=1000000))
 cat("Predicted clicks for 1 million of impressions is", predicted_clicks, "\n")
 ```
 
 # Task 3
+
+### Multiple Regression
 
 We run the multiple linear regression to investigate the effect the number of ads on the webpage and the number of impressions have on the amount of clicks received.
 ```{r}
@@ -166,6 +178,8 @@ Additionally, since only around 45% of the variability in clicks is explained by
 summary(lm(clicks ~ number_ads + impressions + view_rate + ctr + quality, data = site_data))$adj.r.squared
 ```
 Below see a visualization of the model.
+
+## Plot
 
 ```{r}
 ggplot(site_data, aes(x = number_ads, y = clicks, color = impressions)) +
