@@ -1,0 +1,35 @@
+name: Build and Verify R code
+
+on:
+  push:
+    paths:
+      - '**.R'
+      - '**.Rmd'
+  pull_request:
+    paths:
+      - '**.R'
+      - '**.Rmd'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Nix
+      uses: cachix/install-nix-action@v14
+
+    - name: Build with Nix
+      run: nix build
+
+    - name: Verify R and Rmd files
+      run: |
+        for file in $(git diff --name-only HEAD^ HEAD | grep -E '\.R$|\.Rmd$'); do
+          if [[ $file == *.R ]]; then
+            R CMD BATCH $file
+          elif [[ $file == *.Rmd ]]; then
+            Rscript -e "rmarkdown::render('$file')"
+          fi
+        done

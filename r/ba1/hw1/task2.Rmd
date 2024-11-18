@@ -1,0 +1,160 @@
+---
+title: "BA1 Task 2"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-11-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#setwd("~/Downloads")
+site_data <- read.csv("site_data.csv", sep = ";",header=TRUE, fill=TRUE)
+colnames(site_data)
+library(dplyr)
+library(ggplot2)
+library(psych)
+```
+
+# Task 1
+
+### Scatter Plot
+
+```{r}
+ggplot(site_data, aes(x = number_ads, y = impressions)) +
+  geom_point() +
+  labs(
+    title = "Scatter Plot of Number of Ads vs Impressions",
+    x = "Number of Ads",
+    y = "Impressions"
+  ) +
+  theme_minimal()
+```
+
+# Task 2
+
+### Let's run a simple regression model for impressions (dependent variable) and number of ads (independent variable)
+```{r}
+mod0 = lm(impressions ~ number_ads, data = site_data); e <- summary(mod0)
+e
+
+```
+```{r} 
+site_data %>% ggplot(aes(x= number_ads, y= impressions)) +
+geom_point()+
+geom_smooth(method = "lm")
+```
+
+Let's interpret the results.
+```{r}
+e$coefficients
+```
+The estimate of intercept is a negative number, it suggests that if there were zero ads, the predicted number of impressions would be negative. In practice, this doesn't make sense, as impressions cannot be negative.This suggests that the model is only valid in ranges where number_ads matches the data input's constrained range.
+Coefficient for number of ads is 474641. It means that with one additional ad slot impressions increase by 474641. 
+The p-values for intercept and number_ads are smaller than 0.05. It means that we can reject the null hypothesis that intercept and number_ads coefficient are zero — intercept and number_adds are statistically significant within the model.
+``` {r}
+e$r.squared
+```
+R-squared of 0.4866041 suggests that 48.66% of the variability in impressions is explained by the number of ads. It is not much, therefore perhaps adding additional variables can improve the model.
+
+```{r}
+e$adj.r.squared
+```
+R-squared adjusted is very close to R-squared value. It suggests that the model is not very affected by the number of predictors.
+
+P-value of F-statistic is < 2.2e-16 which is less than 0.05. It means we can reject the null hypothesis that R-squared equals 0 (or all coefficients except for intercept = 0). It suggests that model as a whole is significant. 
+
+### Let's run a simple regression model for clicks (dependent variable) and impressions(independent variable)
+```{r}
+mod1 = lm(clicks ~ impressions, data = site_data); d <- summary(mod1)
+d 
+```
+
+```{r}
+site_data %>% ggplot(aes(x= impressions, y= clicks)) +
+geom_point()+
+geom_smooth(method = "lm")
+```
+Let's interpret the results.
+``` {r} 
+d$coefficients
+```
+Estimate of intercept suggests that without impressions there are 1.684 clicks. 
+Estimate of impressions suggests that additional impression increases number of clicks by 2.097217e-05. 
+The p-value for intercept is  bigger than 0.05 - not statistically significant. It means that we cannot reject the null hypothesis that intercept is zero. The p-value for impressions is less than 0.05. We can reject null hypothesis that impressions coefficient is zero. This means impressions coefficient is significant within our model.
+```{r}
+d$r.squared
+```
+R-squared of 0.4512875 suggests that 45.12875% of the variability in clicks is explained by impressions. It is not much, therefore adding additional variables can improve the model.
+```{r}
+d$adj.r.squared
+```
+R-squared adjusted is very close to R-squared value. It suggests that the model is not very affected by the number of predictors.
+p-value of F-statistic is < 2.2e-16 which is less than 0.05. It means we can reject the null hypothesis that R-squared equals 0 (or all coefficients except for intercept = 0). It suggests that model as a whole is significant 
+
+###Let's predict number of impressions when a website owner would publish 5 ad slots on their website
+```{r}
+predicted_imp <- predict(mod0, newdata = list(number_ads = 5))
+cat("Predicted impressions for 5 ad slots is", predicted_imp, "\n")
+```
+###Let's predict how many clicks could the manager generate on average if a website owner would sell 1M impressions on their website
+```{r}
+predicted_clicks <- predict(mod1, newdata = list(impressions=1000000))
+cat("Predicted clicks for 1 million of impressions is", predicted_clicks, "\n")
+```
+
+# Task 3
+
+We run the multiple linear regression to investigate the effect the number of ads on the webpage and the number of impressions have on the amount of clicks received.
+```{r}
+lm_click_adnum_impr<- lm(clicks ~ number_ads + impressions, data = site_data)
+click_lm_summary <- summary(lm_click_adnum_impr)
+click_lm_summary
+```
+We can see that whicle the number of ads don't explain the number of clicks in a statistically significant way, the number of impressions do. Additionally, the adjusted R-squared is 45%, says that approximately 45% of the variability in the number of clicks can be explained by the number of ads and number of impressions combined.
+
+Let's compare the results with d).
+```{r}
+cat("adj. r-squared for clicks ~ impressions:", d$adj.r.squared, "\n")
+cat("adj. r-squared for clicks ~ number_ads:", e$adj.r.squared, "\n")
+cat("adj. r-squared for clicks ~ number_ads + impressions:", click_lm_summary$adj.r.squared, "\n")
+cat("coefficients for clicks ~ impressions:\n")
+d$coefficients
+cat("coefficients for clicks ~ number_ads:\n")
+e$coefficients
+cat("coefficients for clicks ~ number_ads + impressions:\n")
+click_lm_summary$coefficients
+```
+According to adjusted r squared, our model has not improved. This suggests that the number of ads does not explain additional variability in clicks beyond what impressions already explains. In the multiple regression model, number_ads has an estimate of 0.62, although the P value is not statistically significant (p-value ~0.32) while impressions, although lower estimate, is statistically significant (p-value <0.001), which further confirmes this observation.
+
+This could indicate that number_ads and impressions are correlated. Let's test this
+```{r}
+cor(site_data$number_ads, site_data$impressions)
+```
+We have a correlation of almost 70%, which is relatively high and might be behind why the inclusion of number_ads did not significantly improve our model.
+
+We would recommend the manager to focus on increasing the amount of impressions on the webpage instead of focusing on the amount of ads displayed in order to achieve a more clicks. Increasing impressions has a strong statistical evidence to increase user engagement based on our analysis.
+
+Additionally, since only around 45% of the variability in clicks is explained by the lm model, we would recommend the manage to conduct more tests, potentially incorporating other predictors. As an examples, incorporating view_rate, ctr, and quality variables in the lm model results in an adjusted r squared of ~80%
+```{r}
+summary(lm(clicks ~ number_ads + impressions + view_rate + ctr + quality, data = site_data))$adj.r.squared
+```
+Below see a visualization of the model.
+
+```{r}
+ggplot(site_data, aes(x = number_ads, y = clicks, color = impressions)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", color = "black") +
+  scale_color_gradient(low = "blue", high = "red") +
+  labs(
+    title = "Effects of ad number and impressions on clicks",
+    x = "number of ads",
+    y = "clicks",
+    color = "Impressions"
+  ) +
+  theme_minimal()
+
+```
