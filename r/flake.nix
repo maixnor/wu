@@ -21,6 +21,8 @@
                     rPackages.corrplot
                     rPackages.Hmisc
                     rPackages.apaTables
+                    rPackages.nFactors
+                    rPackages.qgraph
                     tectonic
                     pandoc
                     inotify-tools

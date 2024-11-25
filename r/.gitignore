@@ -1,4 +1,5 @@
 .RData
+.vscode
 *out
 sessions/*
 *.pdf

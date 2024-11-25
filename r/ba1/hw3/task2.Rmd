@@ -1,16 +1,16 @@
 ---
-title: "BA1 Task 2 - Group 1"
+title: "BA1 Unit 3 - Group 1"
 output:
   pdf_document: 
     latex_engine: tectonic
     fig_caption: yes
   html_document: default
-date: "2024-11-15"
+date: "2024-11-18"
 ---
 
 Benjamin Meixner, Maryna Manzharova, Elias Clemens Maria Prackwieser, Richard Takacs
 
-# Assignment - Unit 3
+# Setup
 
 
 ```{r setup, include=FALSE}
@@ -20,46 +20,78 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 setwd("~/repo/wu/r/ba1/data")
 site_data <- read.csv("site_data.csv", sep = ";",header=TRUE, fill=TRUE)
-setwd("~/repo/wu/r/ba1/hw1")
-colnames(site_data)
 library(dplyr)
 library(ggplot2)
 library(psych)
-library(Hmisc)
-library(corrplot)
 ```
 
 # Task 1
 
-### Scatter Plot
+First we take a quick look at our dataset to get familiar with the data. The following commands help us get some quick information:
 
 ```{r}
-ggplot(site_data, aes(x = number_ads, y = impressions)) +
-  geom_point() +
-  labs(
-    title = "Scatter Plot of Number of Ads vs Impressions",
-    x = "Number of Ads",
-    y = "Impressions"
-  ) +
-  theme_minimal()
+head(site_data)
+
+describe(site_data)
+
+str(site_data)
 ```
 
-### Correlation coefficients
+We are looking at 1215 observations of 14 variables that represent
+online ad results (=marketing data) from 12 websites on 122 days.
+
+Let's go to the first task! Here we will look at the correlation between impressions and the number of ads per page, later on we will check the relation between clicks and impressions.
+
+# Impressions vs. number of ads per page
+
+## a) Scatterplot: how strong is the correlation between Impressions and the number of ads?
+```{r}
+plot(site_data$number_ads,site_data$impressions)
+```
+Since the number of impressions are very large and vary widely, it might come handy to also look at a scatterplot that considers a logarithmic transformation of the number of impressions. The log transformation reduces the impact of large values with extremely high outliers (data is highly skewed). Using log we will obtain a relationship that is easier to visualize.
+```{r}
+log_impressions <- log(site_data$impressions)
+
+plot(site_data$number_ads,log_impressions)
+
+```
+Before we comment on our scatterplot, let's calculate also the correlation coefficients for our pair of variables. Here we will look at our original impression values. We can either simply ask R to give us the correlation coefficient using the *cor()* function. Alternatively, we can use the *cor.test()* function that automatically calculates both the correlation coefficient and its p-value.
+
+# b) Correlation coefficient
+```{r}
+correlation<-cor(site_data$number_ads,site_data$impressions)
+print(correlation)
+
+cor.test(site_data$number_ads, site_data$impressions)
+
+```
+Our correlation coefficient is 0.6975701. This indicates *moderate-strong positive correlation* between the number of ads per page and the impressions. Also, the p-value is smaller than 0.05. Hence we assume that our relationship is statistically significant.
+
+## c) Comments
+As already mentioned before we assume a moderate-strong positive correlation when inspecting the correlation coefficient. If we would only look at our non-logarithmic scatterplot, we could not assume any linear relationship or correlation. Using the logarithm, the correlation indicated by our correlation coefficient becomes more understandable. From looking at the scatterplots we must say that the data is highly skewed: Impressions remain significantly low and increase drastically only when the number of ads per page reaches 14. Therefore, even though the correlation coefficient is moderate-high and positive, this does not mean that we can assume a strong, positive linear relationship.
+
+
+
+# Relation between clicks and impressions
+
+## a) Scatterplot
 
 ```{r}
-# exclude first column (row) and select only numeric columns
-site_data_numeric <- site_data %>% select(-1) %>% select_if(is.numeric)
-rcorr(as.matrix(site_data_numeric)) # includes respective p-values
+plot(site_data$clicks, site_data$impressions)
+log_impressions<-log(site_data$impressions)
+plot(site_data$clicks,log_impressions)
 ```
+Again we use also the logarithmic number of impressions and compare it to the amount of clicks. This allows for a better visualization.
+
+## b) Correlation coefficient
 
 ```{r}
-M <- cor(site_data_numeric)
-corrplot(M, method="circle",diag=FALSE,tl.srt=35)
+cor.test(site_data$impressions, site_data$clicks)
 ```
+Our p-value is smaller 0.05 which means our result is statistically significant. Correlation = 0.6717794. The correlation between impressions and clicks is a bit lower than the correlation impressions-number of ads. Nonetheless, 0.6717794 indicates a *moderate-high positive correlation between impressions and clicks*.
 
-The strongest correlations can be observed between `impressions` and `viewed_impressions`, `clicks` and `number_ads` which is quite obvious.
-The only correlation which is unexpected is the slightly negative, although not statistically significant, correlation of the `publisher` to the other variables.
-We can also observe that the `number of ads` is not as strongly correlated with `clicks` than the others. Indicating that just quantity is not replacing quality in this case.
+## c) Comments
+From analyzing the non-logarithmic scatterplot one cannot assume a high correlation since the data seemes to be drastically left-skewed. The scatterplot with logarithmic values for "impressions" also indicates a distortion of our data. One should therefore be careful when estimating the significance of the correlation coefficient. There is an association between the variables, but the relationship is not linear.
 
 # Task 2
 
