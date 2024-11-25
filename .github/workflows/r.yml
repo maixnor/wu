@@ -26,21 +26,20 @@ jobs:
 
     - name: Verify R and Rmd files
       run: |
-        mkdir out
-        for file in $(git diff --name-only HEAD~7 HEAD | grep -E '\.R$|\.Rmd$'); do
+        for file in $(git diff --name-only HEAD~7 | grep -E '\.R$|\.Rmd$'); do
           if [[ $file == *.R ]]; then
             R CMD BATCH $file
           elif [[ $file == *.Rmd ]]; then
             Rscript -e "rmarkdown::render('$file')"
-            PDF_PATH = $(sed 's/Rmd/pdf/' "$file")
-            mv "$PDF_PATH" out
           fi
         done
 
     - uses: actions/upload-artifact@v4
       with:
-        name: PDFs
-        path: out
+        name: PDFs and logs
+        path: |
+          **/*.pdf
+          **/*.Rout
         retention-days: 10
 
         
