@@ -21,7 +21,6 @@ knitr::opts_chunk$set(echo = TRUE)
 setwd("~/repo/wu/r/ba1/data")
 site_data <- read.csv("site_data.csv", sep = ";",header=TRUE, fill=TRUE)
 
-
 library(dplyr)
 library(ggplot2)
 library(psych)
