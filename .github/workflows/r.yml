@@ -18,7 +18,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        fetch-depth: '2'
+        fetch-depth: '10'
 
     - name: Set up Nix
       uses: cachix/install-nix-action@v14
@@ -28,7 +28,7 @@ jobs:
 
     - name: Verify R and Rmd files
       run: |
-        for file in $(git diff --name-only @{1} | grep -E '\.R$|\.Rmd$'); do
+        for file in $(git diff --name-only HEAD^ | grep -E '\.R$|\.Rmd$'); do
           if [[ $file == *.R ]]; then
             R CMD BATCH $file
           elif [[ $file == *.Rmd ]]; then
@@ -39,9 +39,10 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: PDFs and logs
+        if-no-files-found: error
         path: |
-          **/*.pdf
-          **/*.Rout
+          r/**/*.pdf
+          r/**/*.Rout
         retention-days: 10
 
         
