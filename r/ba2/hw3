@@ -1,0 +1,162 @@
+---
+title: "HA3_tasks1,2"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+```{r}
+library(xts)
+library(lubridate)
+```
+
+# Exercise 1 
+
+First, we call part of the code from class 3 that we will reuse for the exercises. 
+
+```{r}
+price_data <- read.csv(file="price_data.csv", sep = ";", dec = ",")
+firm_data <- read.csv(file="firm_data.csv", sep = ";", dec = ",")
+
+price_data <- na.omit(price_data)
+firm_data <- na.omit(firm_data)
+
+IDs <- unique(price_data$ID)
+
+# Creating xts object for prices of all firms
+IDs <- unique(price_data$ID)
+head(IDs)
+p <- list()
+for (i in 1:length(IDs)) { 
+  price_data_i <- price_data[price_data$ID==IDs[i], ]
+  p[[i]] <- xts(price_data_i$Price,
+       order.by=as.Date(as.character(price_data_i$Date), format="%Y-%m-%d"))
+}
+price <- do.call(cbind, p)
+colnames(price) <- paste0("X", IDs)
+dim(price)
+price <- price["1990/"]
+price[1:10,1:5]
+
+price <- apply.daily(price, FUN=function(x) x[1,] )
+dim(price)
+price <- abs(price)
+price <- na.approx(price)
+
+
+#market cap
+
+price_data$mcap <- price_data$Price * price_data$Shares.Outstanding * 1000
+
+IDs <- unique(price_data$ID)
+head(IDs)
+mcap <- list()
+for (i in 1:length(IDs)) {
+  price_data_i <- price_data[price_data$ID==IDs[i], ]
+  mcap[[i]] <- xts(price_data_i$mcap,
+          order.by=as.Date(as.character(price_data_i$Date), format="%Y-%m-%d"))
+}
+
+mcap[1]
+
+mcap <- do.call(cbind, mcap)
+colnames(mcap) <- paste0("X", IDs)
+dim(price)
+mcap <- mcap["1990/"]
+mcap[1:10,1:5]
+
+mcap <- apply.daily(mcap, FUN=function(x) x[1,] )
+mcap <- abs(mcap)
+```
+## Task 1 
+```{r}
+mcap_end_2002 <- mcap["2002-12-31"]
+
+#Firms are sorted by market cap in descending order
+sorted_mcap__end_2002 <- order(mcap_end_2002, decreasing=TRUE)
+
+#We chose to work with the largest 400 firms
+largest_400 <- sorted_mcap__end_2002[1:400]
+
+#Subsetting market cap to include only our selected firms
+mcap_largest_400 <- mcap_end_2002[,largest_400]
+
+price_end_2002 <- price["2002-12-31"]
+price_end_2003 <- price["2003-12-31"]
+
+#subsetting year end prices for the 400 largest firms
+price_end_2002_largest_400 <- price_end_2002[,largest_400]
+price_end_2003_largest_400 <- price_end_2003[,largest_400]
+
+#simple return for 2003 of the 400 largest firms
+returns_2003 <- (as.vector(price_end_2003_largest_400)/
+                   as.vector(price_end_2002_largest_400))-1
+plot(as.vector(mcap_largest_400),returns_2003,
+     main="Returns of the largest 400 firms as a function of size",
+     xlab="Market capitalization (2002)", ylab="Yearly return (2003)")
+
+#only firms between 5% and 95% range of market cap --> excluding outliers
+filtered_firms <-
+  as.vector(mcap_largest_400) >quantile(as.vector(mcap_largest_400),0.05) &
+  as.vector(mcap_largest_400) < quantile(as.vector(mcap_largest_400),0.95)
+
+plot(as.vector(mcap_largest_400)[filtered_firms],
+     returns_2003[filtered_firms],
+    main="Returns as a function of size
+    for firms between the 5% and 95% range of market cap",
+    xlab="Market capitalization (2002)", ylab="Yearly return (2003)")
+```
+
+## Task 2 
+
+```{r}
+bin_breaks <- quantile(as.vector(mcap_largest_400), probs =seq(0,1,by=0.1))
+mcap_deciles <- cut(as.vector(mcap_largest_400),breaks=bin_breaks, include.lowest=TRUE)
+levels(mcap_deciles) <- paste0("q", 1:10)
+mcap_deciles
+
+#Combining returns and deciles into a data frame
+returns_decile <- data.frame(returns_2003, mcap_deciles)
+
+#average return per each decile
+average_return_decile <- aggregate(returns_2003~mcap_deciles, data=returns_decile, FUN=mean)
+
+#Specifying the two columns of the data frame
+decile_avg_returns <- average_return_decile$returns_2003
+names(decile_avg_returns) <- average_return_decile$mcap_deciles
+
+#Creating a time sequence for 12 months of 2003
+months_2003 <- seq.Date(from = as.Date("2003-01-01"), to = as.Date("2003-12-31"), by = "month")
+
+#Initializing cumulative returns for each decile with a matrix filled with 0-s
+cumulative_returns <- xts(matrix(0, nrow = length(months_2003), ncol = length(decile_avg_returns)),
+                          order.by = months_2003)
+colnames(cumulative_returns) <- names(decile_avg_returns)
+
+#Computing cumulative monthly returns for each decile using a loop
+for (d in 1:length(decile_avg_returns)) {
+  avg_return <- decile_avg_returns[d]
+  cumulative_returns[, d] <- cumprod(rep(1 + avg_return, length(months_2003))) - 1
+}
+
+#Plotting cumulative returns
+plot(index(cumulative_returns), cumulative_returns[, 1], type = "l",
+     main = "Cumulative Monthly Returns by Decile", xlab = "Time", ylab = "Cumulative Return")  # First decile is used as the base plot
+
+for (d in 2:ncol(cumulative_returns)) {
+  lines(index(cumulative_returns), cumulative_returns[, d], col = d, lwd = 2) 
+  #other deciles are added with the loop
+}
+
+legend("topright", legend = colnames(cumulative_returns),
+       col = 1:ncol(cumulative_returns), lty = 1, lwd = 2)
+
+#Converting yearly decile returns to average yearly returns
+average_yearly_returns <- decile_avg_returns * 12  # Annualized returns
+
+#Plotting bar chart of yearly returns
+barplot(average_yearly_returns, col = "lightblue", main = "Average yearly returns by decile",
+        xlab = "Decile", ylab = "Average yearly return (2003)")
+```
+Observation: The average yearly return of the deciles follows a similar path
+as the returns of the single firms.
+However, they are less volatile and follow a smoother trend over time as there are less variablility. The outliers are not visible here due to the averaging effect of the deciles. This leads us to conclude the importance of diversification.

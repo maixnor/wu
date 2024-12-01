@@ -1,5 +1,7 @@
 .*.Rout
 .obsidian
+result
+**/result
 
 # R Markdown output files
 .pdf

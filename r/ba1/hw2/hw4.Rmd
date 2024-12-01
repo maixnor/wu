@@ -1,0 +1,169 @@
+---
+title: "BA Homework 4 - Toothpaste"
+output:
+  pdf_document: 
+    latex_engine: tectonic
+    fig_caption: yes
+authors: "Benjamin Meixner, Maryna Manzharova, Elias Clemens Maria Prackwieser, Richard Takacs"
+date: "2024-11-24"
+---
+# Explanatory Factor Analysis
+
+# Step 1: Formulate the problem
+What are the underlying benefits consumers seek from the purchase of a toothpaste?
+
+We aim to perform an exploratory factor analysis (EFA) to find out.
+
+## Load libraries
+```{r}
+library(psych)
+library(qgraph)
+library(nFactors)
+```
+## Loading the data
+```{r}
+setwd("/home/maixnor/repo/wu/r/ba1/data")
+toothpaste<-read.csv("toothpaste.csv")
+head(toothpaste)
+```
+
+The meaning of the values are:
+- V1: It is important to buy a toothpaste that prevents cavities (cavities).
+- V2: It is important for a toothpaste to strengthen your gums (gums).
+- V3: Prevention of tooth decay is NOT an important benefit offered by a toothpaste (decay).
+- V4: I prefer a toothpaste that freshens breath (breath).
+- V5: The most important consideration in buying a toothpaste is white teeth (white).
+
+## Quick check
+```{r}
+describe(toothpaste)
+dim(toothpaste)
+```
+With 500 observations and 5 variables, the sample size is sufficient.
+
+## Rescaling the data: z-score
+
+We reslace the variables. It is worth noting, that this is optional, as the dataset is already on a standardized 10-point Likert scale.
+```{r}
+toothpaste.sc<-toothpaste
+toothpaste.sc[,1:5]<-scale(toothpaste[,1:5]) # we take the 5 columns for 5 benefits (optional)
+```
+
+# Step 2: Investigate the correlation
+```{r}
+corr.toothpaste.sc <- round(cor(toothpaste.sc[,1:5]),3) # we calculate the correlation matrix of the first 5 columns of the toothpaste.sc dataset, rounding the results to three decimal places.
+corPlot(corr.toothpaste.sc, numbers=T,diag=F,upper=F, main="Correlations between variables", cex = 1.25)
+```
+## What information can we get from the correlation matrix?
+
+We observe a strong positive correlation between:
+- "breath" and "white" (respondents that
+    found white teeth to be important, also value a toothpaste that promotes
+    fresh breath).
+- "cavities" and "gums" (if preventing cavities is important to a customer,
+  strengthening the gums will also be important)
+
+There's a strong negative correlation between:
+- "decay" and "cavities" (people that think prevention of tooth decay is not an
+  important benefit offered by a toothpaste don't think that preventing cavities is important)
+- "decay" and "gums" (people that think prevention of tooth decay is not an
+  important benefit offered by a toothpaste don't think that strengthening gums is important)
+
+Important to note that decay is phrased negatively ("Prevention of tooth decay is NOT important"), so a negative correlation indicates that those who disagree with decay (i.e., think decay prevention is important) tend to agree with cavities and gums.
+
+Correlation between the other pairs of statements is low. 
+# Bartlett's test
+```{r}
+cortest.bartlett(corr.toothpaste.sc, n=nrow(toothpaste.sc))
+```
+We performed the Bartlett's test and got a p-value that is below 0.05. The result
+is significant. We can reject the null-hypothesis that there are no correlations.
+
+Alternatively, we could do the Kaiser-Meyer-Olkin Test:
+```{r}
+KMO(toothpaste.sc[,1:5])
+```
+The KMO is greater than 0.5. We can therefore reject the null-hypothesis. While a KMO of 0.58 is not ideal (i.e. "miserable"), it is acceptable for proceeding with factor analysis.
+
+# Step 3: Determination of the method of factor analysis
+
+Since we want to summarize the underlying benefits consumers seek from the purchase
+of a toothpaste, we will use a *Common Factor Analysis*.
+
+# Step 4: Determine the number of factors
+```{r}
+eigen(corr.toothpaste.sc)[1]
+```
+We are interested only in those factors for which the *Eigenvalue > 1*.
+Therefore we have 2 Factors.
+
+Let's also perform a scree plot:
+```{r}
+nScree(toothpaste.sc[,1:5])
+plotnScree(nScree(toothpaste.sc[,1:5]))
+```
+Now we ask: What is the amount of factors we need to explain at least 60%
+of the *variance*?
+```{r}
+cum_prop <-0
+i <-0
+while (cum_prop<0.6) {
+  i <- i+1
+  efa <- factanal(toothpaste.sc[,1:5],factors=i)
+  cum_prop <- (cumsum(colSums(efa$loading^2)/dim(efa$loading)[1])[i])
+}
+print(i)
+```
+Two factors will sufficiently explain the variance according to all 3 methods. We will use 2 Factors.
+
+# Step 5&6: Rotate the factors (varimax rotation)
+
+```{r}
+fa_result <- factanal(x=toothpaste.sc[,1:5], factors = 2, rotation = "varimax")
+```
+In uniqueness we see the variance in each variable not explained by the factors. The lowest value (i.e. the variable in which the factor explains the most variance) is white with 0.005. The highest is decay with 0.663.
+
+Only when the loading is greater than 0.4, this indicates a strong relationship
+between a variable and a factor.
+
+- The information suggests that Factor 1 is strongly associated with cavities, gums, and 
+  decay, as these variables have high loadings (positive and negative). This seems to represent respondents who prioritize oral health benefits such as cavity prevention and gum strengthening. We can name it "Health Benefits".
+  - It is again important to note that the "decay" question was negatively phrased, so a negative correlation implies that the respondents who care about "decay" also care about "cavities" and "gums"
+
+- Factor 2 seems to be more closely related to breath and white, which might suggest
+  a factor related to aesthetic or cosmetic dental aspects, such as breath 
+  freshness and teeth whiteness. We can name it "Aesthetic Appeal".
+  
+The result from our explanatory factor analysis is *in accordance* with the info
+we can draw from the correlation matrix. The results from our common factor analysis
+are related to what we observe in our correlation matrix, however the *values differ*
+*slightly*. This is because:
+- The correlation matrix gives us an idea of how strongly *each* variable is related 
+  to every other variable in the dataset.
+- Each factor represents a latent variable (not directly observed) that explains 
+  the *common (shared) variance* among the observed variables. The loadings show 
+  how strongly each variable is associated with a factor.
+  
+Factor 1 explains 0.344 of total variance, while factor 2 explains 0.297 of total variance
+We reject the null hypothesis that the number of factors is sufficient, as p-value is less than 0.05.
+The cumulative variance explained is 0.641, which is reasonably high but leaves a lot of variance unaccounted for. However switching to 3 factors with 5 variables isn’t possible due to the math behind factor analysis.
+```{r}
+corPlot(corr.toothpaste.sc, numbers=T,diag=F,upper=F, main="Correlations between variables", cex = 1.25)
+```
+Looking back at the corr plot, correlations between gums, cavities, and decay are quite high. It is in accordance with our result that they fall onto the same factor (factor 1 or "Health Benefits")
+Correlation between breath and white is also high, and they fall onto the factor 2 ("Aesthetic Appeal"). Therefore the factor results are consistent with the correlation matrix.
+
+Let's display the factor loadings graphically:
+```{r}
+var_names <- c("Cavities", "Gums", "Decay", "Breath", "White")
+qgraph(
+  fa_result$loadings,
+  layout = "circle",
+  vsize = 12,
+  labels = var_names,
+  edge.labels = TRUE,
+  minimum = 0.4,
+  cut = 0.4,
+  title = "Factor loading diagram"
+)
+```
