@@ -1,0 +1,311 @@
+---
+title: "Business Analytics II - Group 1 - Home Assignment 3"
+author: "Yurii Masiuk, Vanda Lakatos, Kornel Auer, Vivien Arns, Benjamin Meixner, Nicholas Olsa"
+date: "2024-11-30"
+output: 
+  pdf_document: 
+    latex_engine: tectonic
+    fig_caption: yes
+---
+
+## Completed exercises: all (1,2)
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+
+```{r}
+library(xts)
+library(lubridate)
+set.seed(69420)
+```
+
+# Exercise 1 
+
+First, we call part of the code from class 3 that we will reuse for the exercises. 
+
+```{r}
+setwd("/home/maixnor/repo/wu/r/ba2/data")
+price_data <- read.csv(file="price_data.csv", sep = ";", dec = ",")
+firm_data <- read.csv(file="firm_data.csv", sep = ";", dec = ",")
+
+price_data <- na.omit(price_data)
+firm_data <- na.omit(firm_data)
+
+IDs <- unique(price_data$ID)
+
+# Creating xts object for prices of all firms
+IDs <- unique(price_data$ID)
+head(IDs)
+p <- list()
+for (i in 1:length(IDs)) { 
+  price_data_i <- price_data[price_data$ID==IDs[i], ]
+  p[[i]] <- xts(price_data_i$Price,
+       order.by=as.Date(as.character(price_data_i$Date), format="%Y-%m-%d"))
+}
+price <- do.call(cbind, p)
+colnames(price) <- paste0("X", IDs)
+dim(price)
+price <- price["1990/"]
+price[1:10,1:5]
+
+price <- apply.daily(price, FUN=function(x) x[1,] )
+dim(price)
+price <- abs(price)
+price <- na.approx(price)
+
+
+#market cap
+
+price_data$mcap <- price_data$Price * price_data$Shares.Outstanding * 1000
+
+IDs <- unique(price_data$ID)
+head(IDs)
+mcap <- list()
+for (i in 1:length(IDs)) {
+  price_data_i <- price_data[price_data$ID==IDs[i], ]
+  mcap[[i]] <- xts(price_data_i$mcap,
+          order.by=as.Date(as.character(price_data_i$Date), format="%Y-%m-%d"))
+}
+
+mcap[1]
+
+mcap <- do.call(cbind, mcap)
+colnames(mcap) <- paste0("X", IDs)
+dim(price)
+mcap <- mcap["1990/"]
+mcap[1:10,1:5]
+
+mcap <- apply.daily(mcap, FUN=function(x) x[1,] )
+mcap <- abs(mcap)
+```
+
+## Task 1.1 
+
+```{r}
+mcap_end_2002 <- mcap["2002-12-31"]
+
+sorted_mcap__end_2002 <- order(mcap_end_2002, decreasing=TRUE)
+
+largest_400 <- sorted_mcap__end_2002[1:400]
+
+mcap_largest_400 <- mcap_end_2002[,largest_400]
+
+price_end_2002 <- price["2002-12-31"]
+price_end_2003 <- price["2003-12-31"]
+
+price_end_2002_largest_400 <- price_end_2002[,largest_400]
+price_end_2003_largest_400 <- price_end_2003[,largest_400]
+
+returns_2003 <- (as.vector(price_end_2003_largest_400)/
+                   as.vector(price_end_2002_largest_400))-1
+plot(as.vector(mcap_largest_400),returns_2003,
+     main="Returns of the largest 400 firms as a function of size",
+     xlab="Market capitalization (2002)", ylab="Yearly return (2003)")
+
+# exclude outliers
+filtered_firms <-
+  as.vector(mcap_largest_400) > quantile(as.vector(mcap_largest_400),0.05) &
+  as.vector(mcap_largest_400) < quantile(as.vector(mcap_largest_400),0.95)
+
+plot(as.vector(mcap_largest_400)[filtered_firms],
+     returns_2003[filtered_firms],
+    main="Returns as a function of size
+    for firms between the 5% and 95% range of market cap",
+    xlab="Market capitalization (2002)", ylab="Yearly return (2003)")
+```
+
+## Task 1.2 
+
+```{r}
+bin_breaks <- quantile(as.vector(mcap_largest_400), probs = seq(0, 1, by = 0.1))
+mcap_deciles <- cut(as.vector(mcap_largest_400), breaks = bin_breaks, include.lowest = TRUE)
+levels(mcap_deciles) <- paste0("q", 1:10)
+
+returns_decile <- data.frame(returns_2003, mcap_deciles)
+
+average_return_decile <- aggregate(returns_2003 ~ mcap_deciles, data = returns_decile, FUN = mean)
+decile_avg_returns <- average_return_decile$returns_2003
+names(decile_avg_returns) <- average_return_decile$mcap_deciles
+
+months_2003 <- seq.Date(from = as.Date("2003-01-01"), to = as.Date("2003-12-31"), by = "month")
+
+cumulative_returns <- xts(matrix(0, nrow = length(months_2003), ncol = length(decile_avg_returns)),
+        order.by = months_2003)
+
+colnames(cumulative_returns) <- names(decile_avg_returns)
+
+for (d in 1:length(decile_avg_returns)) {
+  avg_return <- decile_avg_returns[d]
+  cumulative_returns[, d] <- cumprod(rep(1 + avg_return, length(months_2003))) - 1
+}
+
+plot(cumulative_returns[, 1], main = "Cumulative Monthly Returns by Decile", ylab = "Cumulative Return")  # First decile is used as the base plot
+
+for (i in 2:10) {
+  lines(cumulative_returns[, i], col=i)
+}
+
+addLegend("topleft", legend.names=paste0("Portfolio", 1:10), lwd=1, col=1:10)
+
+average_yearly_returns <- decile_avg_returns * 12  # Annualized returns
+
+barplot(average_yearly_returns, col = "lightblue", main = "Average yearly returns by decile",
+        xlab = "Decile", ylab = "Average yearly return (2003)")
+```
+Observation: The average yearly return of the deciles follows a similar path
+as the returns of the single firms.
+However, they are less volatile and follow a smoother trend over time as there are less variablility. The outliers are not visible here due to the averaging effect of the deciles. This leads us to conclude the importance of diversification.
+
+## Task 1.3
+
+To test whether the stocks sorted by size have different returns, we use a paired t.test.
+```{r}
+r_q1 <- returns_decile$returns_2003[returns_decile$mcap_deciles == "q1"]
+r_q10 <- returns_decile$returns_2003[returns_decile$mcap_deciles == "q10"]
+r_q9 <- returns_decile$returns_2003[returns_decile$mcap_deciles == "q9"]
+t.test(x=r_q1, y=r_q10, paired=TRUE, var.equal=FALSE)
+```
+
+We see that the p-value is larger than 0.05, 
+therefore we fail to reject H0 and clonclude that there is no significant difference in returns between q1 and q10
+```{r}
+summary(r_q1)
+summary(r_q10)
+```
+We see that the distributions are different.
+We conduct another t.test for the returns of q9 and q1.
+```{r}
+t.test(x=r_q1, y=r_q9, paired=TRUE, var.equal =FALSE )
+```
+We see that the p-value is smaller than 0.05, 
+therefore we reject H0 and clonclude that there is a significant difference in returns between q1 and q9
+
+# Exercise 2
+
+## Task 2.1
+```{r, warnings=FALSE}
+# Filter data to specific time range and downsample monthly
+price <- na.locf(price)[endpoints(price, on="months")]
+price <- price["2002-12-31/2018-12-31"]
+price[1:10,1:5]
+mcap <- mcap["2002-12-31/2018-12-31"]
+mcap[1:10,1:5]
+
+# Calculate monthly returns
+monthly_returns <- (price / lag(price)) - 1
+
+# Calculate yearly market cap and lag to previous year
+mcap_year_end <- lag(mcap[endpoints(mcap, on = "years"), ])[-1, ]
+
+# Compute yearly returns
+yearly_returns <- apply.yearly(monthly_returns, function(ret) {
+  apply(ret, 2, function(r) prod(1 + r) - 1)
+})[-1, ]
+
+# Remove extreme 1% of returns
+return_quantiles <- quantile(yearly_returns, probs = c(0.005, 0.995), na.rm = TRUE)
+yearly_returns[yearly_returns < return_quantiles[1] | yearly_returns > return_quantiles[2]] <- NA
+```
+
+## Task 2.2
+
+```{r}
+# Initialize an empty list for decile portfolio returns
+decile_returns <- vector("list", length = nrow(yearly_returns))
+
+# Iterate through each year to calculate deciles
+for (year_idx in seq_len(nrow(yearly_returns))) {
+  # Compute decile thresholds based on market capitalization
+  decile_breaks <- quantile(mcap_year_end[year_idx, ], probs = seq(0, 1, 0.1), na.rm = TRUE)
+  
+  # Assign stocks to deciles
+  decile_groups <- findInterval(coredata(mcap_year_end[year_idx, ]), decile_breaks, all.inside = TRUE)
+  
+  # Compute mean yearly returns for each decile
+  decile_avg_returns <- tapply(
+    coredata(yearly_returns[year_idx, ]),
+    decile_groups,
+    function(x) mean(x, na.rm = TRUE)
+  )
+  
+  # Store the decile returns in the list
+  decile_returns[[year_idx]] <- decile_avg_returns
+}
+
+# Combine decile returns into a matrix and convert to xts
+decile_portfolio_matrix <- do.call(rbind, decile_returns)
+colnames(decile_portfolio_matrix) <- paste0("Decile", seq_len(10))
+rownames(decile_portfolio_matrix) <- rownames(yearly_returns)
+decile_portfolio <- xts(decile_portfolio_matrix, order.by = index(yearly_returns))
+head(decile_portfolio)
+```
+
+## Task 2.3 
+
+```{r}
+
+# Calculate cumulative portfolio returns
+cumulative_returns <- cumprod(1 + decile_portfolio) - 1
+
+# Define line colors for deciles
+
+# Plot average yearly returns
+average_yearly_plot <- plot(
+  decile_portfolio,
+  main = "Average Yearly Returns",
+  ylim = c(-0.5, 1)
+)
+average_yearly_plot <- addLegend(
+  legend.loc = "top",
+  legend.names = paste0("d", 1:10),
+  lty = 1,
+  lwd = 2,
+  horiz=TRUE,
+  cex=0.65
+)
+average_yearly_plot
+
+# Plot cumulative returns
+cumulative_returns_plot <- plot(
+  cumulative_returns,
+  main = "Cumulative Return of the ten Portfolios"
+)
+cumulative_returns_plot <- addLegend(
+  legend.loc = "topleft",
+  legend.names = paste0("d", 1:10),
+  lty = 1,
+  lwd = 2,
+)
+cumulative_returns_plot
+
+```
+
+
+## Task 2.4
+
+```{r}
+# Extract returns for the smallest and largest decile portfolios
+returns_smallest <- decile_portfolio[, "Decile1"]  # Smallest decile
+returns_largest <- decile_portfolio[, "Decile10"] # Largest decile
+
+# Remove NA values for clean comparison
+clean_returns_smallest <- na.omit(returns_smallest)
+clean_returns_largest <- na.omit(returns_largest)
+
+# Perform Welch's Two-Sample t-test
+t_test_result <- t.test(
+  x = clean_returns_smallest,
+  y = clean_returns_largest,
+  alternative = "two.sided",
+  var.equal = FALSE
+)
+
+# Display the t-test result
+t_test_result
+```
+
+The t-test result indicates no significant difference in the mean returns between the smallest and largest decile portfolios at a 5% level of significance, as the p-value is relatively big. It does not seem that the size of the portfolio will make any significant difference in average returns within this dataset.
+This result is supported by similar fluctuations shown in the graph of yearly returns throughout deciles.
+
