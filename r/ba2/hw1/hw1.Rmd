@@ -4,6 +4,7 @@ author: "AUER Kornel, ARNS Vivien, LAKATOS Vanda, MASIUK Yurii, MEIXNER Benjamin
 date: "04-11-2024"
 output: 
   pdf_document:
+    latex-engine: tectonic
     fig_width: 12
     fig_height: 12 
 ---

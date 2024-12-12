@@ -27,6 +27,7 @@
                     rPackages.qgraph
                     rPackages.xts
                     rPackages.lubridate
+                    rPackages.tidyverse
                     tectonic
                     pandoc 
                     inotify-tools
