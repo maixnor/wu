@@ -1,0 +1,40 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{times} % Choose 'times' for Times New Roman
+\usepackage{setspace}
+\usepackage{natbib}  % For author-year citations
+\usepackage{geometry} % To customize page margins
+\usepackage{footnote}
+\usepackage{indentfirst} % Indent first paragraph of each section
+
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm} % Page margins
+\setstretch{1.5} % Line spacing
+
+\begin{document}
+
+\title{Your Essay Title}
+\author{Firstname Lastname \\ xxxxx \\ xxxx@s.wu.ac.at}
+\date{\today} % Leave blank for no date
+\maketitle
+
+\section*{Introduction}
+
+The significance of slavery to Britain's economic development is underscored by Eltis and Engerman (2000), who state that "the importance of slavery and the slave trade to industrializing Britain cannot be overstated" \citep{eltisengerman2000}. This perspective is further supported by Berg and Hudson (2021), indicating that the skills developed in the Atlantic trade were crucial for industrialization \citep{berghudson2021}.
+
+This here needs a footnote\footnote{See the insights by \citep{drescher1997} for a detailed analysis on this topic.} which is complete bogus!
+
+\section{Main Body}
+\subsection{Subtopic 1}
+% Your discussion for Subtopic 1...
+
+\subsection{Subtopic 2}
+% Your discussion for Subtopic 2...
+
+\section{Conclusions}
+% Your conclusions here...
+
+\section*{Bibliography}
+\bibliographystyle{apalike} % You can choose other styles like 'apa' or 'ieeetr'
+\bibliography{references} % This points to your .bib file
+
+\end{document}
