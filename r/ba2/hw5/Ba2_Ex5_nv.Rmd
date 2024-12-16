@@ -1,0 +1,177 @@
+---
+title: "Business Analytics II - Group 1 - Home Assignment 5"
+author: "Yurii Masiuk, Vanda Lakatos, Kornel Auer, Vivien Arns, Benjamin Meixner, Nicholas Olsa"
+date: "2024-12-13"
+output: pdf_document
+---
+# Exercise 1
+```{r}
+# Load necessary libraries
+library(lubridate)
+library(xts)
+cols <- c("steelblue", "coral", "forestgreen") # Colors for plots
+
+# load stock returns
+load("/Users/vivienarns/Downloads/returns_hw4.RData")
+time(r) <- floor_date(time(r), unit="month") #round Date to 1st of current month (to match dates with risk-free rates below)
+
+
+# load FF factors to get the risk-free rate
+ff_factors <- read.csv(file = "/Users/vivienarns/Downloads/F-F_Research_Data_Factors.CSV")
+head(ff_factors)
+rf <- xts(ff_factors$RF/100, order.by=as.Date(paste0(ff_factors$X, "01"), format="%Y%m%d")) # Convert risk-free rate into xts object
+colnames(rf) <- "rf"
+
+rf <- rf[time(r)] # Subset risk-free rates to match the dates in the stock returns
+rf
+
+
+# Compute "equally weighted" market return
+r_mkt <- xts(rowMeans(r), order.by=time(r)) # Average returns across all stocks for each time period
+plot(cumprod(1+r_mkt)) # Plot cumulative market returns over time
+
+stock_picks <- c("X10026", "X10308", "X10443") # Define specific stock picks for analysis
+
+
+# Rolling estimation of betas (10-year rolling window, updated yearly)
+betas <- rollapply(cbind(r[,stock_picks], r_mkt)-c(coredata(rf)), width=10*12, by=12, fill=NULL, align="right", by.column=FALSE,
+                   FUN=function(x){
+                     beta <- rep(NA_real_, 3) # Initialize beta vector for three stocks
+                     for(i in 1:3){
+                       beta[i] <- coef(lm(x[,i]~x[,4]))[2]  # Calculate beta as slope of regression on market return
+                     }
+                     return(beta)
+                   } )
+
+tail(betas)  # Show the last computed betas
+plot(betas, col=cols) # Plot rolling betas for the selected stocks
+
+
+# Rolling estimation of alphas (similar to betas)
+alphas <- rollapply(cbind(r[,stock_picks], r_mkt)-c(coredata(rf)) , width=10*12, by=12, fill=NULL, align="right", by.column=FALSE,
+                   FUN=function(x){
+                     alpha <- rep(NA_real_, 3)  # Initialize alpha vector
+                     for(i in 1:3){
+                       alpha[i] <- coef(lm(x[,i]~x[,4]))[1]  # Calculate alpha as intercept of regression on market return
+                     }
+                     return(alpha)
+                   } )
+
+tail(alphas)
+plot(alphas, col=cols) # Plot rolling alphas for the selected stocks
+
+```
+
+# Exercise 2
+```{r}
+# 1) COMPUTING THE BETAS OF ALL STOCKS UP TO 2006
+
+# Create regression matrix X: first column is intercept, second is excess market returns
+# -> used to compute linear regression coefficients as (x'X)^-1 X'y
+X <- cbind(1, coredata(r_mkt["/2006"] - rf["/2006"]))
+
+# (x'X)^-1 X'y to obtain linear regression coefficients
+coefs <- solve(t(X)%*%X) %*% t(X) %*% coredata(r["/2006"] - as.vector(rf["/2006"])) #first row contains alphas, second row betas, columns correspond to firms
+
+betas <- coefs[2,]  # Extract betas from the second row
+
+# Identify top 3 stocks with lowest and highest betas
+low_beta <- head(sort(betas), 3) # Lowest 3 betas
+high_beta <- tail(sort(betas), 3)  # Highest 3 betas
+
+
+# Compute cumulative returns (2007-2010) for low and high beta stocks
+r_low_beta <- apply(r[,names(low_beta)]["2007/2010"], 2, FUN=\(x) cumprod(1+x) )
+# Compute cumulative product of returns for low-beta stocks
+r_low_beta <- xts(r_low_beta, order.by=ymd(rownames(r_low_beta)) )
+
+r_high_beta <- apply(r[,names(high_beta)]["2007/2010"], 2, FUN=\(x) cumprod(1+x) )
+# Compute cumulative product of returns for high-beta stocks
+r_high_beta <- xts(r_high_beta, order.by=ymd(rownames(r_high_beta)) )
+
+# Plot cumulative returns
+par(mfrow=c(1,2))
+plot(r_low_beta)
+plot(r_high_beta)
+par(mfrow=c(1,1))
+```
+
+# Exercise 3
+```{r}
+## load the data
+ff_factors <- read.csv(file = "/Users/vivienarns/Downloads/F-F_Research_Data_Factors.CSV")
+industries<-read.csv(file = "/Users/vivienarns/Downloads/12_Industry_Portfolios.CSV")
+head(ff_factors)
+head(industries)
+
+all(ff_factors$X == industries$X) # Check that all dates are the same
+
+## Calculate industry excess returns
+industries_xret <- cbind(industries[,1], industries[,-1]-ff_factors$RF)
+
+# Combine industry excess returns and Fama-French factors into one dataset
+xret_data <- cbind(industries_xret, ff_factors[,-1])
+
+# Rolling regressions over two-year windows (24 months)
+betas <- rollapply(data = xret_data, width = 24, by.column = FALSE, FUN = function(x){
+  #print((x))
+  b <- list() # Store regression results for each industry
+  y <- as.matrix(x[,2:13]) # Dependent variables: industry excess returns
+  X <- cbind(rep(1,24), as.matrix(x[,14:16])) # Independent variables: intercept, market, SMB, HML returns
+  for(i in 1:12) b[[i]] <- solve(t(X)%*%X)%*%t(X)%*%y[,i]  # Compute regression coefficients
+  return(t(do.call(rbind,b))) # Combine results into a single matrix
+})
+
+alphas <- betas[,seq(1,48,4)] # Extract alphas (intercepts) for each industry
+betas <- betas[,-seq(1,48,4)] # Remove intercepts, leaving only betas (market, SMB, HML)
+
+# Rename columns for clarity
+colnames(betas) <- paste0(rep(colnames(xret_data)[2:13],each=3), colnames(betas))
+colnames(alphas) <- colnames(xret_data)[2:13]
+# CRAN version
+# install.packages("ggthemes")
+library(ggthemes)
+# Define time axis for plotting
+xaxis_time <- as.yearmon(as.Date(paste(ff_factors$X,"01"), "%Y%m%d"))[-(1:23)]
+
+par(mfrow=(c(1,3)))
+## plot market betas
+plot(xaxis_time, betas[,1], type="l", col=unlist(ggthemes_data$economist$fg[2])[1],
+     ylim = c(min(betas[,seq(1,36,3)]), max(betas[,seq(1,36,3)])),
+     ylab="Market Beta", xlab="time")
+for(i in seq(4,36,3)) lines(xaxis_time, betas[,i], col=unlist(ggthemes_data$economist$fg[2])[ceiling(i/3)])
+
+## plot smb betas
+plot(xaxis_time,betas[,2], type="l", col=unlist(ggthemes_data$economist$fg[2])[1],
+     ylim = c(min(betas[,seq(2,36,3)]), max(betas[,seq(2,36,3)])),
+     ylab="SMB Beta", xlab="time")
+for(i in seq(5,36,3)) lines(xaxis_time, betas[,i], col=unlist(ggthemes_data$economist$fg[2])[ceiling(i/3)])
+
+
+## plot hml betas
+plot(xaxis_time,betas[,3], type="l", col=unlist(ggthemes_data$economist$fg[2])[1],
+     ylim = c(min(betas[,seq(3,36,3)]), max(betas[,seq(3,36,3)])),
+     ylab="HML Beta", xlab="time")
+for(i in seq(6,36,3)) lines(xaxis_time, betas[,i], col=unlist(ggthemes_data$economist$fg[2])[ceiling(i/3)])
+par(mfrow=c(1,1))
+
+## plot average betas
+barplot(height = t(matrix(colMeans(betas), ncol=3, byrow=TRUE)), beside=TRUE,
+        col = unlist(ggthemes_data$economist$fg[2])[1:3], border = FALSE, 
+        names.arg = (names(industries)[-1]), las=2)
+par(xpd=TRUE)
+legend(x = -0.7, y = 1.4, legend = c("market", "smb", "hml"),
+       col=unlist(ggthemes_data$economist$fg[2])[1:3], pch=15, bty="n", border=FALSE)
+par(xpd=FALSE)      
+
+## plot alphas over time
+plot(xaxis_time, alphas[,1], type="l", col=unlist(ggthemes_data$economist$fg[2])[1],
+     ylim = c(min(alphas), max(alphas)),
+     ylab="Alpha", xlab="time")
+for(i in 2:12) lines(xaxis_time, alphas[,i], col=unlist(ggthemes_data$economist$fg[2])[i])
+
+# Plot average alphas for each industry
+barplot(height = colMeans(alphas), 
+        col = unlist(ggthemes_data$economist$fg[2])[1:12], border = FALSE, 
+        names.arg = (names(industries)[-1]), las=2, main = "Industry Alphas")
+```

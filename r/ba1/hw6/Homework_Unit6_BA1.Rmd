@@ -1,0 +1,89 @@
+---
+title: "Homework Unit 6 BA1"
+output: 
+  pdf_document:
+    latex_engine: tectonic
+date: "2024-12-15"
+author: "Benjamin Meixner, Maryna Manzharova, Elias Clemens Maria Prackwieser, Richard Takacs"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+``` {r}
+library(readxl)
+library(Benchmarking)
+
+setwd("~/Downloads") #set the working directory where you have the input file !!!!
+
+# read the input data file
+df <- data.frame(read_excel(path = "Data-Assignment.xlsx", sheet="Sheet1"))
+
+df_15 <-df[15,]  # for #15 
+# inputs and outputs to be used for deriving targets 
+inputs=data.frame(df[1:2]) # 1:2 - columns where the inputs are entered
+outputs=data.frame(df[3:6]) # 3:6 - columns where the outputs are entered
+
+# DEA analysis
+result<-dea(inputs, outputs, RTS="crs", ORIENTATION="in", XREF=NULL, YREF=NULL,FRONT.IDX=NULL, SLACK=TRUE, DUAL=FALSE, DIRECT=NULL, param=NULL,TRANSPOSE=FALSE, FAST=FALSE, LP=FALSE, CONTROL=NULL, LPK=NULL)
+
+# create a data frame with the result and write it on a .csv file
+N = nrow(df) # number of DMUs
+Solution = data.frame(seq(1,N), result$eff,result$sx,result$sy) #result$eff: efficiency scores, result$sx: input excess, result$sy: output shortfall
+colnames(Solution) = c('DMU','effi',colnames(df)) # assign column names
+write.csv(Solution, "Solution-Example.csv")
+
+
+result_sol <- read.csv("Solution-Example.csv")
+result_sol
+
+```
+```{r}
+result_DMU15<- result_sol[15,]
+result_DMU15
+eff_DMU15 <- result_DMU15$effi
+eff_DMU15 #efficiency score for DMU 15
+``` 
+
+We can see that for DMU 15 efficiency score is 0.9423003, which is below 1. It has also shortage in outputs Economic Perfomance, Operational Perfomance and Social Perfomance.
+The DMU is not efficient. Adjustment have to be made.
+At first, inputs must be reduced to $Efficiency\ Score \cdot x_{i}$
+```{r}
+New_Lean <- df_15$Lean.Practice  * eff_DMU15
+New_Lean
+New_innov <- df_15$Innovation  * eff_DMU15
+New_innov
+```
+Then, we have to adjust outputs that have shortage (add them to inputs)
+We have to add  0.6219242 to Economic Performance output.
+We have to add  0.005530871 to Operational Performance output.
+We have to add  0.004178742 to Social Performance output.
+``` {r}
+New_Ec <- df_15$Economic.Performance + result_DMU15$Economic.Performance
+New_Ec
+New_Oper <- df_15$Operational.Performance + result_DMU15$Operational.Performance
+New_Oper
+New_Social <- df_15$Social.Performance + result_DMU15$Social.Performance
+New_Social
+```
+```{r}
+df[15,]<- c(New_Lean, New_innov, New_Ec, New_Oper, df_15$Environment.Performance, New_Social)
+df[15,]
+```
+
+#DEA analysis 
+``` {r}
+inputs=data.frame(df[1:2]) # 1:2 - columns where the inputs are entered
+outputs=data.frame(df[3:6]) # 3:6 - columns where the outputs are entered
+
+result<-dea(inputs, outputs, RTS="crs", ORIENTATION="in", XREF=NULL, YREF=NULL,FRONT.IDX=NULL, SLACK=TRUE, DUAL=FALSE, DIRECT=NULL, param=NULL,TRANSPOSE=FALSE, FAST=FALSE, LP=FALSE, CONTROL=NULL, LPK=NULL)
+
+N = nrow(df) # number of DMUs
+Solution = data.frame(seq(1,N), result$eff,result$sx,result$sy) #result$eff: efficiency scores, result$sx: input excess, result$sy: output shortfall
+colnames(Solution) = c('DMU','effi',colnames(df)) # assign column names
+write.csv(Solution, "Solution-Example.csv")
+result_sol <- read.csv("Solution-Example.csv")
+result_DMU15<- result_sol[15,]
+result_DMU15 # now, DMU 15 is efficient. 
+```

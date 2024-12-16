@@ -28,6 +28,7 @@
                     rPackages.xts
                     rPackages.lubridate
                     rPackages.tidyverse
+                    rPackages.Benchmarking
                     tectonic
                     pandoc 
                     inotify-tools
