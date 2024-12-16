@@ -1,8 +1,10 @@
 ---
 title: "Business Analytics II - Group 1 - Home Assignment 5"
 author: "Yurii Masiuk, Vanda Lakatos, Kornel Auer, Vivien Arns, Benjamin Meixner, Nicholas Olsa"
-date: "2024-12-13"
-output: pdf_document
+date: "2024-12-16"
+output: 
+  pdf_document:
+    latex_engine: tectonic
 ---
 # Exercise 1
 ```{r}
@@ -12,12 +14,12 @@ library(xts)
 cols <- c("steelblue", "coral", "forestgreen") # Colors for plots
 
 # load stock returns
-load("/Users/vivienarns/Downloads/returns_hw4.RData")
+load("../data/returns_hw4.RData")
 time(r) <- floor_date(time(r), unit="month") #round Date to 1st of current month (to match dates with risk-free rates below)
 
 
 # load FF factors to get the risk-free rate
-ff_factors <- read.csv(file = "/Users/vivienarns/Downloads/F-F_Research_Data_Factors.CSV")
+ff_factors <- read.csv(file = "../data/F-F_Research_Data_Factors.CSV")
 head(ff_factors)
 rf <- xts(ff_factors$RF/100, order.by=as.Date(paste0(ff_factors$X, "01"), format="%Y%m%d")) # Convert risk-free rate into xts object
 colnames(rf) <- "rf"
@@ -29,6 +31,11 @@ rf
 # Compute "equally weighted" market return
 r_mkt <- xts(rowMeans(r), order.by=time(r)) # Average returns across all stocks for each time period
 plot(cumprod(1+r_mkt)) # Plot cumulative market returns over time
+```
+
+Over 27 years we can see an accumulated returns of 35% with a significant dip in 2008.
+
+```{r}
 
 stock_picks <- c("X10026", "X10308", "X10443") # Define specific stock picks for analysis
 
@@ -44,9 +51,16 @@ betas <- rollapply(cbind(r[,stock_picks], r_mkt)-c(coredata(rf)), width=10*12, b
                    } )
 
 tail(betas)  # Show the last computed betas
+# betas = volatility of risk - how the returns of the stock are correlated to the overall market movement
 plot(betas, col=cols) # Plot rolling betas for the selected stocks
+```
 
+Here the betas of our 3 picked stocks. We can see that in 2008 the blue line dips towards 1. We interpret that during the financial 
+crisis investors are more risk-averse and therefore the risk is approaching market averages due to less risky buying decisions.
 
+We can also see that the stocks we picked are in 2018 rather "low risk" since their volatility is only 0.8 while the market volatility would represent 1.
+
+```{r}
 # Rolling estimation of alphas (similar to betas)
 alphas <- rollapply(cbind(r[,stock_picks], r_mkt)-c(coredata(rf)) , width=10*12, by=12, fill=NULL, align="right", by.column=FALSE,
                    FUN=function(x){
@@ -59,8 +73,10 @@ alphas <- rollapply(cbind(r[,stock_picks], r_mkt)-c(coredata(rf)) , width=10*12,
 
 tail(alphas)
 plot(alphas, col=cols) # Plot rolling alphas for the selected stocks
-
 ```
+
+Here the alphas of our 3 picked stocks. We can see that the returns relative to the market returns are mostly higher on average for our portfolio, we would beat the
+market with this arrangement. The blue stock has negative relative performance until 2005. The best stock is green while orange is close to the market average.
 
 # Exercise 2
 ```{r}
@@ -95,12 +111,14 @@ plot(r_low_beta)
 plot(r_high_beta)
 par(mfrow=c(1,1))
 ```
+Here we can clearly see how the beta is a "multiplier of market movement". While the low betas are mostly stable for themselves and ignore the financial crisis
+the high beta stocks are following the market considerably - up as well as down.
 
 # Exercise 3
 ```{r}
 ## load the data
-ff_factors <- read.csv(file = "/Users/vivienarns/Downloads/F-F_Research_Data_Factors.CSV")
-industries<-read.csv(file = "/Users/vivienarns/Downloads/12_Industry_Portfolios.CSV")
+ff_factors <- read.csv(file = "../data/F-F_Research_Data_Factors.CSV")
+industries<-read.csv(file = "../data/12_Industry_Portfolios.CSV")
 head(ff_factors)
 head(industries)
 
@@ -154,7 +172,16 @@ plot(xaxis_time,betas[,3], type="l", col=unlist(ggthemes_data$economist$fg[2])[1
      ylab="HML Beta", xlab="time")
 for(i in seq(6,36,3)) lines(xaxis_time, betas[,i], col=unlist(ggthemes_data$economist$fg[2])[ceiling(i/3)])
 par(mfrow=c(1,1))
+```
 
+Here the 3 different betas of the Fama-French model.
+
+Taking the Market beta as a baseline we can see that the SMB beta is centered around 0 rather than 1 - low-cap stocks are much more volatile.
+
+Turning to HML beta we can see that the spread is larger for the growth stocks - they have higher extremes for the expense of a center around 1.
+Here we can be truly market-beating with the right growth stocks, but finding the right stock(s) is hard.
+
+```{r}
 ## plot average betas
 barplot(height = t(matrix(colMeans(betas), ncol=3, byrow=TRUE)), beside=TRUE,
         col = unlist(ggthemes_data$economist$fg[2])[1:3], border = FALSE, 
@@ -163,15 +190,29 @@ par(xpd=TRUE)
 legend(x = -0.7, y = 1.4, legend = c("market", "smb", "hml"),
        col=unlist(ggthemes_data$economist$fg[2])[1:3], pch=15, bty="n", border=FALSE)
 par(xpd=FALSE)      
+```
 
+Here we can see that the market beta is relatively uniform. Growth stocks are oppositely market-following in Business Equipment and Health, optimal picks for 
+uncertain times while in Energy, Chemistry, Telecomunications and Utilities the small cap stocks are moving against the market.
+
+```{r}
 ## plot alphas over time
 plot(xaxis_time, alphas[,1], type="l", col=unlist(ggthemes_data$economist$fg[2])[1],
      ylim = c(min(alphas), max(alphas)),
      ylab="Alpha", xlab="time")
 for(i in 2:12) lines(xaxis_time, alphas[,i], col=unlist(ggthemes_data$economist$fg[2])[i])
+```
 
+The alphas over time average at about 0 - market returns. Owning all stocks returns market returns - a revelation!
+
+```{r}
 # Plot average alphas for each industry
 barplot(height = colMeans(alphas), 
         col = unlist(ggthemes_data$economist$fg[2])[1:12], border = FALSE, 
         names.arg = (names(industries)[-1]), las=2, main = "Industry Alphas")
 ```
+
+Here we can see which sectors produce most market-beating returns. Health, Business Equiment and Telecommunications seem like 
+the have good marketing-beating potential while "Other" sectors produce lower than market returns.
+
+

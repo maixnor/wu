@@ -19,6 +19,7 @@
                     rPackages.extraDistr
                     rPackages.dplyr
                     rPackages.ggplot2
+                    rPackages.ggthemes
                     rPackages.psych
                     rPackages.corrplot
                     rPackages.Hmisc
