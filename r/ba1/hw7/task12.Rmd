@@ -218,6 +218,8 @@ profits<-sapply(suite_configurations, calculate_profit)
 optimal_suites <- suite_configurations[which.max(profits)]
 optimal_profit <- max(profits)
 results <- data.frame(Suites = suite_configurations, Profit = profits)
-print(results)
+plot(results) 
 optimal_suites
 ```
+
+The optimal amount of suites to build is 32 to buffer the extra demand at peak times while still balancing excess costs when the demand is not as high and the cleaning costs would make renting out normal rooms cheaper.
