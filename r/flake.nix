@@ -29,6 +29,7 @@
                     rPackages.xts
                     rPackages.lubridate
                     rPackages.tidyverse
+                    rPackages.viridisLite
                     rPackages.Benchmarking
                     tectonic
                     pandoc 
