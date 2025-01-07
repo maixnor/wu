@@ -1,0 +1,127 @@
+---
+title: "Untitled"
+output: pdf_document
+date: "2025-01-07"
+---
+
+#Task a) Calculating the Expected Profit
+```{r}
+n <- 10000  # Number of simulations
+
+# Room Configurations
+suites <- 30
+standard_rooms <- 120 - 2 * suites  # Number of standard rooms available
+
+# Room Prices
+standard_room_price <- 99
+suite_price <- 189
+
+# Define demand functions
+standard_rooms_demand <- function(n) {
+  rnorm(n, mean = 60, sd = 10)
+}
+
+suites_demand <- function(n) {
+  rnorm(n, mean = 30, sd = 10)
+}
+
+# Generate simulated demands
+standard_rooms_demand_sim <- pmax(0, round(standard_rooms_demand(n)))  # Simulated standard room demands
+suites_demand_sim <- pmax(0, round(suites_demand(n)))  # Simulated suite demands
+
+# Calculate standard rooms sold
+standard_rooms_sold <- pmin(standard_rooms, standard_rooms_demand_sim)  # Rooms sold based on demand and availability
+
+# Calculate overflow from standard rooms to suites
+overflow_standard_to_suite <- pmax(0, standard_rooms_demand_sim - standard_rooms)  # Excess standard room demand
+
+# Calculate suites sold for their original price
+suite_sold_for_original_price <- pmin(suites, suites_demand_sim)
+
+# Calculate overflow actually sold as suites
+overflow_sold <- pmin(overflow_standard_to_suite, suites - suite_sold_for_original_price)
+
+# Calculate suites occupied (suites sold for original price + suites sold due to overflow)
+suites_occupied <- suite_sold_for_original_price + overflow_sold
+
+# Revenue Calculation
+revenue <- (standard_rooms_sold * standard_room_price) + 
+           (overflow_sold * standard_room_price) + 
+           (suite_sold_for_original_price * suite_price)
+
+# Cost Calculation
+cost <- 6000 + (15 * standard_rooms_sold) + (30 * suites_occupied)
+
+# Profit per night
+profit_per_night <- revenue - cost
+
+# Output Results
+mean_profit <- mean(profit_per_night)  # Average profit across simulations
+mean_profit  # Print expected profit
+```
+
+# Task b)
+We take our calculations from a) and change the number of suites and additionally test different configurations of suites to find the optimal number of suites.
+```{r}
+n <- 10000  # Number of simulations
+
+# Room Prices
+standard_room_price <- 99
+suite_price <- 189
+
+# Define demand functions
+standard_rooms_demand <- function(n) {
+  rnorm(n, mean = 60, sd = 10)
+}
+
+suites_demand <- function(n) {
+  rnorm(n, mean = 30, sd = 10)
+}
+
+# Function to calculate expected profit for a given number of suites
+calculate_profit <- function(suites) {
+  standard_rooms <- 120 - 2 * suites  # Number of standard rooms available
+  
+  # Generate simulated demands
+  standard_rooms_demand_sim <- pmax(0, round(standard_rooms_demand(n)))  # Simulated standard room demands
+  suites_demand_sim <- pmax(0, round(suites_demand(n)))  # Simulated suite demands
+  
+  # Calculate standard rooms sold
+  standard_rooms_sold <- pmin(standard_rooms, standard_rooms_demand_sim)
+  
+  # Calculate overflow from standard rooms to suites
+  overflow_standard_to_suite <- pmax(0, standard_rooms_demand_sim - standard_rooms)
+  
+  # Calculate suites sold for their original price
+  suite_sold_for_original_price <- pmin(suites, suites_demand_sim)
+  
+  # Calculate overflow actually sold as suites
+  overflow_sold <- pmin(overflow_standard_to_suite, suites - suite_sold_for_original_price)
+  
+  # Calculate suites occupied
+  suites_occupied <- suite_sold_for_original_price + overflow_sold
+  
+  # Revenue Calculation
+  revenue <- (standard_rooms_sold * standard_room_price) + 
+             (overflow_sold * standard_room_price) + 
+             (suite_sold_for_original_price * suite_price)
+  
+  # Cost Calculation
+  cost <- 6000 + (15 * standard_rooms_sold) + (30 * suites_occupied)
+  
+  # Profit per night
+  profit_per_night <- revenue - cost
+  
+  # Return the mean profit
+  mean(profit_per_night)
+}
+
+#Test different configurations of suites
+suite_configurations<-seq(0, 60, by = 1)
+profits<-sapply(suite_configurations, calculate_profit)
+optimal_suites <- suite_configurations[which.max(profits)]
+optimal_profit <- max(profits)
+results <- data.frame(Suites = suite_configurations, Profit = profits)
+print(results)
+optimal_suites
+````

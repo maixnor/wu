@@ -1,0 +1,223 @@
+---
+title: "HW7"
+output: 
+  pdf_document:
+    latex_engine: tectonic
+date: "2025-01-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Task 1
+
+# a 
+
+```{r}
+func_discr <- function(n) {
+  d <- sample(c(1,2), size=n, replace=TRUE, prob=c(0.4,0.6))
+  mean(d)
+}
+avr_d1 <- replicate(1000,func_discr(10))
+avr_d2 <- replicate (1000, func_discr(30))
+par(mfrow =c(1,2))
+hist(avr_d1, xlab = "Sample mean", main ="Distribution of Sample Means with 10 values in each average", breaks = 20)
+hist(avr_d2, xlab = "Sample mean", main ="Distribution of Sample Means with 30 values in each average", breaks = 20)
+# The one with n=30 shows more clustered around the center sample means, the shape appears closer to a bell curve. Left histogram n=10, on the other hand, shows more spread sample means.
+```
+
+```{r}
+sd(avr_d1)
+sd(avr_d2)
+# We can also observe that standard deviation of the sample means decreases with n increase 
+```
+
+# b
+
+```{r}
+func_exp <- function(n2) {
+  e <- rexp(n2,rate=1/2)
+  mean(e)
+}
+avr_e1 <- replicate(1000,func_exp(10))
+avr_e2 <- replicate (1000, func_exp(30))
+par(mfrow =c(1,2))
+hist(avr_e1, xlab = "Sample mean", main ="Distribution of Sample Means with 10 values in each average", breaks = 20)
+hist(avr_e2, xlab = "Sample mean", main ="Distribution of Sample Means with 30 values in each average", breaks = 20)
+#Same observation, with n=30, more bell-shaped histogram
+```
+
+# c
+
+```{r}
+func_unif <- function(n3) {
+  u <- runif(n3,min = 1, max=5)
+  mean(u)
+}
+avr_u1 <- replicate(1000,func_unif(10))
+avr_u2 <- replicate (1000, func_unif(30))
+par(mfrow =c(1,2))
+hist(avr_u1, xlab = "Sample mean", main ="Distribution of Sample Means with 10 values in each average", breaks = 20)
+hist(avr_u2, xlab = "Sample mean", main ="Distribution of Sample Means with 30 values in each average", breaks = 20)
+# Right graph with n=30 is more bell-shaped and sample means are more clustered around the center 
+# So, with all three simulations, we could observe that the distribution of the sample means got closer to normal distribution  as sample size (used for calculating a sample mean) increased —  Central Limit Theory confirmed
+```
+
+## Task 2
+
+```{r}
+mean_d <- 200
+sd_d <- 40
+sample_size <- 500
+profit <- 2.5
+target_width <- 15
+set.seed(999)
+
+sim_ci <- function(n, mean_d, sd_d, profit) {
+  demand_sample <- rnorm(n, mean_d, sd_d)
+  ci <- t.test(demand_sample)$conf.int * profit
+  width <- ci[2] - ci[1]
+  return(list(ci = ci, width = width))
+}
+result_500 <- sim_ci(sample_size, mean_d, sd_d, profit)
+cat("Conf. int. for n=500: $", result_500$ci[1], "to $", result_500$ci[2], 
+    "Width:", result_500$width, "\n")
+
+# since we have the desired width in "profit" but need the "demand" to calculate the sample size, we divide the margin of error by the profit
+ME_d <- (target_width/2) / profit
+ideal_n <- ceiling((1.96*sd_d / ME_d)^2)
+cat("Required sample size:", ideal_n, "\n")
+
+# check results
+result_ideal <- sim_ci(ideal_n, mean_d, sd_d, profit)
+cat("Conf. int. for n=", ideal_n, ": $", result_ideal$ci[1], "to $", 
+    result_ideal$ci[2], "Width:", result_ideal$width, "\n")
+```
+
+## Task 3
+
+### a) Calculating the Expected Profit
+
+```{r}
+n <- 10000  # Number of simulations
+
+# Room Configurations
+suites <- 30
+standard_rooms <- 120 - 2 * suites  # Number of standard rooms available
+
+# Room Prices
+standard_room_price <- 99
+suite_price <- 189
+
+# Define demand functions
+standard_rooms_demand <- function(n) {
+  rnorm(n, mean = 60, sd = 10)
+}
+
+suites_demand <- function(n) {
+  rnorm(n, mean = 30, sd = 10)
+}
+
+# Generate simulated demands
+standard_rooms_demand_sim <- pmax(0, round(standard_rooms_demand(n)))  # Simulated standard room demands
+suites_demand_sim <- pmax(0, round(suites_demand(n)))  # Simulated suite demands
+
+# Calculate standard rooms sold
+standard_rooms_sold <- pmin(standard_rooms, standard_rooms_demand_sim)  # Rooms sold based on demand and availability
+
+# Calculate overflow from standard rooms to suites
+overflow_standard_to_suite <- pmax(0, standard_rooms_demand_sim - standard_rooms)  # Excess standard room demand
+
+# Calculate suites sold for their original price
+suite_sold_for_original_price <- pmin(suites, suites_demand_sim)
+
+# Calculate overflow actually sold as suites
+overflow_sold <- pmin(overflow_standard_to_suite, suites - suite_sold_for_original_price)
+
+# Calculate suites occupied (suites sold for original price + suites sold due to overflow)
+suites_occupied <- suite_sold_for_original_price + overflow_sold
+
+# Revenue Calculation
+revenue <- (standard_rooms_sold * standard_room_price) + 
+           (overflow_sold * standard_room_price) + 
+           (suite_sold_for_original_price * suite_price)
+
+# Cost Calculation
+cost <- 6000 + (15 * standard_rooms_sold) + (30 * suites_occupied)
+
+# Profit per night
+profit_per_night <- revenue - cost
+
+# Output Results
+mean_profit <- mean(profit_per_night)  # Average profit across simulations
+mean_profit  # Print expected profit
+```
+
+### b)
+
+We take our calculations from a) and change the number of suites and additionally test different configurations of suites to find the optimal number of suites.
+
+```{r}
+n <- 10000  # Number of simulations
+
+# Room Prices
+standard_room_price <- 99
+suite_price <- 189
+
+# Define demand functions
+standard_rooms_demand <- function(n) {
+  rnorm(n, mean = 60, sd = 10)
+}
+
+suites_demand <- function(n) {
+  rnorm(n, mean = 30, sd = 10)
+}
+
+# Function to calculate expected profit for a given number of suites
+calculate_profit <- function(suites) {
+  standard_rooms <- 120 - 2 * suites  # Number of standard rooms available
+  
+  # Generate simulated demands
+  standard_rooms_demand_sim <- pmax(0, round(standard_rooms_demand(n)))  # Simulated standard room demands
+  suites_demand_sim <- pmax(0, round(suites_demand(n)))  # Simulated suite demands
+  
+  # Calculate standard rooms sold
+  standard_rooms_sold <- pmin(standard_rooms, standard_rooms_demand_sim)
+  
+  # Calculate overflow from standard rooms to suites
+  overflow_standard_to_suite <- pmax(0, standard_rooms_demand_sim - standard_rooms)
+  
+  # Calculate suites sold for their original price
+  suite_sold_for_original_price <- pmin(suites, suites_demand_sim)
+  
+  # Calculate overflow actually sold as suites
+  overflow_sold <- pmin(overflow_standard_to_suite, suites - suite_sold_for_original_price)
+  
+  # Calculate suites occupied
+  suites_occupied <- suite_sold_for_original_price + overflow_sold
+  
+  # Revenue Calculation
+  revenue <- (standard_rooms_sold * standard_room_price) + 
+             (overflow_sold * standard_room_price) + 
+             (suite_sold_for_original_price * suite_price)
+  
+  # Cost Calculation
+  cost <- 6000 + (15 * standard_rooms_sold) + (30 * suites_occupied)
+  
+  # Profit per night
+  profit_per_night <- revenue - cost
+  
+  # Return the mean profit
+  mean(profit_per_night)
+}
+
+#Test different configurations of suites
+suite_configurations<-seq(0, 60, by = 1)
+profits<-sapply(suite_configurations, calculate_profit)
+optimal_suites <- suite_configurations[which.max(profits)]
+optimal_profit <- max(profits)
+results <- data.frame(Suites = suite_configurations, Profit = profits)
+print(results)
+optimal_suites
+```
