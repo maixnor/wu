@@ -1,0 +1,126 @@
+---
+output: 
+  pdf_document:
+      latex_engine: xelatex
+      fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem 1
+
+### a)
+
+Given a demand of 2400 and a price of 6.5
+
+$$q_d = 2400 = q_S$$
+$$p^* = 6.5$$
+
+We want to find out about the Elasticity in relation to the demand and the supply.
+
+First we look at the demand side.
+
+$$El_{q_d, p} = \frac{P}{q} * q'_d$$
+
+$$Q_D = a - bP$$
+$$Q'_D = - b$$
+
+$$El_{q_d, p} = \frac{6,5 * (-b)}{2400} = 0.8$$
+$$\implies b = 295.4$$
+$$a -295.4 * 6.5 = 2400$$
+$$\implies a = 4320.1$$
+
+Now the supply side.
+
+$$Q_S = c + dP$$
+$$Q'_S = d$$
+
+$$El_{q_s, p} = \frac{6.5 * d}{2400} = 0.7$$ 
+$$\implies d = 258.5$$
+$$c + 6.5 * 258.5 = 2400$$
+$$\implies c = 719.75$$
+
+With this we can construct the Q functions for both supply and demand.
+
+$$Q_d = 4320.1 - 295.4 * P$$
+$$Q_S = 719.75 + 258.5 * P$$
+
+### b)
+
+With the Q functions from a) we can begin to construct the functions for Q total 
+
+$$Q_d(\text{total}) = Q_d(\text{domestic}) + Q_F = 4320.1 - 295.4 * P  + 9000 - 1000P$$
+$$Q_d(\text{total}) = 13320.1 - 1295.4 * P$$
+
+to find the equilibrium price.
+
+$$Q_S(\text{total}) = Q_d(\text{total})$$
+$$719.75 + 258.5 * p^* = 13320.1 - 1295.4 * p^*$$
+$$1553.9 * p^* = 12600.35$$
+$$p^* = 8.11$$
+
+The equilibrium price is $8.11$.
+
+# Problem 3
+
+### a)
+
+$$n = 24$$
+$$C_i = 500 + q_i + 4q_i^2$$
+$$Q_D(P) = 397 - \frac{P}{5}$$
+$$MC = C_i = 1 + 8q_i = P^*$$
+
+$$8q_i = p^* -1$$
+$$Q_{s, i} = q_i(P) = \frac{P - 1}{8}$$
+
+### b)
+
+$$Q_{s, total} = Q_s * n$$
+$$=\frac{p - 1}{8} * 24$$
+$$=3p - 3$$
+
+### c)
+
+$$Q_D = Q_{s, total}$$
+$$397 - \frac{P}{5} = 3P-3$$
+$$400 = 3.2P$$
+$$P = 125$$
+$$Q = 3 * (125) - 3 = 372$$
+
+### d)
+
+$$\pi = R - C_{total}$$
+$$\pi = PQ - (500 + \frac{P - 1}{8} + 4 * (\frac{P-1}{8})^2 * 24$$
+$$\pi = (125 * 372) - (500 + \frac{124}{8} + 4 * (\frac{124}{8})^2) * 24$$
+$$\pi = 46,500 - (500 + 15.5 + 4 * (240.25)) * 24$$
+$$\pi = 46,500 - (515.5 + 961) * 24$$
+$$\pi = 46,500 - (1476.5) * 24$$
+$$\pi = 46,500 - 35,436$$
+$$\pi = 11,064$$
+
+$\pi$ ... accounting profit
+
+### e)
+
+$$\frac{P_0}{5} = 3P_S - 3$$
+$$P_S - P_D = \text{Subsidy} = 12$$
+$$P_S = P_D + 12$$
+$$Q_{new} = 3 * (113.75 + 12) - 3$$
+$$Q_{new} = 374.25$$
+$$397 - 2*P_D = 3 * (P_D + 12) - 3$$
+$$397 - 2*P_D = 3*P_D + 36 - 3$$
+$$364 = 3.2*P_D + 36 - 3$$
+$$113.75 = P_D$$
+$$P_S = 113.75 + 12 = 125.75$$
+$$\text{government expenditure} = S * Q_{new}$$
+$$ = 12 * 374.25$$
+$$ = 4,491$$
+
+$$E_{area} = \frac{1}{2} * (Q_1 - Q_0) * S$$
+$$ = \frac{1}{2} * 2.25 * 12$$
+$$ = 2.25 * 6$$
+$$E = 13.5$$
+
+$E$ ... deadweight
