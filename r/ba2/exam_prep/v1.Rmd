@@ -1,0 +1,123 @@
+---
+title: "PCA Analysis of Equity Markets"
+author: "Student Name"
+date: "`r Sys.Date()`"
+output: 
+    pdf-document:
+        latex_engine: tectonic
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(xts)
+library(zoo)
+library(PerformanceAnalytics)
+library(ggplot2)
+library(corrplot)
+library(factoextra)
+```
+
+## Exercise 1: Data Preparation and Analysis
+
+```{r data_prep}
+# Load sample stock data (assuming CSV with date and price columns)
+data <- read.csv("stock_data.csv")
+dates <- as.Date(data$Date)
+prices <- xts(data[,-1], order.by=dates)
+
+# Calculate daily log returns
+returns <- diff(log(prices))
+
+# Return distribution visualization 
+par(mfrow=c(2,1))
+chart.Histogram(returns$SPY, 
+                main="Return Distribution SPY",
+                methods=c("add.normal","add.density"))
+chart.TimeSeries(returns$SPY, 
+                 main="Time Series of Returns")
+
+# Correlation analysis
+cor_matrix <- cor(returns, use="complete.obs")
+corrplot(cor_matrix, method="color", type="upper",
+         tl.col="black", tl.srt=45)
+
+# Rolling correlations (252-day window)
+roll_cor <- rollapply(returns[,c("SPY","IWM")], 
+                      width=252,
+                      FUN=function(x) cor(x)[1,2],
+                      by.column=FALSE)
+plot(roll_cor, main="Rolling Correlation SPY-IWM")
+```
+
+## Exercise 2: Principal Component Analysis
+
+```{r pca}
+# Standardize returns and perform PCA
+pca_result <- prcomp(returns, scale=TRUE)
+
+# Scree plot
+fviz_eig(pca_result, addlabels=TRUE)
+
+# Calculate explained variance
+explained_var <- pca_result$sdev^2 / sum(pca_result$sdev^2)
+cumulative_var <- cumsum(explained_var)
+print(data.frame(PC=1:length(explained_var),
+                 Variance=explained_var,
+                 Cumulative=cumulative_var))
+
+# PC loadings analysis
+loadings <- pca_result$rotation[,1:3]
+barplot(loadings[,1], main="PC1 Loadings")
+barplot(loadings[,2], main="PC2 Loadings")
+barplot(loadings[,3], main="PC3 Loadings")
+
+# PC scores time series
+scores <- as.xts(pca_result$x[,1:3], order.by=index(returns))
+par(mfrow=c(3,1))
+for(i in 1:3) {
+    plot(scores[,i], main=paste("PC", i, "Scores"))
+}
+```
+
+## Exercise 3: Portfolio Analysis
+
+```{r portfolios}
+# Construct PC-based portfolios
+pc1_portfolio <- returns %*% sign(loadings[,1])
+pc2_portfolio <- returns %*% sign(loadings[,2])
+pc3_portfolio <- returns %*% sign(loadings[,3])
+
+# Portfolio performance metrics
+portfolios <- merge(pc1_portfolio, pc2_portfolio, pc3_portfolio)
+colnames(portfolios) <- c("PC1", "PC2", "PC3")
+
+# Performance statistics
+table.AnnualizedReturns(portfolios)
+table.DownsideRisk(portfolios)
+charts.PerformanceSummary(portfolios)
+
+# Rolling Sharpe ratios
+roll_sharpe <- rollapply(portfolios, 
+                         width=252,
+                         FUN=function(x) SharpeRatio(x, Rf=0),
+                         by.column=TRUE)
+plot(roll_sharpe, main="Rolling Sharpe Ratios")
+
+# Drawdown analysis
+chart.Drawdown(portfolios)
+maxDrawdown(portfolios)
+
+# Factor comparison (assuming factor data available)
+factors <- read.csv("factor_returns.csv")
+factor_returns <- xts(factors[,-1], order.by=as.Date(factors$Date))
+
+combined_returns <- merge(portfolios, factor_returns)
+cor(combined_returns)
+```
+
+Note: This code assumes:
+1. Stock price data in CSV format
+2. Factor returns data available
+3. Required packages installed
+
+Interpretation sections should be added after each major analysis section.

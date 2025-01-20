@@ -1,0 +1,96 @@
+---
+title: "BA2 Mock Exam"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introduction
+In this exam, you will process a new dataset, perform exploratory data checks, conduct regression and PCA analyses, evaluate a portfolio, and calculate risk measures. Fill in the code chunks with your solutions.
+
+---
+
+## Exercise 1: Data Screening
+- Load the provided dataset. Inspect it for missing values, logical errors, or outliers.
+- Subset the data as needed (e.g., time periods or targeted columns).
+
+```{r data-screening}
+# Load libraries
+# ...
+# Read in data
+# ...
+# Summary statistics
+# ...
+# Data cleaning steps
+# ...
+```
+
+---
+
+## Exercise 2: Exploratory Visualization & Returns
+- Plot key variables from the cleaned dataset.
+- If applicable, compute daily or monthly returns. Check for data completeness.
+
+```{r exploratory-visuals}
+# Plot key variables (e.g., price, yields, etc.)
+# ...
+```
+
+```{r returns}
+# Convert price data to returns
+# ...
+# Summaries of returns
+# ...
+```
+
+---
+
+## Exercise 3: PCA on Yield Curve (or Other Multivariate Data)
+- Standardize the relevant variables.
+- Compute and interpret the principal components.
+- Plot the loadings and the explained variance.
+
+```{r pca}
+# Perform PCA on standardized data
+# ...
+# Visualize loadings
+# ...
+# Visualize explained variance
+# ...
+```
+
+---
+
+## Exercise 4: CAPM / Factor Model Analysis
+- Pick a subset of assets or stocks.
+- Estimate betas and alphas over rolling windows.
+- Plot the time series of betas (and alphas).
+
+```{r capm}
+# Merge dataset with market and risk-free data
+# ...
+# Rolling regression for CAPM
+# ...
+# Plot beta and alpha
+# ...
+```
+
+---
+
+## Exercise 5: Portfolio Analysis & Risk Measures
+- Construct a portfolio of several assets.
+- Calculate portfolio returns, weights, VaR, and Expected Shortfall.
+- Plot results and interpret.
+
+```{r portfolio}
+# Define portfolio (assets, weights, etc.)
+# ...
+# Compute portfolio returns
+# ...
+# Compute portfolio VaR, ES
+# ...
+# Visualize results
+# ...
+```
+
+---
