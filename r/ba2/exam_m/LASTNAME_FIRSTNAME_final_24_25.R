@@ -64,6 +64,11 @@ maturities <- data2$maturity
 bond_prices <- 1 / (1 + yields/100)^maturities
 bond_df <- data.frame(maturities = maturities, price = bond_prices)
 # #INTERPRETATION about discount, par, premium goes here
+# Determine if bonds trade at discount, par, or premium
+bond_df$trade <- ifelse(bond_df$price < 100, "Discount",
+                        ifelse(bond_df$price == 100, "Par", "Premium"))
+# Display the trade status
+print(bond_df)
 
 
 
@@ -80,13 +85,43 @@ library(moments)
 vols <- apply(stock_ret, 2, sd, na.rm=TRUE)
 pf_vol <- sd(pf_ret, na.rm=TRUE)
 # #HELPME VaR and ES no direct example for entire approach
+# Calculate 90% VaR
 var90 <- apply(stock_ret, 2, function(x) quantile(x, probs=0.1, na.rm=TRUE))
-es90 <- apply(stock_ret, 2, function(x) mean(x[x < quantile(x, 0.1, na.rm=TRUE)], na.rm=TRUE))
 pf_var90 <- quantile(pf_ret, 0.1, na.rm=TRUE)
+
+# Calculate 90% Expected Shortfall (ES)
+es90 <- apply(stock_ret, 2, function(x) mean(x[x < quantile(x, probs=0.1, na.rm=TRUE)], na.rm=TRUE))
 pf_es90 <- mean(pf_ret[pf_ret < pf_var90], na.rm=TRUE)
+
+# Display VaR and ES
+print(data.frame(Stock=colnames(stock_ret),
+                 VaR90=var90,
+                 ES90=es90))
+print(data.frame(Portfolio_VaR90=pf_var90,
+                 Portfolio_ES90=pf_es90))
+
 # 3) Plots for (a) volatility, (b) VaR, (c) ES  #INTERPRETATION needed
-# Mark portfolio value with a different color or shape
+# Plot Volatility
+barplot(vols, main="Volatility of Individual Stocks", ylab="Standard Deviation (%)", las=2)
+abline(h=pf_vol, col="red", lwd=2)
+legend("topright", legend=c("Portfolio Volatility"), col="red", lwd=2)
+
+# Plot VaR
+barplot(var90, main="90% VaR of Individual Stocks", ylab="VaR (%)", las=2)
+abline(h=pf_var90, col="red", lwd=2)
+legend("topright", legend=c("Portfolio VaR90"), col="red", lwd=2)
+
+# Plot ES
+barplot(es90, main="90% Expected Shortfall of Individual Stocks", ylab="ES (%)", las=2)
+abline(h=pf_es90, col="red", lwd=2)
+legend("topright", legend=c("Portfolio ES90"), col="red", lwd=2)
+
 # 4) Diversification effect #INTERPRETATION needed
+# Calculate correlation matrix
+cor_matrix <- cor(stock_ret, use="complete.obs")
+average_correlation <- mean(cor_matrix[upper.tri(cor_matrix)])
+cat("Average Correlation among Stocks:", average_correlation, "\n")
+# Diversification reduces risk when average correlation is low
 
 
 
@@ -97,27 +132,71 @@ pf_es90 <- mean(pf_ret[pf_ret < pf_var90], na.rm=TRUE)
 # data5: momentum scores
 # 1) Trading strategies: high MOM & low MOM
 # #HELPME rebalancing approach from prior solutions
+library(dplyr)
+
 yrs <- unique(format(index(data4), "%Y"))
 yrs <- yrs[yrs >= "2002" & yrs <= "2018"]
-highMOM_ret <- NULL
-lowMOM_ret <- NULL
+highMOM_ret <- xts()
+lowMOM_ret <- xts()
+
 for(yy in yrs){
   # pick last month of year yy
-  idx_yy <- tail(which(format(index(data4), "%Y")==yy), 1)
+  idx_yy <- tail(which(format(index(data4), "%Y") == yy), 1)
   mom_scores <- data5[idx_yy, ]
+  
   # rank the momentum scores
-  sorted <- sort(mom_scores, decreasing=TRUE, index.return=TRUE)
-  top_ids <- sorted$ix[1:floor(ncol(data5)/3)]
-  bot_ids <- sorted$ix[(2*floor(ncol(data5)/3)+1):ncol(data5)]
-  # hold for next 12 months (or until year-end)
-  # get start idx -> idx_yy+1, end next year
-  # #HELPME handle indexing carefully
-  # store monthly returns in the sample
+  sorted <- sort(mom_scores, decreasing=TRUE)
+  top_ids <- names(sorted)[1:floor(ncol(data5)/3)]
+  bot_ids <- names(sorted)[(2*floor(ncol(data5)/3)+1):ncol(data5)]
+  
+  # Define the period for holding
+  start_idx <- idx_yy + 1
+  end_idx <- idx_yy + 12
+  if(end_idx > nrow(data4)){
+    end_idx <- nrow(data4)
+  }
+  
+  period_returns <- data4[start_idx:end_idx, ]
+  
+  # Calculate average returns for high MOM portfolio
+  high_returns <- rowMeans(period_returns[, top_ids], na.rm=TRUE)
+  highMOM_ret <- rbind(highMOM_ret, high_returns)
+  
+  # Calculate average returns for low MOM portfolio
+  low_returns <- rowMeans(period_returns[, bot_ids], na.rm=TRUE)
+  lowMOM_ret <- rbind(lowMOM_ret, low_returns)
 }
+
 # 2) Plot monthly + cumulative returns of the two MOM portfolios + market
-# #INTERPRETATION needed
+# Combine returns
+combined_ret <- merge(highMOM_ret, lowMOM_ret, data4$r_mkt, join="inner")
+colnames(combined_ret) <- c("High_MOM", "Low_MOM", "Market")
+
+# Plot Monthly Returns
+plot.zoo(combined_ret, screens = 1, col=c("blue", "green", "red"), lty=1, main="Monthly Returns",
+         ylab="Returns (%)")
+legend("topright", legend=colnames(combined_ret), col=c("blue", "green", "red"), lty=1)
+
+# Plot Cumulative Returns
+cum_ret <- cumprod(1 + combined_ret/100)
+plot.zoo(cum_ret, screens = 1, col=c("blue", "green", "red"), lty=1, main="Cumulative Returns",
+         ylab="Cumulative Returns")
+legend("topleft", legend=colnames(cum_ret), col=c("blue", "green", "red"), lty=1)
+
 # 3) Compare annual average returns, vol, Sharpe ratio 
+# Compute annual statistics
+annual_stats <- data.frame(
+  Portfolio = c("High_MOM", "Low_MOM"),
+  Avg_Return = c(mean(highMOM_ret, na.rm=TRUE)*12, mean(lowMOM_ret, na.rm=TRUE)*12),
+  Volatility = c(sd(highMOM_ret, na.rm=TRUE)*sqrt(12), sd(lowMOM_ret, na.rm=TRUE)*sqrt(12)),
+  Sharpe_Ratio = c((mean(highMOM_ret, na.rm=TRUE)-mean(data4$rf, na.rm=TRUE))*12 / (sd(highMOM_ret, na.rm=TRUE)*sqrt(12)),
+                   (mean(lowMOM_ret, na.rm=TRUE)-mean(data4$rf, na.rm=TRUE))*12 / (sd(lowMOM_ret, na.rm=TRUE)*sqrt(12)))
+)
+print(annual_stats)
+
 # 4) Which should have higher CAPM beta #INTERPRETATION
+# Higher expected returns portfolios typically have higher CAPM beta
+# Based on the Sharpe Ratios and returns, High_MOM portfolio should have higher CAPM beta
 
 
 
