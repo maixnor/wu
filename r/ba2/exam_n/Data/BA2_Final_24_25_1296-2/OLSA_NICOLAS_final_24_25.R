@@ -63,29 +63,59 @@ head(data1_ff)
 #------------------------------------------------------------------------------------------------------------
 ## 3)
 
-
-
+# Simple returns: (P_t / P_{t-1}) - 1
+daily_returns <- data1_ff / lag(data1_ff) - 1
+head(daily_returns)
 
 
 #------------------------------------------------------------------------------------------------------------
 ## 4)
 
+# Compute the 2.5% and 97.5% quantiles for each column
+quantiles <- apply(daily_returns, 2, function(col_data) {
+  quantile(col_data, probs = c(0.025, 0.975), na.rm = TRUE)
+})
 
+# Make a copy of the daily_returns so we don’t overwrite the original
+daily_returns_capped <- daily_returns
 
+# For each column, set values outside the [2.5%, 97.5%] range to NA
+for (j in seq_len(ncol(daily_returns_capped))) {
+  low  <- quantiles[1, j]
+  high <- quantiles[2, j]
+  
+  # replace values below 'low' or above 'high' with NA
+  daily_returns_capped[ daily_returns_capped[, j] < low,  j ] <- NA
+  daily_returns_capped[ daily_returns_capped[, j] > high, j ] <- NA
+}
 
+head(daily_returns_capped)
 
 #------------------------------------------------------------------------------------------------------------
 ## 5)
 
+# We typically calculate monthly simple returns by compounding the daily returns
+# within each month, i.e., Prod(1 + daily) - 1
 
+monthly_returns <- apply.monthly(daily_returns_capped, function(x) {
+  # for each column, we compute product(1 + daily) - 1
+  # 'x' here is a matrix (or vector) of daily returns in the given month
+  # We do it column by column
+  apply(x, 2, function(col_data) {
+    prod(1 + na.omit(col_data)) - 1
+  })
+})
 
+# monthly_returns is now a matrix where each row corresponds to one month
+# and each column corresponds to one of your time series.
 
-
+head(monthly_returns)
 
 
 ###########################################
 ##              Exercise 2               ##
 ###########################################
+
 
 
 
