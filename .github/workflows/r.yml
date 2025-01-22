@@ -28,7 +28,7 @@ jobs:
 
     - name: Verify R and Rmd files
       run: |
-        for file in $(git diff --name-only HEAD~20 | grep -E '\.R$|\.Rmd$'); do
+        for file in $(git log -n 5 --pretty=format:"%H" --name-only); do
           if [[ $file == *.R ]]; then
             R CMD BATCH $file
           elif [[ $file == *.Rmd ]]; then
