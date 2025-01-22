@@ -33,6 +33,7 @@
 ###########################################
 # 1) Convert daily prices (data1) to an xts time series
 # HELPME: No direct example found, using # ...existing code... from solutions
+
 library(xts)
 # suppose final_data_1296.RData is loaded
 data1_xts <- xts(data1[,-1], order.by = as.Date(data1[,1]))
