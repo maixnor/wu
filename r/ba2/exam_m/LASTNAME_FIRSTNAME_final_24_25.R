@@ -26,8 +26,6 @@
 #4.   /1
 
 
-
-
 ###########################################
 ##              Exercise 1               ##
 ###########################################
@@ -122,62 +120,84 @@ legend("topright", legend="Portfolio Volatility", col="red", lwd=2, lty=1)
 # data4: monthly returns of 300 stocks, r_mkt, rf
 # data5: momentum scores
 library(dplyr)
+library(xts)
 
-yrs <- unique(format(index(data4), "%Y"))
-yrs <- yrs[yrs >= "2002" & yrs <= "2018"]
-highMOM_ret <- xts()
-lowMOM_ret <- xts()
+# 1) Implement momentum trading strategies
+# Get all dates and years
+all_dates <- index(data4)
+years <- format(all_dates, "%Y")
 
-for(yy in yrs){
-  idx_yy <- tail(which(format(index(data4), "%Y") == yy), 1)
-  # Momentum scores at end of year
-  mom_scores <- data5[idx_yy, ]
-  
-  # Sort scores descending
-  sorted_mom <- sort(mom_scores, decreasing=TRUE)
-  top_ids <- names(sorted_mom)[1:floor(ncol(data5)/3)]
-  bot_ids <- names(sorted_mom)[(2*floor(ncol(data5)/3)+1):ncol(data5)]
-  
-  # Next year's monthly returns
-  start_idx <- idx_yy + 1
-  end_idx <- idx_yy + 12
-  if(end_idx > nrow(data4)) {
-    end_idx <- nrow(data4)
-  }
-  
-  next_period <- data4[start_idx:end_idx, ]
-  high_returns <- rowMeans(next_period[, top_ids], na.rm=TRUE)
-  low_returns <- rowMeans(next_period[, bot_ids], na.rm=TRUE)
-  
-  highMOM_ret <- rbind(highMOM_ret, high_returns)
-  lowMOM_ret <- rbind(lowMOM_ret, low_returns)
+# Find December dates for 2002-2018
+dec_indices <- which(months(all_dates) == "December" & 
+                    years >= "2002" & years <= "2018")
+
+# Initialize containers with dates
+highMOM_ret <- numeric()
+lowMOM_ret <- numeric()
+dates_used <- as.Date(character())
+
+for(i in 1:(length(dec_indices)-1)) {
+    current_idx <- dec_indices[i]
+    next_dec_idx <- dec_indices[i+1]
+    
+    # Get momentum scores at current December
+    mom_scores <- as.numeric(data5[current_idx,])
+    
+    # Determine portfolio composition
+    n_stocks <- ncol(data4) - 2  # subtract r_mkt and rf columns
+    n_select <- floor(n_stocks/3)
+    
+    # Sort and select stocks
+    rank_order <- order(mom_scores, decreasing = TRUE)
+    high_idx <- rank_order[1:n_select]
+    low_idx <- rank_order[(2*n_select+1):n_stocks]
+    
+    # Get returns for next year
+    period_idx <- (current_idx+1):next_dec_idx
+    returns_high <- rowMeans(data4[period_idx, high_idx], na.rm = TRUE)
+    returns_low <- rowMeans(data4[period_idx, low_idx], na.rm = TRUE)
+    
+    # Store returns and dates
+    highMOM_ret <- c(highMOM_ret, returns_high)
+    lowMOM_ret <- c(lowMOM_ret, returns_low)
+    dates_used <- c(dates_used, all_dates[period_idx])
 }
 
-# 2) Monthly + cumulative returns for both portfolios + market
-combined_ret <- merge(highMOM_ret, lowMOM_ret, data4$r_mkt, join="inner")
+# Convert to xts objects
+highMOM_ret <- xts(highMOM_ret, order.by = dates_used)
+lowMOM_ret <- xts(lowMOM_ret, order.by = dates_used)
+
+# 2) Plot monthly and cumulative returns
+# First merge high and low momentum returns
+combined_ret <- merge(highMOM_ret, lowMOM_ret)
+# Then merge with market returns
+combined_ret <- merge(combined_ret, data4$r_mkt[index(combined_ret)])
 colnames(combined_ret) <- c("High_MOM", "Low_MOM", "Market")
 
-plot.zoo(combined_ret, screens=1, col=c("blue","green","red"), lty=1,
-         main="Monthly Returns", ylab="Returns (%)")
-legend("topright", legend=colnames(combined_ret), col=c("blue","green","red"), lty=1)
+# Monthly returns plot
+plot.zoo(combined_ret, screens=1, col=c("blue","red","black"), lty=1,
+         main="Monthly Portfolio Returns", ylab="Returns (%)")
+legend("topright", legend=colnames(combined_ret), 
+       col=c("blue","red","black"), lty=1)
 
+# Cumulative returns plot
 cum_ret <- cumprod(1 + combined_ret/100)
-plot.zoo(cum_ret, screens=1, col=c("blue","green","red"), lty=1,
-         main="Cumulative Returns", ylab="Cumulative Returns")
-legend("topleft", legend=colnames(cum_ret), col=c("blue","green","red"), lty=1)
+plot.zoo(cum_ret, screens=1, col=c("blue","red","black"), lty=1,
+         main="Cumulative Portfolio Returns", ylab="Cumulative Value")
+legend("topleft", legend=colnames(cum_ret), 
+       col=c("blue","red","black"), lty=1)
 
-# 3) Compare average returns, vol, Sharpe
+# 3) Calculate annual statistics
+rf_annual <- mean(data4$rf[index(combined_ret)], na.rm=TRUE)
+
 annual_stats <- data.frame(
-  Portfolio = c("High_MOM","Low_MOM"),
-  Avg_Return = c(mean(highMOM_ret, na.rm=TRUE)*12, mean(lowMOM_ret, na.rm=TRUE)*12),
-  Volatility = c(sd(highMOM_ret, na.rm=TRUE)*sqrt(12), sd(lowMOM_ret, na.rm=TRUE)*sqrt(12)),
-  Sharpe_Ratio = c(
-    (mean(highMOM_ret, na.rm=TRUE) - mean(data4$rf, na.rm=TRUE))*12 /
-      (sd(highMOM_ret, na.rm=TRUE)*sqrt(12)),
-    (mean(lowMOM_ret, na.rm=TRUE) - mean(data4$rf, na.rm=TRUE))*12 /
-      (sd(lowMOM_ret, na.rm=TRUE)*sqrt(12))
-  )
+    Portfolio = c("High_MOM", "Low_MOM", "Market"),
+    Avg_Return = apply(combined_ret, 2, function(x) mean(x, na.rm=TRUE) * 12),
+    Volatility = apply(combined_ret, 2, function(x) sd(x, na.rm=TRUE) * sqrt(12)),
+    row.names = NULL
 )
+annual_stats$Sharpe_Ratio <- (annual_stats$Avg_Return - rf_annual*12) / annual_stats$Volatility
+
 print(annual_stats)
 
-# 4) Higher CAPM beta typically goes with higher average return (CAPM perspective).
+# 4) CAPM perspective discussion follows in comments
