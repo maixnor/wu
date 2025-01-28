@@ -39,7 +39,7 @@
                 ];
 
                 buildPhase = ''
-                    for file in $(git diff --name-only @{20} | grep -E '\.R$|\.Rmd$'); do
+                    for file in $(git log -n 5 --pretty=format:"%H" --name-only | rg '*.Rmd'); do
                         Rscript -e "rmarkdown::render('$file')"
                     done
                 '';
@@ -52,6 +52,39 @@
                     echo "Done"
                 '';
             };
+        };
+
+        devShells.default = pkgs.stdenv.mkDerivation {
+            name = "build-rmds";
+            src = ./.;
+            buildInputs = with pkgs; [ 
+                R 
+                rPackages.rmarkdown 
+                rPackages.extraDistr
+                rPackages.dplyr
+                rPackages.ggplot2
+                rPackages.ggthemes
+                rPackages.psych
+                rPackages.corrplot
+                rPackages.Hmisc
+                rPackages.apaTables
+                rPackages.nFactors
+                rPackages.qgraph
+                rPackages.xts
+                rPackages.lubridate
+                rPackages.tidyverse
+                rPackages.viridisLite
+                rPackages.Benchmarking
+                tectonic
+                pandoc 
+                inotify-tools
+                bat
+                git
+            ];
+
+            shellHook = ''
+                code .
+            '';
         };
     });
 }
