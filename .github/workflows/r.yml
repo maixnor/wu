@@ -1,4 +1,4 @@
-name: Build and Verify R code
+name: Build Rmd to PDF
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
         name: PDFs of Rmd Files
         if-no-files-found: warn
         path: |
-          r/result/*
+          result
         retention-days: 10
 
         
