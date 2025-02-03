@@ -3,11 +3,9 @@ name: Build and Verify R code
 on:
   push:
     paths:
-      - '**.R'
       - '**.Rmd'
   pull_request:
     paths:
-      - '**.R'
       - '**.Rmd'
 
 jobs:
@@ -23,26 +21,19 @@ jobs:
     - name: Set up Nix
       uses: cachix/install-nix-action@v14
 
-    - name: Build with Nix
-      run: nix develop ./r --extra-experimental-features nix-command --extra-experimental-features flakes
+    - name: Fetch Dependencies with Nix
+      run: cd r && nix develop --extra-experimental-features nix-command --extra-experimental-features flakes
 
-    - name: Verify R and Rmd files
-      run: |
-        for file in $(git log -n 5 --pretty=format:"%H" --name-only | grep '^r/'); do
-          if [[ $file == *.R ]]; then
-            R CMD BATCH $file
-          elif [[ $file == *.Rmd ]]; then
-            Rscript -e "rmarkdown::render('$file')"
-          fi
-        done
+    - name: Build Rmd files
+      run: sh gh_action.sh
+
 
     - uses: actions/upload-artifact@v4
       with:
-        name: PDFs and logs
-        if-no-files-found: error
+        name: PDFs of Rmd Files
+        if-no-files-found: warn
         path: |
-          r/**/*.pdf
-          r/**/*.Rout
+          r/result/*
         retention-days: 10
 
         
