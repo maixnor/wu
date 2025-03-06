@@ -136,31 +136,38 @@ highMOM_ret <- numeric()
 lowMOM_ret <- numeric()
 dates_used <- as.Date(character())
 
-for(i in 1:(length(dec_indices)-1)) {
-    current_idx <- dec_indices[i]
-    next_dec_idx <- dec_indices[i+1]
-    
-    # Get momentum scores at current December
-    mom_scores <- as.numeric(data5[current_idx,])
-    
-    # Determine portfolio composition
-    n_stocks <- ncol(data4) - 2  # subtract r_mkt and rf columns
-    n_select <- floor(n_stocks/3)
-    
-    # Sort and select stocks
-    rank_order <- order(mom_scores, decreasing = TRUE)
-    high_idx <- rank_order[1:n_select]
-    low_idx <- rank_order[(2*n_select+1):n_stocks]
-    
-    # Get returns for next year
-    period_idx <- (current_idx+1):next_dec_idx
-    returns_high <- rowMeans(data4[period_idx, high_idx], na.rm = TRUE)
-    returns_low <- rowMeans(data4[period_idx, low_idx], na.rm = TRUE)
-    
-    # Store returns and dates
-    highMOM_ret <- c(highMOM_ret, returns_high)
-    lowMOM_ret <- c(lowMOM_ret, returns_low)
-    dates_used <- c(dates_used, all_dates[period_idx])
+if(length(dec_indices) > 1){
+    for(i in 1:(length(dec_indices)-1)) {
+        current_idx <- dec_indices[i]
+        next_dec_idx <- dec_indices[i+1]
+        
+        # Get momentum scores at current December
+        mom_scores <- as.numeric(data5[current_idx,])
+        
+        # Determine portfolio composition
+        n_stocks <- ncol(data4) - 2  # subtract r_mkt and rf columns
+        n_select <- floor(n_stocks/3)
+        
+        # Sort and select stocks
+        rank_order <- order(mom_scores, decreasing = TRUE)
+        high_idx <- rank_order[1:n_select]
+        low_idx <- rank_order[(2*n_select + 1):min(3*n_select, n_stocks)]
+        
+        # Get returns for next year
+        if(next_dec_idx > current_idx + 1){
+            period_idx <- (current_idx + 1):next_dec_idx
+        } else {
+            next
+        }
+        
+        returns_high <- rowMeans(data4[period_idx, high_idx], na.rm = TRUE)
+        returns_low <- rowMeans(data4[period_idx, low_idx], na.rm = TRUE)
+        
+        # Store returns and dates
+        highMOM_ret <- c(highMOM_ret, returns_high)
+        lowMOM_ret <- c(lowMOM_ret, returns_low)
+        dates_used <- c(dates_used, all_dates[period_idx])
+    }
 }
 
 # Convert to xts objects
@@ -196,7 +203,9 @@ annual_stats <- data.frame(
     Volatility = apply(combined_ret, 2, function(x) sd(x, na.rm=TRUE) * sqrt(12)),
     row.names = NULL
 )
-annual_stats$Sharpe_Ratio <- (annual_stats$Avg_Return - rf_annual*12) / annual_stats$Volatility
+annual_stats$Sharpe_Ratio <- ifelse(annual_stats$Volatility != 0,
+                                    (annual_stats$Avg_Return - rf_annual*12) / annual_stats$Volatility,
+                                    NA)
 
 print(annual_stats)
 
