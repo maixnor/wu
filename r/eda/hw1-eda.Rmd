@@ -23,7 +23,7 @@ Mean miles per gallon is 20.09, so about 8.55 kilometers per liter for the metri
 
 ```{r}
 mean(mtcars$am)
-t.test(mtcars$mpg, mtcars$am, conf.level=0.95)
+t.test(mtcars$mpg ~ mtcars$am, conf.level=0.95)
 ```
 
 - null hypothesis: there is no difference between automatic transmission and fuel consumption
