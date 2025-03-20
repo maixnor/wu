@@ -1,6 +1,6 @@
 ---
 title: "Business Analytics II - Group 1 - Home Assignment 5"
-author: "Yurii Masiuk, Vanda Lakatos, Kornel Auer, Vivien Arns, Benjamin Meixner, Nicholas Olsa"
+author: "xxx xxx, xxx xxx, xxx xxx, xxx xxx, Benjamin Meixner, Nicholas Olsa"
 date: "2024-12-16"
 output: 
   pdf_document:

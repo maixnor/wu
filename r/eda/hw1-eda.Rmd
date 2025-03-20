@@ -1,0 +1,53 @@
+---
+title: "EDA - Home Assignment 1"
+author: "Benjamin Meixner, 12302260"
+date: "2025-03-19"
+output: 
+  pdf_document:
+    latex_engine: tectonic
+---
+
+# Exercise 1
+
+```{r}
+data('mtcars')
+head(mtcars)
+
+mean(mtcars$mpg)
+mean(mtcars$mpg)/3.78*1.609
+```
+
+Mean miles per gallon is 20.09, so about 8.55 kilometers per liter for the metric lovers in this course. :)
+
+# Exercise 2
+
+```{r}
+mean(mtcars$am)
+t.test(mtcars$mpg, mtcars$am, conf.level=0.95)
+```
+
+- null hypothesis: there is no difference between automatic transmission and fuel consumption
+- alt hypothesis: there is difference between automatic transmission and fuel consumption
+
+We reject the null, since p is very small and R also tells us that the alt hypothesis is to be used.
+
+Also we can tell by the mean of `mtcars$am` that 40.6% of cars in this dataset have automatic transmission.
+
+# Exercise 3
+
+```{r}
+ols <- lm(mtcars$mpg ~ mtcars$hp)
+summary(ols)
+```
+
+From the coefficient of -0.06 we can tell that HP does not have an effect on fuel consumption.
+
+```{r}
+par(mfrow=c(2,2))
+plot(ols)
+```
+
+From the Residuals vs Fitted plot I gather that a the actual data points are rather spread out and
+the model does not fit as well. I can also tell that by the $R^2$ of 0.6 which is not so great.
+
+I am only slightly confused by the plot in general.
