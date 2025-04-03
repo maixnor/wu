@@ -1,0 +1,70 @@
+---
+title: "EDA - Home Assignment 2"
+author: "Benjamin Meixner, 12302260"
+date: "2025-03-27"
+output: 
+  pdf_document:
+    latex_engine: tectonic
+---
+
+# Linear Model
+```{r}
+library(ggplot2)
+library(dplyr)
+
+data <- read.csv("data/CEOdata.csv")
+head(data)
+
+sales_salary <- lm(salary ~ sales, data=data)
+
+data %>%
+    ggplot(aes(x = sales, y = salary)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = F)
+
+summary(sales_salary)
+```
+
+# Log Linear Model
+
+```{r}
+log_sales_salary <- lm(log(salary) ~ log(sales), data=data)
+summary(log_sales_salary)
+
+data %>%
+    ggplot(aes(x = log(sales), y = log(salary))) +
+    geom_point() +
+    geom_smooth(method = "lm", se = F)
+
+```
+
+Here the points are closer together and the outliers are less extreme.
+The points now are better-suited for a linear regression model.
+
+# Graduate School
+
+```{r}
+grad_sales <- lm(salary ~ grad, data=data)
+summary(grad_sales)
+```
+
+The slope of the graduate school LM model is negative. 
+Grad School is not a good investment for CEOs.
+
+# Combined Analysis
+
+```{r}
+combined <- lm(log(salary) ~ log(sales) + log(mktval) + profits + age + ceoten, data=data)
+summary(combined)
+```
+
+The highest adjusted $R^2$ I could achieve was 0.30. Not a good model.
+With logarithmic profits the $R^2$ score increased, but then the
+result is quewed because it does not take profits into account when 
+they are negative, since the log for a legative profit is not defined.
+
+The best predictor for CEO compensation using my model is `sales`.
+
+The problem with including `age` and `ceoten` in the model is that
+the variables are influencing one another. Older people are 
+more likely to spend more years in CEO positions.

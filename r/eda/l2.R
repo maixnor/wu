@@ -4,7 +4,7 @@
 library(dplyr)
 library(ggplot2)
 
-pool_visitors = read.csv('r/eda/data/pool_visitors.csv')
+pool_visitors = read.csv('eda/data/pool_visitors.csv')
 head(pool_visitors)
 
 pool_visitors %>% ggplot(aes(x = visitors)) +
@@ -14,7 +14,7 @@ pool_visitors %>% ggplot(aes(x = temperature)) +
     geom_histogram(binwith = 3)
 
 pool_visitors %>% summarize(
-    mean_visitors = mean(visitors)
+    mean_visitors = mean(visitors),
     mean_temperature = mean(temperature)
 )
 
