@@ -8,7 +8,7 @@ output:
 ---
 
 ```{r}
-load("eda/data/admissions.Rdata")
+load("data/admissions.Rdata")
 head(admissions)
 
 lm1 <- lm(admit ~ gpa, data=admissions)
@@ -19,15 +19,13 @@ summary(admissions$gpa[admissions$admit == 0])
 ```
 
 From the output of summary we can see that the correlation is not effective, 
-since it only explains $R^2 = 3.1\%$ of the data.
+since it only explains $R^2$ = 3.1\%$ of the data.
 
 Also from the medians we can only see a $0.2$ point improvement of the students
 admitted vs the non-admitted. I would not deem this hard evidence.
 
 ```{r}
 admissions$gre = admissions$gre / 10
-head(admissions)
-
 admissions$rank = factor(admissions$rank)
 head(admissions)
 
@@ -48,6 +46,7 @@ margins(glm1)
 ```
 
 From the marginal effects of both models we can gather:
+
 - when including just the GPA then a 1 point increase in GPA results in a $21.8\%$ higher acceptance rate.
 - when including all variables then a 1 point increase in GPA results in a $15.5\%$ higher acceptance rate.
 
