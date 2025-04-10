@@ -1,0 +1,187 @@
+---
+title: "Empirical Data Analysis Homework 4"
+author: "HH"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+Use R to solve the following exercises. You can work alone or in groups. Everyone must upload their own answers on canvas\@WU. Upload one PDF file with your answers and interpretations. Explain what you did and what your results mean. In addition, upload the R script that you used to get your results. If you want to use R-Markdown, you can upload one document with both code and interpretation. You do not need to knit your R-Markdown document to a PDF.
+
+## 1. Read the experiment instructions and answer the following questions briefly:
+
+1.  Does the experiment follow a between-subject, or within-subject design?
+
+    Your answer: Between-Subject (treatment/control) and within-subject (coffee/lemonade)
+
+2.  How many levels does the treatment variable have?
+
+    Your answer: 2 levels (decoy/no decoy)
+
+3.  Is it a one-shot experiment, or a repeated experiment?
+
+    Your answer: one-shot
+
+## 2. Open the "decoy.csv" dataset, and load the required libraries.
+
+```{r loading data and required libraries, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+
+# clean the working environment
+rm(list = ls())
+
+# set your working directory
+tryCatch({
+  library(rstudioapi)
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+  }, error=function(cond){message(paste("cannot change working directory"))
+})
+
+# df <- read.csv([FILENAME])
+df <- read.csv("data/decoy.csv")
+```
+
+## 3. Explore the dataset
+
+-   plot the age of the participants in each group
+
+-   Plot the number of participants who chose the small/(medium)/large options
+
+-   Has the random assignment worked? Are two groups (control, and treatment) comparable? For example, compare the number of participants from the morning and afternoon sessions in each group (control and treatment)
+
+```{r Explore, message=FALSE, warning=FALSE}
+# it's good to see the structure of your dataset, what variables do you have, what are their types, etc.
+head(df)
+
+
+df %>% ggplot(aes(x = age, fill = treatment)) + 
+  geom_histogram(alpha = 0.5) + labs(title = "Age distribution by treatment group")
+
+table(df$money, df$treatment)
+
+# you can use the following code to compare the number of participants from the morning and afternoon sessions in each group
+m1 <- glm(money ~ treatment + eda_session, data = df)
+summary(m1)
+
+# or any other codes
+
+```
+
+Your interpretation: In the morning people are more inclined to spend money while the treatment reduced spending. I suspect that the morning spending can be explained by coffee craving.
+
+## 4. Does the average money spent on coffee differ in different treatments?
+
+-   What is the mean, and SD of money spent on coffee in each treatment? (Descriptive statistics) visualize it.
+
+-   Run the correct test of significance (t-test/ rank sum test/$Chi^2$)
+
+-   Run a regression to predict the average money spend on coffee by treatment.
+
+-   Interpret your results. Does your result show a causal relationship?
+
+```{r Coffee}
+
+coffee_summary <- df %>% filter(product == "coffee") %>%
+  group_by(treatment) %>%
+  summarise(mean = mean(money),
+            sd = sd(money),
+            se = sd*1.96) 
+# visualize it
+coffee_summary %>% ggplot(aes(x = treatment, y = mean, fill = treatment)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymin = mean - se, ymax = mean + se), position = position_dodge(0.9), width = 0.25) +
+  labs(title = "Mean and SD of money spent on coffee by treatment")
+
+# example for t.test
+t.test(money ~ treatment, data = df %>% subset(product == "coffee"))
+
+m_coffee <- lm(money ~ treatment, data = df %>% subset(product == "coffee"))
+summary(m_coffee)
+
+```
+
+Your interpretation: it is not causal. the difference is too small, the confidence is too small. We could improve the confidence only with a much increased sample size. 
+
+## 5. Run a regression of money against treatment variable (control/decoy), the product type (lemonade/coffee), and its interaction
+
+-   What is the mean, and SD of money spent on coffee and lemonade in each treatment? (Descriptive statistics) visualize it.
+-   Is the average money spent on lemonade significantly different from coffee?
+-   Does the interaction term have a significant effect?
+-   Interpret the results. Does your result show a causal relationship?
+
+```{r}
+
+product_summary <- df %>%
+  group_by(treatment, product) %>%
+  summarise(mean = mean(money),
+            sd = sd(money),
+            se = sd*1.96)
+
+ggplot(product_summary, aes(x = product, y = mean, fill = treatment)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymin = mean - se, ymax = mean + se), position = position_dodge(0.9), width = 0.25) +
+  labs(title = "Mean and SD of money spent on coffee and lemonade by treatment")
+
+m_interact <- lm(money ~ treatment * product, data = df)
+summary(m_interact)
+
+```
+
+Your interpretation: Lemonade has a significant effect. It shows a causal relationship, although it is very week since $R^2$ is only 7%.
+
+## 6. We hypothesize that having a decoy option would increase the average money participants spend on the product. Does the result support our hypothesis?
+
+-   Run the regression above, and add participants age, and EDA_Session as control variables.
+
+-   Interpret the results. Does the result support our hypothesis?
+
+-   Briefly discuss the external validity of the experiment.
+
+```{r}
+
+m_control <- lm(money ~ treatment * product + age + eda_session, data = df)
+summary(m_control)
+
+```
+
+
+
+Your interpretation: The difference in lemonade purchasing price is still significant. My hypothesis is supported.
+
+The external validity is flawed. 
+
+1. the sample is not representative of the population (only WU-students in a statistics course)
+2. in our analysis we did not use the most important aspect on purchasing behavior: CAT OR DOG? :)
+
+## Experiment Instructions
+
+### Title: Exploring the Decoy Effect in Consumer Decision Making
+
+**Description:** This experiment investigates the influence of the decoy effect on consumer decision making in the context of beverage choices, specifically coffee and lemonade. Participants will be randomly assigned to one of two experimental conditions: a control group and a decoy group.
+
+In both groups, participants will be presented with a hypothetical scenario where they are tasked with making two decisions: one regarding their preference for coffee and another for lemonade. The order in which participants evaluate coffee and lemonade will be randomized for each participant to mitigate order effects.
+
+In the control group, participants will be presented with straightforward choices between two different options of coffee and lemonade, each with specific attributes such as price, and size.
+
+In the decoy group, a third option, known as the decoy, will be introduced for both coffee and lemonade. The decoy options will be strategically designed to be inferior to one of the existing options in terms of certain attributes while being comparable to the other option in other aspects. This is intended to influence participants' decision-making process by making one of the original options more attractive relative to the decoy.
+
+Participants in both groups will evaluate the options and make decisions based on their preferences for coffee and lemonade. Data will be collected on participants' choices, preferences, and reasoning behind their decisions.
+
+The analysis will compare decision-making patterns between the control and decoy groups to assess the impact of the decoy effect on consumer choices in the context of beverage selection. This experiment aims to provide insights into the cognitive mechanisms underlying decision-making and its implications for consumer behavior in real-world scenarios.
+
+### Variables
+
+1.  ResponseId
+2.  Treatment ("control", "decoy")
+3.  Product (coffee/lemonade)
+4.  Money (in Euros)
+5.  age
+6.  gender (male = 0, female = 1, other = 2, prefer not to say = 3)
+7.  field
+8.  eda_session (Morning = 0, Afternoon = 1)
+9.  fam_decoy (No = 0, Yes = 1)
+10. coffee_lemonade_freq (Almost Never = 0, Once a week = 1, two times a week = 2, three or more times a week = 3)
