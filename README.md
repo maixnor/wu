@@ -11,14 +11,12 @@ Basically everything which is not my obsidian vault (wu-quartz) is in here.
 
 # R & nix
 
-I use `tectonic` as a wrapper for Latex - not included in flake, but is straigtforward to install and use.
+I use `tectonic` as a wrapper for Latex, not `xelatex` or any other Latex distribution.
 
 R is a statistical programming language heavily relying on arrays and pure functions.
 
 >Nerdy Linux stuff ahead - you have been warned! 
 
-Nix can be used on Windows through WSL or on MacOs using nix-darvin. Indulge at your own risk - can be very rewarding but is very complex at first.
+Nix can be used on Windows through WSL or on MacOs using nix-darvin. Indulge at your own risk - can be very rewarding but is rather complex at first.
 
-For creating the R environment using nix run `nix develop` in the project root.
-
-Then execute the files using the `justfile`
+You can check my dotfiles and get my R setup from `modules/dev.nix` in my dotfiles.
