@@ -148,14 +148,12 @@ summary(m_control)
 
 ```
 
-
-
 Your interpretation: The difference in lemonade purchasing price is still significant. My hypothesis is supported.
 
 The external validity is flawed. 
 
 1. the sample is not representative of the population (only WU-students in a statistics course)
-2. in our analysis we did not use the most important aspect on purchasing behavior: CAT OR DOG? :)
+2. in our analysis we did not use the most important aspect on purchasing behavior: CAT OR DOG PERSON!? :) 
 
 ## Experiment Instructions
 
