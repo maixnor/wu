@@ -1,0 +1,336 @@
+---
+title: "EDA - Project"
+author: "Ana Carolina Alencaster Herrero"
+date: "2025-05-05"
+output: pdf_document
+---
+ 
+Preparing the Dataset to be used more easily
+
+```{r}
+# load libraries
+library(dplyr)
+library(ggplot2)
+
+rm(list = ls())
+
+tryCatch({
+  library(rstudioapi)
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+  }, error=function(cond){message(paste("cannot change working directory"))
+})
+
+df <- read.csv("project.csv")
+df <- df[-(1:2), ] # first 2 lines are useless
+
+# delete unfinished surveys (1)
+table(df$Finished)
+df <- df %>% filter(Finished != 0.0)
+table(df$Finished)
+
+# RENAME COLUMNS as the questions
+df <- df %>% rename(journal_treatment = Q11,video_treatment = Q13, 
+                    control_treatment = Q12, life_goals = Q1, 
+                    set_goals = Q3_1, clear_sense = "Q2._1", 
+                    write_goals = Q4, whatiwant = Q5_1, watch_content = Q6, 
+                    age = Q7, gender = Q8)
+
+table(df$gender)
+
+# Create treatment variable based on which column has value 1
+df$treatment <- case_when(
+  df$journal_treatment != "" ~ "journal",
+  df$video_treatment != "" ~ "video",
+  df$control_treatment != "" ~ "control",
+  TRUE ~ NA_character_  # Default case for any unmatched values
+)
+df$treatment <- factor(df$treatment, levels = c("control", "journal", "video"))
+
+df$age <- as.numeric(df$age)
+df$watch_content <- as.factor(df$watch_content)
+df <- df %>% filter(gender != "")
+df$gender <- as.factor(df$gender)
+df$whatiwant <- as.numeric(df$whatiwant)
+df$clear_sense <- as.numeric(df$clear_sense)
+df$write_goals <- as.factor(df$write_goals)
+df$set_goals <- as.factor(df$set_goals)
+df$life_goals <- as.factor(df$life_goals)
+
+# remove NAs in the dataset
+df <- na.omit(df)
+```
+
+Begin Analysis
+
+**DEMOGRAPHICS - we check if the randomization was done correctly**
+**Overall:** we see the mean age is similar and the proportion of each gender is also similar - randomization was good.
+
+```{r}
+
+# AGE
+#transform age into a numerical variable and compare means
+
+#TODO run t.test
+df %>%
+  group_by(treatment) %>%
+  summarise(mean_age = mean(age))
+
+age_anova <- aov(age ~ treatment, data = df)
+summary(age_anova) # insignificant
+
+# Visualize age distribution by treatment
+boxplot(age ~ treatment, data = df, 
+        main = "Age Distribution by Treatment Group",
+        xlab = "Treatment", ylab = "Age")
+
+#GENDER
+#Compare the count and proportion of people in each gender in the data
+#count observations per group
+
+gender_data <- df %>%
+  group_by(treatment) %>%
+  count(gender)
+
+# Plot - COUNT
+ggplot(gender_data, aes(x = treatment, y = n, fill = gender)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Gender Count by Treatment",
+       x = "Treatment Group",
+       y = "Count",
+       fill = "Gender") +
+  theme_minimal()
+
+# slight female bias
+
+#plotting proportion is better
+gender_prop_data <- df %>%
+  group_by(treatment, gender) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(treatment) %>%
+  mutate(prop = n / sum(n))
+
+ggplot(gender_prop_data, aes(x = treatment, y = prop, fill = gender)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Proportion of Genders by Treatment Group",
+       x = "Treatment Group",
+       y = "Proportion",
+       fill = "Gender") +
+  scale_y_continuous(labels = scales::percent_format()) +  # shows percent labels
+  theme_minimal()
+# female: 60%
+# male: 40%
+```
+
+**Clear Sense**
+
+Testing difference in means between groups
+
+```{r}
+# almost significant with 0.35
+cs_anova <- aov(clear_sense ~ treatment, data = df)
+summary(cs_anova)
+
+# mean and median clarity
+df %>%
+  group_by(treatment) %>%
+  summarise(mean_clarity = mean(clear_sense))
+df %>%
+  group_by(treatment) %>%
+  summarise(median_clarity = median(clear_sense))
+
+df %>% ggplot(aes(x = treatment, y = clear_sense, fill = treatment)) +
+  geom_boxplot() +
+  labs(title = "Clear Sense by Treatment",
+       x = "Treatment Group",
+       y = "Count",
+       fill = "Treatment") +
+  theme_minimal()
+```
+
+## Regression
+
+**basic regression:** insignificant
+**lognormal regression:** *still insignificant*
+
+```{r}
+#treatment as a dummy variable - we run some regressions
+hist(df$clear_sense)
+
+# basic
+reg1 <- lm(clear_sense ~ treatment, df)
+summary(reg1)
+
+# logarithm
+reg2 <- lm(log(clear_sense + 1) ~ treatment, df)
+summary(reg2)
+
+#scaled - also insignificant
+reg3 <- lm(scale(df$clear_sense) ~ treatment, df)
+summary(reg3)
+```
+
+**Adding Variables**
+***regression with all variables***
+-   [Overall:]{.underline}
+    -   p-value: small
+        ```         
+         1.907e-09
+        ```
+    -   Adjusted R-Squared: 44.69
+-   Shows -
+    -   **Journal condition -** significant - negative
+    -   **Video -** significant - negative
+-   Other possible explanations
+    -   what I want  - significant - positive
+    -   set_goals - significant - positive
+**Possible interpretation**
+-   Maybe doing a journaling task or watching a video makes people more self-aware and therefore makes them think they have less clarity ab their life goals?
+-   having set goals means you have more clarity about your life goals
+
+```{r}
+reg_allvariables<-lm(logclearsense ~ treatment + as.factor(watch_content) + age + as.factor(gender) + as.numeric(whatiwant) + as.factor(write_goals) + set_goals + as.factor(life_goals), df)
+summary(reg_allvariables)
+```
+
+**Other types of regression**
+
+```{r}
+
+#could it be a polynomial regression? - how do we know if this is better?
+reg_allvariables2<-lm(logclearsense ~ treatment^2 + as.factor(watch_content)^2 + age^2 + as.factor(gender)^2 + as.numeric(whatiwant)^2 + as.factor(write_goals)^2 + as.factor(set_goals)^2 + as.factor(life_goals)^2, df)
+summary(reg_allvariables2)
+
+```
+
+**Adding interaction effects**
+
+**EXPLORATORY FACTOR ANALYSIS**
+
+**GAUSS-MARKOV ASSUMPTIONS**
+
+```{r}
+#GAUSS-MARKOV ASSUMPTIONS
+
+#we have our basic model
+model <- lm(clear_sense ~ treatment, data = df)
+summary(model)
+
+# 1. Linearity & Homoskedasticity
+plot(model$fitted.values, model$residuals)  # Check for funnel shape 
+abline(h = 0, col = "red")
+
+library(lmtest)
+bptest(model) #we see: p-value = 0.04241 - this means that we reject the null hypothesis that the data is homeoscedastic - WE MUST USE ROBUST STANDARD ERRORS?
+
+
+# 2. Multicollinearity
+library(car)
+vif(reg_allvariables) #we see all adjusted values have an adjusted GVIF below 2 - so no concern for multicollinearity
+
+#scale the data???
+
+#rescaling the data: Z-score
+Journal.sc<-EDA_Data_valuesnumeric[-1,]
+Journal.sc<-Journal.sc[-5,]
+Journal.sc<-Journal.sc[,-22] #quito clear_sense?
+Journal.sc<-Journal.sc[,21:27]
+
+Journal.sc <- Journal.sc %>% rename(life_goals = Q1, 
+                                    set_goals = Q3_1, 
+                                    write_goals = Q4, whatiwant = Q5_1, watch_content = Q6, 
+                                    age = Q7, gender = Q8)
+
+
+Journal.scaled<-scale(Journal.sc) #we select the values for each category and calculate their z-score using scale(), and then we index these scaled values and define them as a new variable
+summary(Journal.sc)
+cor_matrix <- cor(Journal.sc)
+
+# View the matrix
+library(psych)
+corr.Journal.sc <- round(cor(Journal.scaled),3) #we index the calculated zscore values and calculate the correlation, then round to 3 digits
+corPlot(corr.Journal.sc,
+        numbers=T,diag=F,upper=F,
+        main="Correlations between variables" ) 
+
+KMO(Journal.scaled) #overall MSA is >0.5 - this indicated that there is some correlation between the variables
+
+#EIGENVALUES
+#how many factors should we actually have  - the first 3 are >1 (life_goals, set_goals, write_goals)
+
+library(nFactors) #CFA
+eigen(corr.Journal.sc)
+#first 3 are >1 - but CAREFUL - one is clear_sense
+
+Journal.sc
+
+journal_efa<- factanal(x=Journal.sc, factors=3, rotation="varimax", scores="Bartlett")
+
+
+#Running the Regression With Factors
+
+factors<-journal_efa$scores
+
+
+#if we wanted to relate eth into factors
+
+#factor 1 - age
+#factor 2 - write_goals, watch_content  
+#factor 3 - set_goals, whatiwant
+
+
+factors <- journal_efa$scores
+
+colnames(factors) <- c(
+  "age_factor",
+  "write_goals_watch_content",
+  "set_goals_whatiwant"
+)
+
+```
+
+**Results from the EFA Regression**
+```{r}
+Journal_reggression_data <- data.frame(clear_sense2 = df$clear_sense, factors)
+
+model5 <- lm(clear_sense2 ~ age_factor + write_goals_watch_content + set_goals_whatiwant, data = Journal_reggression_data)
+summary(model5)
+
+#what if now we add the treatments to this model?
+
+Journal_reggression_data_complete <- data.frame(clear_sense2 = df$clear_sense, factors, treatment = df$treatment)
+
+model6 <- lm(clear_sense2 ~ age_factor + write_goals_watch_content + set_goals_whatiwant + treatment, data = Journal_reggression_data_complete)
+summary(model6)
+
+
+head(efa_v$scores)
+reg4<-lm(age ~ as.factor(watch_content), df)
+summary(reg4) #ppl who are older never watch content?????????
+
+# Create the barplot ????????????
+ggplot(df, aes(x = treatment, y = age, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Age by treatment", x = "Group", y = "Age")
+
+plot(log(df$clear_sense))
+```
+
+```{r}
+#WATCH CONTENT
+table(df$watch_content)
+
+watchcontent_data <- df %>%
+  group_by(treatment) %>%
+  count(watch_content)
+
+ggplot(watchcontent_data, aes(x = treatment, y = n, fill = watch_content)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Content Watching Habits by Treatment Group",
+       x = "Treatment Group",
+       y = "Count",
+       fill = "Watch Content")
+```
+
+```{r}
+
+```
