@@ -222,6 +222,55 @@ ggplot(watchcontent_data, aes(x = treatment, y = n, fill = watch_content)) +
 
 **Adding interaction effects**
 
+```{r}
+reg_interact <- lm(log(clear_sense + 1) ~ treatment * whatiwant +
+                     age + gender + watch_content +
+                     write_goals + set_goals + life_goals,
+                   data = df)
+
+summary(reg_interact)
+```
+
+Both the journal and video treatments show significant negative effects on perceived clarity of life goals (clear_sense) compared to the control group. 
+The variable whatiwant, which measures how much individuals base their decisions on what they truly want, has a positive and significant effect on clarity.
+
+→ People who are more in touch with their desires report greater clarity in life goals.
+The interaction between video treatment and whatiwant is positive and statistically significant (p ≈ 0.037).
+→ This implies that for participants in the video group, the effect of being guided by one's desires is amplified.
+
+Several levels of the set_goals variable are highly significant, indicating a strong association with clarity.
+Variables such as gender, age, and watch_content are not significant predictors in this model.
+
+```{r}
+ggplot(df, aes(x = whatiwant, y = clear_sense, color = treatment)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Observed Interaction: Treatment × What I want",
+       x = "What I want (Decision guided by personal desire)",
+       y = "Clarity of Life Goals",
+       color = "Treatment Group") +
+  theme_minimal()
+```
+
+
+```{r}
+#gender
+lm(log(clear_sense + 1) ~ treatment + gender * set_goals, data = df)
+```
+People who set clear goals for the next 5 years report significantly greater clarity in life goals. This effect is strong across all groups, but in some cases, the positive effect of goal-setting is even more pronounced among men. While being in the journal or video treatment slightly reduces clarity (perhaps due to increased self-reflection), setting concrete goals helps offset that effect — especially in men.
+
+
+```{r}
+ggplot(df, aes(x = as.numeric(set_goals), y = clear_sense, color = gender)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Interaction: Gender × Set Goals",
+       x = "Set Goals (ordered factor)",
+       y = "Clarity of Life Goals",
+       color = "Gender") +
+  theme_minimal()
+```
+
 **EXPLORATORY FACTOR ANALYSIS**
 
 **GAUSS-MARKOV ASSUMPTIONS**
