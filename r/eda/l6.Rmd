@@ -1,0 +1,148 @@
+---
+title: "l6_2"
+author: "HH"
+date: ''
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Difference in differences (Diff-in-diff, DID)
+## in-class example: lecture 6
+```{r}
+# install.packages("estimatr")
+library(ggplot2)
+library(dplyr)
+library(estimatr)  ### For lm_robust function (Clustered SE)
+
+# Set your working directory
+
+# load the csv file
+df <- read.csv("MLDA 18-20y.csv")
+```
+
+# Focus on only two states
+- subset data of state40 and state 41
+- State --> Categorical variable
+- Graph mortality rate in two states
+```{r}
+head(df)
+
+df <- df %>% subset(state == 40 | state == 41)
+
+# different ways of the line above
+# df <- df[df$state == 41| df$state == 40, ]
+# df <- df %>% filter(state == 41 | state == 40)
+
+# making it a categorical variable
+df$state <- as.factor(df$state)
+
+ggplot(df, aes(x = year, y = mrate, color = state)) +
+  geom_line()
+
+```
+
+# Running two by two DID (Two entities, pre/post treatment)
+Generate a dummy indicating the time after the law change (post-treatment period).
+The coefficient of the interaction term is the DID estimator.
+```{r}
+
+df$post <- ifelse(df$year >= 1975, T, F)
+
+# Relevel the categorical variable --> we're going to use state 41 as the baseline. 
+df$state <- relevel(df$state, ref = 2)
+#df$state <- relevel(df$state, ref = "41")
+
+
+m1 <- lm(mrate ~ state * post, data = df )
+summary(m1)
+
+# Why? serial correlation
+### Robust model / clustered SE model 
+m1_robust <- lm_robust(mrate ~ state * post, data = df, clusters = state)
+summary(m1_robust)
+```
+
+# Another way to define the state40 dummy variable is the method we used in class.
+```{r}
+df$state40 <- ifelse(df$state == "40", TRUE, FALSE)
+
+df$post <- ifelse(df$year > 1974, TRUE, FALSE) 
+
+m1 <- lm(mrate ~ state40 *  post , data = df)
+summary(m1)
+
+# Why? serial correlation
+### Robust model / clustered SE model 
+m1_robust <- lm_robust(mrate ~ state40 * post, data = df, clusters = state)
+summary(m1_robust)
+
+```
+
+# Reload the dataset to look at reforms changing the MLDA in more states
+
+```{r}
+# reload the data
+df <- read.csv("MLDA 18-20y.csv")
+# state --> categorical variable
+df$state <- as.factor(df$state)
+
+# base R histogram
+hist(df$legal)
+
+# histogram in ggplot
+ggplot(df, aes(x=legal)) + 
+  geom_histogram()
+
+# histogram in ggplot by fequency
+ggplot(df, aes(x=legal)) + 
+  geom_histogram(aes(y = ..density..))
+
+```
+
+# run a simple regression 
+mrate against legal
++ Run a regression accounting for the fact that there could be serial correlation between the observations within a state.
+```{r}
+
+m2 <- lm(mrate ~ legal, data = df)
+summary(m2)
+
+# a regression accounting for the fact that there could be serial correlation between the observations within a state.
+m2_robust <- lm_robust(mrate ~ legal, data = df, clusters = state)
+summary(m2_robust)
+```
+
+## State and time fixed effects
+* Run a regression with clustered SEs which takes into account state and time fixed effects.
+```{r}
+## Note: time -> categorical variable
+
+m3_robust <- lm_robust(mrate ~ state + as.factor(year) + legal, clusters = state, data = df)
+summary(m3_robust)
+
+```
+
+# Common trend assumption 
+Check visually if the common trends assumption is supported.
+```{r}
+ggplot(df, aes(x = year, y = mrate, color = state)) + 
+  geom_line()
+
+
+# Take a look at states 32 and 50 - there is too much noise in the full sample.
+# State 32 has MLDA of 21, and state 50 has MLDA of 18 for the entire time
+ggplot(df %>% subset(state == 50 | state == 32), aes(x = year, y = mrate, color = state)) + 
+  geom_line()
+
+```
+
+# Adding state specific linear trends.
+Run a regression with clustered SEs which takes into account state and time fixed effects and state-specific linear trends.
+```{r}
+
+# This is overkill for a sample of this size!
+m4_robust <- lm_robust(mrate ~ state + as.factor(year) +  state:year + legal, data = df, clusters = state)
+summary(m4_robust)
+
+```

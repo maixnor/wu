@@ -1,0 +1,65 @@
+---
+title: "Empirical Data Analysis Homework 6"
+author: "HH"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r loading data and required libraries, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(estimatr)
+
+# clean the working environmento
+rm(list = ls())
+
+# set your working directory
+tryCatch({
+  library(rstudioapi)
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+  }, error=function(cond){message(paste("cannot change working directory"))
+})
+
+# df <- read.csv([FILENAME])
+df <- read.csv("data/guns.csv")
+```
+
+```{r Estimation, message=FALSE, warning=FALSE}
+m1_robust <- lm_robust(log(vio) ~ shall, data = df, clusters = shall)
+summary(m1_robust)
+m2_robust <- lm_robust(log(vio) ~ shall + incarc_rate + density + avginc + pop + pb1064 + pw1064 + pm1029, data = df, clusters = shall)
+summary(m2_robust)
+```
+
+We can see that the shall in (1) is negative, so that means we have a lower crime rate for states with shall laws. When comparing to the analysis in (2)
+we can also see that the coefficient has decresed (-.0443 to -0.368) which means some of that variation is due to other factors than purely
+the shall laws.
+
+Also the significance level in (2) is not enough to reject the null, since the CI includes 0 and the p-value is 16%, too high.
+
+```{r}
+m3_robust <- lm_robust(log(vio) ~ shall + incarc_rate + density + avginc + 
+                        pop + pb1064 + pw1064 + pm1029 + factor(year) + factor(stateid), 
+                      data = df, clusters = shall)
+summary(m3_robust)
+```
+
+Here I am not sure if I used the right constellation of yaer and stateid, but if I just focus on the `shall` variable:
+
+```
+Coefficients:
+                    Estimate Std. Error   t value Pr(>|t|)   CI Lower  CI Upper
+(Intercept)        3.972e+00  2.0693555   1.91944  0.27675 -14.811247 22.755242
+shall             -2.799e-02  0.0673373  -0.41572  0.74223  -0.670145  0.614158
+...omitted
+```
+
+I can clearly see that the effect has almost vanished. The p-value is 74% and the different years and also the different
+states are much more of a concern than the shall law iteslf. I deem the effects of shall laws neglibile to the point one cannot
+statistically prove they are working (so they probably are not).
+
+
